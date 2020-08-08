@@ -26,8 +26,18 @@
           <hr class="hr-light">
         </div>
         <div class="d-md-flex justify-content-between align-items-center py-4 text-center text-md-left">
-          <div class="order-2"><a class="social-btn sb-style-6 sb-facebook sb-light-skin" href="#"><i class="socicon-facebook"></i></a><a class="social-btn sb-style-6 sb-twitter sb-light-skin" href="#"><i class="socicon-twitter"></i></a><a class="social-btn sb-style-6 sb-linkedin sb-light-skin" href="#"><i class="socicon-linkedin"></i></a><a class="social-btn sb-style-6 sb-youtube sb-light-skin" href="#"><i class="socicon-youtube"></i></a><a class="social-btn sb-style-6 sb-behance sb-light-skin" href="#"><i class="socicon-behance"></i></a></div>
-          <p class="m-0 text-sm text-white order-1"><span class='opacity-60'>© All rights reserved. Made with</span> <i class='d-inline-block align-middle fe-icon-heart text-danger'></i> <a href='http://createx.studio/' class='d-inline-block nav-link text-white opacity-60 p-0' target='_blank'>by Createx Studio</a></p>
+          <div class="order-2">
+              <a class="social-btn sb-style-6 sb-facebook sb-light-skin" target="_blank" href="https://www.facebook.com/martin.mbithi.73">
+                  <i class="socicon-facebook"></i>
+                </a>
+                <a class="social-btn sb-style-6 sb-twitter sb-light-skin" target="_blank" href="https://twitter.com/martinezmbithi">
+                    <i class="socicon-twitter"></i>
+                </a>
+                <a class="social-btn sb-style-6 sb-github sb-light-skin" target="_blank" href="https://github.com/MartMbithi/">
+                    <i class="socicon-github"></i>
+                </a>
+            </div>
+          <p class="m-0 text-sm text-white order-1"><span class='opacity-60'>© 2020 -<?php echo date ('Y');?> All rights reserved. Whipped With</span> <i class='d-inline-block align-middle fe-icon-heart text-danger'></i> By  <a href='https://martdev.info/' class='d-inline-block nav-link text-white opacity-60 p-0' target='_blank'>MartDevelopers Inc</a></p>
         </div>
       </div>
     </footer>

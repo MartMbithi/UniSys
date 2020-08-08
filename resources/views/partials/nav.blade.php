@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="d-table-cell align-middle pr-md-3">
             <a class="navbar-brand mr-1" href="{{ url('/') }}">
-                <img src="img/logo/logo.png" alt="UniSys"/>
+                <img src="img/logo/logo-light.png" height="100" width="200" alt="UniSys"/>
             </a>
         </div>
         <div class="d-table-cell w-100 align-middle pl-md-3">
@@ -21,19 +21,19 @@
                 </li>
                 <!-- About-->
                 <li class="nav-item">
-                    <a class="nav-link" href="portfolio-style1-boxed.html">
+                    <a class="nav-link" href="{{ url('/about') }}">
                         About UniSys
                     </a>
                 </li>
                 <!--Features-->
                 <li class="nav-item">
-                    <a class="nav-link" href="blog-grid-rs.html">
+                    <a class="nav-link" href="{{ url('/features') }}">
                         Features
                     </a>
                 </li>
                 <!--Installation Steps-->
                 <li class="nav-item mega-dropdown-toggle">
-                    <a class="nav-link" href="shop-boxed-ls.html">
+                    <a class="nav-link" href="{{ url('/user-manual') }}">
                         User Manual
                     </a>
                 </li>

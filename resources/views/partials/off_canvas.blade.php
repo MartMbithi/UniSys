@@ -7,7 +7,7 @@
         <div class="d-flex justify-content-between pt-2">
             <div class="btn-group w-100 mr-2">
                 <a class="btn btn-secondary btn-sm btn-block">
-                    <img src="img/flags/en.png" alt="English"/>
+                    <img src="{{ url('img/flags/en.png') }}" alt="English"/>
                     English
                 </a>
             </div>

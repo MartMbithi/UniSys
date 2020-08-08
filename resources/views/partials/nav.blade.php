@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="d-table-cell align-middle pr-md-3">
             <a class="navbar-brand mr-1" href="{{ url('/') }}">
-                <img src="img/logo/logo-light.png" height="100" width="200" alt="UniSys"/>
+                <img src="{{ url('img/logo/logo-light.png') }}" height="100" width="200" alt="UniSys"/>
             </a>
         </div>
         <div class="d-table-cell w-100 align-middle pl-md-3">

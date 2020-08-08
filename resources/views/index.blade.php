@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <title>UniSys - Light Weight University Information Management Syste</title>
     <!-- SEO Meta Tags-->
-    <meta name="description" content="CreateX - Multipurpose Bootstrap Theme">
-    <meta name="keywords" content="multipurpose, portfolio, blog, shop, e-commerce, modern, flat style, responsive,  business, corporate, mobile, bootstrap 4, html5, css3, jquery, js, gallery, slider, touch, creative, clean">
-    <meta name="author" content="Createx Studio">
+    <meta name="description" content="UniSys">
+    <meta name="keywords" content="multipurpose, light weight, information management system,responsive,  University, bootstrap 4, html5, css3, jquery, js,clean">
+    <meta name="author" content="MartDevelopers Inc , Team Devlan">
     <!-- Viewport-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon and Touch Icons-->
@@ -18,11 +18,11 @@
     <meta name="msapplication-TileColor" content="#603cba">
     <meta name="theme-color" content="#ffffff">
     <!-- Vendor Styles including: Font Icons, Plugins, etc.-->
-    <link rel="stylesheet" media="screen" href="css/vendor.min.css">
+    <link rel="stylesheet" media="screen" href="{{ url('css/vendor.min.css') }}">
     <!-- Main Theme Styles + Bootstrap-->
-    <link rel="stylesheet" media="screen" href="css/theme.min.css">
+    <link rel="stylesheet" media="screen" href="{{ url('css/theme.min.css') }}">
     <!-- Modernizr-->
-    <script src="js/modernizr.min.js"></script>
+    <script src="{{ url('js/modernizr.min.js') }}"></script>
   </head>
   <!-- Body-->
   <body>
@@ -210,7 +210,7 @@
     <!-- Backdrop-->
     <div class="site-backdrop"></div>
     <!-- JavaScript (jQuery) libraries, plugins and custom scripts-->
-    <script src="js/vendor.min.js"></script>
-    <script src="js/theme.min.js"></script>
+    <script src="{{ url('js/vendor.min.js') }}"></script>
+    <script src="{{ url('js/theme.min.js') }}"></script>
   </body>
 </html>

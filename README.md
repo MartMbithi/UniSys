@@ -10,8 +10,7 @@
 UniSys is a Laravel Powered Light Weight University Information Management System which is a web, desktop and android application  with expressive, elegant and comprehensive functionalities. We believe tertiary education records management must be an enjoyable and creative experience to be truly fulfilling. UniSys takes the pain out of Campus / University Information Management by easing and automating day to day activities.UniSys is accessible, powerful, and provides tools required for large, robust and complex Information Management.
 
 ## UniSys🧑‍🎓 Modules
-
-
+...Loading 😎
 ## License
 
 UniSys is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

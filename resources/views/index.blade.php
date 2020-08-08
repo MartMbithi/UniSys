@@ -225,6 +225,7 @@
       </div>
       <div class="offcanvas-footer px-4 pt-3 pb-2 text-center"><a class="social-btn sb-style-3 sb-twitter" href="#"><i class="socicon-twitter"></i></a><a class="social-btn sb-style-3 sb-facebook" href="#"><i class="socicon-facebook"></i></a><a class="social-btn sb-style-3 sb-pinterest" href="#"><i class="socicon-pinterest"></i></a><a class="social-btn sb-style-3 sb-instagram" href="#"><i class="socicon-instagram"></i></a></div>
     </div>
+
     <!-- Navbar: Simple Ghost-->
     <header class="navbar-wrapper navbar-boxed navbar-simple-ghost">
       <div class="container-fluid">
@@ -471,6 +472,7 @@
         </div>
       </div>
     </header>
+    
     <!-- Page Content-->
     <!-- Hero-->
     <section class="bg-dark bg-center-top bg-no-repeat position-relative pt-5 pb-4 pb-md-5" style="background-image: url(img/homepages/theme-presentation/hero-bg-back.jpg);">

@@ -48,81 +48,59 @@
       <div class="bg-white box-shadow py-5 px-4 px-sm-5">
         <div class="row">
           <div class="col-md-6 pb-4 mb-3">
-            <h5><span class='d-inline-block bg-info text-white px-2 py-1'>12</span> Pre-designed Homepages</h5>
-            <p class="text-muted pb-3">Initial release comes with 12 pre-designed Homepages (Landing pages) that target various business niches. More homepages will be added in future updates. Every future update will include at least one new homepage along with other improvements, fixes and added features.</p>
+            <h5><span class='d-inline-block bg-info text-white px-2 py-1'>1</span> Light Weight Application</h5>
+            <p class="text-muted pb-3">UniSys is a light weight web based application that will / won't consume your server resorces and also ensures fast execution. The best thing about UniSys is its compatibility because it works well on all devices</p>
             <hr>
           </div>
           <div class="col-md-6 pb-4 mb-3">
-            <h5><span class='d-inline-block bg-warning text-white px-2 py-1'>45+</span> Flexible UI Components</h5>
-            <p class="text-muted pb-3">DRY approach, modular design are the cornerstones of the modern web development. CreateX introduces 40+ components and each has 2 - 10 variations. They can be mixed together to produce more complex components. This gives you unlimited possibilities.</p>
+            <h5><span class='d-inline-block bg-warning text-white px-2 py-1'>2</span> Flexible UI Components</h5>
+            <p class="text-muted pb-3">DRY approach, modular design are the cornerstones of the modern web development. UniSys introduces many components  and modules each having diffrent variations. 
             <hr>
           </div>
           <div class="col-md-6 pb-4 mb-3">
-            <h5><span class='d-inline-block bg-accent text-white px-3 py-1'>3</span> Modules: Portfolio, Blog, Shop</h5>
-            <p class="text-muted pb-3">Most modern websites require News (Blog) section to engage with their visitors. Other would need E-commerce functionality because they want to sell products via the website. Yet another want to showcase their works. With CreateX you have them covered.</p>
+            <h5><span class='d-inline-block bg-accent text-white px-3 py-1'>3</span>Highly Scalable</h5>
+            <p class="text-muted pb-3">
+                No matter the size of your university, if you need to digitize the needs of your institution, UniSys is what you ought to opt for. This is one single software which will allow you to manage administration, financial affair, student affairs and all other related issues in your university. </p>
             <hr>
           </div>
           <div class="col-md-6 pb-4 mb-3">
-            <h5><span class='d-inline-block bg-success text-white px-2 py-1'>9+</span> User Account Pages</h5>
-            <p class="text-muted pb-3">Most online shops require users to create account to be able to manage their orders, edit shipping adresses, earn reward points etc. CreateX includes all crucial page templates to ensure your online shop will provide as smooth and engaging user experience as possible.</p>
+            <h5><span class='d-inline-block bg-success text-white px-2 py-1'>4</span> Security</h5>
+            <p class="text-muted pb-3">UniSys is reliable enterprise software because it operates at a very high level of security which are pre-requisite for all universities. It can also be customized to suit the needs of your institution, therefore, you don’t have to get one designed specifically for your organization.</p>
             <hr>
           </div>
-          <div class="col-md-6 pb-4 mb-3">
-            <h5><span class='d-inline-block bg-primary text-white px-2 py-1'>16</span> Hand-crafted Secondary Pages</h5>
-            <p class="text-muted pb-3">The pages like About Us, Services, Pricing are one of the most important pages on the website. It is an opportunity where website visitors get to know the company, learn about services and pricing. CreateX also includes sepcialty pages like 404, search results, etc.</p>
-            <hr>
-          </div>
-          <div class="col-md-6 pb-4 mb-3">
-            <h5><span class='d-inline-block bg-danger text-white px-3 py-1'>7</span> Header Variations</h5>
-            <p class="text-muted pb-3">More options is better. Especially when it comes to such important website element as main navigation. CreateX includes 7 variants of header layout and appearance. Choose the right one for your project. More variants will come in future updates.</p>
-            <hr>
-          </div>
-        </div>
-        <p class="text-lg text-center mb-0">...and much more</p>
       </div>
     </section>
     
-    <!-- Fetures-->
+    <!-- Features-->
     <section class="container pt-2 pb-5 mb-3">
-      <h2 class="h3 block-title text-center"><span class='font-weight-normal'>And some</span> Cool Features</h2>
+      <h2 class="h3 block-title text-center">Cool Features</h2>
       <div class="row pt-4">
         <div class="col-md-6">
           <dl class="dl-with-icon">
-            <dt><i class="fe-icon-check-circle text-success"></i>Kick-start your development</dt>
-            <dd>Start your development process fast and easy with Node.js and Gulp setup. Configuration files are included in download package. Full tasks automation.</dd>
-            <dt><i class="fe-icon-check-circle text-success"></i>Easy To Customize With Sass</dt>
-            <dd>CreateX is built using Sass. Easily change colors, typography and much more. It is the most mature, stable, and powerful CSS extension language in the world.</dd>
-            <dt><i class="fe-icon-check-circle text-success"></i>Pug - Node Templating Engine</dt>
-            <dd>No need to write huge amount of HTML, if you don’t want to. Pug provides features not available in plain HTML like variables, includes, mixins, etc.</dd>
-            <dt><i class="fe-icon-check-circle text-success"></i>Built With Bootstrap 4</dt>
-            <dd>CreateX is the ultimate website front-end solution based on Bootstrap 4 - the world's most popular responsive, mobile-first front-end component library.</dd>
-            <dt><i class="fe-icon-check-circle text-success"></i>45+ Flexible Components</dt>
-            <dd>Besides styling all default Bootstrap 4 components CreateX introduces lots of new flexible, customizable and reusable elements to use across the website.</dd>
-            <dt><i class="fe-icon-check-circle text-success"></i>Mobile Friendly Interface</dt>
-            <dd>It's not a surprise that nowadays over 60% of users shop online using their mobile devices. CreateX is 100% responsive and optimized for small touch screens.</dd>
+            <dt><i class="fe-icon-users text-success"></i>Students Information Management</dt>
+            <dt><i class="fe-icon-book text-success"></i>Library Information Management</dt>
+            <dt><i class="fe-icon-home text-success"></i>Hostel Information Management</dt>
+            <dt><i class="fe-icon-shopping-bag text-success"></i>Mess Information Management</dt>
+            <dt><i class="fe-icon-tag text-success"></i>Programe and Course Management</dt>
+            <dt><i class="fe-icon-truck text-success"></i>Transport Management</dt>
           </dl>
         </div>
         <div class="col-md-6">
           <dl class="dl-with-icon">
-            <dt><i class="fe-icon-check-circle text-success"></i>Mobile Friendly Interface</dt>
-            <dd>It's not a surprise that nowadays over 60% of users shop online using their mobile devices. CreateX is 100% responsive and optimized for touch screens.</dd>
-            <dt><i class="fe-icon-check-circle text-success"></i>Google Fonts</dt>
-            <dd>CreateX uses Google fonts which are free, fast to load and of very high quality. Currently Google fonts library includes 870+ font families to choose from.</dd>
-            <dt><i class="fe-icon-check-circle text-success"></i>Touch-enabled Sliders</dt>
-            <dd>In the era of touch screens it's important to ensure great user experience on handheld devices, especially when it comes to such importnat interface component as slider.</dd>
-            <dt><i class="fe-icon-check-circle text-success"></i>Vector Based HD Ready Icons</dt>
-            <dd>CreateX uses font-based icon packs to ensure that infographics and interface icons look sharp on any device with any screen resolution and pixel density.</dd>
-            <dt><i class="fe-icon-check-circle text-success"></i>Customizable Google Maps</dt>
-            <dd>Thanks to Gmap3 plugin and Snazzy Maps collection of custom map styles you can create unique map design that fits perfectly overall look of your website.</dd>
-            <dt><i class="fe-icon-check-circle text-success"></i>W3C Valid HTML Code</dt>
-            <dd>All HTML files are checked via W3C validator to ensure 100% valid code. As you probably know invalid HTML limits innovation, but CreateX is innovative at its core.</dd>
+            <dt><i class="fe-icon-user-check text-success"></i>HR Information Management</dt>
+            <dt><i class="fe-icon-bookmark text-success"></i>Scholarships And Discounts</dt>
+            <dt><i class="fe-icon-user-plus text-success"></i>Admission Information Management</dt>
+            <dt><i class="fe-icon-award text-success"></i>Exam / Results Management</dt>
+            <dt><i class="fe-icon-package text-success"></i>Inventory and Assets Informatgion Management</dt>
+            <dt><i class="fe-icon-airplay text-success"></i>Students / Lecturers Portal</dt>
           </dl>
         </div>
       </div>
     </section>
     <!-- Footer + CTA-->
     @include('partials.footer')
-    <!-- Back To Top Button--><a class="scroll-to-top-btn" href="#"><i class="fe-icon-chevron-up"></i></a>
+    <!-- Back To Top Button-->
+    <a class="scroll-to-top-btn" href="#"><i class="fe-icon-chevron-up"></i></a>
     <!-- Backdrop-->
     <div class="site-backdrop"></div>
     <!-- JavaScript (jQuery) libraries, plugins and custom scripts-->

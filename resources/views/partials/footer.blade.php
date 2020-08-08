@@ -1,7 +1,7 @@
 <footer class="bg-dark pt-5">
       <div class="container pt-3 text-center">
         <h3 class="font-weight-normal text-white">Still not convinced?</h3>
-        <h2 class="h3 text-white pb-4">Download UniSys</h2><a class="btn btn-gradient btn-lg" href="https://github.com/MartMbithi/UniSys/archive/master.zip" target="_blank"><i class="fe-icon-download"></i>&nbsp;Download</a>
+        <h2 class="h3 text-white pb-4">Get UniSys</h2><a class="btn btn-gradient btn-lg" href="https://github.com/MartMbithi/UniSys/archive/master.zip" target="_blank"><i class="fe-icon-download"></i>&nbsp;Download</a>
         <div class="py-5 mt-3">
           <hr class="hr-light">
         </div>

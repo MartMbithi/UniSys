@@ -1,21 +1,20 @@
 <footer class="bg-dark pt-5">
       <div class="container pt-3 text-center">
         <h3 class="font-weight-normal text-white">Still not convinced?</h3>
-        <h2 class="h3 text-white pb-4">Add premium support and lifetime updates to this.</h2><a class="btn btn-gradient btn-lg" href="https://themes.getbootstrap.com/product/createx-multipurpose-template-ui-kit/" target="_blank"><i class="fe-icon-shopping-cart"></i>&nbsp;Buy CreateX</a>
+        <h2 class="h3 text-white pb-4">Download UniSys</h2><a class="btn btn-gradient btn-lg" href="https://github.com/MartMbithi/UniSys/archive/master.zip" target="_blank"><i class="fe-icon-download"></i>&nbsp;Download</a>
         <div class="py-5 mt-3">
           <hr class="hr-light">
         </div>
         <h6 class="text-white text-center pt-4">Subscribe to Newsletter</h6>
         <div class="row justify-content-center pb-4 mb-3">
           <div class="col-xl-6 col-lg-7 col-md-9">
-            <form action="https://studio.us12.list-manage.com/subscribe/post?u=c7103e2c981361a6639545bd5&amp;amp;id=29ca296126" method="post" target="_blank" novalidate>
+            <form  method="post" target="_blank" novalidate>
               <div class="input-group">
                 <input class="form-control form-control-light-skin" type="email" name="EMAIL" placeholder="Email address">
                 <div class="input-group-append">
                   <button class="btn btn-primary" type="submit">Sign Up</button>
                 </div>
               </div><small class="form-text text-white opacity-50 pt-1 text-center">Enter email to receive a newsletter about updates and new products.</small>
-              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
               <div style="position: absolute; left: -5000px;" aria-hidden="true">
                 <input type="text" name="b_c7103e2c981361a6639545bd5_1194bb7544" tabindex="-1">
               </div>

@@ -6,49 +6,27 @@
         </div>
       <div class="d-table-cell w-100 align-middle pl-md-3">
         <div class="navbar-top d-none d-lg-flex justify-content-between align-items-center">
-          <div>
-              <a class="navbar-link mr-3" href="tel:+1212477690000">
-                  <i class="fe-icon-phone"></i>
-                  +1 (212) 477 690 000
-                </a>
-                <a class="navbar-link mr-3" href="mailto:support@example.com">
-                    <i class="fe-icon-mail"></i>
-                    support@example.com
-                </a>
-                <a class="social-btn sb-style-3 sb-twitter" href="#">
-                    <i class="socicon-twitter"></i>
-                </a>
-                <a class="social-btn sb-style-3 sb-facebook" href="#">
-                    <i class="socicon-facebook"></i>
-                </a>
-                <a class="social-btn sb-style-3 sb-pinterest" href="#">
-                    <i class="socicon-pinterest"></i>
-                </a>
-                <a class="social-btn sb-style-3 sb-instagram" href="#">
-                    <i class="socicon-instagram"></i>
-                </a>
-            </div>
-          <div>
-            <ul class="list-inline mb-0">
-              <li class="dropdown-toggle mr-2"><a class="navbar-link" href="account-login.html"><i class="fe-icon-user"></i>Login or Create account</a>
-                <div class="dropdown-menu right-aligned p-3 text-center" style="min-width: 200px;">
-                  <p class="text-sm opacity-70">Sign in to your account or register new one to have full control over your orders, receive bonuses and more.</p><a class="btn btn-primary btn-sm btn-block" href="account-login.html">Sign In</a>
-                  <p class="text-sm text-muted mt-3 mb-0">New customer? <a href='account-login.html'>Register</a></p>
+                <div>
+                    <a class="navbar-link mr-3" href="tel:+254737229776">
+                        <i class="fe-icon-phone"></i>
+                        +254 737 22 9776
+                    </a>
+                    <a class="navbar-link mr-3" href="mailto:martdevelopers254@gmail.com">
+                        <i class="fe-icon-mail"></i>
+                        mail@unisys.org
+                    </a>
+                    <a class="social-btn sb-style-3 sb-twitter" target="_blank" href="https://twitter.com/martinezmbithi">
+                        <i class="socicon-twitter"></i>
+                    </a>
+                    <a class="social-btn sb-style-3 sb-facebook" target="_blank" href="https://www.facebook.com/martin.mbithi.73">
+                        <i class="socicon-facebook"></i>
+                    </a>
+                    <a class="social-btn sb-style-3 sb-github" target="_blank" href="https://github.com/MartMbithi/">
+                        <i class="socicon-github"></i>
+                    </a>
                 </div>
-              </li>
-              <li class="dropdown-toggle"><a class="navbar-link" href="#"><img src="img/flags/en.png" alt="English"/>Eng / Usd</a>
-                <div class="dropdown-menu lang-dropdown right-aligned">
-                  <div class="p-3">
-                    <select class="form-control">
-                      <option value="usd">$ USD</option>
-                      <option value="eur">€ EUR</option>
-                      <option value="ukp">£ UKP</option>
-                      <option value="jpy">¥ JPY</option>
-                    </select>
-                  </div><a class="dropdown-item" href="#"><img src="img/flags/fr.png" alt="Français"/>Français</a><a class="dropdown-item" href="#"><img src="img/flags/de.png" alt="Deutsch"/>Deutsch</a><a class="dropdown-item" href="#"><img src="img/flags/it.png" alt="Italiano"/>Italiano</a>
-                </div>
-              </li>
-            </ul>
+        <div>
+            
           </div>
         </div>
         <div class="navbar justify-content-end justify-content-lg-between">

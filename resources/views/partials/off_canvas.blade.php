@@ -38,7 +38,7 @@
             <!--Features-->
             <div class="card">
                 <div class="card-header">
-                    <a class="mobile-menu-link" href="{{ url('/features') }}">
+                    <a class="mobile-menu-link" href="{{ url('/modules') }}">
                         UniSys Modules
                     </a>
                 </div>

@@ -49,7 +49,7 @@
             </li>
             <!--Features-->
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/features') }}">
+                <a class="nav-link" href="{{ url('/modules') }}">
                     Modules
                 </a>
             </li>

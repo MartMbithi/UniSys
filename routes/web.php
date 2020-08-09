@@ -13,7 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function ()
+{
     return view('index');
     //home page route
 });
@@ -22,4 +23,10 @@ Route::get('/about', function ()
 {
     return view('about');
     //about page route
+});
+
+Route::get('/features', function()
+{
+    return view('/modules');
+    //Modules route
 });

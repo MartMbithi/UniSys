@@ -45,11 +45,6 @@
                             <i class="fe-icon-menu"></i>
                         </a>
                     </li>
-                    <li>
-                        <a href="#" data-toggle="search">
-                            <i class="fe-icon-search"></i>
-                        </a>
-                    </li>
                 </ul>
                 <a class="btn btn-gradient ml-3 d-none d-xl-inline-block" href="https://github.com/MartMbithi/UniSys" target="_blank">Download UniSys</a>
             </div>

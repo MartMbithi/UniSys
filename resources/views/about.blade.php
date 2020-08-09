@@ -5,7 +5,7 @@
     <!-- Off-Canvas Menu-->
     @include('partials.off_canvas')
     <!-- Navbar: Default-->
-    @include('partials.nav')
+    @include('partials.header')
     <!-- Page Title-->
     <div class="page-title d-flex" aria-label="Page title" style="background-image: url(img/page-title/blog-pattern.jpg);">
       <div class="container text-left align-self-center">

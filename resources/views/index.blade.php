@@ -38,7 +38,7 @@
       <div class="container bg-content py-5 my-md-5 text-center text-md-left">
         <div class="pb-md-5 mt-5 mb-md-5">
           <div class="d-inline-block h6 text-lg bg-white px-3 py-2 mt-md-4">UniSys</div>
-          <h1 class="display-3 text-white"><span class="d-block break-word">University </span><span class="d-block break-word">Information </span> <span class="d-block break-word"> Management </span><span class="d-block break-word"> System</span></h1>
+          <h1 class="display-3 text-white"><span class="d-block break-word">University </span><span class="d-block break-word"> Management </span><span class="d-block break-word"> System</span></h1>
         </div>
       </div>
     </section>

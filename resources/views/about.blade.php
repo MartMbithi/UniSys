@@ -3,7 +3,7 @@
   <body>
     
     <!-- Off-Canvas Menu-->
-    @include('partials.off_canvas')
+    @include('partials.mobile')
     <!-- Navbar: Default-->
     @include('partials.header')
     <!-- Page Title-->

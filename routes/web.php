@@ -27,6 +27,12 @@ Route::get('/about', function ()
 
 Route::get('/modules', function()
 {
-    return view('/modules');
+    return view('modules');
     //Modules route
+});
+
+Route::get('/user-manual', function()
+{
+    //Documentation Route
+    return view('documentation');
 });

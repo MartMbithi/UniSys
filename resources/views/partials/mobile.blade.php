@@ -2,21 +2,18 @@
     <span class="offcanvas-close">
         <i class="fe-icon-x"></i>
     </span>
-    <div class="px-4 pb-4">
+      <div class="px-4 pb-4">
         <h6>Menu</h6>
         <div class="d-flex justify-content-between pt-2">
-            <div class="btn-group w-100 mr-2">
-                <a class="btn btn-secondary btn-sm btn-block">
-                    <img src="{{ url('img/flags/en.png') }}" alt="English"/>
-                    English
+          <div class="btn-group w-100 mr-2">
+              <a class="btn btn-secondary btn-sm btn-block dropdown-toggle" href="#" data-toggle="dropdown">
+                  <img src="img/flags/en.png" alt="English"/>
+                  English
                 </a>
-            </div>
-            <a class="btn btn-primary btn-sm btn-block" target="_blank" href="https://github.com/MartMbithi/UniSys">
-                <i class="fe-icon-download"></i>&nbsp;Download UniSys
-            </a>
+          </div>
         </div>
-    </div>
-    <div class="offcanvas-scrollable-area border-top" style="height:calc(100% - 235px); top: 144px;">
+      </div>
+      <div class="offcanvas-scrollable-area border-top" style="height:calc(100% - 235px); top: 144px;">
         <!-- Mobile Menu-->
         <div class="accordion mobile-menu" id="accordion-menu">
             <!-- Home-->
@@ -53,5 +50,6 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </div>

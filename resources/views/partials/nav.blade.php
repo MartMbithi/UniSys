@@ -27,14 +27,14 @@
                 </li>
                 <!--Features-->
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/features') }}">
-                        Features
+                    <a class="nav-link" href="{{ url('/modules') }}">
+                        Modules
                     </a>
                 </li>
                 <!--Installation Steps-->
                 <li class="nav-item mega-dropdown-toggle">
                     <a class="nav-link" href="{{ url('/user-manual') }}">
-                        User Manual
+                      Documentation
                     </a>
                 </li>
             </ul>
@@ -43,11 +43,6 @@
                     <li class="d-block d-lg-none">
                         <a href="#mobile-menu" data-toggle="offcanvas">
                             <i class="fe-icon-menu"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" data-toggle="search">
-                            <i class="fe-icon-search"></i>
                         </a>
                     </li>
                 </ul>

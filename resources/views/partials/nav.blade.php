@@ -27,8 +27,8 @@
                 </li>
                 <!--Features-->
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/features') }}">
-                        Features
+                    <a class="nav-link" href="{{ url('/modules') }}">
+                        Modules
                     </a>
                 </li>
                 <!--Installation Steps-->

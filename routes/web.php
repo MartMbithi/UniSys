@@ -25,7 +25,7 @@ Route::get('/about', function ()
     //about page route
 });
 
-Route::get('/features', function()
+Route::get('/modules', function()
 {
     return view('/modules');
     //Modules route

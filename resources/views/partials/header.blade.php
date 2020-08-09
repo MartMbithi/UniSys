@@ -56,7 +56,7 @@
             <!--Installation Steps-->
             <li class="nav-item mega-dropdown-toggle">
                 <a class="nav-link" href="{{ url('/user-manual') }}">
-                    User Manual
+                    Documentation
                 </a>
             </li>
         </ul>

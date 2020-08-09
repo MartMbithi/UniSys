@@ -45,7 +45,7 @@
             <div class="card">
                 <div class="card-header">
                     <a class="mobile-menu-link" href="{{ url('/user-manual') }}">
-                        User Manual
+                        Documentation
                     </a>
                 </div>
             </div>

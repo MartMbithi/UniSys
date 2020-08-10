@@ -58,12 +58,18 @@ Route::get('/hostel', function()
 
 Route::get('/course', function()
 {
-    //Hostel Module
+    //course Module
     return view('course-module');
 });
 
 Route::get('/transport', function()
 {
-    //Hostel Module
+    //Transport Module
     return view('transport-module');
+});
+
+Route::get('/hr', function()
+{
+    //HRM Module
+    return view('hr-module');
 });

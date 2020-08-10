@@ -98,3 +98,10 @@ Route::get('/inventory', function()
 return view('inventory-module');
 });
 
+
+Route::get('/portals', function()
+{
+    //portals Module
+return view('portals-module');
+});
+

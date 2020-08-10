@@ -36,6 +36,24 @@
         </div>
       </div>
 
+      <div class="d-md-table w-100 p-4 p-lg-5 mb-30 box-shadow">
+        <div class="d-md-table-cell align-middle mx-auto mb-4 mb-md-0" style="width: 150px;">
+        <img class="d-block w-100" src="{{ url('img/pages/about-icons/03.png') }}" alt="MartDevelopers"></div>
+        <div class="d-md-table-cell align-middle pl-md-4 pl-lg-5 text-center text-md-left">
+          <h3 class="h4">UniSys</h3>
+          <p class="text-muted">
+            UniSys is a web based light weight University Information Management System. Its shipped as a web based application, 
+            a desktop application, a mobile device application and a cloud application.
+            UniSys is reliable enterprise software because it operates at a very high level of security that is
+            a pre-requisite for all universities.
+            It can also be customized to suit the needs of your institution, therefore, 
+            you don’t have to get one designed specifically for your organization. It also supports multiple user access but keeps on strict security controls
+            so that no data is lost and access is only provided to necessary data only.
+            UniSys is user-friendly, customizable, secure and reliable which makes it one of the best enterprise software for your university systems.
+          </P>
+        </div>
+      </div>
+
     </div>
     <!-- Footer-->
     @include('partials.footer')

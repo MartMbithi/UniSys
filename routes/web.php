@@ -79,3 +79,9 @@ Route::get('/discounts', function()
     //discounts Module
     return view('discounts-module');
 });
+
+Route::get('/admission', function()
+{
+    //admission Module
+    return view('admission-module');
+});

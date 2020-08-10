@@ -26,7 +26,6 @@
         <div class="d-md-table-cell align-middle pl-md-4 pl-lg-5 text-center text-md-left">
           <h3 class="h4">Students Information Management</h3>
           <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id purus at risus pellentesque faucibus a quis eros. In eu fermentum leo. Integer ut eros lacus. Proin ut accumsan leo. Morbi vitae est eget dolor consequat aliquam eget quis dolor. Mauris rutrum fermentum erat, at euismod lorem pharetra nec. Duis erat lectus, ultrices euismod sagittis at, pharetra eu nisl. Phasellus id ante at velit tincidunt hendrerit. Aenean dolor dolor, tristique nec placerat nec.</p>
-          <a class="font-weight-medium text-decoration-none" href="{{ url('/student') }}">View More<i class="fe-icon-arrow-right d-inline-block align-middle ml-1"></i></a>
         </div>
       </div>
 
@@ -35,7 +34,6 @@
         <div class="d-md-table-cell align-middle pl-md-4 pl-lg-5 text-center text-md-left">
           <h3 class="h4">Library Information Management</h3>
           <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id purus at risus pellentesque faucibus a quis eros. In eu fermentum leo. Integer ut eros lacus. Proin ut accumsan leo. Morbi vitae est eget dolor consequat aliquam eget quis dolor. Mauris rutrum fermentum erat, at euismod lorem pharetra nec. Duis erat lectus, ultrices euismod sagittis at, pharetra eu nisl. Phasellus id ante at velit tincidunt hendrerit. Aenean dolor dolor, tristique nec placerat nec.</p>
-          <a class="font-weight-medium text-decoration-none" href="{{ url('/library') }}">View More<i class="fe-icon-arrow-right d-inline-block align-middle ml-1"></i></a>
         </div>
       </div>
 
@@ -44,7 +42,6 @@
         <div class="d-md-table-cell align-middle pl-md-4 pl-lg-5 text-center text-md-left">
           <h3 class="h4">Hostel Information Management</h3>
           <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id purus at risus pellentesque faucibus a quis eros. In eu fermentum leo. Integer ut eros lacus. Proin ut accumsan leo. Morbi vitae est eget dolor consequat.</p>
-          <a class="font-weight-medium text-decoration-none" href="{{ url('/hostel') }}">View More<i class="fe-icon-arrow-right d-inline-block align-middle ml-1"></i></a>
         </div>
       </div>
 
@@ -53,7 +50,6 @@
         <div class="d-md-table-cell align-middle pl-md-4 pl-lg-5 text-center text-md-left">
           <h3 class="h4">Programe and Course Management</h3>
           <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id purus at risus pellentesque faucibus a quis eros. In eu fermentum leo. Integer ut eros lacus. Proin ut accumsan leo. Morbi vitae est eget dolor consequat aliquam eget quis dolor. Mauris rutrum fermentum erat, at euismod lorem pharetra nec. Duis erat lectus, ultrices euismod sagittis at, pharetra eu nisl. Phasellus id ante at velit tincidunt hendrerit. Aenean dolor dolor, tristique nec placerat nec.</p>
-          <a class="font-weight-medium text-decoration-none" href="{{ url('/programme') }}">View More<i class="fe-icon-arrow-right d-inline-block align-middle ml-1"></i></a>
         </div>
       </div>
 
@@ -62,7 +58,6 @@
         <div class="d-md-table-cell align-middle pl-md-4 pl-lg-5 text-center text-md-left">
           <h3 class="h4">Transport Management</h3>
           <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id purus at risus pellentesque faucibus a quis eros. In eu fermentum leo. Integer ut eros lacus. Proin ut accumsan leo. Morbi vitae est eget dolor consequat aliquam eget quis dolor. Mauris rutrum fermentum erat, at euismod lorem pharetra nec. Duis erat lectus, ultrices euismod sagittis at, pharetra eu nisl. Phasellus id ante at velit tincidunt hendrerit. Aenean dolor dolor, tristique nec placerat nec.</p>
-          <a class="font-weight-medium text-decoration-none" href="{{ url('/transport') }}">View More<i class="fe-icon-arrow-right d-inline-block align-middle ml-1"></i></a>
         </div>
       </div>
 
@@ -71,7 +66,6 @@
         <div class="d-md-table-cell align-middle pl-md-4 pl-lg-5 text-center text-md-left">
           <h3 class="h4">HR Information Management</h3>
           <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id purus at risus pellentesque faucibus a quis eros. In eu fermentum leo. Integer ut eros lacus. Proin ut accumsan leo. Morbi vitae est eget dolor consequat aliquam eget quis dolor. Mauris rutrum fermentum erat, at euismod lorem pharetra nec. Duis erat lectus, ultrices euismod sagittis at, pharetra eu nisl. Phasellus id ante at velit tincidunt hendrerit. Aenean dolor dolor, tristique nec placerat nec.</p>
-          <a class="font-weight-medium text-decoration-none" href="{{ url('/hr') }}">View More<i class="fe-icon-arrow-right d-inline-block align-middle ml-1"></i></a>
         </div>
       </div>
 
@@ -80,7 +74,6 @@
         <div class="d-md-table-cell align-middle pl-md-4 pl-lg-5 text-center text-md-left">
           <h3 class="h4">Scholarships And Discounts</h3>
           <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id purus at risus pellentesque faucibus a quis eros. In eu fermentum leo. Integer ut eros lacus. Proin ut accumsan leo. Morbi vitae est eget dolor consequat aliquam eget quis dolor. Mauris rutrum fermentum erat, at euismod lorem pharetra nec. Duis erat lectus, ultrices euismod sagittis at, pharetra eu nisl. Phasellus id ante at velit tincidunt hendrerit. Aenean dolor dolor, tristique nec placerat nec.</p>
-          <a class="font-weight-medium text-decoration-none" href="{{ url('/scholarships') }}">View More<i class="fe-icon-arrow-right d-inline-block align-middle ml-1"></i></a>
         </div>
       </div>
 
@@ -89,7 +82,6 @@
         <div class="d-md-table-cell align-middle pl-md-4 pl-lg-5 text-center text-md-left">
           <h3 class="h4">Admission Information Management</h3>
           <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id purus at risus pellentesque faucibus a quis eros. In eu fermentum leo. Integer ut eros lacus. Proin ut accumsan leo. Morbi vitae est eget dolor consequat aliquam eget quis dolor. Mauris rutrum fermentum erat, at euismod lorem pharetra nec. Duis erat lectus, ultrices euismod sagittis at, pharetra eu nisl. Phasellus id ante at velit tincidunt hendrerit. Aenean dolor dolor, tristique nec placerat nec.</p>
-          <a class="font-weight-medium text-decoration-none" href="{{ url('/mess') }}">View More<i class="fe-icon-arrow-right d-inline-block align-middle ml-1"></i></a>
         </div>
       </div>
 
@@ -98,7 +90,6 @@
         <div class="d-md-table-cell align-middle pl-md-4 pl-lg-5 text-center text-md-left">
           <h3 class="h4">Exam / Results Management</h3>
           <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id purus at risus pellentesque faucibus a quis eros. In eu fermentum leo. Integer ut eros lacus. Proin ut accumsan leo. Morbi vitae est eget dolor consequat aliquam eget quis dolor. Mauris rutrum fermentum erat, at euismod lorem pharetra nec. Duis erat lectus, ultrices euismod sagittis at, pharetra eu nisl. Phasellus id ante at velit tincidunt hendrerit. Aenean dolor dolor, tristique nec placerat nec.</p>
-          <a class="font-weight-medium text-decoration-none" href="{{ url('/exam') }}">View More<i class="fe-icon-arrow-right d-inline-block align-middle ml-1"></i></a>
         </div>
       </div>
 
@@ -107,7 +98,6 @@
         <div class="d-md-table-cell align-middle pl-md-4 pl-lg-5 text-center text-md-left">
           <h3 class="h4">Inventory and Assets Informatgion Management</h3>
           <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id purus at risus pellentesque faucibus a quis eros. In eu fermentum leo. Integer ut eros lacus. Proin ut accumsan leo. Morbi vitae est eget dolor consequat aliquam eget quis dolor. Mauris rutrum fermentum erat, at euismod lorem pharetra nec. Duis erat lectus, ultrices euismod sagittis at, pharetra eu nisl. Phasellus id ante at velit tincidunt hendrerit. Aenean dolor dolor, tristique nec placerat nec.</p>
-          <a class="font-weight-medium text-decoration-none" href="{{ url('/inventory') }}">View More<i class="fe-icon-arrow-right d-inline-block align-middle ml-1"></i></a>
         </div>
       </div>
 
@@ -116,7 +106,6 @@
         <div class="d-md-table-cell align-middle pl-md-4 pl-lg-5 text-center text-md-left">
           <h3 class="h4">Students / Lecturers Portal</h3>
           <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id purus at risus pellentesque faucibus a quis eros. In eu fermentum leo. Integer ut eros lacus. Proin ut accumsan leo. Morbi vitae est eget dolor consequat aliquam eget quis dolor. Mauris rutrum fermentum erat, at euismod lorem pharetra nec. Duis erat lectus, ultrices euismod sagittis at, pharetra eu nisl. Phasellus id ante at velit tincidunt hendrerit. Aenean dolor dolor, tristique nec placerat nec.</p>
-          <a class="font-weight-medium text-decoration-none" href="{{ url('/portal') }}">View More<i class="fe-icon-arrow-right d-inline-block align-middle ml-1"></i></a>
         </div>
       </div>
            

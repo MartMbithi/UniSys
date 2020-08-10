@@ -38,7 +38,7 @@
 
       <div class="d-md-table w-100 p-4 p-lg-5 mb-30 box-shadow">
         <div class="d-md-table-cell align-middle mx-auto mb-4 mb-md-0" style="width: 150px;">
-        <img class="d-block w-100" src="{{ url('img/pages/about-icons/03.png') }}" alt="MartDevelopers"></div>
+        <img class="d-block w-100" src="{{ url('img/pages/about-icons/03.png') }}" alt="About UniSys"></div>
         <div class="d-md-table-cell align-middle pl-md-4 pl-lg-5 text-center text-md-left">
           <h3 class="h4">UniSys</h3>
           <p class="text-muted">

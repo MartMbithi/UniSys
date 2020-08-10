@@ -62,4 +62,8 @@ Route::get('/course', function()
     return view('course-module');
 });
 
-
+Route::get('/transport', function()
+{
+    //Hostel Module
+    return view('transport-module');
+});

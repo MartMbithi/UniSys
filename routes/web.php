@@ -56,3 +56,10 @@ Route::get('/hostel', function()
 });
 
 
+Route::get('/course', function()
+{
+    //Hostel Module
+    return view('course-module');
+});
+
+

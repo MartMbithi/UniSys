@@ -73,3 +73,9 @@ Route::get('/hr', function()
     //HRM Module
     return view('hr-module');
 });
+
+Route::get('/discounts', function()
+{
+    //discounts Module
+    return view('discounts-module');
+});

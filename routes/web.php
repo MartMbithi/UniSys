@@ -85,3 +85,16 @@ Route::get('/admission', function()
     //admission Module
     return view('admission-module');
 });
+
+Route::get('/exams', function()
+{
+    //exams Module
+return view('exams-module');
+});
+
+Route::get('/inventory', function()
+{
+    //Inventory Module
+return view('inventory-module');
+});
+

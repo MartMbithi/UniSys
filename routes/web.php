@@ -36,3 +36,9 @@ Route::get('/user-manual', function()
     //Documentation Route
     return view('documentation');
 });
+
+Route::get('/student', function()
+{
+    //Students Module
+    return view('students-module');
+})

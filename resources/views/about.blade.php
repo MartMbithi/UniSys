@@ -22,15 +22,20 @@
     </div>
     <!-- Page Content-->
     <div class="container pb-5 mb-3">
-      <!-- Buy Online-->
       <div class="d-md-table w-100 p-4 p-lg-5 mb-30 box-shadow">
-        <div class="d-md-table-cell align-middle mx-auto mb-4 mb-md-0" style="width: 150px;"><img class="d-block w-100" src="img/pages/about-icons/01.png" alt="Buy Online"></div>
+        <div class="d-md-table-cell align-middle mx-auto mb-4 mb-md-0" style="width: 150px;">
+        <img class="d-block w-100" src="{{ url('img/pages/about-icons/01.png') }}" alt="MartDevelopers"></div>
         <div class="d-md-table-cell align-middle pl-md-4 pl-lg-5 text-center text-md-left">
-          <h3 class="h4">Search, Select, Buy Online.</h3>
-          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id purus at risus pellentesque faucibus a quis eros. In eu fermentum leo. Integer ut eros lacus. Proin ut accumsan leo. Morbi vitae est eget dolor consequat aliquam eget quis dolor. Mauris rutrum fermentum erat, at euismod lorem pharetra nec. Duis erat lectus, ultrices euismod sagittis at, pharetra eu nisl. Phasellus id ante at velit tincidunt hendrerit. Aenean dolor dolor, tristique nec placerat nec.</p><a class="font-weight-medium text-decoration-none" href="shop-boxed-ls.html">View Products<i class="fe-icon-arrow-right d-inline-block align-middle ml-1"></i></a>
+          <h3 class="h4">About MartDevelopers The UniSys Creators</h3>
+          <p class="text-muted">
+            MartDevelopers Inc is one of the leading enterprise application software development corporation that  helps companies of all sizes and industries innovate through simplification.
+            From the back office to the boardroom, warehouse to storefront, on premise to cloud,desktop to mobile device MartDevelopers Inc empowers people and organizations to work together more efficiently
+            and use business insight more effectively to stay ahead of the competition. 
+            Our applications and services enable customers to operate profitably, adapt continuously, and grow sustainably
+          </P>
         </div>
       </div>
-                
+
     </div>
     <!-- Footer-->
     @include('partials.footer')

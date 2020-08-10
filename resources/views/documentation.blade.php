@@ -1,7 +1,6 @@
 @include('partials.head')
   <!-- Body-->
-  <body>
-    
+  <body>    
     <!-- Off-Canvas Menu-->
     @include('partials.mobile')
     <!-- Navbar: Default-->

@@ -41,4 +41,18 @@ Route::get('/student', function()
 {
     //Students Module
     return view('students-module');
-})
+});
+
+Route::get('/library', function()
+{
+    //Library Module
+    return view('library-module');
+});
+
+Route::get('/hostel', function()
+{
+    //Hostel Module
+    return view('hostel-module');
+});
+
+

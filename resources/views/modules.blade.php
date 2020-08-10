@@ -24,7 +24,8 @@
     <div class="container pb-5 mb-3">
       <a href="{{ url('/student') }}">
         <div class="d-md-table w-100 p-4 p-lg-5 mb-30 box-shadow">
-          <div class="d-md-table-cell align-middle mx-auto mb-4 mb-md-0" style="width: 150px;"><img class="d-block w-100" src="img/pages/about-icons/01.png" alt="Students"></div>
+          <div class="d-md-table-cell align-middle mx-auto mb-4 mb-md-0" style="width: 150px;">
+          <img class="d-block w-100" src="{{ url('img/pages/about-icons/01.png') }}" alt=""></div>
           <div class="d-md-table-cell align-middle pl-md-4 pl-lg-5 text-center text-md-left">
             <h3 class="h4">Students Information Management</h3>
           </div>
@@ -33,7 +34,8 @@
 
       <a href="{{ url('/library') }}">
         <div class="d-md-table w-100 p-4 p-lg-5 mb-30 box-shadow">
-          <div class="d-md-table-cell align-middle mx-auto mb-4 mb-md-0" style="width: 150px;"><img class="d-block w-100" src="img/pages/about-icons/02.png" alt="Delivery Worldwide"></div>
+          <div class="d-md-table-cell align-middle mx-auto mb-4 mb-md-0" style="width: 150px;">
+          <img class="d-block w-100" src="{{ url('img/pages/about-icons/01.png') }}" alt=""></div>
           <div class="d-md-table-cell align-middle pl-md-4 pl-lg-5 text-center text-md-left">
             <h3 class="h4">Library Information Management</h3>
           </div>
@@ -42,7 +44,8 @@
 
       <a href="{{ url('/hostel') }}">
         <div class="d-md-table w-100 p-4 p-lg-5 mb-30 box-shadow">
-          <div class="d-md-table-cell align-middle mx-auto mb-4 mb-md-0" style="width: 150px;"><img class="d-block w-100" src="img/pages/about-icons/03.png" alt="Mobile App"></div>
+          <div class="d-md-table-cell align-middle mx-auto mb-4 mb-md-0" style="width: 150px;">
+          <img class="d-block w-100" src="{{ url('img/pages/about-icons/01.png') }}" alt=""></div>
           <div class="d-md-table-cell align-middle pl-md-4 pl-lg-5 text-center text-md-left">
             <h3 class="h4">Hostel Information Management</h3>
           </div>
@@ -51,7 +54,8 @@
 
       <a href="{{ url('/course') }}">
         <div class="d-md-table w-100 p-4 p-lg-5 box-shadow">
-          <div class="d-md-table-cell align-middle mx-auto mb-4 mb-md-0" style="width: 150px;"><img class="d-block w-100" src="img/pages/about-icons/04.png" alt="Outlet Stores"></div>
+          <div class="d-md-table-cell align-middle mx-auto mb-4 mb-md-0" style="width: 150px;">
+          <img class="d-block w-100" src="{{ url('img/pages/about-icons/01.png') }}" alt=""></div>
           <div class="d-md-table-cell align-middle pl-md-4 pl-lg-5 text-center text-md-left">
             <h3 class="h4">Programe and Course Management</h3>
           </div>
@@ -60,7 +64,8 @@
 
       <a href="{{ url('/transport') }}">
         <div class="d-md-table w-100 p-4 p-lg-5 box-shadow">
-          <div class="d-md-table-cell align-middle mx-auto mb-4 mb-md-0" style="width: 150px;"><img class="d-block w-100" src="img/pages/about-icons/04.png" alt="Outlet Stores"></div>
+          <div class="d-md-table-cell align-middle mx-auto mb-4 mb-md-0" style="width: 150px;">
+          <img class="d-block w-100" src="{{ url('img/pages/about-icons/01.png') }}" alt=""></div>
           <div class="d-md-table-cell align-middle pl-md-4 pl-lg-5 text-center text-md-left">
             <h3 class="h4">Transport Management</h3>
           </div>
@@ -70,7 +75,8 @@
       
       <a href="{{ url('/hr') }}">
         <div class="d-md-table w-100 p-4 p-lg-5 box-shadow">
-          <div class="d-md-table-cell align-middle mx-auto mb-4 mb-md-0" style="width: 150px;"><img class="d-block w-100" src="img/pages/about-icons/04.png" alt="Outlet Stores"></div>
+          <div class="d-md-table-cell align-middle mx-auto mb-4 mb-md-0" style="width: 150px;">
+          <img class="d-block w-100" src="{{ url('img/pages/about-icons/01.png') }}" alt=""></div>
           <div class="d-md-table-cell align-middle pl-md-4 pl-lg-5 text-center text-md-left">
             <h3 class="h4">HR Information Management</h3>
           </div>
@@ -79,7 +85,8 @@
 
       <a href="{{ url('/discounts') }}">
         <div class="d-md-table w-100 p-4 p-lg-5 box-shadow">
-          <div class="d-md-table-cell align-middle mx-auto mb-4 mb-md-0" style="width: 150px;"><img class="d-block w-100" src="img/pages/about-icons/04.png" alt="Outlet Stores"></div>
+          <div class="d-md-table-cell align-middle mx-auto mb-4 mb-md-0" style="width: 150px;">
+          <img class="d-block w-100" src="{{ url('img/pages/about-icons/01.png') }}" alt=""></div>
           <div class="d-md-table-cell align-middle pl-md-4 pl-lg-5 text-center text-md-left">
             <h3 class="h4">Scholarships And Discounts</h3>
           </div>
@@ -88,7 +95,8 @@
 
       <a href="{{ url('/admission') }}">
         <div class="d-md-table w-100 p-4 p-lg-5 box-shadow">
-          <div class="d-md-table-cell align-middle mx-auto mb-4 mb-md-0" style="width: 150px;"><img class="d-block w-100" src="img/pages/about-icons/04.png" alt="Outlet Stores"></div>
+          <div class="d-md-table-cell align-middle mx-auto mb-4 mb-md-0" style="width: 150px;">
+          <img class="d-block w-100" src="{{ url('img/pages/about-icons/01.png') }}" alt=""></div>
           <div class="d-md-table-cell align-middle pl-md-4 pl-lg-5 text-center text-md-left">
             <h3 class="h4">Admission Information Management</h3>
           </div>
@@ -97,7 +105,8 @@
 
       <a href="{{ url('/exams') }}">
         <div class="d-md-table w-100 p-4 p-lg-5 box-shadow">
-          <div class="d-md-table-cell align-middle mx-auto mb-4 mb-md-0" style="width: 150px;"><img class="d-block w-100" src="img/pages/about-icons/04.png" alt="Outlet Stores"></div>
+          <div class="d-md-table-cell align-middle mx-auto mb-4 mb-md-0" style="width: 150px;">
+          <img class="d-block w-100" src="{{ url('img/pages/about-icons/01.png') }}" alt=""></div>
           <div class="d-md-table-cell align-middle pl-md-4 pl-lg-5 text-center text-md-left">
             <h3 class="h4">Exam / Results Management</h3>
           </div>
@@ -106,7 +115,8 @@
 
       <a href="{{ url('/inventory') }}">
         <div class="d-md-table w-100 p-4 p-lg-5 box-shadow">
-          <div class="d-md-table-cell align-middle mx-auto mb-4 mb-md-0" style="width: 150px;"><img class="d-block w-100" src="img/pages/about-icons/04.png" alt="Outlet Stores"></div>
+          <div class="d-md-table-cell align-middle mx-auto mb-4 mb-md-0" style="width: 150px;">
+          <img class="d-block w-100" src="{{ url('img/pages/about-icons/01.png') }}" alt=""></div>
           <div class="d-md-table-cell align-middle pl-md-4 pl-lg-5 text-center text-md-left">
             <h3 class="h4">Inventory and Assets Informatgion Management</h3>
           </div>
@@ -115,7 +125,8 @@
       
       <a href="{{ url('/portals') }}">
         <div class="d-md-table w-100 p-4 p-lg-5 box-shadow">
-          <div class="d-md-table-cell align-middle mx-auto mb-4 mb-md-0" style="width: 150px;"><img class="d-block w-100" src="img/pages/about-icons/04.png" alt="Outlet Stores"></div>
+          <div class="d-md-table-cell align-middle mx-auto mb-4 mb-md-0" style="width: 150px;">
+          <img class="d-block w-100" src="{{ url('img/pages/about-icons/01.png') }}" alt=""></div>
           <div class="d-md-table-cell align-middle pl-md-4 pl-lg-5 text-center text-md-left">
             <h3 class="h4">Students / Lecturers Portal</h3>
           </div>

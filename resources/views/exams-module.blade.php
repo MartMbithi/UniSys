@@ -14,28 +14,29 @@
             </li>
             <li class="breadcrumb-item"><a href="{{ url('/modules') }}">Modules</a>
             </li>
-            <li class="breadcrumb-item"><a href="{{ url('/admission') }}">Admissions Information Management </a>
+            <li class="breadcrumb-item"><a href="{{ url('/admission') }}">Exams and Results Module</a>
             </li>
           </ol>
         </nav>
-        <h1 class="">Admission Information Management Module</h1>
+        <h1 class="">Exams and Results Module</h1>
       </div>
     </div>
     <!-- Page Content-->
     <div class="container pb-5 mb-3">
       <div class="d-md-table w-100 p-4 p-lg-5 mb-30 box-shadow">
         <div class="d-md-table-cell align-middle pl-md-4 pl-lg-5 text-center text-md-left">
-          <h3 class="h4">Admission Information Management  Module Features</h3>
+          <h3 class="h4">Exams and Results Module Features</h3>
           <p class="text-muted">
-            <li>Manage Students details </li>
-            <li>Unique username to students </li>
-            <li>Saved contact details to send immediate alerts to parents</li>
-            <li>Automate attendance</li>
-            <li>Customize the admission forms</li>
-            <li>Students Documents Management </li>
-            <li>Batch Allotment - Automatic allotment of batches every academic year reduces the burden on the administrative teams </li>
-            <li>Academic year records- UniSys can also be used to store the academic records of all the students including alumni. </li>
-            <li>Admission Application Enquiry - The Enquiry module with the Analytic dashboard, where admin can view all the applications regarding new admission, enquiries of parents/students about courses, also linked the academic year to get a complete admission flow for the year.</li>
+            <li>Application for enrolment at the university</li>
+            <li>Payment of various university fees</li>
+            <li>Printing of examination hall tickets</li>
+            <li>Results / mark sheets can be viewed online</li>
+            <li>Viewing of answer scripts’ scanned copy</li>
+            <li>Application for Revaluation</li>
+            <li>Completion of Degree</li>
+            <li>Application for Transcripts and Degree</li>
+            <li>Degree / Transcript verification</li>
+            <li>Application for Migration certificate</li>
           </p>
         </div>
       </div>

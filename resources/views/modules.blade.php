@@ -118,7 +118,7 @@
           <div class="d-md-table-cell align-middle mx-auto mb-4 mb-md-0" style="width: 150px;">
           <img class="d-block w-100" src="{{ url('img/pages/about-icons/01.png') }}" alt=""></div>
           <div class="d-md-table-cell align-middle pl-md-4 pl-lg-5 text-center text-md-left">
-            <h3 class="h4">Inventory and Assets Informatgion Management</h3>
+            <h3 class="h4">Inventory and Assets Information Management</h3>
           </div>
         </div>
       </a>

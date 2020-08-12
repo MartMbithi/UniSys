@@ -1,6 +1,6 @@
 <header class="navbar-wrapper navbar-sticky">
     <div class="d-table-cell align-middle pr-md-3">
-        <a class="navbar-brand mr-1" href="index-2.html">
+        <a class="navbar-brand mr-1" href="{{ url('/') }}">
             <img src="{{ url('img/logo/logo-dark.png') }}" alt="Logo"/>
         </a>
     </div>

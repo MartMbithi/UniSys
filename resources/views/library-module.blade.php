@@ -35,19 +35,17 @@
             where the No. of exchanges surpass a few thousands in number. 
             Also, the product can work even without Bar Codes consistently. 
             The Bar-Code age and printing procedure is a Built-In highlight of this Software. These are some of features of the module
-            <li>
-                <ul>A modern integrated library management system (LMS).</ul>
-                <ul>Can be scalable to Windows, Linux and Mac OS platform.</ul>
-                <ul>Print your own barcodes.</ul>
-                <ul>Full catalog, circulation and acquisitions system for library stock management.</ul>
-                <ul>Web based OPAC (Online Public Access Catalog) system</ul>
-                <ul>Simple, clear search interface for all users</ul>
-                <ul>Multilingual and multi-user support</ul>
-                <ul>Export and import records</ul>
-                <ul>Easy way to enter new books</ul>
-                <ul>Keep record of complete info of a book like title, author name, publisher name etc.</ul>
-                <ul> Easy way to check-in and check-out</ul>
-            </li>
+            <li>A modern integrated library management system (LMS).</li>
+            <li>Can be scalable to Windows, Linux and Mac OS platform.</li>
+            <li>Print your own barcodes.</li>
+            <li>Full catalog, circulation and acquisitions system for library stock management.</li>
+            <li>Web based OPAC (Online Public Access Catalog) system</li>
+            <li>Simple, clear search interface for all users</li>
+            <li>Multilingual and multi-user support</li>
+            <li>Export and import records</li>
+            <li>Easy way to enter new books</li>
+            <li>Keep record of complete info of a book like title, author name, publisher name etc.</li>
+            <li> Easy way to check-in and check-out</li>
           </p>
         </div>
       </div>

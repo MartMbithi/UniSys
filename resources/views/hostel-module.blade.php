@@ -14,18 +14,18 @@
             </li>
             <li class="breadcrumb-item"><a href="{{ url('/modules') }}">Modules</a>
             </li>
-            <li class="breadcrumb-item"><a href="{{ url('/library') }}">Library Information Management Module</a>
+            <li class="breadcrumb-item"><a href="{{ url('/hostel') }}">Hostel Information Management Module</a>
             </li>
           </ol>
         </nav>
-        <h1 class="">Library Information Management Module</h1>
+        <h1 class="">Hostel Information Management Module</h1>
       </div>
     </div>
     <!-- Page Content-->
     <div class="container pb-5 mb-3">
       <div class="d-md-table w-100 p-4 p-lg-5 mb-30 box-shadow">
         <div class="d-md-table-cell align-middle pl-md-4 pl-lg-5 text-center text-md-left">
-          <h3 class="h4">Library Information Management Module</h3>
+          <h3 class="h4">Hostel Information Management Module</h3>
           <p class="text-muted">
             This module has been intended to automate, oversee and care for the general handling of even enormous scale hostels. 
             <li>Reservations management </li>

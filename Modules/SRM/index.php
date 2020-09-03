@@ -14,11 +14,11 @@
                         <form id="loginForm">
                             <div class="form-group">
                                 <label class="control-label" for="username">Username | Email | Staff Number</label>
-                                <input type="text" placeholder="example@gmail.com" title="Please enter you username" required="" value="" name="username" id="username" class="form-control">
+                                <input type="text" placeholder="" title="Please enter you username" required="" value="" name="username" id="username" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label class="control-label" for="password">Password</label>
-                                <input type="password" title="Please enter your password" placeholder="******" required="" value="" name="password" id="password" class="form-control">
+                                <input type="password" title="Please enter your password" placeholder="" required="" value="" name="password" id="password" class="form-control">
                             </div>
                             <div class="checkbox login-checkbox">
                             </div>

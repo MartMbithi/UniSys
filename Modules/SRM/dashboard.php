@@ -1,12 +1,9 @@
 <?php require_once('partials/_head.php');?>
 <body>
-    <!--[if lt IE 8]>
-		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-	<![endif]-->
+
     <!-- Start Header menu area -->
     <?php require_once('partials/_sidebar.php');?>
     <!-- End Header menu area -->
-    <!-- Start Welcome area -->
     <div class="all-content-wrapper">
         <div class="container-fluid">
             <div class="row">

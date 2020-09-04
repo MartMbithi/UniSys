@@ -39,18 +39,33 @@
                         </ul>
                     </li>
                     <li>
-                        <a class="has-arrow" href="admissions.php" aria-expanded="false"><span class="fa fa-user-plus icon-wrap"></span> <span class="mini-click-non">Admissions</span></a>
+                        <a class="has-arrow" href="enrollments.php" aria-expanded="false"><span class="fa fa-share-square-o icon-wrap"></span> <span class="mini-click-non">Enrollments</span></a>
                         <ul class="submenu-angle" aria-expanded="false">
-                            <li><a title="Academic Years" href="academic_year.php"><span class="mini-sub-pro">Academic Year</span></a></li>
-                            <li><a title="Admissions" href="admissions.php"><span class="mini-sub-pro">Admissions</span></a></li>
-                            <li><a title="Manage Academic Years" href="manage_academic_years.php"><span class="mini-sub-pro">Manage Academic Yrs</span></a></li>
-                            <li><a title="Manage Admissions" href="manage_admissions.php"><span class="mini-sub-pro">Manage Admissions</span></a></li>
+                            <li><a title="Enrollments" href="enrollments.php"><span class="mini-sub-pro">Enrollments</span></a></li>
                         </ul>
                     </li>
                     <li>
-                        <a title="Students" href="students.php" aria-expanded="false"><span class="fa fa-users icon-wrap sub-icon-mg" aria-hidden="true"></span>
-                            <span class="mini-click-non">Students</span></a>
+                        <a class="has-arrow" href="" aria-expanded="false"><span class="fa fa-bar-chart icon-wrap"></span> <span class="mini-click-non">Reports</span></a>
+                        <ul class="submenu-angle" aria-expanded="false">
+                            <li><a title="Faculties" href="reports_faculties.php"><span class="mini-sub-pro">Faculties</span></a></li>
+                        </ul>
+                        <ul class="submenu-angle" aria-expanded="false">
+                            <li><a title="Admissions" href="reports_admissions.php"><span class="mini-sub-pro">Admissions</span></a></li>
+                        </ul>
+                        <ul class="submenu-angle" aria-expanded="false">
+                            <li><a title="Courses" href="reports_courses.php"><span class="mini-sub-pro">Courses</span></a></li>
+                        </ul>
+                        <ul class="submenu-angle" aria-expanded="false">
+                            <li><a title="Units" href="reports_units.php"><span class="mini-sub-pro">Units</span></a></li>
+                        </ul>
+                        <ul class="submenu-angle" aria-expanded="false">
+                            <li><a title="Enrollments" href="reports_enrollments.php"><span class="mini-sub-pro">Enrollents</span></a></li>
+                        </ul>
+                        <ul class="submenu-angle" aria-expanded="false">
+                            <li><a title="Students" href="reports_students.php"><span class="mini-sub-pro">Students</span></a></li>
+                        </ul>
                     </li>
+                    
                 </ul>
             </nav>
         </div>

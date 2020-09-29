@@ -25,7 +25,7 @@ require_once('partials/_head.php');
     <div class="error-pagewrap">
         <div class="error-page-int">
             <div class="text-center m-b-md custom-login">
-                <h3>UniSys</h3>
+                <img src="img/logo/logo-dark.png" class="img-fluid" alt="">
                 <p>Students Records Management Module</p>
             </div>
             <div class="content-error">
@@ -34,15 +34,15 @@ require_once('partials/_head.php');
                         <form method="POST" id="loginForm">
                             <div class="form-group">
                                 <label class="control-label" for="username">Staff Email | Staff Number</label>
-                                <input type="text" required name="auth_email"  class="form-control">
+                                <input type="text" required name="auth_email" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label class="control-label" for="password">Password</label>
-                                <input type="password" required  name="auth_password"  class="form-control">
+                                <input type="password" required name="auth_password" class="form-control">
                             </div>
                             <div class="checkbox login-checkbox">
                             </div>
-                            <input type="submit" class="btn btn-success btn-block loginbtn">Login</button>
+                            <input type="submit" name="login" class="btn btn-success btn-block loginbtn" value="Login">
                             <a class="btn btn-default btn-block" href="forgot-password.php">Forgot Password</a>
                         </form>
                     </div>

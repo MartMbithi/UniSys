@@ -5,6 +5,11 @@ $stmt = $mysqli->prepare($ret);
 $stmt->execute(); //ok
 $res = $stmt->get_result();
 while ($staff = $res->fetch_object()) {
+    if ($staff->passport == '') {
+        $passport = "<img src='img/product/pro4.jpg'  />";
+    } else {
+        $passport = "img/staffs/$row->passport";
+    }
 ?>
     <div class="header-advance-area">
         <div class="header-top-area">
@@ -54,7 +59,7 @@ while ($staff = $res->fetch_object()) {
                                             </li>
                                             <li class="nav-item">
                                                 <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
-                                                    <img src="img/product/pro4.jpg" alt="" />
+                                                    <?php echo $passport; ?>
                                                     <span class="admin-name"><?php echo $staff->name; ?></span>
                                                     <i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
                                                 </a>

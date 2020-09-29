@@ -1,4 +1,7 @@
-<?php require_once('partials/_head.php'); ?>
+<?php
+
+require_once('partials/_head.php');
+?>
 
 <body>
 
@@ -11,9 +14,9 @@
             <div class="content-error">
                 <div class="hpanel">
                     <div class="panel-body">
-                        <form id="loginForm">
+                        <form method="POST" id="loginForm">
                             <div class="form-group">
-                                <label class="control-label" for="username">Username | Email | Staff Number</label>
+                                <label class="control-label" for="username">Staff Email | Staff Number</label>
                                 <input type="text" placeholder="" title="Please enter you username" required="" value="" name="username" id="username" class="form-control">
                             </div>
                             <div class="form-group">
@@ -22,13 +25,13 @@
                             </div>
                             <div class="checkbox login-checkbox">
                             </div>
-                            <button class="btn btn-success btn-block loginbtn">Login</button>
+                            <input type="submit" class="btn btn-success btn-block loginbtn">Login</button>
                             <a class="btn btn-default btn-block" href="forgot-password.php">Forgot Password</a>
                         </form>
                     </div>
                 </div>
             </div>
-            <?php require_once('partials/_auth-footer.php');?>
+            <?php require_once('partials/_auth-footer.php'); ?>
         </div>
     </div>
     <?php require_once('partials/_scripts.php'); ?>

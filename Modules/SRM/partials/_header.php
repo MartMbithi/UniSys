@@ -6,7 +6,7 @@ $stmt->execute(); //ok
 $res = $stmt->get_result();
 while ($staff = $res->fetch_object()) {
     if ($staff->passport == '') {
-        $passport = "<img src='img/product/pro4.jpg'  />";
+        $passport = "<img src='img/logo/logo-dark.png'  />";
     } else {
         $passport = "img/staffs/$row->passport";
     }
@@ -33,30 +33,7 @@ while ($staff = $res->fetch_object()) {
                                 <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                     <div class="header-right-info">
                                         <ul class="nav navbar-nav mai-top-nav header-right-menu">
-                                            <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa fa-bell" aria-hidden="true"></i><span class="indicator-nt"></span></a>
-                                                <div role="menu" class="notification-author dropdown-menu animated zoomIn">
-                                                    <div class="notification-single-top">
-                                                        <h1>Notifications</h1>
-                                                    </div>
-                                                    <ul class="notification-menu">
-                                                        <li>
-                                                            <a href="#">
-                                                                <div class="notification-icon">
-                                                                    <i class="educate-icon educate-checked edu-checked-pro admin-check-pro" aria-hidden="true"></i>
-                                                                </div>
-                                                                <div class="notification-content">
-                                                                    <span class="notification-date">16 Sept</span>
-                                                                    <h2>Advanda Cro</h2>
-                                                                    <p>Please done this project as soon possible.</p>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="notification-view">
-                                                        <a href="notifications.php">View All Notification</a>
-                                                    </div>
-                                                </div>
-                                            </li>
+
                                             <li class="nav-item">
                                                 <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
                                                     <?php echo $passport; ?>
@@ -64,7 +41,7 @@ while ($staff = $res->fetch_object()) {
                                                     <i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
                                                 </a>
                                                 <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
-                                                    <li><a href="logout.php"><span class="edu-icon edu-locked author-log-ic"></span>Log Out</a>
+                                                    <li><a href="logout.php"><span class="fa fa-logout"></span>Log Out</a>
                                                     </li>
                                                 </ul>
                                             </li>

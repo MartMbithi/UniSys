@@ -36,7 +36,7 @@ require_once('partials/_head.php');
     <div class="error-pagewrap">
         <div class="error-page-int">
             <div class="text-center m-b-md custom-login">
-                <h3>UniSys</h3>
+                <img src="img/logo/logo-dark.png" class="img-fluid" alt="">
                 <p>Students Records Management Module</p>
             </div>
             <div class="content-error">
@@ -45,8 +45,8 @@ require_once('partials/_head.php');
                         <form method="POST" id="loginForm">
                             <div class="form-group">
                                 <label class="control-label" for="username">Email</label>
-                                <input type="text" name="email" require class="form-control">
-                                <input type="hidden" name="new_pass" value="<?php echo $a;?><?php echo $b;?>" require class="form-control">
+                                <input type="text" name="auth_email" require class="form-control">
+                                <input type="hidden" name="new_pass" value="<?php echo $a; ?><?php echo $b; ?>" require class="form-control">
                             </div>
                             <div class="checkbox login-checkbox">
                             </div>

@@ -1,5 +1,22 @@
 <?php
+session_start();
+include('configs/config.php');
 
+if (isset($_POST['login'])) {
+    $auth_email = $_POST['auth_email'];
+    $auth_password = sha1(md5($_POST['auth_password'])); //double encrypt to increase security
+    $stmt = $mysqli->prepare("SELECT auth_email, auth_number, auth_password, auth_id  FROM UniSys_Auth  WHERE (auth_email =? || auth_number =? AND auth_password =?)");
+    $stmt->bind_param('sss', $auth_email, $auth_email, $auth_password); //bind fetched parameters
+    $stmt->execute(); //execute bind 
+    $stmt->bind_result($auth_email, $auth_email, $auth_password, $auth_id); //bind result
+    $rs = $stmt->fetch();
+    $_SESSION['auth_id'] = $auth_id;
+    if ($rs) {
+        header("location:dashboard.php");
+    } else {
+        $err = "Access Denied Please Check Your Credentials";
+    }
+}
 require_once('partials/_head.php');
 ?>
 
@@ -17,11 +34,11 @@ require_once('partials/_head.php');
                         <form method="POST" id="loginForm">
                             <div class="form-group">
                                 <label class="control-label" for="username">Staff Email | Staff Number</label>
-                                <input type="text" placeholder="" title="Please enter you username" required="" value="" name="username" id="username" class="form-control">
+                                <input type="text" required name="auth_email"  class="form-control">
                             </div>
                             <div class="form-group">
                                 <label class="control-label" for="password">Password</label>
-                                <input type="password" title="Please enter your password" placeholder="" required="" value="" name="password" id="password" class="form-control">
+                                <input type="password" required  name="auth_password"  class="form-control">
                             </div>
                             <div class="checkbox login-checkbox">
                             </div>

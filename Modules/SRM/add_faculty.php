@@ -15,7 +15,7 @@ require_once('partials/_head.php');
     <!-- End Left menu area -->
     <!-- Start Welcome area -->
     <div class="all-content-wrapper">
-        <br><br><br>
+        <br><br><br><br><br>
         <?php require_once('partials/_header.php'); ?>
         <!-- Single pro tab review Start-->
         <div class="single-pro-review-area mt-t-30 mg-b-15">
@@ -24,7 +24,7 @@ require_once('partials/_head.php');
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="product-payment-inner-st">
                             <ul id="myTabedu1" class="tab-review-design">
-                                <li class="active"><a href="#description">Add Department</a></li>
+                                <li class="active"><a href="#description">Add Faculty</a></li>
                             </ul>
                             <div id="myTabContent" class="tab-content custom-product-edit">
                                 <div class="product-tab-list tab-pane fade active in" id="description">
@@ -33,33 +33,27 @@ require_once('partials/_head.php');
                                             <div class="review-content-section">
                                                 <form method="POST" id="add-department" action="#" class="add-department">
                                                     <div class="row">
-                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                        <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
                                                             <div class="form-group">
-                                                                <input name="name" type="text" class="form-control" placeholder="Name">
+                                                                <input name="faculty_name" type="text" class="form-control" placeholder="Faculty Name">
+                                                                <input name="faculty_id" type="hidden" class="form-control" placeholder="Name">
                                                             </div>
                                                             <div class="form-group">
-                                                                <input name="headofdepartment" type="text" class="form-control" placeholder="Head of Department">
+                                                                <input name="faculty_head" type="text" class="form-control" placeholder="Head of Department">
                                                             </div>
                                                             <div class="form-group">
-                                                                <input name="email" type="email" class="form-control" placeholder="Email">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                            <div class="form-group">
-                                                                <input name="phone" type="number" class="form-control" placeholder="Phone">
+                                                                <input name="faculty_code" type="text" class="form-control" placeholder="Faculty Code">
                                                             </div>
                                                             <div class="form-group">
-                                                                <input name="noofstudent" type="number" class="form-control" placeholder="No. of Students">
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <input name="status" type="text" class="form-control" placeholder="Status">
+                                                                <textarea rows="10" name="faculty_desc" type="text" class="form-control" placeholder="Faculty Description"></textarea>
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <br>
                                                     <div class="row">
                                                         <div class="col-lg-12">
                                                             <div class="payment-adress">
-                                                                <button type="submit" class="btn btn-primary waves-effect waves-light">Submit</button>
+                                                                <button type="submit" name="add_faculty" class="btn btn-primary waves-effect waves-light">Submit</button>
                                                             </div>
                                                         </div>
                                                     </div>

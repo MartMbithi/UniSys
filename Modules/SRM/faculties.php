@@ -30,7 +30,7 @@ require_once('partials/_head.php');
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="logo-pro">
-                        <a href="dashboard.php"><img class="main-logo" alt="" /></a>
+                        <a class="main-logo" href="dashboard.php"></a>
                     </div>
                 </div>
             </div>

@@ -2,6 +2,21 @@
 session_start();
 require_once('configs/config.php');
 require_once('configs/checklogin.php');
+
+//Delete
+if (isset($_GET['delete'])) {
+    $id = $_GET['delete'];
+    $adn = "DELETE FROM UniSys_Faculties WHERE faculty_id =?";
+    $stmt = $mysqli->prepare($adn);
+    $stmt->bind_param('s', $id);
+    $stmt->execute();
+    $stmt->close();
+    if ($stmt) {
+        $success = "Deleted" && header("refresh:1; url=faculties.php");
+    } else {
+        $info = "Please Try Again Or Try Later";
+    }
+}
 require_once('partials/_head.php');
 ?>
 

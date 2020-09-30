@@ -12,15 +12,7 @@ require_once('partials/_head.php');
     <?php require_once('partials/_sidebar.php'); ?>
     <!-- End Header menu area -->
     <div class="all-content-wrapper">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="logo-pro">
-                        <a href="dashboard.php"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+
         <?php require_once('partials/_header.php'); ?>
         <!-- <div class="analytics-sparkle-area">
             <div class="container-fluid">
@@ -61,6 +53,7 @@ require_once('partials/_head.php');
                 </div>
             </div>
         </div> -->
+        <br><br><br>
         <div class="product-sales-area mg-tb-30">
             <div class="container-fluid">
                 <div class="row">

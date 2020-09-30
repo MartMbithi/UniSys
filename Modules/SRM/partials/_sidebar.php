@@ -1,7 +1,7 @@
 <div class="left-sidebar-pro">
     <nav id="sidebar" class="">
         <div class="sidebar-header">
-            <a href="dashboard.php"><img class="main-logo" width="120" height="30" src="img/logo/logo-dark.png" alt="" /></a>
+            <a href="dashboard.php"><img class="main-logo" width="120" height="50" src="img/logo/logo-dark.png" alt="" /></a>
             <strong><a href="dashboard.php"><img src="img/logo/logo-dark.png" alt="" /></a></strong>
         </div>
         <div class="left-custom-menu-adp-wrap comment-scrollbar">

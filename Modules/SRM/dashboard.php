@@ -1,20 +1,26 @@
-<?php require_once('partials/_head.php');?>
+<?php
+session_start();
+require_once('configs/config.php');
+require_once('configs/checklogin.php');
+require_once('partials/_head.php');
+?>
+
 <body>
 
     <!-- Start Header menu area -->
-    <?php require_once('partials/_sidebar.php');?>
+    <?php require_once('partials/_sidebar.php'); ?>
     <!-- End Header menu area -->
     <div class="all-content-wrapper">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="logo-pro">
-                        <a href="index.html"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
+                        <a href="dashboard.php"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
                     </div>
                 </div>
             </div>
         </div>
-        <?php require_once('partials/_header.php');?>
+        <?php require_once('partials/_header.php'); ?>
         <div class="analytics-sparkle-area">
             <div class="container-fluid">
                 <div class="row">
@@ -373,11 +379,11 @@
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <div class="actions graph-rp actions-graph-rp">
                                             <a href="#" class="btn btn-dark btn-circle active tip-top" data-toggle="tooltip" title="Refresh">
-													<i class="fa fa-reply" aria-hidden="true"></i>
-												</a>
+                                                <i class="fa fa-reply" aria-hidden="true"></i>
+                                            </a>
                                             <a href="#" class="btn btn-blue-grey btn-circle active tip-top" data-toggle="tooltip" title="Delete">
-													<i class="fa fa-trash-o" aria-hidden="true"></i>
-												</a>
+                                                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -544,10 +550,10 @@
                 </div>
             </div>
         </div>
-        <?php require_once('partials/_footer.php');?>
+        <?php require_once('partials/_footer.php'); ?>
     </div>
 
-    <?php require_once('partials/_scripts.php');?>
+    <?php require_once('partials/_scripts.php'); ?>
 </body>
 
 </html>

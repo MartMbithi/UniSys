@@ -2,6 +2,29 @@
 session_start();
 require_once('configs/config.php');
 require_once('configs/checklogin.php');
+require_once('configs/codeGen.php');
+//add faculty
+
+if (isset($_POST['add_faculty'])) {
+
+    $faculty_id = $_POST['faculty_id'];
+    $faculty_code = $_POST['faculty_code'];
+    $faculty_name = $_POST['faculty_name'];
+    $faculty_desc = $_POST['faculty_desc'];
+    $faculty_head = $_POST['faculty_head'];
+
+    $query = "INSERT INTO UniSys_Faculties (faculty_id, faculty_code, faculty_name, faculty_desc, faculty_head) VALUES (?,?,?,?,?)";
+    $stmt = $mysqli->prepare($query);
+    $rc = $stmt->bind_param('sssss', $faculty_id, $faculty_code, $faculty_name, $faculty_desc, $faculty_head);
+    $stmt->execute();
+    if ($stmt) {
+        //inject alert that post is shared  
+        $success = "Added" && header("refresh:1; url=add_faculty.php");
+    } else {
+        //inject alert that task failed
+        $info = "Please Try Again Or Try Later";
+    }
+}
 
 require_once('partials/_head.php');
 ?>
@@ -36,13 +59,13 @@ require_once('partials/_head.php');
                                                         <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
                                                             <div class="form-group">
                                                                 <input name="faculty_name" type="text" class="form-control" placeholder="Faculty Name">
-                                                                <input name="faculty_id" type="hidden" class="form-control" placeholder="Name">
+                                                                <input name="faculty_id" value="<?php echo $facultyID;?>" type="hidden" class="form-control" placeholder="Name">
                                                             </div>
                                                             <div class="form-group">
                                                                 <input name="faculty_head" type="text" class="form-control" placeholder="Head of Department">
                                                             </div>
                                                             <div class="form-group">
-                                                                <input name="faculty_code" type="text" class="form-control" placeholder="Faculty Code">
+                                                                <input name="faculty_code" type="text" value="<?php echo $a;?>-<?php echo $b;?>" class="form-control" placeholder="Faculty Code">
                                                             </div>
                                                             <div class="form-group">
                                                                 <textarea rows="10" name="faculty_desc" type="text" class="form-control" placeholder="Faculty Description"></textarea>

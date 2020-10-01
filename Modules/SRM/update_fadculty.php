@@ -53,7 +53,7 @@ require_once('partials/_head.php');
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="product-payment-inner-st">
                                 <ul id="myTabedu1" class="tab-review-design">
-                                    <li class="active"><a href="#description"><?php echo $row->faculty_name; ?> Faculty</a></li>
+                                    <li class="active"><a href="#description"><?php echo $faculty->faculty_name; ?> Faculty</a></li>
                                 </ul>
                                 <div id="myTabContent" class="tab-content custom-product-edit">
                                     <div class="product-tab-list tab-pane fade active in" id="description">
@@ -64,16 +64,16 @@ require_once('partials/_head.php');
                                                         <div class="row">
                                                             <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
                                                                 <div class="form-group">
-                                                                    <input name="faculty_name" type="text" value="<?php echo $faculty_name; ?>" class="form-control" placeholder="Faculty Name">
+                                                                    <input name="faculty_name" type="text" value="<?php echo $faculty->faculty_name; ?>" class="form-control" placeholder="Faculty Name">
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <input name="faculty_head" value="<?php echo $row->faculty_head; ?>" type="text" class="form-control" placeholder="Head of Department">
+                                                                    <input name="faculty_head" value="<?php echo $faculty->faculty_head; ?>" type="text" class="form-control" placeholder="Head of Department">
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <input name="faculty_code" value="<?php echo $row->faculty_code; ?>" type="text" value="<?php echo $a; ?>-<?php echo $b; ?>" class="form-control" placeholder="Faculty Code">
+                                                                    <input name="faculty_code" value="<?php echo $faculty->faculty_code; ?>" type="text" value="<?php echo $a; ?>-<?php echo $b; ?>" class="form-control" placeholder="Faculty Code">
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <textarea rows="10" name="faculty_desc" type="text" class="form-control" placeholder="Faculty Description"><?php echo $row->faculty_desc; ?></textarea>
+                                                                    <textarea rows="10" name="faculty_desc" type="text" class="form-control" placeholder="Faculty Description"><?php echo $faculty->faculty_desc; ?></textarea>
                                                                 </div>
                                                             </div>
                                                         </div>

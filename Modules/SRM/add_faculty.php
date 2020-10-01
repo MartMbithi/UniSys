@@ -5,7 +5,7 @@ require_once('configs/checklogin.php');
 require_once('configs/codeGen.php');
 //add faculty
 
-if (isset($_POST['add'])) {
+if (isset($_POST['add_faculty'])) {
 
     $faculty_id = $_POST['faculty_id'];
     $faculty_code = $_POST['faculty_code'];
@@ -65,7 +65,7 @@ require_once('partials/_head.php');
                                                                 <input name="faculty_head" type="text" class="form-control" placeholder="Head of Department">
                                                             </div>
                                                             <div class="form-group">
-                                                                <input name="faculty_code" type="text" class="form-control" placeholder="Faculty Code">
+                                                                <input name="faculty_code" type="text" value="<?php echo $a;?>-<?php echo $b;?>" class="form-control" placeholder="Faculty Code">
                                                             </div>
                                                             <div class="form-group">
                                                                 <textarea rows="10" name="faculty_desc" type="text" class="form-control" placeholder="Faculty Description"></textarea>

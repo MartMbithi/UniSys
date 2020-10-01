@@ -9,8 +9,8 @@
     $rc= substr(str_shuffle("QWERTYUIOPLKJHGFDSAZXCVBNM1234567890"),1,$length);
 
 // -------staff ID--------------------------------------------------------------------//
-    $length = 127001;
-    $staff_id = bin2hex(random_bytes($length));
+    $length = 12;
+    $facultyID = bin2hex(random_bytes($length));
 
 // -------Payroll ID--------------------------------------------------------------------//
     $length = 15;

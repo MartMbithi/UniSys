@@ -70,7 +70,7 @@ require_once('partials/_head.php');
                                             <td>
                                                 <a href="view_faculty.php?view=<?php echo $faculty->faculty_id; ?>" data-toggle="tooltip" title="View Faculty" class="btn btn-success pd-setting-ed"><i class="fa fa-eye" aria-hidden="true"></i> View</a>
 
-                                                <a href="update_fadculty.php?edit=<?php echo $faculty->faculty_id; ?>" data-toggle="tooltip" title="Edit Faculty" class="btn btn-warning pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
+                                                <a href="update_fadculty.php?update=<?php echo $faculty->faculty_id; ?>" data-toggle="tooltip" title="Edit Faculty" class="btn btn-warning pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
 
                                                 <a href="faculties.php?delete=<?php echo $faculty->faculty_id; ?>" data-toggle="tooltip" title="Delete Faculty" class="btn btn-danger pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</a>
                                             </td>

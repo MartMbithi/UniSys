@@ -2,7 +2,7 @@
 session_start();
 require_once('configs/config.php');
 require_once('configs/checklogin.php');
-require_once('config/codeGen.php');
+require_once('configs/codeGen.php');
 //add faculty
 
 if (isset($_POST['add'])) {

@@ -4,9 +4,7 @@ require_once('configs/config.php');
 require_once('configs/checklogin.php');
 check_login();
 require_once('configs/codeGen.php');
-//add faculty
-
-if (isset($_POST['ad_year'])) {
+if (isset($_POST['add_year'])) {
 
     $year_id = $_POST['year_id'];
     $year_code = $_POST['year_code'];
@@ -63,10 +61,10 @@ require_once('partials/_head.php');
                                                                 <input name="year_code" type="text" class="form-control" value="<?php echo $a;?>-<?php echo $b;?>">
                                                             </div>
                                                             <div class="form-group">
-                                                                <input name="year_start" type="text"  class="form-control" placeholder="DD - MM - YYYY">
+                                                                <input name="year_start" type="text"  class="form-control" placeholder="Start Date DD - MM - YYYY">
                                                             </div>
                                                             <div class="form-group">
-                                                                <input name="year_end" type="text"  class="form-control" placeholder="DD - MM - YYYY">
+                                                                <input name="year_end" type="text"  class="form-control" placeholder="End Date DD - MM - YYYY">
                                                             </div>
                                                         </div>
                                                     </div>

@@ -2,6 +2,8 @@
 session_start();
 require_once('configs/config.php');
 require_once('configs/checklogin.php');
+check_login();
+
 require_once('configs/codeGen.php');
 
 if (isset($_POST['update_faculty'])) {

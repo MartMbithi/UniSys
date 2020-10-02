@@ -37,7 +37,7 @@ require_once('partials/_head.php');
                 </div>
             </div>
         </div>
-        <br><br><br>
+        <br><br><br><br><br>
         <?php
         require_once('partials/_header.php');
         ?>

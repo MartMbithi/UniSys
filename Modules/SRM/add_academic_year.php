@@ -4,23 +4,19 @@ require_once('configs/config.php');
 require_once('configs/checklogin.php');
 check_login();
 require_once('configs/codeGen.php');
-//add faculty
+if (isset($_POST['add_year'])) {
 
-if (isset($_POST['add_faculty'])) {
+    $year_id = $_POST['year_id'];
+    $year_code = $_POST['year_code'];
+    $year_start = $_POST['year_start'];
+    $year_end = $_POST['year_end'];
 
-    $faculty_id = $_POST['faculty_id'];
-    $faculty_code = $_POST['faculty_code'];
-    $faculty_name = $_POST['faculty_name'];
-    $faculty_desc = $_POST['faculty_desc'];
-    $faculty_head = $_POST['faculty_head'];
-
-    $query = "INSERT INTO UniSys_Faculties (faculty_id, faculty_code, faculty_name, faculty_desc, faculty_head) VALUES (?,?,?,?,?)";
+    $query = "INSERT INTO UniSys_Academic_Years (year_id, year_code, year_start, year_end) VALUES (?,?,?,?)";
     $stmt = $mysqli->prepare($query);
-    $rc = $stmt->bind_param('sssss', $faculty_id, $faculty_code, $faculty_name, $faculty_desc, $faculty_head);
+    $rc = $stmt->bind_param('ssss', $year_id, $year_code, $year_start, $year_end);
     $stmt->execute();
     if ($stmt) {
-        //inject alert that post is shared  
-        $success = "Added" && header("refresh:1; url=add_faculty.php");
+        $success = "Added" && header("refresh:1; url=academic_year.php");
     } else {
         //inject alert that task failed
         $info = "Please Try Again Or Try Later";
@@ -39,7 +35,7 @@ require_once('partials/_head.php');
     <!-- End Left menu area -->
     <!-- Start Welcome area -->
     <div class="all-content-wrapper">
-        <br><br><br><br><br>
+        <br><br><br><br><br><br><br>
         <?php require_once('partials/_header.php'); ?>
         <!-- Single pro tab review Start-->
         <div class="single-pro-review-area mt-t-30 mg-b-15">
@@ -48,7 +44,7 @@ require_once('partials/_head.php');
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="product-payment-inner-st">
                             <ul id="myTabedu1" class="tab-review-design">
-                                <li class="active"><a href="#description">Add Faculty</a></li>
+                                <li class="active"><a href="#description">Register Academic Year</a></li>
                             </ul>
                             <div id="myTabContent" class="tab-content custom-product-edit">
                                 <div class="product-tab-list tab-pane fade active in" id="description">
@@ -59,17 +55,16 @@ require_once('partials/_head.php');
                                                     <div class="row">
                                                         <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
                                                             <div class="form-group">
-                                                                <input name="faculty_name" type="text" class="form-control" placeholder="Faculty Name">
-                                                                <input name="faculty_id" value="<?php echo $facultyID;?>" type="hidden" class="form-control" placeholder="Name">
+                                                                <input name="year_id" value="<?php echo $facultyID;?>" type="hidden" class="form-control" placeholder="Name">
                                                             </div>
                                                             <div class="form-group">
-                                                                <input name="faculty_head" type="text" class="form-control" placeholder="Head of Department">
+                                                                <input name="year_code" type="text" class="form-control" value="<?php echo $a;?>-<?php echo $b;?>">
                                                             </div>
                                                             <div class="form-group">
-                                                                <input name="faculty_code" type="text" value="<?php echo $a;?>-<?php echo $b;?>" class="form-control" placeholder="Faculty Code">
+                                                                <input name="year_start" type="text"  class="form-control" placeholder="Start Date DD - MM - YYYY">
                                                             </div>
                                                             <div class="form-group">
-                                                                <textarea rows="10" name="faculty_desc" type="text" class="form-control" placeholder="Faculty Description"></textarea>
+                                                                <input name="year_end" type="text"  class="form-control" placeholder="End Date DD - MM - YYYY">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -77,7 +72,7 @@ require_once('partials/_head.php');
                                                     <div class="row">
                                                         <div class="col-lg-12">
                                                             <div class="payment-adress">
-                                                                <button type="submit" name="add_faculty" class="btn btn-primary waves-effect waves-light">Submit</button>
+                                                                <button type="submit" name="add_year" class="btn btn-primary waves-effect waves-light">Submit</button>
                                                             </div>
                                                         </div>
                                                     </div>

@@ -20,8 +20,8 @@ if (isset($_POST['update'])) {
     $country = $_POST['country'];
     $course_name = $_POST['course_name'];
     $course_id = $_POST['course_id'];
-    $passport = $_FILES['image']['name'];
-    move_uploaded_file($_FILES["image"]["tmp_name"], "img/student/" . $_FILES["passport"]["name"]);
+    $passport = $_FILES['passport']['name'];
+    move_uploaded_file($_FILES["passport"]["tmp_name"], "img/student/" . $_FILES["passport"]["name"]);
 
     $query = "UPDATE UniSys_Students SET  passport=?, name =?, reg_no =?, campus_email =?, personal_email =?, idnumber =?, phone =?, gender =?, dob =?, adr =?, country =?, course_name =?, course_id =? WHERE id =?";
     $stmt = $mysqli->prepare($query);

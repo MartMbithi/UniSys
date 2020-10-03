@@ -7,7 +7,7 @@ require_once('configs/codeGen.php');
 
 if (isset($_POST['update'])) {
 
-    $update = $_GET['id'];
+    $update = $_GET['update'];
     $name = $_POST['name'];
     $reg_no = $_POST['reg_no'];
     $campus_email = $_POST['campus_email'];
@@ -20,10 +20,12 @@ if (isset($_POST['update'])) {
     $country = $_POST['country'];
     $course_name = $_POST['course_name'];
     $course_id = $_POST['course_id'];
+    $passport = $_FILES['image']['name'];
+    move_uploaded_file($_FILES["image"]["tmp_name"], "img/student/" . $_FILES["passport"]["name"]);
 
-    $query = "UPDATE UniSys_Students SET  name =?, reg_no =?, campus_email =?, personal_email =?, idnumber =?, phone =?, gender =?, dob =?, adr =?, country =?, course_name =?, course_id =? WHERE id =?";
+    $query = "UPDATE UniSys_Students SET  passport=?, name =?, reg_no =?, campus_email =?, personal_email =?, idnumber =?, phone =?, gender =?, dob =?, adr =?, country =?, course_name =?, course_id =? WHERE id =?";
     $stmt = $mysqli->prepare($query);
-    $rc = $stmt->bind_param('sssssssssssss', $name, $reg_no, $campus_email, $personal_email, $idnumber, $phone, $gender, $dob, $adr, $country, $course_name, $course_id, $update);
+    $rc = $stmt->bind_param('ssssssssssssss', $passport, $name, $reg_no, $campus_email, $personal_email, $idnumber, $phone, $gender, $dob, $adr, $country, $course_name, $course_id, $update);
     $stmt->execute();
     if ($stmt) {
         $success = "Updated" && header("refresh:1; url=admissions.php");
@@ -69,7 +71,7 @@ require_once('partials/_head.php');
                                         <div class="row">
                                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                 <div class="review-content-section">
-                                                    <form method="POST" id="add-department" action="#" class="add-department">
+                                                    <form method="POST" enctype="multipart/form-data" id="demo1-upload" class="dropzone dropzone-custom needsclick add-professors add-department">
                                                         <div class="row">
                                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                                                 <div class="form-group">
@@ -117,6 +119,17 @@ require_once('partials/_head.php');
                                                                 <div class="form-group">
                                                                     <input required name="adr" value="<?php echo $std->adr; ?>" type="text" class="form-control" placeholder="Address">
                                                                 </div>
+
+                                                                <div class="form-group alert-up-pd">
+                                                                    <div class="dz-message needsclick download-custom">
+                                                                        <i class="fa fa-download edudropnone" aria-hidden="true"></i>
+                                                                        <h2 class="edudropnone">Drop image here or click to upload.</h2>
+                                                                        <p class="edudropnone"><span class="note needsclick">(This is just a demo dropzone. Selected image is <strong>not</strong> actually uploaded.)</span>
+                                                                        </p>
+                                                                        <input name="imageico" class="hd-pro-img" type="text" />
+                                                                    </div>
+                                                                </div>
+
                                                                 <div class="form-group">
                                                                     <input required name="country" value="<?php echo $std->country; ?>" type="text" class="form-control" placeholder="Country">
                                                                 </div>

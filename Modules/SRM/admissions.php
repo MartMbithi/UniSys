@@ -77,7 +77,7 @@ require_once('partials/_head.php');
                                             <td><?php echo $std->personal_email; ?></td>
                                             <td><?php echo $std->campus_email; ?></td>
                                             <td><?php echo $std->phone; ?></td>
-                                            <td><?php echo $std->course; ?></td>
+                                            <td><?php echo $std->course_name; ?></td>
                                             <td><?php echo $std->gender; ?></td>
                                             <td><?php echo $std->dob; ?></td>
                                             <td>

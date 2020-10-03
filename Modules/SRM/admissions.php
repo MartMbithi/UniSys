@@ -58,23 +58,31 @@ require_once('partials/_head.php');
                                         <th>Email</th>
                                         <th>Campus Email</th>
                                         <th>Phone Number</th>
-                                        <th></th>
+                                        <th>Course</th>
+                                        <th>Gender</th>
+                                        <th>DOB</th>
                                         <th>Settings</th>
                                     </tr>
                                     <?php
-                                    $ret = "SELECT * FROM `UniSys_Academic_Years`  ";
+                                    $ret = "SELECT * FROM `UniSys_Students`  ";
                                     $stmt = $mysqli->prepare($ret);
                                     $stmt->execute(); //ok
                                     $res = $stmt->get_result();
-                                    while ($year = $res->fetch_object()) {
+                                    while ($std = $res->fetch_object()) {
                                     ?>
                                         <tr>
-                                            <td><?php echo $year->year_code; ?></td>
-                                            <td><?php echo $year->year_start; ?></td>
-                                            <td><?php echo $year->year_end; ?></td>
+                                            <td><?php echo $std->reg_no; ?></td>
+                                            <td><?php echo $std->name; ?></td>
+                                            <td><?php echo $std->idnumber; ?></td>
+                                            <td><?php echo $std->personal_email;?></td>
+                                            <td><?php echo $std->campus_email;?></td>
+                                            <td><?php echo $std->phone;?></td>
+                                            <td><?php echo $std->course;?></td>
+                                            <td><?php echo $std->gender;?></td>
+                                            <td><?php echo $std->dob;?></td>
                                             <td>
-                                                <a href="update_academic_year.php?update=<?php echo $year->year_id; ?>" data-toggle="tooltip" title="Edit Faculty" class="btn btn-warning pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
-                                                <a href="academic_year.php?delete=<?php echo $year->year_id; ?>" data-toggle="tooltip" title="Delete Faculty" class="btn btn-danger pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</a>
+                                                <a href="update_admissions.php?update=<?php echo $std->id; ?>" data-toggle="tooltip" title="Edit Admission" class="btn btn-warning pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
+                                                <a href="admissions.php?delete=<?php echo $std->id; ?>" data-toggle="tooltip" title="Delete Admission" class="btn btn-danger pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</a>
                                             </td>
                                         </tr>
                                     <?php } ?>

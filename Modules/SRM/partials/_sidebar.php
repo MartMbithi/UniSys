@@ -22,8 +22,6 @@
                         <ul class="submenu-angle" aria-expanded="false">
                             <li><a title="Academic Years" href="academic_year.php"><span class="mini-sub-pro">Academic Year</span></a></li>
                             <li><a title="Admissions" href="admissions.php"><span class="mini-sub-pro">Admissions</span></a></li>
-                            <li><a title="Manage Academic Years" href="manage_academic_years.php"><span class="mini-sub-pro">Manage Academic Yrs</span></a></li>
-                            <li><a title="Manage Admissions" href="manage_admissions.php"><span class="mini-sub-pro">Manage Admissions</span></a></li>
                         </ul>
                     </li>
 
@@ -35,7 +33,6 @@
                         <a class="has-arrow" href="units.php" aria-expanded="false"><span class="fa fa-user-plus icon-wrap"></span> <span class="mini-click-non">Students Units</span></a>
                         <ul class="submenu-angle" aria-expanded="false">
                             <li><a title="Units" href="units.php"><span class="mini-sub-pro">Units</span></a></li>
-                            <li><a title="Manage Units" href="manage_units.php"><span class="mini-sub-pro">Manage Units</span></a></li>
                         </ul>
                     </li>
                     <li>
@@ -65,7 +62,7 @@
                             <li><a title="Students" href="reports_students.php"><span class="mini-sub-pro">Students</span></a></li>
                         </ul>
                     </li>
-                    
+
                 </ul>
             </nav>
         </div>

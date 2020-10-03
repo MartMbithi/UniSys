@@ -71,25 +71,25 @@ require_once('partials/_head.php');
                                                             </div>
 
                                                             <div class="form-group">
-                                                                <input name="reg_no" type="text" class="form-control" placeholder="Registration Number">
+                                                                <input required name="reg_no" type="text" class="form-control" placeholder="Registration Number">
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                                             <div class="form-group">
-                                                                <input name="campus_email" type="text" class="form-control" placeholder="Campus Email">
+                                                                <input required  name="campus_email" type="text" class="form-control" placeholder="Campus Email">
                                                             </div>
 
                                                             <div class="form-group">
-                                                                <input name="personal_email" type="text" class="form-control" placeholder="Personal Email">
+                                                                <input required name="personal_email" type="text" class="form-control" placeholder="Personal Email">
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                                             <div class="form-group">
-                                                                <input name="idnumber" type="text" class="form-control" placeholder="National ID Number">
+                                                                <input required name="idnumber" type="text" class="form-control" placeholder="National ID Number">
                                                             </div>
 
                                                             <div class="form-group">
-                                                                <input name="phone" type="text" class="form-control" placeholder="Phone Number">
+                                                                <input required name="phone" type="text" class="form-control" placeholder="Phone Number">
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-4">
@@ -102,35 +102,35 @@ require_once('partials/_head.php');
                                                             </div>
 
                                                             <div class="form-group">
-                                                                <input name="dob" type="text" class="form-control" placeholder="Date Of Birth">
+                                                                <input required name="dob" type="text" class="form-control" placeholder="Date Of Birth">
                                                             </div>
 
                                                         </div>
 
                                                         <div class=" form-row col-lg-12 col-md-12 col-sm-12 col-xs-6">
                                                             <div class="form-group">
-                                                                <input name="adr" type="text" class="form-control" placeholder="Address">
+                                                                <input required name="adr" type="text" class="form-control" placeholder="Address">
                                                             </div>
                                                             <div class="form-group">
-                                                                <input name="country" type="text" class="form-control" placeholder="Country">
+                                                                <input required name="country" type="text" class="form-control" placeholder="Country">
                                                             </div>
                                                             <div class="form-group">
-                                                                <select name="course_name" id="courseName" onchange="getCourseDetails();" class="form-control">
+                                                                <select name="course_name" id="courseName" onchange="getCourseDetails(this.value);" class="form-control">
                                                                     <option>Select Course</option>
                                                                     <?php
                                                                     $ret = "SELECT * FROM `UniSys_Courses`  ";
                                                                     $stmt = $mysqli->prepare($ret);
                                                                     $stmt->execute(); //ok
                                                                     $res = $stmt->get_result();
-                                                                    while ($std = $res->fetch_object()) {
+                                                                    while ($course = $res->fetch_object()) {
                                                                     ?>
-                                                                        <option><?php echo $row->course_name; ?></option>
+                                                                        <option><?php echo $course->course_name; ?></option>
                                                                     <?php
                                                                     } ?>
                                                                 </select>
                                                             </div>
                                                             <div class="form-group">
-                                                                <input name="course_id" id="Course_Id" type="text" class="form-control" placeholder="Phone Number">
+                                                                <input name="course_id" id="Course_Id" type="hidden" class="form-control" placeholder="Course Id">
                                                             </div>
                                                         </div>
                                                     </div>

@@ -155,7 +155,17 @@ check_login();
                                                             <div class="row">
                                                                 <div class="col-lg-12">
                                                                     <div class="skill-title">
-                                                                        <h2>Enrolled Units </h2>
+                                                                        <?php
+                                                                        $std_id = $std->id;
+                                                                        $ret = "SELECT * FROM  UniSys_Enrollments WHERE student_id = '$std_id'  ";
+                                                                        $stmt = $mysqli->prepare($ret);
+                                                                        $stmt->execute(); //ok
+                                                                        $res = $stmt->get_result();
+                                                                        while ($unit = $res->fetch_object()) {
+                                                                        ?>
+                                                                            <h2>Enrolled Units For Academic Year <?php echo $unit->enroll_aca_yr; ?> </h2>
+                                                                        <?php
+                                                                        } ?>
                                                                         <hr />
                                                                     </div>
                                                                 </div>
@@ -172,7 +182,6 @@ check_login();
                                                                     ?>
                                                                         <li><i class="fa fa-angle-right"></i> <?php echo $unit->unit_code; ?> <?php echo $unit->name; ?> </li>
                                                                     <?php } ?>
-
                                                                 </ul>
                                                             </div>
                                                         </div>

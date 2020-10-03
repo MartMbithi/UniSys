@@ -47,13 +47,13 @@ require_once('partials/_head.php');
                         <div class="product-status-wrap drp-lst">
                             <h4>Admited Students List</h4>
                             <div class="add-product">
-                                <a href="add_academic_year.php">Admit Students</a>
+                                <a href="add_admission.php">Admit Student</a>
                             </div>
                             <div class="asset-inner">
                                 <table>
                                     <tr>
                                         <th>Reg No</th>
-                                        <th>Name</th> 
+                                        <th>Name</th>
                                         <th>Id Number</th>
                                         <th>Email</th>
                                         <th>Campus Email</th>
@@ -74,13 +74,14 @@ require_once('partials/_head.php');
                                             <td><?php echo $std->reg_no; ?></td>
                                             <td><?php echo $std->name; ?></td>
                                             <td><?php echo $std->idnumber; ?></td>
-                                            <td><?php echo $std->personal_email;?></td>
-                                            <td><?php echo $std->campus_email;?></td>
-                                            <td><?php echo $std->phone;?></td>
-                                            <td><?php echo $std->course;?></td>
-                                            <td><?php echo $std->gender;?></td>
-                                            <td><?php echo $std->dob;?></td>
+                                            <td><?php echo $std->personal_email; ?></td>
+                                            <td><?php echo $std->campus_email; ?></td>
+                                            <td><?php echo $std->phone; ?></td>
+                                            <td><?php echo $std->course; ?></td>
+                                            <td><?php echo $std->gender; ?></td>
+                                            <td><?php echo $std->dob; ?></td>
                                             <td>
+                                                <a href="view_admissions.php?view=<?php echo $std->id; ?>" data-toggle="tooltip" title="View Admission" class="btn btn-primary pd-setting-ed"><i class="fa fa-eye" aria-hidden="true"></i> View</a>
                                                 <a href="update_admissions.php?update=<?php echo $std->id; ?>" data-toggle="tooltip" title="Edit Admission" class="btn btn-warning pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
                                                 <a href="admissions.php?delete=<?php echo $std->id; ?>" data-toggle="tooltip" title="Delete Admission" class="btn btn-danger pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</a>
                                             </td>

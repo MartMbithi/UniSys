@@ -55,7 +55,7 @@ require_once('partials/_head.php');
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="product-payment-inner-st">
                             <ul id="myTabedu1" class="tab-review-design">
-                                <li class="active"><a href="#description">Add Faculty</a></li>
+                                <li class="active"><a href="#description">Add New Student Admission Record</a></li>
                             </ul>
                             <div id="myTabContent" class="tab-content custom-product-edit">
                                 <div class="product-tab-list tab-pane fade active in" id="description">
@@ -64,19 +64,67 @@ require_once('partials/_head.php');
                                             <div class="review-content-section">
                                                 <form method="POST" id="add-department" action="#" class="add-department">
                                                     <div class="row">
-                                                        <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                                             <div class="form-group">
-                                                                <input name="faculty_name" type="text" class="form-control" placeholder="Faculty Name">
-                                                                <input name="faculty_id" value="<?php echo $facultyID;?>" type="hidden" class="form-control" placeholder="Name">
+                                                                <input name="name" type="text" class="form-control" placeholder="Student Name">
+                                                                <input name="id" value="<?php echo $facultyID; ?>" type="hidden" class="form-control" placeholder="Name">
                                                             </div>
+
                                                             <div class="form-group">
-                                                                <input name="faculty_head" type="text" class="form-control" placeholder="Head of Department">
+                                                                <input name="reg_no" type="text" class="form-control" placeholder="Registration Number">
                                                             </div>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                                             <div class="form-group">
-                                                                <input name="faculty_code" type="text" value="<?php echo $a;?>-<?php echo $b;?>" class="form-control" placeholder="Faculty Code">
+                                                                <input name="campus_email" type="text" class="form-control" placeholder="Campus Email">
                                                             </div>
+
                                                             <div class="form-group">
-                                                                <textarea rows="10" name="faculty_desc" type="text" class="form-control" placeholder="Faculty Description"></textarea>
+                                                                <input name="personal_email" type="text" class="form-control" placeholder="Personal Email">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                            <div class="form-group">
+                                                                <input name="idnumber" type="text" class="form-control" placeholder="National ID Number">
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <input name="phone" type="text" class="form-control" placeholder="Phone Number">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                            <div class="form-group">
+                                                                <select name="gender" class="form-control">
+                                                                    <option>Select Gender</option>
+                                                                    <option>Male</option>
+                                                                    <option>Female</option>
+                                                                </select>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <input name="dob" type="text" class="form-control" placeholder="Date Of Birth">
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <input name="country" type="text" class="form-control" placeholder="Country">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                            <div class="form-group">
+                                                                <input name="adr" type="text" class="form-control" placeholder="Address">
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <select name="course_name" id="Course_Name" onchange="getCourseDetails();" class="form-control">
+                                                                    <option>Select Gender</option>
+                                                                    <option>Male</option>
+                                                                    <option>Female</option>
+                                                                </select>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <input name="course_id" id="Course_Id" type="hidden" class="form-control" placeholder="Phone Number">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -84,7 +132,7 @@ require_once('partials/_head.php');
                                                     <div class="row">
                                                         <div class="col-lg-12">
                                                             <div class="payment-adress">
-                                                                <button type="submit" name="add_faculty" class="btn btn-primary waves-effect waves-light">Submit</button>
+                                                                <button type="submit" name="add" class="btn btn-primary waves-effect waves-light">Submit</button>
                                                             </div>
                                                         </div>
                                                     </div>

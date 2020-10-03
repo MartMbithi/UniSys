@@ -119,17 +119,9 @@ require_once('partials/_head.php');
                                                                 <div class="form-group">
                                                                     <input required name="adr" value="<?php echo $std->adr; ?>" type="text" class="form-control" placeholder="Address">
                                                                 </div>
-
-                                                                <div class="form-group alert-up-pd">
-                                                                    <div class="dz-message needsclick download-custom">
-                                                                        <i class="fa fa-download edudropnone" aria-hidden="true"></i>
-                                                                        <h2 class="edudropnone">Drop image here or click to upload.</h2>
-                                                                        <p class="edudropnone"><span class="note needsclick">(This is just a demo dropzone. Selected image is <strong>not</strong> actually uploaded.)</span>
-                                                                        </p>
-                                                                        <input name="imageico" class="hd-pro-img" type="text" />
-                                                                    </div>
+                                                                <div class="form-group">
+                                                                    <input required name="passport" type="file" class="fbtn btn-outline-success form-control" placeholder="Upload Passport">
                                                                 </div>
-
                                                                 <div class="form-group">
                                                                     <input required name="country" value="<?php echo $std->country; ?>" type="text" class="form-control" placeholder="Country">
                                                                 </div>

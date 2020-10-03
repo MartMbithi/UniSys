@@ -104,7 +104,7 @@ require_once('partials/_head.php');
                                                             <div class="form-group">
                                                                 <input name="dob" type="text" class="form-control" placeholder="Date Of Birth">
                                                             </div>
-                                                           
+
                                                         </div>
 
                                                         <div class=" form-row col-lg-12 col-md-12 col-sm-12 col-xs-6">
@@ -115,18 +115,18 @@ require_once('partials/_head.php');
                                                                 <input name="country" type="text" class="form-control" placeholder="Country">
                                                             </div>
                                                             <div class="form-group">
-                                                                <select name="course_name" id="Course_Name" onchange="getCourseDetails();" class="form-control">
+                                                                <select name="course_name" id="courseName" onchange="getCourseDetails();" class="form-control">
                                                                     <option>Select Course</option>
-                                                                    <?php 
+                                                                    <?php
                                                                     $ret = "SELECT * FROM `UniSys_Courses`  ";
                                                                     $stmt = $mysqli->prepare($ret);
                                                                     $stmt->execute(); //ok
                                                                     $res = $stmt->get_result();
                                                                     while ($std = $res->fetch_object()) {
-                                                                        ?>
-                                                                    <option><?php echo $row->course_name; ?></option>
+                                                                    ?>
+                                                                        <option><?php echo $row->course_name; ?></option>
                                                                     <?php
-                                                                    }?>                                                                    
+                                                                    } ?>
                                                                 </select>
                                                             </div>
                                                             <div class="form-group">

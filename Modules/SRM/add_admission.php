@@ -23,7 +23,7 @@ if (isset($_POST['add'])) {
 
     $query = "INSERT INTO UniSys_Students (id, name, reg_no, campus_email, personal_email, idnumber, phone, gender, dob, adr, country, course_name, course_id) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
     $stmt = $mysqli->prepare($query);
-    $rc = $stmt->bind_param('sssssssssssss', $id, $name, $reg_no, $campus_email, $personal_email, $idnumber, $phone, $gender, $dob, $country, $course_name, $course_id);
+    $rc = $stmt->bind_param('sssssssssssss', $id, $name, $reg_no, $campus_email, $personal_email, $idnumber, $phone, $gender, $dob, $adr, $country, $course_name, $course_id);
     $stmt->execute();
     if ($stmt) {
         //inject alert that post is shared  

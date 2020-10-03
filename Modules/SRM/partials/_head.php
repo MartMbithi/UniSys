@@ -63,14 +63,14 @@
 		============================================ -->
   <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 
-   <!-- SWEET ALERTS
+  <!-- SWEET ALERTS
 		============================================ -->
   <script src="js/sweetalerts/promise-polyfill.js"></script>
   <link href="js/sweetalerts/sweetalert2.min.css" rel="stylesheet" type="text/css" />
   <link href="js/sweetalerts/sweetalert.css" rel="stylesheet" type="text/css" />
   <script src="js/sweetalerts/sweetalert2.min.js"></script>
   <script src="js/sweetalerts/custom-sweetalert.js"></script>
-  
+
   <!-- SWAL ALERTS INJECTION
 		============================================ -->
   <?php if (isset($success)) { ?>
@@ -108,4 +108,20 @@
     </script>
 
   <?php } ?>
+  <!-- AJAX -->
+  <script>
+    function getCourseDetails(val) {
+      $.ajax({
+
+        type: "POST",
+        url: "ajax.php",
+        data: 'courseName=' + val,
+        success: function(data) {
+          //alert(data);
+          $('#Course_Id').val(data);
+        }
+      });
+
+    }
+  </script>
 </head>

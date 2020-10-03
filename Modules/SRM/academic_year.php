@@ -70,8 +70,8 @@ require_once('partials/_head.php');
                                             <td><?php echo $year->year_start; ?></td>
                                             <td><?php echo $year->year_end; ?></td>
                                             <td>
-                                                <a href="update_academic_year.php?update=<?php echo $year->year_id; ?>" data-toggle="tooltip" title="Edit Faculty" class="btn btn-warning pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
-                                                <a href="academic_year.php?delete=<?php echo $year->year_id; ?>" data-toggle="tooltip" title="Delete Faculty" class="btn btn-danger pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</a>
+                                                <a href="update_academic_year.php?update=<?php echo $year->year_id; ?>" data-toggle="tooltip" title="Edit Academic Year" class="btn btn-warning pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
+                                                <a href="academic_year.php?delete=<?php echo $year->year_id; ?>" data-toggle="tooltip" title="Delete Academic Year" class="btn btn-danger pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</a>
                                             </td>
                                         </tr>
                                     <?php } ?>

@@ -61,12 +61,12 @@ require_once('partials/_head.php');
                                                         <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
                                                             <div class="form-group">
                                                                 <label for="exampleInputEmail1">Course Name</label>
-                                                                <input name="course_name" type="text" class="form-control" placeholder="Faculty Name">
+                                                                <input name="course_name" type="text" class="form-control">
                                                                 <input name="course_id" value="<?php echo $facultyID; ?>" type="hidden" class="form-control" placeholder="Name">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label for="exampleInputEmail1">Course Code</label>
-                                                                <input name="course_code" type="text" value="<?php echo $a; ?>-<?php echo $b; ?>" class="form-control" placeholder="Faculty Code">
+                                                                <input name="course_code" type="text" value="<?php echo $a; ?>-<?php echo $b; ?>" class="form-control">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label for="exampleInputEmail1">Admitted Course</label>
@@ -85,8 +85,12 @@ require_once('partials/_head.php');
                                                                 </select>
                                                             </div>
                                                             <div class="form-group">
-                                                                <input name="faculty_id" id="facultyID" type="hidden" class="form-control" placeholder="Course Id">
-                                                                <input name="faculty_code" id="facultyCode" type="hidden" class="form-control" placeholder="Course Id">
+                                                                <label for="exampleInputEmail1">Faculty ID</label>
+                                                                <input name="faculty_id" readonly id="facultyID" type="text" class="form-control" placeholder="Course Id">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="exampleInputEmail1">Faculty Code</label>
+                                                                <input name="faculty_code" readonly id="facultyCode" type="text" class="form-control" placeholder="Course Id">
                                                             </div>
                                                         </div>
                                                     </div>

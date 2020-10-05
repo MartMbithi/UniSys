@@ -63,7 +63,7 @@
 		============================================ -->
   <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 
-<!-- Data tables css -->
+  <!-- Data tables css -->
   <link rel="stylesheet" href="css/data-table/bootstrap-table.css">
   <link rel="stylesheet" href="css/data-table/bootstrap-editable.css">
 
@@ -126,6 +126,68 @@
         }
       });
 
+    }
+
+    function getFacultyDetails(val) {
+      $.ajax({
+
+        type: "POST",
+        url: "ajax.php",
+        data: 'facultyName=' + val,
+        success: function(data) {
+          //alert(data);
+          $('#facultyID').val(data);
+        }
+      });
+
+      $.ajax({
+
+        type: "POST",
+        url: "ajax.php",
+        data: 'facultyId=' + val,
+        success: function(data) {
+          //alert(data);
+          $('#facultyCode').val(data);
+        }
+      });
+
+    }
+
+    function getUnitDetails(val) {
+      $.ajax({
+
+        type: "POST",
+        url: "ajax.php",
+        data: 'UnitCode=' + val,
+        success: function(data) {
+          //alert(data);
+          $('#unitName').val(data);
+        }
+      });
+    }
+
+    function getStudentDetails(val) {
+      $.ajax({
+
+        type: "POST",
+        url: "ajax.php",
+        data: 'RegNumber=' + val,
+        success: function(data) {
+          //alert(data);
+          $('#StudentName').val(data);
+        }
+      });
+
+      $.ajax({
+
+        type: "POST",
+        url: "ajax.php",
+        data: 'StudentName=' + val,
+        success: function(data) {
+          //alert(data);
+          $('#StudentID').val(data);
+        }
+      });
     }
   </script>
 </head>

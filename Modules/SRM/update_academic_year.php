@@ -64,12 +64,15 @@ require_once('partials/_head.php');
                                                             <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
 
                                                                 <div class="form-group">
+                                                                    <label for="exampleInputEmail1">Academic Year Code</label>
                                                                     <input name="year_code" type="text" class="form-control" value="<?php echo $a; ?>-<?php echo $b; ?>">
                                                                 </div>
                                                                 <div class="form-group">
+                                                                    <label for="exampleInputEmail1">Academic Year Start Dates</label>
                                                                     <input name="year_start" value="<?php echo $year->year_start; ?>" type="text" class="form-control" placeholder="Start Date DD - MM - YYYY">
                                                                 </div>
                                                                 <div class="form-group">
+                                                                    <label for="exampleInputEmail1">Academic Year End Dates</label>
                                                                     <input name="year_end" value="<?php echo $year->year_end; ?>" type="text" class="form-control" placeholder="End Date DD - MM - YYYY">
                                                                 </div>
                                                             </div>

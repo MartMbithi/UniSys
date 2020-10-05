@@ -63,6 +63,10 @@
 		============================================ -->
   <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 
+<!-- Data tables css -->
+  <link rel="stylesheet" href="css/data-table/bootstrap-table.css">
+  <link rel="stylesheet" href="css/data-table/bootstrap-editable.css">
+
   <!-- SWEET ALERTS
 		============================================ -->
   <script src="js/sweetalerts/promise-polyfill.js"></script>

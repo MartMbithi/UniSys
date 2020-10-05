@@ -51,31 +51,44 @@ require_once('partials/_head.php');
                                 <a href="add_academic_year.php">Add Academic Year</a>
                             </div>
                             <div class="asset-inner">
-                                <table>
-                                    <tr>
-                                        <th>Code</th>
-                                        <th>Start Date</th>
-                                        <th>End Date</th>
-                                        <th>Settings</th>
-                                    </tr>
-                                    <?php
-                                    $ret = "SELECT * FROM `UniSys_Academic_Years`  ";
-                                    $stmt = $mysqli->prepare($ret);
-                                    $stmt->execute(); //ok
-                                    $res = $stmt->get_result();
-                                    while ($year = $res->fetch_object()) {
-                                    ?>
-                                        <tr>
-                                            <td><?php echo $year->year_code; ?></td>
-                                            <td><?php echo $year->year_start; ?></td>
-                                            <td><?php echo $year->year_end; ?></td>
-                                            <td>
-                                                <a href="update_academic_year.php?update=<?php echo $year->year_id; ?>" data-toggle="tooltip" title="Edit Academic Year" class="btn btn-warning pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
-                                                <a href="academic_year.php?delete=<?php echo $year->year_id; ?>" data-toggle="tooltip" title="Delete Academic Year" class="btn btn-danger pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</a>
-                                            </td>
-                                        </tr>
-                                    <?php } ?>
-                                </table>
+                                <div class="datatable-dashv1-list custom-datatable-overright">
+                                    <div id="toolbar">
+                                        <select class="form-control dt-tb">
+                                            <option value="">Export Basic</option>
+                                            <option value="all">Export All</option>
+                                            <option value="selected">Export Selected</option>
+                                        </select>
+                                    </div>
+                                    <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true" data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
+                                        <thead>
+                                            <tr>
+                                                <th>Code</th>
+                                                <th>Start Date</th>
+                                                <th>End Date</th>
+                                                <th>Settings</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                            $ret = "SELECT * FROM `UniSys_Academic_Years`  ";
+                                            $stmt = $mysqli->prepare($ret);
+                                            $stmt->execute(); //ok
+                                            $res = $stmt->get_result();
+                                            while ($year = $res->fetch_object()) {
+                                            ?>
+                                                <tr>
+                                                    <td><?php echo $year->year_code; ?></td>
+                                                    <td><?php echo $year->year_start; ?></td>
+                                                    <td><?php echo $year->year_end; ?></td>
+                                                    <td>
+                                                        <a href="update_academic_year.php?update=<?php echo $year->year_id; ?>" data-toggle="tooltip" title="Edit Academic Year" class="btn btn-warning pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
+                                                        <a href="academic_year.php?delete=<?php echo $year->year_id; ?>" data-toggle="tooltip" title="Delete Academic Year" class="btn btn-danger pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</a>
+                                                    </td>
+                                                </tr>
+                                            <?php } ?>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
 
                         </div>

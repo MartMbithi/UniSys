@@ -59,16 +59,20 @@ require_once('partials/_head.php');
                                                     <div class="row">
                                                         <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
                                                             <div class="form-group">
+                                                                <label for="exampleInputEmail1">Faculty Name</label>
                                                                 <input name="faculty_name" type="text" class="form-control" placeholder="Faculty Name">
-                                                                <input name="faculty_id" value="<?php echo $facultyID;?>" type="hidden" class="form-control" placeholder="Name">
+                                                                <input name="faculty_id" value="<?php echo $facultyID; ?>" type="hidden" class="form-control" placeholder="Name">
                                                             </div>
                                                             <div class="form-group">
+                                                                <label for="exampleInputEmail1">Faculty Head</label>
                                                                 <input name="faculty_head" type="text" class="form-control" placeholder="Head of Department">
                                                             </div>
                                                             <div class="form-group">
-                                                                <input name="faculty_code" type="text" value="<?php echo $a;?>-<?php echo $b;?>" class="form-control" placeholder="Faculty Code">
+                                                                <label for="exampleInputEmail1">Faculty Code</label>
+                                                                <input name="faculty_code" type="text" value="<?php echo $a; ?>-<?php echo $b; ?>" class="form-control" placeholder="Faculty Code">
                                                             </div>
                                                             <div class="form-group">
+                                                                <label for="exampleInputEmail1">Faculty Description</label>
                                                                 <textarea rows="10" name="faculty_desc" type="text" class="form-control" placeholder="Faculty Description"></textarea>
                                                             </div>
                                                         </div>

@@ -55,16 +55,19 @@ require_once('partials/_head.php');
                                                     <div class="row">
                                                         <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
                                                             <div class="form-group">
-                                                                <input name="year_id" value="<?php echo $facultyID;?>" type="hidden" class="form-control" placeholder="Name">
+                                                                <input name="year_id" value="<?php echo $facultyID; ?>" type="hidden" class="form-control" placeholder="Name">
                                                             </div>
                                                             <div class="form-group">
-                                                                <input name="year_code" type="text" class="form-control" value="<?php echo $a;?>-<?php echo $b;?>">
+                                                                <label for="exampleInputEmail1">Academic Year Code</label>
+                                                                <input name="year_code" type="text" class="form-control" value="<?php echo $a; ?>-<?php echo $b; ?>">
                                                             </div>
                                                             <div class="form-group">
-                                                                <input name="year_start" type="text"  class="form-control" placeholder="Start Date DD - MM - YYYY">
+                                                                <label for="exampleInputEmail1">Academic Year Start Dates</label>
+                                                                <input name="year_start" type="text" class="form-control" placeholder="Start Date DD - MM - YYYY">
                                                             </div>
                                                             <div class="form-group">
-                                                                <input name="year_end" type="text"  class="form-control" placeholder="End Date DD - MM - YYYY">
+                                                                <label for="exampleInputEmail1">Academic Year End Dates</label>
+                                                                <input name="year_end" type="text" class="form-control" placeholder="End Date DD - MM - YYYY">
                                                             </div>
                                                         </div>
                                                     </div>

@@ -20,10 +20,12 @@ if (isset($_POST['add'])) {
     $country = $_POST['country'];
     $course_name = $_POST['course_name'];
     $course_id = $_POST['course_id'];
+    $passport = $_FILES['passport']['name'];
+    move_uploaded_file($_FILES["passport"]["tmp_name"], "img/student/" . $_FILES["passport"]["name"]);
 
-    $query = "INSERT INTO UniSys_Students (id, name, reg_no, campus_email, personal_email, idnumber, phone, gender, dob, adr, country, course_name, course_id) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+    $query = "INSERT INTO UniSys_Students (passport, id, name, reg_no, campus_email, personal_email, idnumber, phone, gender, dob, adr, country, course_name, course_id) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
     $stmt = $mysqli->prepare($query);
-    $rc = $stmt->bind_param('sssssssssssss', $id, $name, $reg_no, $campus_email, $personal_email, $idnumber, $phone, $gender, $dob, $adr, $country, $course_name, $course_id);
+    $rc = $stmt->bind_param('ssssssssssssss', $passport, $id, $name, $reg_no, $campus_email, $personal_email, $idnumber, $phone, $gender, $dob, $adr, $country, $course_name, $course_id);
     $stmt->execute();
     if ($stmt) {
         //inject alert that post is shared  
@@ -62,7 +64,7 @@ require_once('partials/_head.php');
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <div class="review-content-section">
-                                                <form method="POST" id="add-department" action="#" class="add-department">
+                                                <form method="POST" id="add-department" enctype="multipart/form-data" class="add-department">
                                                     <div class="row">
                                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                                             <div class="form-group">
@@ -79,33 +81,28 @@ require_once('partials/_head.php');
                                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                                             <div class="form-group">
                                                                 <label for="exampleInputEmail1">Campus / University Email Address</label>
-
                                                                 <input required name="campus_email" type="text" class="form-control" placeholder="Campus Email">
                                                             </div>
 
                                                             <div class="form-group">
                                                                 <label for="exampleInputEmail1">Personal Email Address</label>
-
                                                                 <input required name="personal_email" type="text" class="form-control" placeholder="Personal Email">
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                                             <div class="form-group">
                                                                 <label for="exampleInputEmail1">National ID Number</label>
-
                                                                 <input required name="idnumber" type="text" class="form-control" placeholder="National ID Number">
                                                             </div>
 
                                                             <div class="form-group">
                                                                 <label for="exampleInputEmail1">Phone Number</label>
-
                                                                 <input required name="phone" type="text" class="form-control" placeholder="Phone Number">
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-4">
                                                             <div class="form-group">
                                                                 <label for="exampleInputEmail1">Gender</label>
-
                                                                 <select name="gender" class="form-control">
                                                                     <option>Select Gender</option>
                                                                     <option>Male</option>
@@ -115,26 +112,25 @@ require_once('partials/_head.php');
 
                                                             <div class="form-group">
                                                                 <label for="exampleInputEmail1">Date Of Bith</label>
-
                                                                 <input required name="dob" type="text" class="form-control" placeholder="Date Of Birth">
                                                             </div>
 
                                                         </div>
-
                                                         <div class=" form-row col-lg-12 col-md-12 col-sm-12 col-xs-6">
                                                             <div class="form-group">
                                                                 <label for="exampleInputEmail1">Address</label>
-
                                                                 <input required name="adr" type="text" class="form-control" placeholder="Address">
                                                             </div>
                                                             <div class="form-group">
+                                                                <label for="exampleInputEmail1">Colored Passport Image</label>
+                                                                <input required name="passport" type="file" class="fbtn btn-outline-success form-control" placeholder="Upload Passport">
+                                                            </div>
+                                                            <div class="form-group">
                                                                 <label for="exampleInputEmail1">Country</label>
-
                                                                 <input required name="country" type="text" class="form-control" placeholder="Country">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label for="exampleInputEmail1">Admitted Course</label>
-
                                                                 <select name="course_name" id="courseName" onchange="getCourseDetails(this.value);" class="form-control">
                                                                     <option>Select Course</option>
                                                                     <?php

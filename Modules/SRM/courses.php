@@ -46,7 +46,7 @@ require_once('partials/_head.php');
                         <div class="product-status-wrap drp-lst">
                             <h4>Courses List</h4>
                             <div class="add-product">
-                                <a href="add_faculty.php">Regsiter New Course</a>
+                                <a href="add_course.php">Regsiter New Course</a>
                             </div>
                             <div class="asset-inner">
                                 <div class="datatable-dashv1-list custom-datatable-overright">

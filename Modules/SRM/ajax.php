@@ -31,8 +31,8 @@ if (!empty($_POST["facultyName"])) {
 
 
 //Faculty Name
-if (!empty($_POST["facultyID"])) {
-    $id = $_POST['facultyID'];
+if (!empty($_POST["facultyId"])) {
+    $id = $_POST['facultyId'];
     $stmt = $DB_con->prepare("SELECT * FROM UniSys_Faculties WHERE faculty_name = :id");
     $stmt->execute(array(':id' => $id));
 ?>

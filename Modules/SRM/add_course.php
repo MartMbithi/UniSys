@@ -71,7 +71,7 @@ require_once('partials/_head.php');
                                                             <div class="form-group">
                                                                 <label for="exampleInputEmail1">Admitted Course</label>
                                                                 <select name="faculty_name" id="facultyName" onchange="getFacultyDetails(this.value);" class="form-control">
-                                                                    <option>Select FAculty</option>
+                                                                    <option>Select Faculty</option>
                                                                     <?php
                                                                     $ret = "SELECT * FROM `UniSys_Faculties`  ";
                                                                     $stmt = $mysqli->prepare($ret);

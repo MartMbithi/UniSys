@@ -66,34 +66,46 @@ require_once('partials/_head.php');
                                                     <div class="row">
                                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                                             <div class="form-group">
+                                                                <label for="exampleInputEmail1">Full Names</label>
                                                                 <input name="name" type="text" class="form-control" placeholder="Student Name">
                                                                 <input name="id" value="<?php echo $facultyID; ?>" type="hidden" class="form-control" placeholder="Name">
                                                             </div>
 
                                                             <div class="form-group">
+                                                                <label for="exampleInputEmail1">Registration Or Admission Number</label>
                                                                 <input required name="reg_no" type="text" class="form-control" placeholder="Registration Number">
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                                             <div class="form-group">
+                                                                <label for="exampleInputEmail1">Campus / University Email Address</label>
+
                                                                 <input required name="campus_email" type="text" class="form-control" placeholder="Campus Email">
                                                             </div>
 
                                                             <div class="form-group">
+                                                                <label for="exampleInputEmail1">Personal Email Address</label>
+
                                                                 <input required name="personal_email" type="text" class="form-control" placeholder="Personal Email">
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                                             <div class="form-group">
+                                                                <label for="exampleInputEmail1">National ID Number</label>
+
                                                                 <input required name="idnumber" type="text" class="form-control" placeholder="National ID Number">
                                                             </div>
 
                                                             <div class="form-group">
+                                                                <label for="exampleInputEmail1">Phone Number</label>
+
                                                                 <input required name="phone" type="text" class="form-control" placeholder="Phone Number">
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-4">
                                                             <div class="form-group">
+                                                                <label for="exampleInputEmail1">Gender</label>
+
                                                                 <select name="gender" class="form-control">
                                                                     <option>Select Gender</option>
                                                                     <option>Male</option>
@@ -102,6 +114,8 @@ require_once('partials/_head.php');
                                                             </div>
 
                                                             <div class="form-group">
+                                                                <label for="exampleInputEmail1">Date Of Bith</label>
+
                                                                 <input required name="dob" type="text" class="form-control" placeholder="Date Of Birth">
                                                             </div>
 
@@ -109,12 +123,18 @@ require_once('partials/_head.php');
 
                                                         <div class=" form-row col-lg-12 col-md-12 col-sm-12 col-xs-6">
                                                             <div class="form-group">
+                                                                <label for="exampleInputEmail1">Address</label>
+
                                                                 <input required name="adr" type="text" class="form-control" placeholder="Address">
                                                             </div>
                                                             <div class="form-group">
+                                                                <label for="exampleInputEmail1">Country</label>
+
                                                                 <input required name="country" type="text" class="form-control" placeholder="Country">
                                                             </div>
                                                             <div class="form-group">
+                                                                <label for="exampleInputEmail1">Admitted Course</label>
+
                                                                 <select name="course_name" id="courseName" onchange="getCourseDetails(this.value);" class="form-control">
                                                                     <option>Select Course</option>
                                                                     <?php
@@ -138,6 +158,7 @@ require_once('partials/_head.php');
                                                     <div class="row">
                                                         <div class="col-lg-12">
                                                             <div class="payment-adress">
+
                                                                 <button type="submit" name="add" class="btn btn-primary waves-effect waves-light">Submit</button>
                                                             </div>
                                                         </div>

@@ -47,48 +47,44 @@ require_once('partials/_head.php');
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="product-payment-inner-st">
                             <ul id="myTabedu1" class="tab-review-design">
-                                <li class="active"><a href="#description">Register New Course</a></li>
+                                <li class="active"><a href="#description">Register New Unit</a></li>
                             </ul>
                             <div id="myTabContent" class="tab-content custom-product-edit">
                                 <div class="product-tab-list tab-pane fade active in" id="description">
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <div class="review-content-section">
-                                                <form method="POST" id="add-department" action="#" class="add-department">
+                                                <form method="POST" id="add-department"  class="add-department">
                                                     <div class="row">
                                                         <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
                                                             <div class="form-group">
-                                                                <label for="exampleInputEmail1">Course Name</label>
-                                                                <input name="course_name" type="text" class="form-control">
-                                                                <input name="course_id" value="<?php echo $facultyID; ?>" type="hidden" class="form-control" placeholder="Name">
+                                                                <label for="exampleInputEmail1">Unit Name</label>
+                                                                <input name="unit_name" type="text" class="form-control">
+                                                                <input name="unit_id" value="<?php echo $facultyID; ?>" type="hidden" class="form-control" placeholder="Name">
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="exampleInputEmail1">Course Code</label>
-                                                                <input name="course_code" type="text" value="<?php echo $a; ?>-<?php echo $b; ?>" class="form-control">
+                                                                <label for="exampleInputEmail1">Unit Code</label>
+                                                                <input name="unit_code" type="text" value="<?php echo $a; ?>-<?php echo $b; ?>" class="form-control">
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="exampleInputEmail1">Course Faculty</label>
-                                                                <select name="faculty_name" id="facultyName" onchange="getFacultyDetails(this.value);" class="form-control">
-                                                                    <option>Select Faculty</option>
+                                                                <label for="exampleInputEmail1">Course </label>
+                                                                <select name="course_name" id="courseName" onchange="getCourseDetails(this.value);" class="form-control">
+                                                                    <option>Select Course Name</option>
                                                                     <?php
-                                                                    $ret = "SELECT * FROM `UniSys_Faculties`  ";
+                                                                    $ret = "SELECT * FROM `UniSys_Courses`  ";
                                                                     $stmt = $mysqli->prepare($ret);
                                                                     $stmt->execute(); //ok
                                                                     $res = $stmt->get_result();
-                                                                    while ($faculty = $res->fetch_object()) {
+                                                                    while ($courses = $res->fetch_object()) {
                                                                     ?>
-                                                                        <option><?php echo $faculty->faculty_name; ?></option>
+                                                                        <option><?php echo $courses->course_name; ?></option>
                                                                     <?php
                                                                     } ?>
                                                                 </select>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="exampleInputEmail1">Faculty ID</label>
-                                                                <input name="faculty_id" readonly id="facultyID" type="text" class="form-control" placeholder="Course Id">
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="exampleInputEmail1">Faculty Code</label>
-                                                                <input name="faculty_code" readonly id="facultyCode" type="text" class="form-control" placeholder="Course Id">
+                                                                <label for="exampleInputEmail1">Course ID</label>
+                                                                <input name="course_id" readonly id="courseID" type="text" class="form-control" placeholder="Course Id">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -96,7 +92,7 @@ require_once('partials/_head.php');
                                                     <div class="row">
                                                         <div class="col-lg-12">
                                                             <div class="payment-adress">
-                                                                <button type="submit" name="add_course" class="btn btn-primary waves-effect waves-light">Submit</button>
+                                                                <button type="submit" name="add" class="btn btn-primary waves-effect waves-light">Submit</button>
                                                             </div>
                                                         </div>
                                                     </div>

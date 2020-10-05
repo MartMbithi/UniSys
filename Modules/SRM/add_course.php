@@ -85,7 +85,7 @@ require_once('partials/_head.php');
                                                                 </select>
                                                             </div>
                                                             <div class="form-group">
-                                                                <input name="faculty_id" id="FacultyID" type="hidden" class="form-control" placeholder="Course Id">
+                                                                <input name="faculty_id" id="facultyID" type="hidden" class="form-control" placeholder="Course Id">
                                                                 <input name="faculty_code" id="facultyCode" type="hidden" class="form-control" placeholder="Course Id">
                                                             </div>
                                                         </div>

@@ -63,7 +63,7 @@
 		============================================ -->
   <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 
-<!-- Data tables css -->
+  <!-- Data tables css -->
   <link rel="stylesheet" href="css/data-table/bootstrap-table.css">
   <link rel="stylesheet" href="css/data-table/bootstrap-editable.css">
 
@@ -123,6 +123,31 @@
         success: function(data) {
           //alert(data);
           $('#Course_Id').val(data);
+        }
+      });
+
+    }
+
+    function getFacultyDetails(val) {
+      $.ajax({
+
+        type: "POST",
+        url: "ajax.php",
+        data: 'facultyName=' + val,
+        success: function(data) {
+          //alert(data);
+          $('#facultyID').val(data);
+        }
+      });
+
+      $.ajax({
+
+        type: "POST",
+        url: "ajax.php",
+        data: 'facultyId=' + val,
+        success: function(data) {
+          //alert(data);
+          $('#facultyCode').val(data);
         }
       });
 

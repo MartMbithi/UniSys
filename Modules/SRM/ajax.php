@@ -14,3 +14,32 @@ if (!empty($_POST["courseName"])) {
 <?php
     }
 }
+
+//Faculty ID
+if (!empty($_POST["facultyName"])) {
+    $id = $_POST['facultyName'];
+    $stmt = $DB_con->prepare("SELECT * FROM UniSys_Faculties WHERE faculty_name = :id");
+    $stmt->execute(array(':id' => $id));
+?>
+<?php
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+?>
+<?php echo htmlentities($row['faculty_id']); ?>
+<?php
+    }
+}
+
+
+//Faculty Name
+if (!empty($_POST["facultyID"])) {
+    $id = $_POST['facultyID'];
+    $stmt = $DB_con->prepare("SELECT * FROM UniSys_Faculties WHERE faculty_name = :id");
+    $stmt->execute(array(':id' => $id));
+?>
+<?php
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+?>
+<?php echo htmlentities($row['faculty_code']); ?>
+<?php
+    }
+}

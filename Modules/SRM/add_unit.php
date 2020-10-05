@@ -5,7 +5,7 @@ require_once('configs/checklogin.php');
 check_login();
 require_once('configs/codeGen.php');
 
-if (isset($_POST['add_unit'])) {
+if (isset($_POST['add'])) {
 
     $course_name = $_POST['course_name'];
     $course_id = $_POST['course_id'];

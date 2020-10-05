@@ -43,3 +43,17 @@ if (!empty($_POST["facultyId"])) {
 <?php
     }
 }
+
+//Units details
+if (!empty($_POST["UnitCode"])) {
+    $id = $_POST['UnitCode'];
+    $stmt = $DB_con->prepare("SELECT * FROM UniSys_Units WHERE unit_code = :id");
+    $stmt->execute(array(':id' => $id));
+?>
+<?php
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+?>
+<?php echo htmlentities($row['unit_name']); ?>
+<?php
+    }
+}

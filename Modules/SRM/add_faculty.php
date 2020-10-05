@@ -72,6 +72,7 @@ require_once('partials/_head.php');
                                                                 <input name="faculty_code" type="text" value="<?php echo $a; ?>-<?php echo $b; ?>" class="form-control" placeholder="Faculty Code">
                                                             </div>
                                                             <div class="form-group">
+                                                                <label for="exampleInputEmail1">Faculty Description</label>
                                                                 <textarea rows="10" name="faculty_desc" type="text" class="form-control" placeholder="Faculty Description"></textarea>
                                                             </div>
                                                         </div>

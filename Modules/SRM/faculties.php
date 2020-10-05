@@ -37,7 +37,7 @@ require_once('partials/_head.php');
                 </div>
             </div>
         </div>
-        <br><br><br>
+        <br><br><br><br>
         <?php
         require_once('partials/_header.php');
         ?>
@@ -51,33 +51,45 @@ require_once('partials/_head.php');
                                 <a href="add_faculty.php">Add Faculty</a>
                             </div>
                             <div class="asset-inner">
-                                <table>
-                                    <tr>
-                                        <th>Faculty Code</th>
-                                        <th>Faculty Name</th>
-                                        <th>Faculty Head</th>
-                                        <th>Faculty Settings</th>
-                                    </tr>
-                                    <?php
-                                    $ret = "SELECT * FROM `UniSys_Faculties`  ";
-                                    $stmt = $mysqli->prepare($ret);
-                                    $stmt->execute(); //ok
-                                    $res = $stmt->get_result();
-                                    while ($faculty = $res->fetch_object()) {
-                                    ?>
-                                        <tr>
-                                            <td><?php echo $faculty->faculty_code; ?></td>
-                                            <td><?php echo $faculty->faculty_name; ?></td>
-                                            <td><?php echo $faculty->faculty_head; ?></td>
-                                            <td>
-                                                <a href="update_fadculty.php?update=<?php echo $faculty->faculty_id; ?>" data-toggle="tooltip" title="Edit Faculty" class="btn btn-warning pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
-                                                <a href="faculties.php?delete=<?php echo $faculty->faculty_id; ?>" data-toggle="tooltip" title="Delete Faculty" class="btn btn-danger pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</a>
-                                            </td>
-                                        </tr>
-                                    <?php } ?>
-                                </table>
+                                <div class="datatable-dashv1-list custom-datatable-overright">
+                                    <div id="toolbar">
+                                        <select class="form-control dt-tb">
+                                            <option value="">Export Basic</option>
+                                            <option value="all">Export All</option>
+                                            <option value="selected">Export Selected</option>
+                                        </select>
+                                    </div>
+                                    <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true" data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
+                                        <thead>
+                                            <tr>
+                                                <th>Faculty Code</th>
+                                                <th>Faculty Name</th>
+                                                <th>Faculty Head</th>
+                                                <th>Faculty Settings</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                            $ret = "SELECT * FROM `UniSys_Faculties`  ";
+                                            $stmt = $mysqli->prepare($ret);
+                                            $stmt->execute(); //ok
+                                            $res = $stmt->get_result();
+                                            while ($faculty = $res->fetch_object()) {
+                                            ?>
+                                                <tr>
+                                                    <td><?php echo $faculty->faculty_code; ?></td>
+                                                    <td><?php echo $faculty->faculty_name; ?></td>
+                                                    <td><?php echo $faculty->faculty_head; ?></td>
+                                                    <td>
+                                                        <a href="update_fadculty.php?update=<?php echo $faculty->faculty_id; ?>" data-toggle="tooltip" title="Edit Faculty" class="btn btn-warning pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
+                                                        <a href="faculties.php?delete=<?php echo $faculty->faculty_id; ?>" data-toggle="tooltip" title="Delete Faculty" class="btn btn-danger pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</a>
+                                                    </td>
+                                                </tr>
+                                            <?php } ?>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
-
                         </div>
                     </div>
                 </div>

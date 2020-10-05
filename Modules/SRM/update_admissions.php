@@ -75,33 +75,40 @@ require_once('partials/_head.php');
                                                         <div class="row">
                                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                                                 <div class="form-group">
+                                                                    <label for="exampleInputEmail1">Full Names</label>
                                                                     <input name="name" value="<?php echo $std->name; ?>" type="text" class="form-control" placeholder="Student Name">
                                                                 </div>
 
                                                                 <div class="form-group">
+                                                                    <label for="exampleInputEmail1">Registration Number</label>
                                                                     <input required name="reg_no" value="<?php echo $std->reg_no; ?>" type="text" class="form-control" placeholder="Registration Number">
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                                                 <div class="form-group">
+                                                                    <label for="exampleInputEmail1">Campus Email</label>
                                                                     <input required name="campus_email" value="<?php echo $std->campus_email; ?>" type="text" class="form-control" placeholder="Campus Email">
                                                                 </div>
 
                                                                 <div class="form-group">
+                                                                    <label for="exampleInputEmail1">Personal Email</label>
                                                                     <input required name="personal_email" value="<?php echo $std->personal_email; ?>" type="text" class="form-control" placeholder="Personal Email">
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                                                 <div class="form-group">
+                                                                    <label for="exampleInputEmail1">National ID Number</label>
                                                                     <input required name="idnumber" value="<?php echo $std->idnumber; ?>" type="text" class="form-control" placeholder="National ID Number">
                                                                 </div>
 
                                                                 <div class="form-group">
+                                                                    <label for="exampleInputEmail1">Phone Number</label>
                                                                     <input required name="phone" value="<?php echo $std->phone; ?>" type="text" class="form-control" placeholder="Phone Number">
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-4">
                                                                 <div class="form-group">
+                                                                    <label for="exampleInputEmail1">Gender</label>
                                                                     <select name="gender" class="form-control">
                                                                         <option><?php echo $std->gender; ?></option>
                                                                         <option>Male</option>
@@ -110,6 +117,7 @@ require_once('partials/_head.php');
                                                                 </div>
 
                                                                 <div class="form-group">
+                                                                    <label for="exampleInputEmail1">Date Of Bith</label>
                                                                     <input required name="dob" value="<?php echo $std->dob; ?>" type="text" class="form-control" placeholder="Date Of Birth">
                                                                 </div>
 
@@ -117,15 +125,19 @@ require_once('partials/_head.php');
 
                                                             <div class=" form-row col-lg-12 col-md-12 col-sm-12 col-xs-6">
                                                                 <div class="form-group">
+                                                                    <label for="exampleInputEmail1">Address</label>
                                                                     <input required name="adr" value="<?php echo $std->adr; ?>" type="text" class="form-control" placeholder="Address">
                                                                 </div>
                                                                 <div class="form-group">
+                                                                    <label for="exampleInputEmail1">Colored Passport Image</label>
                                                                     <input required name="passport" type="file" class="fbtn btn-outline-success form-control" placeholder="Upload Passport">
                                                                 </div>
                                                                 <div class="form-group">
+                                                                    <label for="exampleInputEmail1">Country</label>
                                                                     <input required name="country" value="<?php echo $std->country; ?>" type="text" class="form-control" placeholder="Country">
                                                                 </div>
                                                                 <div class="form-group">
+                                                                    <label for="exampleInputEmail1">Course</label>
                                                                     <select name="course_name" id="courseName" onchange="getCourseDetails(this.value);" class="form-control">
                                                                         <option>Select Course</option>
                                                                         <?php

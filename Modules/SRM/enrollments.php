@@ -4,17 +4,15 @@ require_once('configs/config.php');
 require_once('configs/checklogin.php');
 check_login();
 
-
-//Delete
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
-    $adn = "DELETE FROM UniSys_Academic_Years WHERE year_id =?";
+    $adn = "DELETE FROM UniSys_Enrollments WHERE enroll_id =?";
     $stmt = $mysqli->prepare($adn);
     $stmt->bind_param('s', $id);
     $stmt->execute();
     $stmt->close();
     if ($stmt) {
-        $success = "Deleted" && header("refresh:1; url=academic_year.php");
+        $success = "Deleted" && header("refresh:1; url=enrollments.php");
     } else {
         $info = "Please Try Again Or Try Later";
     }
@@ -37,7 +35,7 @@ require_once('partials/_head.php');
                 </div>
             </div>
         </div>
-        <br><br><br><br><br>
+        <br><br><br><br>
         <?php
         require_once('partials/_header.php');
         ?>
@@ -46,9 +44,9 @@ require_once('partials/_head.php');
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="product-status-wrap drp-lst">
-                            <h4>Registered Academic Years List</h4>
+                            <h4>Enrollments</h4>
                             <div class="add-product">
-                                <a href="add_academic_year.php">Add Academic Year</a>
+                                <a href="add_enrollment.php">Register New Enrollment</a>
                             </div>
                             <div class="asset-inner">
                                 <div class="datatable-dashv1-list custom-datatable-overright">
@@ -63,26 +61,32 @@ require_once('partials/_head.php');
                                         <thead>
                                             <tr>
                                                 <th>Code</th>
-                                                <th>Start Date</th>
-                                                <th>End Date</th>
-                                                <th>Settings</th>
+                                                <th>Academic Year</th>
+                                                <th>Unit Code</th>
+                                                <th>Unit Name</th>
+                                                <th>Student Adm Number</th>
+                                                <th>Student Name</th>
+                                                <th>Enrollment Settings</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $ret = "SELECT * FROM `UniSys_Academic_Years`  ";
+                                            $ret = "SELECT * FROM `UniSys_Enrollments`  ";
                                             $stmt = $mysqli->prepare($ret);
                                             $stmt->execute(); //ok
                                             $res = $stmt->get_result();
-                                            while ($year = $res->fetch_object()) {
+                                            while ($en = $res->fetch_object()) {
                                             ?>
                                                 <tr>
-                                                    <td><?php echo $year->year_code; ?></td>
-                                                    <td><?php echo $year->year_start; ?></td>
-                                                    <td><?php echo $year->year_end; ?></td>
+                                                    <td><?php echo $en->enroll_code; ?></td>
+                                                    <td><?php echo $en->enroll_aca_yr; ?></td>
+                                                    <td><?php echo $en->unit_code; ?></td>
+                                                    <td><?php echo $en->unit_name; ?></td>
+                                                    <td><?php echo $en->student_reg_no; ?></td>
+                                                    <td><?php echo $en->student_name; ?></td>
                                                     <td>
-                                                        <a href="update_academic_year.php?update=<?php echo $year->year_id; ?>" data-toggle="tooltip" title="Edit Academic Year" class="btn btn-warning pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
-                                                        <a href="academic_year.php?delete=<?php echo $year->year_id; ?>" data-toggle="tooltip" title="Delete Academic Year" class="btn btn-danger pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</a>
+                                                        <a href="update_enrollment.php?update=<?php echo $en->enroll_id; ?>" data-toggle="tooltip" title="Edit Enrollment" class="btn btn-warning pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
+                                                        <a href="enrollments.php?delete=<?php echo $en->enroll_id; ?>" data-toggle="tooltip" title="Delete Enrollment" class="btn btn-danger pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</a>
                                                     </td>
                                                 </tr>
                                             <?php } ?>
@@ -90,7 +94,6 @@ require_once('partials/_head.php');
                                     </table>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>

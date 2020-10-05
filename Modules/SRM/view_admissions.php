@@ -180,7 +180,7 @@ check_login();
                                                                     $res = $stmt->get_result();
                                                                     while ($unit = $res->fetch_object()) {
                                                                     ?>
-                                                                        <li><i class="fa fa-angle-right"></i> <?php echo $unit->unit_code; ?> <?php echo $unit->name; ?> </li>
+                                                                        <li><i class="fa fa-angle-right"></i> <?php echo $unit->unit_code; ?> <?php echo $unit->unit_name; ?> </li>
                                                                     <?php } ?>
                                                                 </ul>
                                                             </div>

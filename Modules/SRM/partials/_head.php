@@ -152,5 +152,42 @@
       });
 
     }
+
+    function getUnitDetails(val) {
+      $.ajax({
+
+        type: "POST",
+        url: "ajax.php",
+        data: 'UnitCode=' + val,
+        success: function(data) {
+          //alert(data);
+          $('#unitName').val(data);
+        }
+      });
+    }
+
+    function getStudentDetails(val) {
+      $.ajax({
+
+        type: "POST",
+        url: "ajax.php",
+        data: 'RegNumber=' + val,
+        success: function(data) {
+          //alert(data);
+          $('#StudentName').val(data);
+        }
+      });
+
+      $.ajax({
+
+        type: "POST",
+        url: "ajax.php",
+        data: 'StudentName=' + val,
+        success: function(data) {
+          //alert(data);
+          $('#StudentID').val(data);
+        }
+      });
+    }
   </script>
 </head>

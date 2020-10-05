@@ -62,7 +62,7 @@ require_once('partials/_head.php');
                                         <div class="row">
                                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                 <div class="review-content-section">
-                                                    <form method="POST" id="add-department"  class="add-department">
+                                                    <form method="POST" id="add-department" class="add-department">
                                                         <div class="row">
                                                             <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
                                                                 <div class="form-group">

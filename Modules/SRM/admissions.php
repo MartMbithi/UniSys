@@ -50,44 +50,55 @@ require_once('partials/_head.php');
                                 <a href="add_admission.php">Admit Student</a>
                             </div>
                             <div class="asset-inner">
-                                <table>
-                                    <tr>
-                                        <th>Reg No</th>
-                                        <th>Name</th>
-                                        <th>Id Number</th>
-                                        <th>Email</th>
-                                        <th>Campus Email</th>
-                                        <th>Phone Number</th>
-                                        <th>Course</th>
-                                        <th>Gender</th>
-                                        <th>DOB</th>
-                                        <th>Settings</th>
-                                    </tr>
-                                    <?php
-                                    $ret = "SELECT * FROM `UniSys_Students`  ";
-                                    $stmt = $mysqli->prepare($ret);
-                                    $stmt->execute(); //ok
-                                    $res = $stmt->get_result();
-                                    while ($std = $res->fetch_object()) {
-                                    ?>
-                                        <tr>
-                                            <td><?php echo $std->reg_no; ?></td>
-                                            <td><?php echo $std->name; ?></td>
-                                            <td><?php echo $std->idnumber; ?></td>
-                                            <td><?php echo $std->personal_email; ?></td>
-                                            <td><?php echo $std->campus_email; ?></td>
-                                            <td><?php echo $std->phone; ?></td>
-                                            <td><?php echo $std->course_name; ?></td>
-                                            <td><?php echo $std->gender; ?></td>
-                                            <td><?php echo $std->dob; ?></td>
-                                            <td>
-                                                <a href="view_admissions.php?view=<?php echo $std->id; ?>" data-toggle="tooltip" title="View Admission" class="btn btn-primary pd-setting-ed"><i class="fa fa-eye" aria-hidden="true"></i> View</a>
-                                                <a href="update_admissions.php?update=<?php echo $std->id; ?>" data-toggle="tooltip" title="Edit Admission" class="btn btn-warning pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
-                                                <a href="admissions.php?delete=<?php echo $std->id; ?>" data-toggle="tooltip" title="Delete Admission" class="btn btn-danger pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</a>
-                                            </td>
-                                        </tr>
-                                    <?php } ?>
-                                </table>
+                                <div class="datatable-dashv1-list custom-datatable-overright">
+                                    <div id="toolbar">
+                                        <select class="form-control dt-tb">
+                                            <option value="">Export Basic</option>
+                                            <option value="all">Export All</option>
+                                            <option value="selected">Export Selected</option>
+                                        </select>
+                                    </div>
+                                    <table id="table" class="table-striped" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true" data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
+                                        <thead>
+                                            <tr>
+                                                <th>Reg No</th>
+                                                <th>Name</th>
+                                                <th>Id Number</th>
+                                                <th>Campus Email</th>
+                                                <th>Phone Number</th>
+                                                <th>Course</th>
+                                                <th>Gender</th>
+                                                <th>DOB</th>
+                                                <th>Settings</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                            $ret = "SELECT * FROM `UniSys_Students`  ";
+                                            $stmt = $mysqli->prepare($ret);
+                                            $stmt->execute(); //ok
+                                            $res = $stmt->get_result();
+                                            while ($std = $res->fetch_object()) {
+                                            ?>
+                                                <tr>
+                                                    <td><?php echo $std->reg_no; ?></td>
+                                                    <td><?php echo $std->name; ?></td>
+                                                    <td><?php echo $std->idnumber; ?></td>
+                                                    <td><?php echo $std->campus_email; ?></td>
+                                                    <td><?php echo $std->phone; ?></td>
+                                                    <td><?php echo $std->course_name; ?></td>
+                                                    <td><?php echo $std->gender; ?></td>
+                                                    <td><?php echo $std->dob; ?></td>
+                                                    <td>
+                                                        <a href="view_admissions.php?view=<?php echo $std->id; ?>" data-toggle="tooltip" title="View Admission" class="btn btn-primary pd-setting-ed"><i class="fa fa-eye" aria-hidden="true"></i> View</a>
+                                                        <a href="update_admissions.php?update=<?php echo $std->id; ?>" data-toggle="tooltip" title="Edit Admission" class="btn btn-warning pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
+                                                        <a href="admissions.php?delete=<?php echo $std->id; ?>" data-toggle="tooltip" title="Delete Admission" class="btn btn-danger pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</a>
+                                                    </td>
+                                                </tr>
+                                            <?php } ?>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
 
                         </div>

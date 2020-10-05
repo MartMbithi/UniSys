@@ -69,7 +69,7 @@ require_once('partials/_head.php');
                                                                 <input name="course_code" type="text" value="<?php echo $a; ?>-<?php echo $b; ?>" class="form-control">
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="exampleInputEmail1">Admitted Course</label>
+                                                                <label for="exampleInputEmail1">Course Faculty</label>
                                                                 <select name="faculty_name" id="facultyName" onchange="getFacultyDetails(this.value);" class="form-control">
                                                                     <option>Select Faculty</option>
                                                                     <?php

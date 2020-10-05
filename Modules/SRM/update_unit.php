@@ -72,7 +72,7 @@ require_once('partials/_head.php');
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="exampleInputEmail1">Unit Code</label>
-                                                                    <input name="unit_code" value="<?php echo $unit->unit_code; ?>" type="text" class="form-control">
+                                                                    <input name="unit_code" value="<?php echo $units->unit_code; ?>" type="text" class="form-control">
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="exampleInputEmail1">Course </label>

@@ -16,13 +16,13 @@ require_once('partials/_head.php');
 
         <?php require_once('partials/_header.php'); ?>
 
-        <br><br><br>
+        <br><br><br><br><br>
         <div class="product-status mg-b-15">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="product-status-wrap drp-lst">
-                            <h4>Enrollments</h4>
+                            <h4>Recent Enrollments</h4>
                             <div class="add-product">
                                 <a href="add_enrollment.php">Register New Enrollment</a>
                             </div>

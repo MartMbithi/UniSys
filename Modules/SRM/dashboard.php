@@ -19,7 +19,7 @@ require_once('partials/_head.php');
     <!--  END LOADER -->
 
     <!--  BEGIN NAVBAR  -->
-    <?php require_once('partials/_nav.php');?>
+    <?php require_once('partials/_nav.php'); ?>
     <!--  END NAVBAR  -->
 
     <!--  BEGIN NAVBAR  -->
@@ -48,16 +48,17 @@ require_once('partials/_head.php');
             <ul class="navbar-nav flex-row ml-auto ">
                 <li class="nav-item more-dropdown">
                     <div class="dropdown  custom-dropdown-icon">
-                        <a class="dropdown-toggle btn" href="#" role="button" id="customDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Settings</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
+                        <a class="dropdown-toggle btn" href="#" role="button" id="customDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Advanced Reporting</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg></a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="customDropdown">
-                            <a class="dropdown-item" data-value="Settings" href="javascript:void(0);">Settings</a>
-                            <a class="dropdown-item" data-value="Mail" href="javascript:void(0);">Mail</a>
-                            <a class="dropdown-item" data-value="Print" href="javascript:void(0);">Print</a>
-                            <a class="dropdown-item" data-value="Download" href="javascript:void(0);">Download</a>
-                            <a class="dropdown-item" data-value="Share" href="javascript:void(0);">Share</a>
+                            <a class="dropdown-item" data-value="Faculties" href="unisys_srm_reports_faculties.php">Faculties</a>
+                            <a class="dropdown-item" data-value="Admissions" href="unisys_srm_reports_admissions.php">Admissions</a>
+                            <a class="dropdown-item" data-value="Courses" href="unisys_srm_reports_courses.php">Courses</a>
+                            <a class="dropdown-item" data-value="Units" href="unisys_srm_reports_units.php">Units</a>
+                            <a class="dropdown-item" data-value="Enrollments" href="unisys_srm_reports_enrollments.php">Enrollments</a>
+                            <a class="dropdown-item" data-value="Students" href="unisys_srm_reports_students.php">Students</a>
                         </div>
                     </div>
                 </li>
@@ -73,7 +74,7 @@ require_once('partials/_head.php');
         <div class="search-overlay"></div>
 
         <!--  BEGIN SIDEBAR  -->
-        <?php require_once('partials/_sidebar.php');?>
+        <?php require_once('partials/_sidebar.php'); ?>
         <!--  END SIDEBAR  -->
 
         <!--  BEGIN CONTENT AREA  -->
@@ -853,7 +854,7 @@ require_once('partials/_head.php');
                 </div>
 
             </div>
-            <?php require_once('partials/_footer.php');?>
+            <?php require_once('partials/_footer.php'); ?>
         </div>
         <!--  END CONTENT AREA  -->
 

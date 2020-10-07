@@ -19,7 +19,7 @@
                     </div>
                 </a>
                 <ul class="collapse submenu list-unstyled show" id="dashboard" data-parent="#accordionExample">
-                    <li class="active">
+                    <li>
                         <a href="dashboard.php"> Main Dashboard </a>
                     </li>
                     <li>

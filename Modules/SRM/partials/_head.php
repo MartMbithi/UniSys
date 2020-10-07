@@ -1,82 +1,24 @@
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>UniSys - Students Records Management Module</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- favicon
-		============================================ -->
-  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-  <!-- Google Fonts
-		============================================ -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
-  <!-- Bootstrap CSS
-		============================================ -->
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <!-- Bootstrap CSS
-		============================================ -->
-  <link rel="stylesheet" href="css/font-awesome.min.css">
-  <!-- owl.carousel CSS
-		============================================ -->
-  <link rel="stylesheet" href="css/owl.carousel.css">
-  <link rel="stylesheet" href="css/owl.theme.css">
-  <link rel="stylesheet" href="css/owl.transitions.css">
-  <!-- animate CSS
-		============================================ -->
-  <link rel="stylesheet" href="css/animate.css">
-  <!-- normalize CSS
-		============================================ -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <!-- meanmenu icon CSS
-		============================================ -->
-  <link rel="stylesheet" href="css/meanmenu.min.css">
-  <!-- main CSS
-		============================================ -->
-  <link rel="stylesheet" href="css/main.css">
-  <!-- educate icon CSS
-		============================================ -->
-  <link rel="stylesheet" href="css/educate-custon-icon.css">
-  <!-- morrisjs CSS
-		============================================ -->
-  <link rel="stylesheet" href="css/morrisjs/morris.css">
-  <!-- mCustomScrollbar CSS
-		============================================ -->
-  <link rel="stylesheet" href="css/scrollbar/jquery.mCustomScrollbar.min.css">
-  <!-- metisMenu CSS
-		============================================ -->
-  <link rel="stylesheet" href="css/metisMenu/metisMenu.min.css">
-  <link rel="stylesheet" href="css/metisMenu/metisMenu-vertical.css">
-  <!-- calendar CSS
-		============================================ -->
-  <link rel="stylesheet" href="css/calendar/fullcalendar.min.css">
-  <link rel="stylesheet" href="css/calendar/fullcalendar.print.min.css">
-  <!-- style CSS
-		============================================ -->
-  <link rel="stylesheet" href="css/style.css">
-  <!-- responsive CSS
-		============================================ -->
-  <link rel="stylesheet" href="css/responsive.css">
-  <!-- modernizr JS
-		============================================ -->
-  <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+  <title>UniSys | Students Records Management Module</title>
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="assets/css/plugins.css" rel="stylesheet" type="text/css" />
+  <link href="assets/css/authentication/form-2.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/forms/theme-checkbox-radio.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/forms/switches.css">
+  <link href="plugins/sweetalerts/sweetalert2.min.css" rel="stylesheet" type="text/css" />
+  <link href="plugins/sweetalerts/sweetalert.css" rel="stylesheet" type="text/css" />
+  <link href="plugins/apex/apexcharts.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/dashboard/dash_1.css" rel="stylesheet" type="text/css" />
 
-  <!-- Data tables css -->
-  <link rel="stylesheet" href="css/data-table/bootstrap-table.css">
-  <link rel="stylesheet" href="css/data-table/bootstrap-editable.css">
-
-  <!-- SWEET ALERTS
-		============================================ -->
-  <script src="js/sweetalerts/promise-polyfill.js"></script>
-  <link href="js/sweetalerts/sweetalert2.min.css" rel="stylesheet" type="text/css" />
-  <link href="js/sweetalerts/sweetalert.css" rel="stylesheet" type="text/css" />
-  <script src="js/sweetalerts/sweetalert2.min.js"></script>
-  <script src="js/sweetalerts/custom-sweetalert.js"></script>
-
-  <!-- SWAL ALERTS INJECTION
-		============================================ -->
+  <!-- SWAL ALERTS INJECTION-->
   <?php if (isset($success)) { ?>
     <!--This code for injecting success alert-->
     <script>

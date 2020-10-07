@@ -1,5 +1,5 @@
 <p align="center"><img src="https://github.com/MartMbithi/UniSys/blob/master/public/logo.png" width="200"></p>
-## NOTE : HEAVY REFACTORING IS REQUIRED - THIS VERSION IS HIGHLY UNSTABLE
+<h1 align ="center"> NOTE : HEAVY REFACTORING IS REQUIRED - THIS VERSION IS HIGHLY UNSTABLE</h1>
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>

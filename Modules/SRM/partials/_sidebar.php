@@ -23,7 +23,7 @@
                         <a href="dashboard.php"> Main Dashboard </a>
                     </li>
                     <li>
-                        <a href="dashbaord_analytics.php"> Analytics </a>
+                        <a href="dashboard_analytics.php"> Analytics </a>
                     </li>
                 </ul>
             </li>

@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from designreset.com/cork/ltr/demo4/auth_login_boxed.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 21 May 2020 13:00:15 GMT -->
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,6 +15,8 @@
   <link rel="stylesheet" type="text/css" href="assets/css/forms/switches.css">
   <link href="plugins/sweetalerts/sweetalert2.min.css" rel="stylesheet" type="text/css" />
   <link href="plugins/sweetalerts/sweetalert.css" rel="stylesheet" type="text/css" />
+  <link href="plugins/apex/apexcharts.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/dashboard/dash_1.css" rel="stylesheet" type="text/css" />
 
   <!-- SWAL ALERTS INJECTION-->
   <?php if (isset($success)) { ?>

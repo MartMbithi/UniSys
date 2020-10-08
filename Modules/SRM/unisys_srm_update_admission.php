@@ -5,9 +5,9 @@ require_once('configs/checklogin.php');
 check_login();
 require_once('configs/codeGen.php');
 
-if (isset($_POST['edit_admission'])) {
+if (isset($_POST['update_admission'])) {
 
-    $update = $_UPDATE['update'];
+    $update = $_GET['update'];
     $name = $_POST['name'];
     $reg_no = $_POST['reg_no'];
     $campus_email = $_POST['campus_email'];

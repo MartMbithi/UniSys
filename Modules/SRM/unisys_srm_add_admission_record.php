@@ -21,7 +21,7 @@ if (isset($_POST['add_admission'])) {
     $course_name = $_POST['course_name'];
     $course_id = $_POST['course_id'];
     $passport = $_FILES['passport']['name'];
-    move_uploaded_file($_FILES["passport"]["tmp_name"], "img/student/" . $_FILES["passport"]["name"]);
+    move_uploaded_file($_FILES["passport"]["tmp_name"], "assets/img/student/" . $_FILES["passport"]["name"]);
 
     $query = "INSERT INTO UniSys_Students (passport, id, name, reg_no, campus_email, personal_email, idnumber, phone, gender, dob, adr, country, course_name, course_id) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
     $stmt = $mysqli->prepare($query);
@@ -130,7 +130,7 @@ require_once('partials/_head.php');
 
                                     <div class="form-group col-md-4">
                                         <label for="inputEmail4">Gender</label>
-                                        <select class='form-control basic' name="faculty_head" id="">
+                                        <select class='form-control basic' name="gender" id="">
                                             <option selected>Select Gender</option>
                                             <option selected>Male</option>
                                             <option selected>Female</option>
@@ -141,7 +141,7 @@ require_once('partials/_head.php');
                                         <input type="text" class="form-control" name="dob">
                                     </div>
                                     <div class="form-group col-md-4">
-                                        <label for="inputEmail4">Date Of Bith</label>
+                                        <label for="inputEmail4">Passport</label>
                                         <input type="file" class="form-control btn btn-outline-success" name="passport">
                                     </div>
 
@@ -174,7 +174,7 @@ require_once('partials/_head.php');
                                         <input type="text" class="form-control" readonly id="Course_Id" name="course_id">
                                     </div>
                                 </div>
-                                <button type="submit" name="add_admission" class="btn btn-primary mt-3">Add Faculty</button>
+                                <button type="submit" name="add_admission" class="btn btn-primary mt-3">Admit Student</button>
                             </form>
                         </div>
                     </div>

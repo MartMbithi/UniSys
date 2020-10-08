@@ -116,13 +116,13 @@ require_once('partials/_head.php');
                                                 <td><?php echo $std->dob; ?></td>
                                                 <td class="text-center">
                                                     <a href="unisys_srm_view_admission.php?view=<?php echo $std->id; ?>" data-toggle="tooltip" title="Edit Faculty" class="badge outline-badge-success">
-                                                         View
+                                                        View
                                                     </a>
-                                                    <a href="unisys_srm_update_admission.php?update=<?php echo $sid->id; ?>" data-toggle="tooltip" title="Edit Faculty" class="badge outline-badge-warning">
-                                                         Edit
+                                                    <a href="unisys_srm_update_admission.php?update=<?php echo $std->id; ?>" data-toggle="tooltip" title="Edit Faculty" class="badge outline-badge-warning">
+                                                        Edit
                                                     </a>
-                                                    <a href="unisys_srm_admissions.php?delete=<?php echo $sid->id; ?>" data-toggle="tooltip" title="Delete Faculty" class="badge outline-badge-danger">
-                                                         Delete
+                                                    <a href="unisys_srm_admissions.php?delete=<?php echo $std->id; ?>" data-toggle="tooltip" title="Delete Faculty" class="badge outline-badge-danger">
+                                                        Delete
                                                     </a>
                                                 </td>
                                             </tr>

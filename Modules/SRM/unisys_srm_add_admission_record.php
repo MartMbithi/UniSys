@@ -28,7 +28,7 @@ if (isset($_POST['add_admission'])) {
     $rc = $stmt->bind_param('ssssssssssssss', $passport, $id, $name, $reg_no, $campus_email, $personal_email, $idnumber, $phone, $gender, $dob, $adr, $country, $course_name, $course_id);
     $stmt->execute();
     if ($stmt) {
-        $success = "Added" && header("refresh:1; url=add_admission.php");
+        $success = "Added" && header("refresh:1; url=unisys_srm_admissions.php");
     } else {
         //inject alert that task failed
         $info = "Please Try Again Or Try Later";

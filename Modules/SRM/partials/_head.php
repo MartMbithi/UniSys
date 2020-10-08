@@ -17,6 +17,9 @@
   <link href="plugins/sweetalerts/sweetalert.css" rel="stylesheet" type="text/css" />
   <link href="plugins/apex/apexcharts.css" rel="stylesheet" type="text/css">
   <link href="assets/css/dashboard/dash_1.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" type="text/css" href="plugins/table/datatable/datatables.css">
+  <link rel="stylesheet" type="text/css" href="plugins/table/datatable/dt-global_style.css">
+  <link href="assets/css/users/user-profile.css" rel="stylesheet" type="text/css" />
 
   <!-- SWAL ALERTS INJECTION-->
   <?php if (isset($success)) { ?>

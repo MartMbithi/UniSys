@@ -36,3 +36,9 @@
             });
         });
     </script>
+    <script src="plugins/ckeditor/ckeditor.js"></script>
+    <script>
+        //Faculty Instance
+        CKEDITOR.replace('faculty_desc');
+
+    </script>

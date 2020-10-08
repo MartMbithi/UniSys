@@ -4,7 +4,6 @@ require_once('configs/config.php');
 require_once('configs/checklogin.php');
 check_login();
 require_once('configs/codeGen.php');
-//add faculty
 
 if (isset($_POST['add_faculty'])) {
 
@@ -19,7 +18,6 @@ if (isset($_POST['add_faculty'])) {
     $rc = $stmt->bind_param('sssss', $faculty_id, $faculty_code, $faculty_name, $faculty_desc, $faculty_head);
     $stmt->execute();
     if ($stmt) {
-        //inject alert that post is shared  
         $success = "Added" && header("refresh:1; url=add_faculty.php");
     } else {
         //inject alert that task failed
@@ -106,7 +104,7 @@ require_once('partials/_head.php');
                                         <select class='form-control basic' name="faculty_head" id="">
                                             <option selected>Select Head Of Faculty</option>
                                             <?php
-                                            $ret = "SELECT * FROM `UniSys_Staffs `  ";
+                                            $ret = "SELECT * FROM `UniSys_Staffs` ";
                                             $stmt = $mysqli->prepare($ret);
                                             $stmt->execute(); //ok
                                             $res = $stmt->get_result();
@@ -123,7 +121,6 @@ require_once('partials/_head.php');
                                         <textarea required name="faculty_desc" rows="10" id="faculty_desc" class="form-control"></textarea>
                                     </div>
                                 </div>
-
                                 <button type="submit" name="add_faculty" class="btn btn-primary mt-3">Add Faculty</button>
                             </form>
                         </div>

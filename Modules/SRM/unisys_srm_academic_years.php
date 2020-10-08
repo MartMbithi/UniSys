@@ -4,7 +4,6 @@ require_once('configs/config.php');
 require_once('configs/checklogin.php');
 check_login();
 require_once('partials/_analytics.php');
-
 //Delete
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];

@@ -52,7 +52,7 @@ require_once('partials/_head.php');
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
                                 <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
-                                <li class="breadcrumb-item"><a href="unisys_srm_add_academic_year.php">Academic Years</a></li>
+                                <li class="breadcrumb-item"><a href="unisys_srm_academic_years.php">Academic Years</a></li>
                                 <li class="breadcrumb-item active" aria-current="page"><span>Register Academic Years</span></li>
                             </ol>
                         </nav>

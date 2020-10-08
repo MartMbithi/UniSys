@@ -4,6 +4,20 @@ require_once('configs/config.php');
 require_once('configs/checklogin.php');
 check_login();
 require_once('partials/_analytics.php');
+//Delete
+if (isset($_GET['delete'])) {
+    $id = $_GET['delete'];
+    $adn = "DELETE FROM UniSys_Faculties WHERE faculty_id =?";
+    $stmt = $mysqli->prepare($adn);
+    $stmt->bind_param('s', $id);
+    $stmt->execute();
+    $stmt->close();
+    if ($stmt) {
+        $success = "Deleted" && header("refresh:1; url=faculties.php");
+    } else {
+        $info = "Please Try Again Or Try Later";
+    }
+}
 require_once('partials/_head.php');
 ?>
 
@@ -58,6 +72,15 @@ require_once('partials/_head.php');
                 <div class="row layout-top-spacing">
                     <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
                         <div class="widget-content widget-content-area br-6">
+                            <a class="btn btn-outline-success" href="add_package.php">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
+                                    <path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"></path>
+                                    <polygon points="12 15 17 21 7 21 12 15"></polygon>
+                                </svg>
+
+
+                                Create New Faculty
+                            </a>
                             <div class="table-responsive mb-4 mt-4">
                                 <table id="alter_pagination" class="table table-hover" style="width:100%">
                                     <thead>
@@ -81,8 +104,19 @@ require_once('partials/_head.php');
                                                 <td><?php echo $faculty->faculty_name; ?></td>
                                                 <td><?php echo $faculty->faculty_head; ?></td>
                                                 <td class="text-center">
-                                                    <a href="update_fadculty.php?update=<?php echo $faculty->faculty_id; ?>" data-toggle="tooltip" title="Edit Faculty" class="btn btn-warning pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
-                                                    <a href="faculties.php?delete=<?php echo $faculty->faculty_id; ?>" data-toggle="tooltip" title="Delete Faculty" class="btn btn-danger pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</a>
+                                                    <a href="update_fadculty.php?update=<?php echo $faculty->faculty_id; ?>" data-toggle="tooltip" title="Edit Faculty" class="btn btn-warning pd-setting-ed">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
+                                                            <polygon points="16 3 21 8 8 21 3 21 3 16 16 3"></polygon>
+                                                        </svg> Edit
+                                                    </a>
+                                                    <a href="faculties.php?delete=<?php echo $faculty->faculty_id; ?>" data-toggle="tooltip" title="Delete Faculty" class="btn btn-danger pd-setting-ed">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
+                                                            <polyline points="3 6 5 6 21 6"></polyline>
+                                                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                                            <line x1="10" y1="11" x2="10" y2="17"></line>
+                                                            <line x1="14" y1="11" x2="14" y2="17"></line>
+                                                        </svg> Delete
+                                                    </a>
                                                 </td>
                                             </tr>
                                         <?php } ?>

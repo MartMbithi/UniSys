@@ -49,11 +49,9 @@ require_once('partials/_head.php');
                         <line x1="3" y1="6" x2="21" y2="6"></line>
                         <line x1="3" y1="18" x2="21" y2="18"></line>
                     </svg></a>
-
                 <ul class="navbar-nav flex-row">
                     <li>
                         <div class="page-header">
-
                             <nav class="breadcrumb-one" aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
@@ -63,7 +61,6 @@ require_once('partials/_head.php');
                                     <li class="breadcrumb-item active" aria-current="page"><span><?php echo $year->year_code; ?></span></li>
                                 </ol>
                             </nav>
-
                         </div>
                     </li>
                 </ul>
@@ -99,15 +96,15 @@ require_once('partials/_head.php');
                                     <div class="form-row">
                                         <div class="form-group col-md-4">
                                             <label for="inputEmail4">Academic Year Code</label>
-                                            <input type="text" class="form-control" value="<?php echo $year->year_year_code; ?>" name="year_code">
+                                            <input type="text" class="form-control" value="<?php echo $year->year_code; ?>" name="year_code">
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label for="inputEmail4">Academic Year Start Date</label>
-                                            <input type="date" class="form-control" value="<?php echo $year->year_start; ?>" name="year_start">
+                                            <input value="<?php echo $year->year_start; ?>" type="text" class="form-control"  name="year_start">
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label for="inputEmail4">Academic Year End Date</label>
-                                            <input type="date" class="form-control" value="<?php echo $year->year_end; ?>" name="year_end">
+                                            <input value="<?php echo $year->year_end; ?>" type="text" class="form-control"  name="year_end">
                                         </div>
                                     </div>
 

@@ -13,7 +13,7 @@ if (isset($_GET['delete'])) {
     $stmt->execute();
     $stmt->close();
     if ($stmt) {
-        $success = "Deleted" && header("refresh:1; url=faculties.php");
+        $success = "Deleted" && header("refresh:1; url=unisys_srm_faculties.php");
     } else {
         $info = "Please Try Again Or Try Later";
     }
@@ -72,7 +72,7 @@ require_once('partials/_head.php');
                 <div class="row layout-top-spacing">
                     <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
                         <div class="widget-content widget-content-area br-6">
-                            <a class="btn btn-outline-success" href="add_faculty.php">
+                            <a class="btn btn-outline-success" href="unisys_srm_add_faculty.php">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
                                     <path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"></path>
                                     <polygon points="12 15 17 21 7 21 12 15"></polygon>
@@ -104,12 +104,12 @@ require_once('partials/_head.php');
                                                 <td><?php echo $faculty->faculty_name; ?></td>
                                                 <td><?php echo $faculty->faculty_head; ?></td>
                                                 <td class="text-center">
-                                                    <a href="update_fadculty.php?update=<?php echo $faculty->faculty_id; ?>" data-toggle="tooltip" title="Edit Faculty" class="btn btn-warning pd-setting-ed">
+                                                    <a href="unisys_srm_update_faculty.php?update=<?php echo $faculty->faculty_id; ?>" data-toggle="tooltip" title="Edit Faculty" class="btn btn-warning pd-setting-ed">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
                                                             <polygon points="16 3 21 8 8 21 3 21 3 16 16 3"></polygon>
                                                         </svg> Edit
                                                     </a>
-                                                    <a href="faculties.php?delete=<?php echo $faculty->faculty_id; ?>" data-toggle="tooltip" title="Delete Faculty" class="btn btn-danger pd-setting-ed">
+                                                    <a href="unisys_srm_faculties.php?delete=<?php echo $faculty->faculty_id; ?>" data-toggle="tooltip" title="Delete Faculty" class="btn btn-danger pd-setting-ed">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
                                                             <polyline points="3 6 5 6 21 6"></polyline>
                                                             <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>

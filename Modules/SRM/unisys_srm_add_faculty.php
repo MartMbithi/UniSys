@@ -18,7 +18,7 @@ if (isset($_POST['add_faculty'])) {
     $rc = $stmt->bind_param('sssss', $faculty_id, $faculty_code, $faculty_name, $faculty_desc, $faculty_head);
     $stmt->execute();
     if ($stmt) {
-        $success = "Added" && header("refresh:1; url=add_faculty.php");
+        $success = "Added" && header("refresh:1; url=unisys_srm_add_faculty.php");
     } else {
         //inject alert that task failed
         $info = "Please Try Again Or Try Later";

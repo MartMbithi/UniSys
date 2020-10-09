@@ -104,7 +104,7 @@ require_once('partials/_head.php');
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="inputEmail4">Unit Name</label>
-                                            <input type="text" class="form-control" value="<?php echo $units->units_name; ?>" name="unit_name">
+                                            <input type="text" class="form-control" value="<?php echo $units->unit_name; ?>" name="unit_name">
                                         </div>
 
                                     </div>

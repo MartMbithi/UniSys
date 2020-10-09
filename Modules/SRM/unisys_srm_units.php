@@ -7,13 +7,13 @@ check_login();
 //Delete
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
-    $adn = "DELETE FROM UniSys_Courses WHERE course_id =?";
+    $adn = "DELETE FROM UniSys_Units WHERE unit_id =?";
     $stmt = $mysqli->prepare($adn);
     $stmt->bind_param('s', $id);
     $stmt->execute();
     $stmt->close();
     if ($stmt) {
-        $success = "Deleted" && header("refresh:1; url=unisys_srm_courses.php");
+        $success = "Deleted" && header("refresh:1; url=unisys_srm_units.php");
     } else {
         $info = "Please Try Again Or Try Later";
     }
@@ -44,7 +44,7 @@ require_once('partials/_head.php');
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
                                 <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><span>Courses</span></li>
+                                <li class="breadcrumb-item active" aria-current="page"><span>Units</span></li>
                             </ol>
                         </nav>
 
@@ -72,42 +72,41 @@ require_once('partials/_head.php');
                 <div class="row layout-top-spacing">
                     <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
                         <div class="widget-content widget-content-area br-6">
-                            <a class="btn btn-outline-success" href="unisys_srm_add_course.php">
+                            <a class="btn btn-outline-success" href="unisys_srm_add_unit.php">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
                                     <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
                                     <polyline points="13 2 13 9 20 9"></polyline>
                                 </svg>
-                                Register New Course
+                                Register New Unit
                             </a>
                             <div class="table-responsive mb-4 mt-4">
                                 <table id="alter_pagination" class="table table-hover" style="width:100%">
                                     <thead>
                                         <tr>
-                                            <th>Course Code</th>
+                                            <th>Unit Code</th>
+                                            <th>Unit Name</th>
                                             <th>Course Name</th>
-                                            <th>Faculty Code</th>
-                                            <th>Faculty Name</th>
-                                            <th>Course Settings</th>
+                                            <th>Unit Settings</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-                                        $ret = "SELECT * FROM `UniSys_Courses`  ";
+                                        $ret = "SELECT * FROM `UniSys_Units`  ";
                                         $stmt = $mysqli->prepare($ret);
                                         $stmt->execute(); //ok
                                         $res = $stmt->get_result();
-                                        while ($courses = $res->fetch_object()) {
+                                        while ($units = $res->fetch_object()) {
                                         ?>
                                             <tr>
-                                                <td><?php echo $courses->course_code; ?></td>
-                                                <td><?php echo $courses->course_name; ?></td>
-                                                <td><?php echo $courses->faculty_code; ?></td>
-                                                <td><?php echo $courses->faculty_name; ?></td>
+                                                <td><?php echo $units->unit_code; ?></td>
+                                                <td><?php echo $units->unit_name; ?></td>
+                                                <td><?php echo $units->course_name; ?></td>
+                                                <td>
                                                 <td class="text-center">
-                                                    <a href="unisys_srm_update_couse.php?update=<?php echo $courses->course_id; ?>" data-toggle="tooltip" title="Edit Faculty" class="badge outline-badge-warning pd-setting-ed">
+                                                    <a href="unisys_srm_update_unit.php?update=<?php echo $units->unit_id; ?>" data-toggle="tooltip" class="badge outline-badge-warning pd-setting-ed">
                                                         Edit
                                                     </a>
-                                                    <a href="unisys_srm_courses.php?delete=<?php echo $courses->course_id; ?>" data-toggle="tooltip" title="Delete Faculty" class="badge outline-badge-danger pd-setting-ed">
+                                                    <a href="unisys_srm_units.php?delete=<?php echo $units->unit_id; ?>" data-toggle="tooltip" class="badge outline-badge-danger pd-setting-ed">
                                                         Delete
                                                     </a>
                                                 </td>

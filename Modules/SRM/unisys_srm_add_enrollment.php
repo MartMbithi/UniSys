@@ -6,7 +6,6 @@ check_login();
 require_once('configs/codeGen.php');
 
 if (isset($_POST['add_enrollment'])) {
-
     $enroll_id = $_POST['enroll_id'];
     $enroll_code = $_POST['enroll_code'];
     $enroll_aca_yr = $_POST['enroll_aca_yr'];

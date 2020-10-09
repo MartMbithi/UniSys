@@ -3,7 +3,6 @@ session_start();
 require_once('configs/config.php');
 require_once('configs/checklogin.php');
 check_login();
-require_once('partials/_analytics.php');
 require_once('partials/_head.php');
 ?>
 
@@ -30,8 +29,8 @@ require_once('partials/_head.php');
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
                                 <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
-                                <li class="breadcrumb-item"><a href="dashboard.php">Advanced Reporting</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><span>Student Admissions</span></li>
+                                <li class="breadcrumb-item"><a href="unisys_srm_reports_courses.php">Advanced Reporting</a></li>
+                                <li class="breadcrumb-item active" aria-current="page"><span>Courses</span></li>
                             </ol>
                         </nav>
 
@@ -59,45 +58,29 @@ require_once('partials/_head.php');
                 <div class="row layout-top-spacing">
                     <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
                         <div class="widget-content widget-content-area br-6">
-                            <!-- <a class="btn btn-outline-success" href="unisys_srm_add_admission_record.php">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
-                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                                </svg>
-
-                                Register New Student Admission Record
-                            </a> -->
                             <div class="table-responsive mb-4 mt-4">
                                 <table id="alter_pagination" class="table table-hover" style="width:100%">
                                     <thead>
                                         <tr>
-                                            <th>Reg No</th>
-                                            <th>Name</th>
-                                            <th>Id No.</th>
-                                            <th>Phone No.</th>
-                                            <th>Campus Email</th>
-                                            <th>Course</th>
-                                            <th>Gender</th>
+                                            <th>Course Code</th>
+                                            <th>Course Name</th>
+                                            <th>Faculty Code</th>
+                                            <th>Faculty Name</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-                                        $ret = "SELECT * FROM `UniSys_Students`  ";
+                                        $ret = "SELECT * FROM `UniSys_Courses`  ";
                                         $stmt = $mysqli->prepare($ret);
                                         $stmt->execute(); //ok
                                         $res = $stmt->get_result();
-                                        while ($std = $res->fetch_object()) {
+                                        while ($courses = $res->fetch_object()) {
                                         ?>
                                             <tr>
-                                                <td><?php echo $std->reg_no; ?></td>
-                                                <td><?php echo $std->name; ?></td>
-                                                <td><?php echo $std->idnumber; ?></td>
-                                                <td><?php echo $std->phone; ?></td>
-                                                <td><?php echo $std->campus_email; ?></td>
-                                                <td><?php echo $std->course_name; ?></td>
-                                                <td><?php echo $std->gender; ?></td>
+                                                <td><?php echo $courses->course_code; ?></td>
+                                                <td><?php echo $courses->course_name; ?></td>
+                                                <td><?php echo $courses->faculty_code; ?></td>
+                                                <td><?php echo $courses->faculty_name; ?></td>
                                             </tr>
                                         <?php } ?>
                                     </tbody>

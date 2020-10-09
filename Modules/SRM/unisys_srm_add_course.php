@@ -20,8 +20,7 @@ if (isset($_POST['add_course'])) {
     $rc = $stmt->bind_param('ssssss', $faculty_id, $faculty_code, $faculty_name, $course_name, $course_id, $course_code);
     $stmt->execute();
     if ($stmt) {
-        //inject alert that post is shared  
-        $success = "Added" && header("refresh:1; url=add_course.php");
+        $success = "Added" && header("refresh:1; url=unisys_srm_add_course.php");
     } else {
         //inject alert that task failed
         $info = "Please Try Again Or Try Later";
@@ -122,11 +121,11 @@ require_once('partials/_head.php');
                                 <div class="form-row mb-4">
                                     <div class="form-group col-md-6">
                                         <label for="inputAddress">Faculty ID</label>
-                                        <input name="faculty_id" readonly id="facultyID" type="text" class="form-control" placeholder="Course Id">
+                                        <input name="faculty_id" readonly id="facultyID" type="text" class="form-control" placeholder="Faculty Id">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputAddress">Faculty Code</label>
-                                        <input name="faculty_code" readonly id="facultyCode" type="text" class="form-control" placeholder="Course Id">
+                                        <input name="faculty_code" readonly id="facultyCode" type="text" class="form-control" placeholder="Faculty Code">
                                     </div>
                                 </div>
                                 <button type="submit" name="add_course" class="btn btn-primary mt-3">Add Course</button>

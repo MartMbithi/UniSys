@@ -85,11 +85,14 @@ require_once('partials/_head.php');
                                     </div>
                                     <div class="text-center user-info">
                                         <?php
-                                        if ($std->passport == '') {
+                                        if ($std->passport == '' && $std->gender == 'Male') {
                                             echo "<img src='assets/img/boy.png' class='img-fluid img-thumbnail' alt='avatar'>";
+                                        } else if ($std->passport == '' && $std->gender == 'Female') {
+                                            echo "<img src='assets/img/girl-1.png' class='img-fluid img-thumbnail' alt='avatar'>";
                                         } else {
                                             echo "<img src='assets/img/student/$std->passport' class='img-fluid img-thumbnail' alt='avatar'>";
-                                        } ?>
+                                        }
+                                        ?>
 
                                         <p class=""><?php echo $std->name; ?></p>
                                     </div>
@@ -116,11 +119,7 @@ require_once('partials/_head.php');
                                                     Gender : <?php echo $std->gender; ?>
                                                 </li>
                                                 <li class="contacts-block__item">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
-                                                        <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                                        <circle cx="8.5" cy="7" r="4"></circle>
-                                                        <polyline points="17 11 19 13 23 9"></polyline>
-                                                    </svg> DOB : <?php echo $std->dob; ?>
+                                                    DOB : <?php echo $std->dob; ?>
                                                 </li>
                                                 <li class="contacts-block__item">
                                                     Address : <?php echo $std->adr; ?>

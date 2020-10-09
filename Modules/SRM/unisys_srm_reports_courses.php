@@ -59,7 +59,7 @@ require_once('partials/_head.php');
                     <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
                         <div class="widget-content widget-content-area br-6">
                             <div class="table-responsive mb-4 mt-4">
-                                <table id="alter_pagination" class="table table-hover" style="width:100%">
+                                <table id="html5-extension" class="table table-hover" style="width:100%">
                                     <thead>
                                         <tr>
                                             <th>Course Code</th>

@@ -90,10 +90,8 @@ require_once('partials/_head.php');
                                             <th>Name</th>
                                             <th>Id Number</th>
                                             <th>Campus Email</th>
-                                            <th>Phone Number</th>
                                             <th>Course</th>
                                             <th>Gender</th>
-                                            <th>DOB</th>
                                             <th>Settings</th>
                                         </tr>
                                     </thead>
@@ -110,10 +108,8 @@ require_once('partials/_head.php');
                                                 <td><?php echo $std->name; ?></td>
                                                 <td><?php echo $std->idnumber; ?></td>
                                                 <td><?php echo $std->campus_email; ?></td>
-                                                <td><?php echo $std->phone; ?></td>
                                                 <td><?php echo $std->course_name; ?></td>
                                                 <td><?php echo $std->gender; ?></td>
-                                                <td><?php echo $std->dob; ?></td>
                                                 <td class="text-center">
                                                     <a href="unisys_srm_view_admission.php?view=<?php echo $std->id; ?>" data-toggle="tooltip" title="Edit Faculty" class="badge outline-badge-success">
                                                         View

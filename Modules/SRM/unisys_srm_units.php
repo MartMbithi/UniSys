@@ -101,7 +101,6 @@ require_once('partials/_head.php');
                                                 <td><?php echo $units->unit_code; ?></td>
                                                 <td><?php echo $units->unit_name; ?></td>
                                                 <td><?php echo $units->course_name; ?></td>
-                                                <td>
                                                 <td class="text-center">
                                                     <a href="unisys_srm_update_unit.php?update=<?php echo $units->unit_id; ?>" data-toggle="tooltip" class="badge outline-badge-warning pd-setting-ed">
                                                         Edit

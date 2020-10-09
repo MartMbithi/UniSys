@@ -106,7 +106,7 @@ require_once('partials/_head.php');
                                         <div class="form-group col-md-6">
                                             <label for="inputEmail4">Academic Year</label>
                                             <select name="enroll_aca_yr" class="form-control">
-                                                <option>Select Academic Years</option>
+                                                <option><?php echo $en->enroll_aca_yr; ?></option>
                                                 <?php
                                                 $ret = "SELECT * FROM `UniSys_Academic_Years`  ";
                                                 $stmt = $mysqli->prepare($ret);

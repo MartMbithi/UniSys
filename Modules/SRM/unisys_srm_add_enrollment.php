@@ -20,8 +20,7 @@ if (isset($_POST['add_enrollment'])) {
     $rc = $stmt->bind_param('ssssssss', $enroll_id, $enroll_code, $enroll_aca_yr, $unit_code, $unit_name, $student_id, $student_name, $student_reg_no);
     $stmt->execute();
     if ($stmt) {
-        //inject alert that post is shared  
-        $success = "Added" && header("refresh:1; url=add_enrollment.php");
+        $success = "Added" && header("refresh:1; url=unisys_srm_add_enrollment.php");
     } else {
         //inject alert that task failed
         $info = "Please Try Again Or Try Later";
@@ -94,15 +93,11 @@ require_once('partials/_head.php');
                                     </div>
                                 </div>
                                 <div class="form-row">
-                                    <div class="form-group col-md-4">
+                                    <div class="form-group col-md-6">
                                         <label for="inputEmail4">Code</label>
                                         <input type="text" class="form-control" value="<?php echo $a; ?>-<?php echo $b; ?>" name="enroll_code">
                                     </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="inputEmail4"> Name</label>
-                                        <input type="text" class="form-control" name="faculty_name">
-                                    </div>
-                                    <div class="form-group col-md-4">
+                                    <div class="form-group col-md-6">
                                         <label for="inputEmail4">Academic Year</label>
                                         <select name="enroll_aca_yr" class="form-control">
                                             <option>Select Academic Years</option>

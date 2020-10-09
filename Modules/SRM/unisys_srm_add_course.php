@@ -14,7 +14,6 @@ if (isset($_POST['add_course'])) {
     $course_id = $_POST['course_id'];
     $course_code = $_POST['course_code'];
 
-
     $query = "INSERT INTO UniSys_Courses (faculty_id, faculty_code, faculty_name, course_name, course_id, course_code) VALUES (?,?,?,?,?,?)";
     $stmt = $mysqli->prepare($query);
     $rc = $stmt->bind_param('ssssss', $faculty_id, $faculty_code, $faculty_name, $course_name, $course_id, $course_code);

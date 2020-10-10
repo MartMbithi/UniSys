@@ -118,15 +118,15 @@ require_once('partials/_head.php');
                                 <div class="form-row">
                                     <div class="form-group col-md-4">
                                         <label for="inputEmail4">Faculty Code</label>
-                                        <input type="text" class="form-control" value="<?php echo $a; ?>-<?php echo $b; ?>" name="faculty_code">
+                                        <input type="text" class="form-control" required value="<?php echo $a; ?>-<?php echo $b; ?>" name="faculty_code">
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="inputEmail4">Faculty Name</label>
-                                        <input type="text" class="form-control" name="faculty_name">
+                                        <input type="text" class="form-control" required name="faculty_name">
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="inputEmail4">Head Of Faculty</label>
-                                        <select class='form-control basic' name="faculty_head" id="">
+                                        <select required class='form-control basic' name="faculty_head" id="">
                                             <option selected>Select Head Of Faculty</option>
                                             <?php
                                             $ret = "SELECT * FROM `UniSys_Staffs` ";

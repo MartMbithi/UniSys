@@ -118,15 +118,15 @@ require_once('partials/_head.php');
                                 <div class="form-row">
                                     <div class="form-group col-md-4">
                                         <label for="inputEmail4">Academic Year Code</label>
-                                        <input type="text" class="form-control" value="<?php echo $a; ?>-<?php echo $b; ?>" name="year_code">
+                                        <input type="text" class="form-control" required value="<?php echo $a; ?>-<?php echo $b; ?>" name="year_code">
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="inputEmail4">Academic Year Start Date</label>
-                                        <input type="date" class="form-control" name="year_start">
+                                        <input type="date" class="form-control" required name="year_start">
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="inputEmail4">Academic Year End Date</label>
-                                        <input type="date" class="form-control" name="year_end">
+                                        <input type="date" class="form-control" required name="year_end">
                                     </div>
                                 </div>
 

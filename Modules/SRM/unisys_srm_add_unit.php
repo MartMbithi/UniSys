@@ -7,23 +7,51 @@ require_once('configs/codeGen.php');
 
 if (isset($_POST['add_unit'])) {
 
-    $course_name = $_POST['course_name'];
-    $course_id = $_POST['course_id'];
-    $unit_id = $_POST['unit_id'];
-    $unit_code = $_POST['unit_code'];
-    $unit_name = $_POST['unit_name'];
-
-    $query = "INSERT INTO UniSys_Units (course_name, course_id, unit_id, unit_code, unit_name) VALUES (?,?,?,?,?)";
-    $stmt = $mysqli->prepare($query);
-    $rc = $stmt->bind_param('sssss', $course_name, $course_id, $unit_id, $unit_code, $unit_name);
-    $stmt->execute();
-    if ($stmt) {
-        $success = "Added" && header("refresh:1; url=unisys_srm_add_unit.php");
+    $error = 0;
+    if (isset($_POST['unit_code']) && !empty($_POST['unit_code'])) {
+        $unit_code = mysqli_real_escape_string($mysqli, trim($_POST['unit_code']));
     } else {
-        //inject alert that task failed
-        $info = "Please Try Again Or Try Later";
+        $error = 1;
+        $err = "Unit Code Cannot Be Empty";
+    }
+    if (isset($_POST['unit_name']) && !empty($_POST['unit_name'])) {
+        $unit_name = mysqli_real_escape_string($mysqli, trim($_POST['unit_name']));
+    } else {
+        $error = 1;
+        $err = "Unit Name Cannot Be Empty";
+    }
+
+    if (!$error) {
+        $sql = "SELECT * FROM  UniSys_Units WHERE  unit_code='$unit_code' || unit_name = '$unit_name' ";
+        $res = mysqli_query($mysqli, $sql);
+        if (mysqli_num_rows($res) > 0) {
+            $row = mysqli_fetch_assoc($res);
+            if ($unit_code == $row['unit_code']) {
+                $err =  "Unit Code Already Exists";
+            } else {
+                $err = "Unit Name Already Exists";
+            }
+        } else {
+            $course_name = $_POST['course_name'];
+            $course_id = $_POST['course_id'];
+            $unit_id = $_POST['unit_id'];
+            $unit_code = $_POST['unit_code'];
+            $unit_name = $_POST['unit_name'];
+
+            $query = "INSERT INTO UniSys_Units (course_name, course_id, unit_id, unit_code, unit_name) VALUES (?,?,?,?,?)";
+            $stmt = $mysqli->prepare($query);
+            $rc = $stmt->bind_param('sssss', $course_name, $course_id, $unit_id, $unit_code, $unit_name);
+            $stmt->execute();
+            if ($stmt) {
+                $success = "Added" && header("refresh:1; url=unisys_srm_add_unit.php");
+            } else {
+                //inject alert that task failed
+                $info = "Please Try Again Or Try Later";
+            }
+        }
     }
 }
+
 
 require_once('partials/_head.php');
 ?>
@@ -93,18 +121,17 @@ require_once('partials/_head.php');
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Unit Code</label>
-                                        <input type="text" class="form-control" value="<?php echo $a; ?>-<?php echo $b; ?>" name="unit_code">
+                                        <input required type="text" class="form-control" value="<?php echo $a; ?>-<?php echo $b; ?>" name="unit_code">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Unit Name</label>
-                                        <input type="text" class="form-control" name="unit_name">
+                                        <input required type="text" class="form-control" name="unit_name">
                                     </div>
-
                                 </div>
                                 <div class="form-row mb-6">
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Course Name</label>
-                                        <select name="course_name" id="courseName" onchange="getCourseDetails(this.value);" class="form-control">
+                                        <select required name="course_name" id="courseName" onchange="getCourseDetails(this.value);" class="form-control">
                                             <option>Select Course Name</option>
                                             <?php
                                             $ret = "SELECT * FROM `UniSys_Courses`  ";
@@ -121,7 +148,7 @@ require_once('partials/_head.php');
 
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Course ID</label>
-                                        <input name="course_id" readonly id="Course_Id" type="text" class="form-control" placeholder="">
+                                        <input name="course_id" required readonly id="Course_Id" type="text" class="form-control" placeholder="">
                                     </div>
                                 </div>
                                 <button type="submit" name="add_unit" class="btn btn-primary mt-3">Add Unit</button>

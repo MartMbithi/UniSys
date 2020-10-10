@@ -6,23 +6,43 @@ check_login();
 require_once('configs/codeGen.php');
 
 if (isset($_POST['add_enrollment'])) {
-    $enroll_id = $_POST['enroll_id'];
-    $enroll_code = $_POST['enroll_code'];
-    $enroll_aca_yr = $_POST['enroll_aca_yr'];
-    $unit_code = $_POST['unit_code'];
-    $unit_name = $_POST['unit_name'];
-    $student_id = $_POST['student_id'];
-    $student_name = $_POST['student_name'];
-    $student_reg_no = $_POST['student_reg_no'];
-    $query = "INSERT INTO UniSys_Enrollments (enroll_id, enroll_code, enroll_aca_yr, unit_code, unit_name, student_id, student_name, student_reg_no) VALUES (?,?,?,?,?,?,?,?)";
-    $stmt = $mysqli->prepare($query);
-    $rc = $stmt->bind_param('ssssssss', $enroll_id, $enroll_code, $enroll_aca_yr, $unit_code, $unit_name, $student_id, $student_name, $student_reg_no);
-    $stmt->execute();
-    if ($stmt) {
-        $success = "Added" && header("refresh:1; url=unisys_srm_add_enrollment.php");
+
+    $error = 0;
+    if (isset($_POST['enroll_code']) && !empty($_POST['enroll_code'])) {
+        $enroll_code = mysqli_real_escape_string($mysqli, trim($_POST['enroll_code']));
     } else {
-        //inject alert that task failed
-        $info = "Please Try Again Or Try Later";
+        $error = 1;
+        $err = "Unit Code Cannot Be Empty";
+    }
+
+    if (!$error) {
+        $sql = "SELECT * FROM  UniSys_Enrollments  WHERE  enroll_code='$enroll_code' ";
+        $res = mysqli_query($mysqli, $sql);
+        if (mysqli_num_rows($res) > 0) {
+            $row = mysqli_fetch_assoc($res);
+            if ($enroll_code == $row['enroll_code']) {
+                $err =  "Enroll Code Already Exists";
+            }
+        } else {
+            $enroll_id = $_POST['enroll_id'];
+            $enroll_code = $_POST['enroll_code'];
+            $enroll_aca_yr = $_POST['enroll_aca_yr'];
+            $unit_code = $_POST['unit_code'];
+            $unit_name = $_POST['unit_name'];
+            $student_id = $_POST['student_id'];
+            $student_name = $_POST['student_name'];
+            $student_reg_no = $_POST['student_reg_no'];
+            $query = "INSERT INTO UniSys_Enrollments (enroll_id, enroll_code, enroll_aca_yr, unit_code, unit_name, student_id, student_name, student_reg_no) VALUES (?,?,?,?,?,?,?,?)";
+            $stmt = $mysqli->prepare($query);
+            $rc = $stmt->bind_param('ssssssss', $enroll_id, $enroll_code, $enroll_aca_yr, $unit_code, $unit_name, $student_id, $student_name, $student_reg_no);
+            $stmt->execute();
+            if ($stmt) {
+                $success = "Added" && header("refresh:1; url=unisys_srm_add_enrollment.php");
+            } else {
+                //inject alert that task failed
+                $info = "Please Try Again Or Try Later";
+            }
+        }
     }
 }
 

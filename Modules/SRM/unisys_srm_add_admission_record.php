@@ -6,32 +6,60 @@ check_login();
 require_once('configs/codeGen.php');
 
 if (isset($_POST['add_admission'])) {
+    //Error Handling and prevention of posting double entries
 
-    $id = $_POST['id'];
-    $name = $_POST['name'];
-    $reg_no = $_POST['reg_no'];
-    $campus_email = $_POST['campus_email'];
-    $personal_email  = $_POST['personal_email'];
-    $idnumber = $_POST['idnumber'];
-    $phone = $_POST['phone'];
-    $gender = $_POST['gender'];
-    $dob = $_POST['dob'];
-    $adr = $_POST['adr'];
-    $country = $_POST['country'];
-    $course_name = $_POST['course_name'];
-    $course_id = $_POST['course_id'];
-    $passport = $_FILES['passport']['name'];
-    move_uploaded_file($_FILES["passport"]["tmp_name"], "assets/img/student/" . $_FILES["passport"]["name"]);
-
-    $query = "INSERT INTO UniSys_Students (passport, id, name, reg_no, campus_email, personal_email, idnumber, phone, gender, dob, adr, country, course_name, course_id) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-    $stmt = $mysqli->prepare($query);
-    $rc = $stmt->bind_param('ssssssssssssss', $passport, $id, $name, $reg_no, $campus_email, $personal_email, $idnumber, $phone, $gender, $dob, $adr, $country, $course_name, $course_id);
-    $stmt->execute();
-    if ($stmt) {
-        $success = "Added" && header("refresh:1; url=unisys_srm_admissions.php");
+    $error = 0;
+    if (isset($_POST['reg_no']) && !empty($_POST['reg_no'])) {
+        $reg_no = mysqli_real_escape_string($mysqli, trim($_POST['reg_no']));
     } else {
-        //inject alert that task failed
-        $info = "Please Try Again Or Try Later";
+        $error = 1;
+        $err = "Admission Number Cannot Be Empty";
+    }
+    if (isset($_POST['campus_email']) && !empty($_POST['campus_email'])) {
+        $campus_email = mysqli_real_escape_string($mysqli, trim($_POST['campus_email']));
+    } else {
+        $error = 1;
+        $err = "Campus Email Cannot Be Empty";
+    }
+
+    if (!$error) {
+        $sql = "SELECT * FROM  UniSys_Students WHERE  reg_no='$reg_no' ||  campus_email = '$campus_email'";
+        $res = mysqli_query($mysqli, $sql);
+        if (mysqli_num_rows($res) > 0) {
+            $row = mysqli_fetch_assoc($res);
+            if ($reg_no == $row['reg_no']) {
+                $err =  "Student With Admission Number Already Exists";
+            } else {
+                $err = "Campus Email Already Assigned";
+            }
+        } else {
+            $id = $_POST['id'];
+            $name = $_POST['name'];
+            $reg_no = $_POST['reg_no'];
+            $campus_email = $_POST['campus_email'];
+            $personal_email  = $_POST['personal_email'];
+            $idnumber = $_POST['idnumber'];
+            $phone = $_POST['phone'];
+            $gender = $_POST['gender'];
+            $dob = $_POST['dob'];
+            $adr = $_POST['adr'];
+            $country = $_POST['country'];
+            $course_name = $_POST['course_name'];
+            $course_id = $_POST['course_id'];
+            $passport = $_FILES['passport']['name'];
+            move_uploaded_file($_FILES["passport"]["tmp_name"], "assets/img/student/" . $_FILES["passport"]["name"]);
+
+            $query = "INSERT INTO UniSys_Students (passport, id, name, reg_no, campus_email, personal_email, idnumber, phone, gender, dob, adr, country, course_name, course_id) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            $stmt = $mysqli->prepare($query);
+            $rc = $stmt->bind_param('ssssssssssssss', $passport, $id, $name, $reg_no, $campus_email, $personal_email, $idnumber, $phone, $gender, $dob, $adr, $country, $course_name, $course_id);
+            $stmt->execute();
+            if ($stmt) {
+                $success = "Added" && header("refresh:1; url=unisys_srm_admissions.php");
+            } else {
+                //inject alert that task failed
+                $info = "Please Try Again Or Try Later";
+            }
+        }
     }
 }
 
@@ -103,29 +131,29 @@ require_once('partials/_head.php');
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Full Name</label>
-                                        <input type="text" class="form-control" name="name">
+                                        <input type="text" required class="form-control" name="name">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Admission Number</label>
-                                        <input type="text" class="form-control" name="reg_no">
+                                        <input type="text" required class="form-control" name="reg_no">
                                     </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Campus Email</label>
-                                        <input type="text" class="form-control" name="campus_email">
+                                        <input type="text" required class="form-control" name="campus_email">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Personal Email</label>
-                                        <input type="text" class="form-control" name="personal_email">
+                                        <input type="text" required class="form-control" name="personal_email">
                                     </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">National ID Number</label>
-                                        <input type="text" class="form-control" name="idnumber">
+                                        <input type="text" required class="form-control" name="idnumber">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Phone Number</label>
-                                        <input type="text" class="form-control" name="phone">
+                                        <input type="text" required class="form-control" name="phone">
                                     </div>
 
                                     <div class="form-group col-md-4">
@@ -138,20 +166,20 @@ require_once('partials/_head.php');
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="inputEmail4">Date Of Bith</label>
-                                        <input type="text" class="form-control" name="dob">
+                                        <input type="text" required class="form-control" name="dob">
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="inputEmail4">Passport</label>
-                                        <input type="file" class="form-control btn btn-outline-success" name="passport">
+                                        <input type="file" required class="form-control btn btn-outline-success" name="passport">
                                     </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Address</label>
-                                        <input type="text" class="form-control" name="adr">
+                                        <input type="text" required class="form-control" name="adr">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Country</label>
-                                        <input type="text" class="form-control" name="country">
+                                        <input type="text" required class="form-control" name="country">
                                     </div>
 
                                     <div class="form-group col-md-6">

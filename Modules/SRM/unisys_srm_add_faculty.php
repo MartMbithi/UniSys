@@ -18,7 +18,7 @@ if (isset($_POST['add_faculty'])) {
         $faculty_name = mysqli_real_escape_string($mysqli, trim($_POST['faculty_name']));
     } else {
         $error = 1;
-        $err = "Faculty  Name cannot Be Empty";
+        $err = "Faculty  Name Cannot Be Empty";
     }
 
     if (!$error) {

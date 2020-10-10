@@ -6,21 +6,47 @@ check_login();
 require_once('configs/codeGen.php');
 
 if (isset($_POST['add_academic_year'])) {
+    //Error Handling and prevention of posting double entries
 
-    $year_id = $_POST['year_id'];
-    $year_code = $_POST['year_code'];
-    $year_start = $_POST['year_start'];
-    $year_end = $_POST['year_end'];
-
-    $query = "INSERT INTO UniSys_Academic_Years (year_id, year_code, year_start, year_end) VALUES (?,?,?,?)";
-    $stmt = $mysqli->prepare($query);
-    $rc = $stmt->bind_param('ssss', $year_id, $year_code, $year_start, $year_end);
-    $stmt->execute();
-    if ($stmt) {
-        $success = "Added" && header("refresh:1; url=unisys_srm_add_academic_year.php");
+    $error = 0;
+    if (isset($_POST['year_code']) && !empty($_POST['year_code'])) {
+        $year_code = mysqli_real_escape_string($mysqli, trim($_POST['year_code']));
     } else {
-        //inject alert that task failed
-        $info = "Please Try Again Or Try Later";
+        $error = 1;
+        $err = "Academic Year Code Cannot Be Empty";
+    }
+    if (isset($_POST['year_start']) && !empty($_POST['year_start'])) {
+        $year_start = mysqli_real_escape_string($mysqli, trim($_POST['year_start']));
+    } else {
+        $error = 1;
+        $err = "Academic Start Date Cannot Be Empty";
+    }
+
+    if (!$error) {
+        $sql = "SELECT * FROM  UniSys_Academic_Years WHERE  year_code='$year_code' ";
+        $res = mysqli_query($mysqli, $sql);
+        if (mysqli_num_rows($res) > 0) {
+            $row = mysqli_fetch_assoc($res);
+            if ($year_code == $row['year_code']) {
+                $err =  "Academic Year With That Code  Exists";
+            }
+        } else {
+            $year_id = $_POST['year_id'];
+            $year_code = $_POST['year_code'];
+            $year_start = $_POST['year_start'];
+            $year_end = $_POST['year_end'];
+
+            $query = "INSERT INTO UniSys_Academic_Years (year_id, year_code, year_start, year_end) VALUES (?,?,?,?)";
+            $stmt = $mysqli->prepare($query);
+            $rc = $stmt->bind_param('ssss', $year_id, $year_code, $year_start, $year_end);
+            $stmt->execute();
+            if ($stmt) {
+                $success = "Added" && header("refresh:1; url=unisys_srm_add_academic_year.php");
+            } else {
+                //inject alert that task failed
+                $info = "Please Try Again Or Try Later";
+            }
+        }
     }
 }
 
@@ -101,9 +127,9 @@ require_once('partials/_head.php');
                                     <div class="form-group col-md-4">
                                         <label for="inputEmail4">Academic Year End Date</label>
                                         <input type="date" class="form-control" name="year_end">
-                                    </div>                                    
+                                    </div>
                                 </div>
-                                
+
                                 <button type="submit" name="add_academic_year" class="btn btn-primary mt-3">Add Academic Year</button>
                             </form>
                         </div>

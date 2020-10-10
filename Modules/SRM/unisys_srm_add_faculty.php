@@ -6,22 +6,47 @@ check_login();
 require_once('configs/codeGen.php');
 
 if (isset($_POST['add_faculty'])) {
-
-    $faculty_id = $_POST['faculty_id'];
-    $faculty_code = $_POST['faculty_code'];
-    $faculty_name = $_POST['faculty_name'];
-    $faculty_desc = $_POST['faculty_desc'];
-    $faculty_head = $_POST['faculty_head'];
-
-    $query = "INSERT INTO UniSys_Faculties (faculty_id, faculty_code, faculty_name, faculty_desc, faculty_head) VALUES (?,?,?,?,?)";
-    $stmt = $mysqli->prepare($query);
-    $rc = $stmt->bind_param('sssss', $faculty_id, $faculty_code, $faculty_name, $faculty_desc, $faculty_head);
-    $stmt->execute();
-    if ($stmt) {
-        $success = "Added" && header("refresh:1; url=unisys_srm_add_faculty.php");
+    //Error Handling and prevention of posting double entries
+    $error = 0;
+    if (isset($_POST['faculty_code']) && !empty($_POST['faculty_code'])) {
+        $faculty_code = mysqli_real_escape_string($mysqli, trim($_POST['faculty_code']));
     } else {
-        //inject alert that task failed
-        $info = "Please Try Again Or Try Later";
+        $error = 1;
+        $err = "Faculty Code Cannot Be Empty";
+    }
+    if (isset($_POST['faculty_name']) && !empty($_POST['faculty_name'])) {
+        $faculty_name = mysqli_real_escape_string($mysqli, trim($_POST['faculty_name']));
+    } else {
+        $error = 1;
+        $err = "Faculty  Name cannot Be Empty";
+    }
+
+    if (!$error) {
+        $sql = "SELECT * FROM  UniSys_Faculties WHERE  faculty_code='$faculty_code' ";
+        $res = mysqli_query($mysqli, $sql);
+        if (mysqli_num_rows($res) > 0) {
+            $row = mysqli_fetch_assoc($res);
+            if ($faculty_code == $row['faculty_code']) {
+                $err =  "Faculty With That Code  Exists";
+            }
+        } else {
+            $faculty_id = $_POST['faculty_id'];
+            $faculty_code = $_POST['faculty_code'];
+            $faculty_name = $_POST['faculty_name'];
+            $faculty_desc = $_POST['faculty_desc'];
+            $faculty_head = $_POST['faculty_head'];
+
+            $query = "INSERT INTO UniSys_Faculties (faculty_id, faculty_code, faculty_name, faculty_desc, faculty_head) VALUES (?,?,?,?,?)";
+            $stmt = $mysqli->prepare($query);
+            $rc = $stmt->bind_param('sssss', $faculty_id, $faculty_code, $faculty_name, $faculty_desc, $faculty_head);
+            $stmt->execute();
+            if ($stmt) {
+                $success = "Added" && header("refresh:1; url=unisys_srm_add_faculty.php");
+            } else {
+                //inject alert that task failed
+                $info = "Please Try Again Or Try Later";
+            }
+        }
     }
 }
 

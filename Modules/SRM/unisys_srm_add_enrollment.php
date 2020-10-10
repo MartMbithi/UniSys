@@ -15,13 +15,30 @@ if (isset($_POST['add_enrollment'])) {
         $err = "Unit Code Cannot Be Empty";
     }
 
+    if (isset($_POST['student_reg_no']) && !empty($_POST['student_reg_no'])) {
+        $student_reg_no = mysqli_real_escape_string($mysqli, trim($_POST['student_reg_no']));
+    } else {
+        $error = 1;
+        $err = "Student Reg No Cannot Be Empty";
+    }
+
+    if (isset($_POST['unit_code']) && !empty($_POST['unit_code'])) {
+        $unit_code = mysqli_real_escape_string($mysqli, trim($_POST['unit_code']));
+    } else {
+        $error = 1;
+        $err = "Unit Code Cannot Be Empty";
+    }
+
+
     if (!$error) {
-        $sql = "SELECT * FROM  UniSys_Enrollments  WHERE  enroll_code='$enroll_code' ";
+        $sql = "SELECT * FROM  UniSys_Enrollments  WHERE  enroll_code='$enroll_code' || ( student_reg_no ='$student_reg_no' AND unit_code = '$unit_code')   ";
         $res = mysqli_query($mysqli, $sql);
         if (mysqli_num_rows($res) > 0) {
             $row = mysqli_fetch_assoc($res);
             if ($enroll_code == $row['enroll_code']) {
                 $err =  "Enroll Code Already Exists";
+            }if ($student_reg_no == $row['student_reg_no'] && $unit_code == $row['unit_code']) {
+                $err = "Student Already Enrolled That Unit";
             }
         } else {
             $enroll_id = $_POST['enroll_id'];

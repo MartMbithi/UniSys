@@ -62,7 +62,7 @@ if (isset($_POST['update_enrollments'])) {
             $info = "Please Try Again Or Try Later";
         }
     } else {
-        $err = "Please Try Again Or Try Later";
+        $err = "Please Fill All Required Fields";
     }
 }
 

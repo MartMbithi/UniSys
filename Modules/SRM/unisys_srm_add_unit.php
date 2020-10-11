@@ -21,6 +21,13 @@ if (isset($_POST['add_unit'])) {
         $err = "Unit Name Cannot Be Empty";
     }
 
+    if (isset($_POST['course_id']) && !empty($_POST['course_id'])) {
+        $course_id = mysqli_real_escape_string($mysqli, trim($_POST['course_id']));
+    } else {
+        $error = 1;
+        $err = "Course ID / Name Cannot Be Empty";
+    }
+
     if (!$error) {
         $sql = "SELECT * FROM  UniSys_Units WHERE  unit_code='$unit_code' || unit_name = '$unit_name' ";
         $res = mysqli_query($mysqli, $sql);

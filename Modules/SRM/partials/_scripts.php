@@ -86,3 +86,8 @@
     <script src="plugins/select2/select2.min.js"></script>
 
     <script src="plugins/select2/custom-select2.js"></script>
+    <script>
+        var ss = $(".basic").select2({
+            tags: true,
+        });
+    </script>

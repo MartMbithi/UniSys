@@ -131,11 +131,11 @@ require_once('partials/_head.php');
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Code</label>
-                                        <input type="text" class="form-control" value="<?php echo $a; ?>-<?php echo $b; ?>" name="enroll_code">
+                                        <input type="text" required class="form-control" value="<?php echo $a; ?>-<?php echo $b; ?>" name="enroll_code">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Academic Year</label>
-                                        <select name="enroll_aca_yr" class="form-control">
+                                        <select name="enroll_aca_yr" class="form-control basic">
                                             <option>Select Academic Years</option>
                                             <?php
                                             $ret = "SELECT * FROM `UniSys_Academic_Years`  ";
@@ -153,7 +153,7 @@ require_once('partials/_head.php');
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Unit Code</label>
-                                        <select name="unit_code" id="UnitCode" onchange="getUnitDetails(this.value);" class="form-control">
+                                        <select name="unit_code" id="UnitCode" onchange="getUnitDetails(this.value);" class="form-control basic">
                                             <option>Select Unit Code</option>
                                             <?php
                                             $ret = "SELECT * FROM `UniSys_Units`  ";
@@ -168,11 +168,11 @@ require_once('partials/_head.php');
                                         </select> </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4"> Unit Name</label>
-                                        <input name="unit_name" readonly id="unitName" type="text" class="form-control">
+                                        <input name="unit_name" required readonly id="unitName" type="text" class="form-control">
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="inputEmail4">Student Reg Number</label>
-                                        <select name="student_reg_no" id="RegNumber" onchange="getStudentDetails(this.value);" class="form-control">
+                                        <select name="student_reg_no" id="RegNumber" onchange="getStudentDetails(this.value);" class="form-control basic">
                                             <option>Select Student Registration Number</option>
                                             <?php
                                             $ret = "SELECT * FROM `UniSys_Students`  ";
@@ -188,11 +188,11 @@ require_once('partials/_head.php');
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="inputEmail4"> Student Name</label>
-                                        <input name="student_name" readonly id="StudentName" type="text" class="form-control">
+                                        <input name="student_name" required readonly id="StudentName" type="text" class="form-control">
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="inputEmail4"> Student ID</label>
-                                        <input name="student_id" readonly id="StudentID" type="text" class="form-control">
+                                        <input name="student_id" required readonly id="StudentID" type="text" class="form-control">
                                     </div>
                                 </div>
 

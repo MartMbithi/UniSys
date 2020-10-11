@@ -131,7 +131,7 @@ require_once('partials/_head.php');
                                 <div class="form-row mb-6">
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Course Name</label>
-                                        <select required name="course_name" id="courseName" onchange="getCourseDetails(this.value);" class="form-control">
+                                        <select required name="course_name" id="courseName" onchange="getCourseDetails(this.value);" class="form-control basic">
                                             <option>Select Course Name</option>
                                             <?php
                                             $ret = "SELECT * FROM `UniSys_Courses`  ";

@@ -23,6 +23,21 @@ if (isset($_POST['add_course'])) {
         $err = "Course Name Cannot Be Empty";
     }
 
+    if (isset($_POST['faculty_id']) && !empty($_POST['faculty_id'])) {
+        $faculty_id = mysqli_real_escape_string($mysqli, trim($_POST['faculty_id']));
+    } else {
+        $error = 1;
+        $err = "Faculty ID Cannot Be Empty";
+    }
+
+    if (isset($_POST['faculty_code']) && !empty($_POST['faculty_code'])) {
+        $faculty_code = mysqli_real_escape_string($mysqli, trim($_POST['faculty_code']));
+    } else {
+        $error = 1;
+        $err = "Faculty Code Cannot Be Empty";
+    }
+
+
     if (!$error) {
         $sql = "SELECT * FROM  UniSys_Courses WHERE  course_code='$course_code' ";
         $res = mysqli_query($mysqli, $sql);

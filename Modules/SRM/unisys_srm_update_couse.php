@@ -7,22 +7,39 @@ require_once('configs/codeGen.php');
 
 if (isset($_POST['update_course'])) {
 
-    $faculty_id = $_POST['faculty_id'];
-    $faculty_code = $_POST['faculty_code'];
-    $faculty_name = $_POST['faculty_name'];
-    $course_name = $_POST['course_name'];
-    $update = $_GET['update'];
-    $course_code = $_POST['course_code'];
-
-    $query = "UPDATE UniSys_Courses SET faculty_id =?, faculty_code =?, faculty_name =?, course_name =?, course_code =? WHERE course_id =?";
-    $stmt = $mysqli->prepare($query);
-    $rc = $stmt->bind_param('ssssss', $faculty_id, $faculty_code, $faculty_name, $course_name, $course_code, $update);
-    $stmt->execute();
-    if ($stmt) {
-        $success = "Added" && header("refresh:1; url=unisys_srm_courses.php");
+    $error = 0;
+    if (isset($_POST['faculty_id']) && !empty($_POST['faculty_id'])) {
+        $faculty_id = mysqli_real_escape_string($mysqli, trim($_POST['faculty_id']));
     } else {
-        //inject alert that task failed
-        $info = "Please Try Again Or Try Later";
+        $error = 1;
+        $err = "Faculty ID Cannot Be Empty";
+    }
+
+    if (isset($_POST['faculty_code']) && !empty($_POST['faculty_code'])) {
+        $faculty_code = mysqli_real_escape_string($mysqli, trim($_POST['faculty_code']));
+    } else {
+        $error = 1;
+        $err = "Faculty Code Cannot Be Empty";
+    }
+
+    if (!$error) {
+        $faculty_id = $_POST['faculty_id'];
+        $faculty_code = $_POST['faculty_code'];
+        $faculty_name = $_POST['faculty_name'];
+        $course_name = $_POST['course_name'];
+        $update = $_GET['update'];
+        $course_code = $_POST['course_code'];
+
+        $query = "UPDATE UniSys_Courses SET faculty_id =?, faculty_code =?, faculty_name =?, course_name =?, course_code =? WHERE course_id =?";
+        $stmt = $mysqli->prepare($query);
+        $rc = $stmt->bind_param('ssssss', $faculty_id, $faculty_code, $faculty_name, $course_name, $course_code, $update);
+        $stmt->execute();
+        if ($stmt) {
+            $success = "Added" && header("refresh:1; url=unisys_srm_courses.php");
+        } else {
+            //inject alert that task failed
+            $info = "Please Try Again Or Try Later";
+        }
     }
 }
 
@@ -142,7 +159,7 @@ require_once('partials/_head.php');
                 </div>
             <?php
             require_once('partials/_footer.php');
-            }
+        }
             ?>
             </div>
             <!--  END CONTENT AREA  -->

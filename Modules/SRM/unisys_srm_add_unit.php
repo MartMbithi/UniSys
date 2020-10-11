@@ -21,6 +21,13 @@ if (isset($_POST['add_unit'])) {
         $err = "Unit Name Cannot Be Empty";
     }
 
+    if (isset($_POST['course_id']) && !empty($_POST['course_id'])) {
+        $course_id = mysqli_real_escape_string($mysqli, trim($_POST['course_id']));
+    } else {
+        $error = 1;
+        $err = "Course ID / Name Cannot Be Empty";
+    }
+
     if (!$error) {
         $sql = "SELECT * FROM  UniSys_Units WHERE  unit_code='$unit_code' || unit_name = '$unit_name' ";
         $res = mysqli_query($mysqli, $sql);
@@ -131,7 +138,7 @@ require_once('partials/_head.php');
                                 <div class="form-row mb-6">
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Course Name</label>
-                                        <select required name="course_name" id="courseName" onchange="getCourseDetails(this.value);" class="form-control">
+                                        <select required name="course_name" id="courseName" onchange="getCourseDetails(this.value);" class="form-control basic">
                                             <option>Select Course Name</option>
                                             <?php
                                             $ret = "SELECT * FROM `UniSys_Courses`  ";

@@ -6,22 +6,30 @@ check_login();
 require_once('configs/codeGen.php');
 
 if (isset($_POST['update_units'])) {
-
-    $course_name = $_POST['course_name'];
-    $course_id = $_POST['course_id'];
-    $update = $_GET['update'];
-    $unit_code = $_POST['unit_code'];
-    $unit_name = $_POST['unit_name'];
-
-    $query = "UPDATE UniSys_Units  SET course_name =?, course_id =?, unit_code =?, unit_name =? WHERE unit_id =?";
-    $stmt = $mysqli->prepare($query);
-    $rc = $stmt->bind_param('sssss', $course_name, $course_id, $unit_code, $unit_name, $update);
-    $stmt->execute();
-    if ($stmt) {
-        $success = "Added" && header("refresh:1; url=unisys_srm_units.php");
+    $error = 0;
+    if (isset($_POST['course_id']) && !empty($_POST['course_id'])) {
+        $course_id = mysqli_real_escape_string($mysqli, trim($_POST['course_id']));
     } else {
-        //inject alert that task failed
-        $info = "Please Try Again Or Try Later";
+        $error = 1;
+        $err = "Course ID / Name Cannot Be Empty";
+    }
+    if (!$error) {
+        $course_name = $_POST['course_name'];
+        $course_id = $_POST['course_id'];
+        $update = $_GET['update'];
+        $unit_code = $_POST['unit_code'];
+        $unit_name = $_POST['unit_name'];
+
+        $query = "UPDATE UniSys_Units  SET course_name =?, course_id =?, unit_code =?, unit_name =? WHERE unit_id =?";
+        $stmt = $mysqli->prepare($query);
+        $rc = $stmt->bind_param('sssss', $course_name, $course_id, $unit_code, $unit_name, $update);
+        $stmt->execute();
+        if ($stmt) {
+            $success = "Added" && header("refresh:1; url=unisys_srm_units.php");
+        } else {
+            //inject alert that task failed
+            $info = "Please Try Again Or Try Later";
+        }
     }
 }
 
@@ -111,8 +119,8 @@ require_once('partials/_head.php');
                                     <div class="form-row mb-6">
                                         <div class="form-group col-md-6">
                                             <label for="inputEmail4">Course Name</label>
-                                            <select name="course_name" id="courseName" onchange="getCourseDetails(this.value);" class="form-control">
-                                                <option>Select Course Name</option>
+                                            <select name="course_name" id="courseName" onchange="getCourseDetails(this.value);" class="form-control basic">
+                                                <option><?php echo $units->course_name; ?></option>
                                                 <?php
                                                 $ret = "SELECT * FROM `UniSys_Courses`  ";
                                                 $stmt = $mysqli->prepare($ret);

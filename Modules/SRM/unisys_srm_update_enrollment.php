@@ -6,23 +6,63 @@ check_login();
 require_once('configs/codeGen.php');
 
 if (isset($_POST['update_enrollments'])) {
-    $update = $_GET['update'];
-    $enroll_code = $_POST['enroll_code'];
-    $enroll_aca_yr = $_POST['enroll_aca_yr'];
-    $unit_code = $_POST['unit_code'];
-    $unit_name = $_POST['unit_name'];
-    $student_id = $_POST['student_id'];
-    $student_name = $_POST['student_name'];
-    $student_reg_no = $_POST['student_reg_no'];
-    $query = "UPDATE UniSys_Enrollments SET enroll_code =?, enroll_aca_yr =?, unit_code =?, unit_name =?, student_id =?, student_name =?, student_reg_no =? WHERE enroll_id =?";
-    $stmt = $mysqli->prepare($query);
-    $rc = $stmt->bind_param('ssssssss', $enroll_code, $enroll_aca_yr, $unit_code, $unit_name, $student_id, $student_name, $student_reg_no, $update);
-    $stmt->execute();
-    if ($stmt) {
-        $success = "Updated" && header("refresh:1; url=unisys_srm_enrollments.php");
+
+    $error = 0;
+    if (isset($_POST['enroll_code']) && !empty($_POST['enroll_code'])) {
+        $enroll_code = mysqli_real_escape_string($mysqli, trim($_POST['enroll_code']));
     } else {
-        //inject alert that task failed
-        $info = "Please Try Again Or Try Later";
+        $error = 1;
+        $err = "Unit Code Cannot Be Empty";
+    }
+
+    if (isset($_POST['student_reg_no']) && !empty($_POST['student_reg_no'])) {
+        $student_reg_no = mysqli_real_escape_string($mysqli, trim($_POST['student_reg_no']));
+    } else {
+        $error = 1;
+        $err = "Student Reg No Cannot Be Empty";
+    }
+
+    if (isset($_POST['unit_code']) && !empty($_POST['unit_code'])) {
+        $unit_code = mysqli_real_escape_string($mysqli, trim($_POST['unit_code']));
+    } else {
+        $error = 1;
+        $err = "Unit Code Cannot Be Empty";
+    }
+
+    if (isset($_POST['unit_name']) && !empty($_POST['unit_name'])) {
+        $unit_name = mysqli_real_escape_string($mysqli, trim($_POST['unit_name']));
+    } else {
+        $error = 1;
+        $err = "Unit Name Cannot Be Empty";
+    }
+
+    if (isset($_POST['student_name']) && !empty($_POST['student_name'])) {
+        $student_name = mysqli_real_escape_string($mysqli, trim($_POST['student_name']));
+    } else {
+        $error = 1;
+        $err = "Student Name Cannot Be Empty";
+    }
+    if (!$error) {
+        $update = $_GET['update'];
+        $enroll_code = $_POST['enroll_code'];
+        $enroll_aca_yr = $_POST['enroll_aca_yr'];
+        $unit_code = $_POST['unit_code'];
+        $unit_name = $_POST['unit_name'];
+        $student_id = $_POST['student_id'];
+        $student_name = $_POST['student_name'];
+        $student_reg_no = $_POST['student_reg_no'];
+        $query = "UPDATE UniSys_Enrollments SET enroll_code =?, enroll_aca_yr =?, unit_code =?, unit_name =?, student_id =?, student_name =?, student_reg_no =? WHERE enroll_id =?";
+        $stmt = $mysqli->prepare($query);
+        $rc = $stmt->bind_param('ssssssss', $enroll_code, $enroll_aca_yr, $unit_code, $unit_name, $student_id, $student_name, $student_reg_no, $update);
+        $stmt->execute();
+        if ($stmt) {
+            $success = "Updated" && header("refresh:1; url=unisys_srm_enrollments.php");
+        } else {
+            //inject alert that task failed
+            $info = "Please Try Again Or Try Later";
+        }
+    } else {
+        $err = "Please Try Again Or Try Later";
     }
 }
 
@@ -105,7 +145,7 @@ require_once('partials/_head.php');
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="inputEmail4">Academic Year</label>
-                                            <select name="enroll_aca_yr" class="form-control">
+                                            <select name="enroll_aca_yr" class="form-control basic">
                                                 <option><?php echo $en->enroll_aca_yr; ?></option>
                                                 <?php
                                                 $ret = "SELECT * FROM `UniSys_Academic_Years`  ";
@@ -123,7 +163,7 @@ require_once('partials/_head.php');
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <label for="inputEmail4">Unit Code</label>
-                                            <select name="unit_code" id="UnitCode" onchange="getUnitDetails(this.value);" class="form-control">
+                                            <select name="unit_code" id="UnitCode" onchange="getUnitDetails(this.value);" class="form-control basic">
                                                 <option>Select Unit Code</option>
                                                 <?php
                                                 $ret = "SELECT * FROM `UniSys_Units`  ";
@@ -142,7 +182,7 @@ require_once('partials/_head.php');
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label for="inputEmail4">Student Reg Number</label>
-                                            <select name="student_reg_no" id="RegNumber" onchange="getStudentDetails(this.value);" class="form-control">
+                                            <select name="student_reg_no" id="RegNumber" onchange="getStudentDetails(this.value);" class="form-control basic">
                                                 <option>Select Student Registration Number</option>
                                                 <?php
                                                 $ret = "SELECT * FROM `UniSys_Students`  ";

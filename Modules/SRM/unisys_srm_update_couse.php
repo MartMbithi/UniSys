@@ -6,6 +6,8 @@ check_login();
 require_once('configs/codeGen.php');
 
 if (isset($_POST['update_course'])) {
+
+    $error = 0;
     if (isset($_POST['faculty_id']) && !empty($_POST['faculty_id'])) {
         $faculty_id = mysqli_real_escape_string($mysqli, trim($_POST['faculty_id']));
     } else {
@@ -19,7 +21,6 @@ if (isset($_POST['update_course'])) {
         $error = 1;
         $err = "Faculty Code Cannot Be Empty";
     }
-
 
     if (!$error) {
         $faculty_id = $_POST['faculty_id'];

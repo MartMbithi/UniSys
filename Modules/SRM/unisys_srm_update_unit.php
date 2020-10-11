@@ -6,7 +6,7 @@ check_login();
 require_once('configs/codeGen.php');
 
 if (isset($_POST['update_units'])) {
-
+    $error = 0;
     if (isset($_POST['course_id']) && !empty($_POST['course_id'])) {
         $course_id = mysqli_real_escape_string($mysqli, trim($_POST['course_id']));
     } else {

@@ -6,32 +6,54 @@ check_login();
 require_once('configs/codeGen.php');
 
 if (isset($_POST['update_admission'])) {
-
-    $update = $_GET['update'];
-    $name = $_POST['name'];
-    $reg_no = $_POST['reg_no'];
-    $campus_email = $_POST['campus_email'];
-    $personal_email  = $_POST['personal_email'];
-    $idnumber = $_POST['idnumber'];
-    $phone = $_POST['phone'];
-    $gender = $_POST['gender'];
-    $dob = $_POST['dob'];
-    $adr = $_POST['adr'];
-    $country = $_POST['country'];
-    $course_name = $_POST['course_name'];
-    $course_id = $_POST['course_id'];
-    $passport = $_FILES['passport']['name'];
-    move_uploaded_file($_FILES["passport"]["tmp_name"], "assets/img/student/" . $_FILES["passport"]["name"]);
-
-    $query = "UPDATE UniSys_Students SET passport =?, name =?, reg_no =?, campus_email =?, personal_email =?, idnumber =?, phone =?, gender =?, dob =?, adr =?, country =?, course_name =?, course_id =? WHERE id =?";
-    $stmt = $mysqli->prepare($query);
-    $rc = $stmt->bind_param('ssssssssssssss', $passport, $name, $reg_no, $campus_email, $personal_email, $idnumber, $phone, $gender, $dob, $adr, $country, $course_name, $course_id, $update);
-    $stmt->execute();
-    if ($stmt) {
-        $success = "Added" && header("refresh:1; url=unisys_srm_admissions.php");
+    $error = 0;
+    if (isset($_POST['reg_no']) && !empty($_POST['reg_no'])) {
+        $reg_no = mysqli_real_escape_string($mysqli, trim($_POST['reg_no']));
     } else {
-        //inject alert that task failed
-        $info = "Please Try Again Or Try Later";
+        $error = 1;
+        $err = "Admission Number Cannot Be Empty";
+    }
+    if (isset($_POST['campus_email']) && !empty($_POST['campus_email'])) {
+        $campus_email = mysqli_real_escape_string($mysqli, trim($_POST['campus_email']));
+    } else {
+        $error = 1;
+        $err = "Campus Email Cannot Be Empty";
+    }
+
+    if (isset($_POST['course_id']) && !empty($_POST['course_id'])) {
+        $course_id = mysqli_real_escape_string($mysqli, trim($_POST['course_id']));
+    } else {
+        $error = 1;
+        $err = "Course ID Cannot Be Empty";
+    }
+
+    if (!$error) {
+        $update = $_GET['update'];
+        $name = $_POST['name'];
+        $reg_no = $_POST['reg_no'];
+        $campus_email = $_POST['campus_email'];
+        $personal_email  = $_POST['personal_email'];
+        $idnumber = $_POST['idnumber'];
+        $phone = $_POST['phone'];
+        $gender = $_POST['gender'];
+        $dob = $_POST['dob'];
+        $adr = $_POST['adr'];
+        $country = $_POST['country'];
+        $course_name = $_POST['course_name'];
+        $course_id = $_POST['course_id'];
+        $passport = $_FILES['passport']['name'];
+        move_uploaded_file($_FILES["passport"]["tmp_name"], "assets/img/student/" . $_FILES["passport"]["name"]);
+
+        $query = "UPDATE UniSys_Students SET passport =?, name =?, reg_no =?, campus_email =?, personal_email =?, idnumber =?, phone =?, gender =?, dob =?, adr =?, country =?, course_name =?, course_id =? WHERE id =?";
+        $stmt = $mysqli->prepare($query);
+        $rc = $stmt->bind_param('ssssssssssssss', $passport, $name, $reg_no, $campus_email, $personal_email, $idnumber, $phone, $gender, $dob, $adr, $country, $course_name, $course_id, $update);
+        $stmt->execute();
+        if ($stmt) {
+            $success = "Added" && header("refresh:1; url=unisys_srm_admissions.php");
+        } else {
+            //inject alert that task failed
+            $info = "Please Try Again Or Try Later";
+        }
     }
 }
 

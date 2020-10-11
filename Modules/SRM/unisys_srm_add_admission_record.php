@@ -22,6 +22,13 @@ if (isset($_POST['add_admission'])) {
         $err = "Campus Email Cannot Be Empty";
     }
 
+    if (isset($_POST['course_id']) && !empty($_POST['course_id'])) {
+        $course_id = mysqli_real_escape_string($mysqli, trim($_POST['course_id']));
+    } else {
+        $error = 1;
+        $err = "Course ID Cannot Be Empty";
+    }
+
     if (!$error) {
         $sql = "SELECT * FROM  UniSys_Students WHERE  reg_no='$reg_no' ||  campus_email = '$campus_email'";
         $res = mysqli_query($mysqli, $sql);

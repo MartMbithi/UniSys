@@ -206,7 +206,7 @@ require_once('partials/_head.php');
                                         </div>
                                     </div>
 
-                                    <button type="submit" name="update_enrollment" class="btn btn-primary mt-3">Update Enrollment</button>
+                                    <button type="submit" name="update_enrollments" class="btn btn-primary mt-3">Update Enrollment</button>
                                 </form>
                             </div>
                         </div>

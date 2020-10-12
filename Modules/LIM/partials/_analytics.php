@@ -1,49 +1,46 @@
 <?php
-
-/* Faculties */
-$query = "SELECT COUNT(*)  FROM `UniSys_Faculties`";
+/* Available Book Copies */
+$query = "SELECT SUM(copies)  FROM `UniSys_LIM_Books_Cataloque`";
 $stmt = $mysqli->prepare($query);
 $stmt->execute();
-$stmt->bind_result($Faculties);
+$stmt->bind_result($AvailableBook);
 $stmt->fetch();
 $stmt->close();
 
-/* Academic Years */
-$query = "SELECT COUNT(*) FROM `UniSys_Academic_Years`";
+/* Lost Books */
+$query = "SELECT COUNT(*)  FROM `UniSys_LIM_Library_Operations` WHERE type = 'Lost'" ;
 $stmt = $mysqli->prepare($query);
 $stmt->execute();
-$stmt->bind_result($Academic_Years);
+$stmt->bind_result($LostBook);
 $stmt->fetch();
 $stmt->close();
 
-/* Courses */
-$query = "SELECT COUNT(*) FROM `UniSys_Courses`";
+/* Damanged Books */
+$query = "SELECT COUNT(*)  FROM `UniSys_LIM_Library_Operations` WHERE type = 'Damanged'" ;
 $stmt = $mysqli->prepare($query);
 $stmt->execute();
-$stmt->bind_result($Courses);
+$stmt->bind_result($DamangedBooks);
 $stmt->fetch();
 $stmt->close();
 
-/* Admissions */
-$query = "SELECT  COUNT(*) FROM `UniSys_Students`";
+/* Borrowed  Books */
+$borrowedBooks = ($AvailableBook - ($LostBook + $DamangedBooks));
+
+/* Total Paid Fine */
+$query = "SELECT SUM(fine_amt)  FROM `UniSys_LIM_Fines` WHERE  status = 'Paid'";
 $stmt = $mysqli->prepare($query);
 $stmt->execute();
-$stmt->bind_result($Admissions);
+$stmt->bind_result($PaidFine);
 $stmt->fetch();
 $stmt->close();
 
-/* Enrollments */
-$query = "SELECT COUNT(*) FROM `UniSys_Enrollments` ";
+/* Unpaid Fine */
+$query = "SELECT SUM(fine_amt)  FROM `UniSys_LIM_Fines` WHERE  status != 'Paid'";
 $stmt = $mysqli->prepare($query);
 $stmt->execute();
-$stmt->bind_result($Enrollments);
+$stmt->bind_result($UnPaidFine);
 $stmt->fetch();
 $stmt->close();
 
-/* Students */
-$query = "SELECT COUNT(*) FROM `UniSys_Students` ";
-$stmt = $mysqli->prepare($query);
-$stmt->execute();
-$stmt->bind_result($Students);
-$stmt->fetch();
-$stmt->close();
+/* Total Fine */
+$totalFine = $PaidFine + $UnPaidFine;

@@ -41,3 +41,6 @@ $stmt->execute();
 $stmt->bind_result($UnPaidFine);
 $stmt->fetch();
 $stmt->close();
+
+/* Total Fine */
+$totalFine = $PaidFine + $UnPaidFine;

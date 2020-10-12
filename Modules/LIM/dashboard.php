@@ -213,17 +213,17 @@ require_once('partials/_head.php');
 
                                     <div class="acc-total-info">
                                         <h5>Balance</h5>
-                                        <p class="acc-amount">$470</p>
+                                        <p class="acc-amount">Ksh <?php echo $totalFine;?></p>
                                     </div>
 
                                     <div class="inv-detail">
                                         <div class="info-detail-1">
                                             <p>Paid Fines</p>
-                                            <p>$ 199.0</p>
+                                            <p>Ksh <?php echo $PaidFine;?></p>
                                         </div>
                                         <div class="info-detail-2">
                                             <p>Pending Fines</p>
-                                            <p>$ 17.82</p>
+                                            <p>Ksh <?php echo $UnPaidFine;?></p>
                                         </div>
                                     </div>
 

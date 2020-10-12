@@ -94,7 +94,7 @@ require_once('partials/_head.php');
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value">45,141</h6>
+                                        <h6 class="value"><?php echo $AvailableBook;?></h6>
                                         <p class="">Available Book Copies</p>
                                     </div>
                                     <div class="">
@@ -115,7 +115,7 @@ require_once('partials/_head.php');
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value">45,141</h6>
+                                        <h6 class="value"><?php echo $LostBook;?></h6>
                                         <p class="">Lost Books</p>
                                     </div>
                                     <div class="">
@@ -137,7 +137,7 @@ require_once('partials/_head.php');
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value">45,141</h6>
+                                        <h6 class="value"><?php echo $DamangedBooks;?></h6>
                                         <p class="">Damanged Books</p>
                                     </div>
                                     <div class="">
@@ -159,7 +159,7 @@ require_once('partials/_head.php');
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value">45,141</h6>
+                                        <h6 class="value"><?php echo $borrowedBooks;?></h6>
                                         <p class="">Borrowed Books</p>
                                     </div>
                                     <div class="">
@@ -180,7 +180,7 @@ require_once('partials/_head.php');
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value">45,141</h6>
+                                        <h6 class="value"> Ksh <?php echo $PaidFine;?></h6>
                                         <p class="">Unpaid Fine</p>
                                     </div>
                                     <div class="">

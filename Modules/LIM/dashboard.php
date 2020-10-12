@@ -241,7 +241,7 @@ require_once('partials/_head.php');
 
                             <div class="widget-heading">
                                 <h5 class="">Recently Added Books
-                                    <a href="unisys_lim_reports_fines.php" class="badge outline-badge-success">View All</a>
+                                    <a href="unisys_lim_books_cataloque.php" class="badge outline-badge-success">View All</a>
                                 </h5>
                             </div>
 

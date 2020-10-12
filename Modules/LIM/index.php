@@ -26,7 +26,7 @@ require_once('partials/_head.php');
             <div class="form-form-wrap">
                 <div class="form-container">
                     <div class="form-content">
-                        <img class="img-fluid text-center" src="assets/img/logo.png">
+                        <img class="img-fluid text-center"  src="assets/img/logo.png">
                         <h1>Library Informatation Management Module</h1>
                         <form method="post" class="text-left">
                             <div class="form">

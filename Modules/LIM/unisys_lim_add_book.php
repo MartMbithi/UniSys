@@ -30,12 +30,13 @@ if (isset($_POST['add_book'])) {
             $publisher  = $_POST['publisher'];
             $copies  = $_POST['copies'];
             $synopsis = $_POST['synopsis'];
+            $barcode = $_POST['barcode'];
             $cover_img = $_FILES['cover_img']['name'];
             move_uploaded_file($_FILES["cover_img"]["tmp_name"], "assets/img/cover_img/" . $_FILES["cover_img"]["name"]);
 
-            $query = "INSERT INTO UniSys_LIM_Books_Cataloque (id, isbn, title, author, publisher, copies, synopsis, cover_img) VALUES (?,?,?,?,?,?,?,?)";
+            $query = "INSERT INTO UniSys_LIM_Books_Cataloque (id, barcode, isbn, title, author, publisher, copies, synopsis, cover_img) VALUES (?,?,?,?,?,?,?,?,?)";
             $stmt = $mysqli->prepare($query);
-            $rc = $stmt->bind_param('ssssssss', $id, $isbn, $title, $author, $publisher, $copies, $synopsis, $cover_img);
+            $rc = $stmt->bind_param('sssssssss', $id, $barcode, $isbn, $title, $author, $publisher, $copies, $synopsis, $cover_img);
             $stmt->execute();
             if ($stmt) {
                 $success = "Added" && header("refresh:1; url=unisys_lim_add_book.php");
@@ -116,6 +117,7 @@ require_once('partials/_head.php');
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">ISBN Number</label>
                                         <input type="text" required value="<?php echo $a; ?><?php echo $b; ?>" class="form-control" name="isbn">
+                                        <input type="hidden" required value="<?php echo $b; ?><?php echo $a; ?>" class="form-control" name="barcode">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Title</label>

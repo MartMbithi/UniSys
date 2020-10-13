@@ -4,7 +4,7 @@ require_once('configs/config.php');
 require_once('configs/checklogin.php');
 check_login();
 require_once('partials/_analytics.php');
-
+require_once('configs/codeGen.php');
 require_once('partials/_head.php');
 ?>
 
@@ -70,28 +70,29 @@ require_once('partials/_head.php');
                         <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
                             <div class="widget-content widget-content-area br-6">
                                 <div class="card component-card_2">
-                                    <img src="assets/img/cover_img/<?php echo $book->cover_img; ?>" class="img-thumbnail img-fluid card-img-top" alt="widget-card-2">
                                     <div class="card-body">
-                                        <h5 class="card-title"><?php echo  $book->title; ?> </h5>
+                                        <h5 class="card-title">Book Title: <?php echo  $book->title; ?> </h5>
                                         <h5 class="card-title">ISBN: <?php echo  $book->isbn; ?> </h5>
                                         <h5 class="card-title">Author: <?php echo  $book->author; ?> </h5>
                                         <hr>
-                                        <form method="POST" enctype="multipart/form-data">
+                                        <form method="POST" class="text-center" enctype="multipart/form-data">
                                             <div class="form-row">
-                                                <div class="form-group col-md-6">
+                                                <div class="form-group col-md-12">
                                                     <label for="inputEmail4">Raw Barcode Number</label>
-                                                    <input type="text" required value="<?php echo $a; ?><?php echo $b; ?>" class="form-control" name="barcode_text">
+                                                    <input type="text" required value="<?php echo $book->barcode;?>" class="form-control" name="barcode_text">
                                                 </div>
                                             </div>
                                             <button type="submit" name="generate_barcode" class="btn btn-primary mt-3">Generate BarCode</button>
                                         </form>
-
-                                        <?php
+                                        <hr>
+                                        <?php   
                                         if (isset($_POST['generate_barcode'])) {
                                             $text = $_POST['barcode_text'];
-                                            echo "<img alt='testing' src='barcode_api.php?codetype=Code39&size=40&text=" . $text . "&print=true'/>";
-                                        } ?>
+                                            echo "<img alt='testing' id='barcode' src='barcode_api.php?codetype=Code39&size=100&text=" . $text . "&print=true'/>";
 
+                                           echo " <button id='print' onclick='printContent('barcode');'  class='btn btn-primary mt-3'>Print</button>";
+                                        } ?>
+                                        <hr>
                                     </div>
                                 </div>
                             </div>

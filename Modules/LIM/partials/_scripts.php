@@ -481,7 +481,7 @@
     <script src="plugins/ckeditor/ckeditor.js"></script>
     <script>
         //Faculty Instance
-        CKEDITOR.replace('faculty_desc');
+        CKEDITOR.replace('textarea');
     </script>
     <!-- NOTE TO Use Copy CSV Excel PDF Print Options You Must Include These Files  -->
     <script src="plugins/table/datatable/button-ext/dataTables.buttons.min.js"></script>

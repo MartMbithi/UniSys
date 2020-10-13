@@ -79,20 +79,21 @@ require_once('partials/_head.php');
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
                                                     <label for="inputEmail4">Raw Barcode Number</label>
-                                                    <input type="text" required value="<?php echo $book->barcode;?>" class="form-control" name="barcode_text">
+                                                    <input type="text" required value="<?php echo $book->barcode; ?>" class="form-control" name="barcode_text">
                                                 </div>
                                             </div>
                                             <button type="submit" name="generate_barcode" class="btn btn-primary mt-3">Generate BarCode</button>
                                         </form>
                                         <hr>
-                                        <?php   
-                                        if (isset($_POST['generate_barcode'])) {
-                                            $text = $_POST['barcode_text'];
-                                            echo "<img alt='testing' id='barcode' src='barcode_api.php?codetype=Code39&size=100&text=" . $text . "&print=true'/>";
-
-                                           echo " <button id='print' onclick='printContent('barcode');'  class='btn btn-primary mt-3'>Print</button>";
-                                        } ?>
-                                        <hr>
+                                        <div class="text-center">
+                                            <?php
+                                            if (isset($_POST['generate_barcode'])) {
+                                                $text = $_POST['barcode_text'];
+                                                echo "<img alt='testing' id='barcode' src='barcode_api.php?codetype=Code39&size=100&text=" . $text . "&print=true'/>";
+                                            } ?>
+                                            <hr>
+                                            <button id='print' onclick="printContent('barcode');" class='btn btn-primary mt-3'>Print</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -106,7 +107,15 @@ require_once('partials/_head.php');
             <!--  END CONTENT AREA  -->
         </div>
         <!-- END MAIN CONTAINER -->
-
+        <script>
+            function printContent(el) {
+                var restorepage = $('body').html();
+                var printcontent = $('#' + el).clone();
+                $('body').empty().html(printcontent);
+                window.print();
+                $('body').html(restorepage);
+            }
+        </script>
         <?php require_once('partials/_scripts.php'); ?>
 </body>
 

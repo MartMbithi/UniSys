@@ -12,6 +12,8 @@
     </script>
     <script src="assets/js/custom.js"></script>
     <script src="plugins/apex/apexcharts.min.js"></script>
+    <!-- Load Analytics Once Again -->
+    <?php require_once('partials/_analytics.php'); ?>
     <script>
         try {
 
@@ -72,7 +74,7 @@
                         },
                     }
                 },
-                colors: ['#1b55e2', '#e7515a'],
+                colors: ['#1b55e2', '#ffa700', '#e7515a'],
                 dataLabels: {
                     enabled: false
                 },
@@ -92,7 +94,7 @@
                     }]
                 },
                 subtitle: {
-                    text: 'Total Profit',
+                    text: 'Library Operations',
                     align: 'left',
                     margin: 0,
                     offsetX: -10,
@@ -104,7 +106,7 @@
                     }
                 },
                 title: {
-                    text: '$10,840',
+                    text: '<?php echo $ops; ?>',
                     align: 'left',
                     margin: 0,
                     offsetX: -10,
@@ -122,12 +124,17 @@
                     lineCap: 'square'
                 },
                 series: [{
-                    name: 'Income',
-                    data: [16800, 16800, 15500, 17800, 15500, 17000, 19000, 16000, 15000, 17000, 14000, 17000]
-                }, {
-                    name: 'Expenses',
-                    data: [16500, 17500, 16200, 17300, 16000, 19500, 16000, 17000, 16000, 19000, 18000, 19000]
-                }],
+                        name: 'Borrowed Books',
+                        data: [<?php echo $jan; ?>, <?php echo $feb; ?>, <?php echo $mar; ?>, <?php echo $apr; ?>, <?php echo $may; ?>, <?php echo $jun; ?>, <?php echo $jul; ?>, <?php echo $aug; ?>, <?php echo $sep; ?>, <?php echo $oct; ?>, <?php echo $nov; ?>, <?php echo $dec; ?>]
+                    }, {
+                        name: 'Damanged Books',
+                        data: [<?php echo $Jan; ?>, <?php echo $Feb; ?>, <?php echo $Mar; ?>, <?php echo $Apr; ?>, <?php echo $May; ?>, <?php echo $Jun; ?>, <?php echo $Jul; ?>, <?php echo $Aug; ?>, <?php echo $Sep; ?>, <?php echo $Oct; ?>, <?php echo $Nov; ?>, <?php echo $Dec; ?>]
+                    },
+                    {
+                        name: 'Lost Books',
+                        data: [<?php echo $lostJan; ?>, <?php echo $lostFeb; ?>, <?php echo $lostMar; ?>, <?php echo $lostApr; ?>, <?php echo $lostMay; ?>, <?php echo $lostJun; ?>, <?php echo $Jul; ?>, <?php echo $lostAug; ?>, <?php echo $lostSep; ?>, <?php echo $lostOct; ?>, <?php echo $lostNov; ?>, <?php echo $lostDec; ?>]
+                    }
+                ],
                 labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
                 xaxis: {
                     axisBorder: {
@@ -241,7 +248,7 @@
                     type: 'donut',
                     width: 380
                 },
-                colors: ['#5c1ac3', '#e2a03f', '#e7515a', '#e2a03f'],
+                colors: ['#e7515a', '#e2a03f', '#5c1ac3', '#e2a03f'],
                 dataLabels: {
                     enabled: false
                 },
@@ -301,8 +308,8 @@
                     show: true,
                     width: 25,
                 },
-                series: [985, 737, 270],
-                labels: ['Apparel', 'Electronic', 'Others'],
+                series: [<?php echo $LostBook; ?>, <?php echo $DamangedBooks; ?>, <?php echo $borrowedBooks; ?>],
+                labels: ['Lost', 'Damanged', 'Borrowed'],
                 responsive: [{
                     breakpoint: 1599,
                     options: {
@@ -407,10 +414,7 @@
                 },
                 series: [{
                     name: 'Direct',
-                    data: [58, 44, 55, 57, 56, 61, 58, 63, 60, 66, 56, 63]
-                }, {
-                    name: 'Organic',
-                    data: [91, 76, 85, 101, 98, 87, 105, 91, 114, 94, 66, 70]
+                    data: [<?php echo $visitJan; ?>, <?php echo $visitFeb; ?>, <?php echo $visitMar; ?>, <?php echo $visitApr; ?>, <?php echo $visitMay; ?>, <?php echo $visitJun; ?>, <?php echo $visitJul; ?>, <?php echo $visitAug; ?>, <?php echo $visitSep; ?>, <?php echo $visitOct; ?>, <?php echo $visitNov; ?>, <?php echo $visitDec; ?>]
                 }],
                 xaxis: {
                     categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],

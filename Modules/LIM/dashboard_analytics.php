@@ -94,7 +94,7 @@ require_once('partials/_head.php');
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value"><?php echo $AvailableBook;?></h6>
+                                        <h6 class="value"><?php echo $AvailableBook; ?></h6>
                                         <p class="">Available Book Copies</p>
                                     </div>
                                     <div class="">
@@ -115,7 +115,7 @@ require_once('partials/_head.php');
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value"><?php echo $LostBook;?></h6>
+                                        <h6 class="value"><?php echo $LostBook; ?></h6>
                                         <p class="">Lost Books</p>
                                     </div>
                                     <div class="">
@@ -137,7 +137,7 @@ require_once('partials/_head.php');
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value"><?php echo $DamangedBooks;?></h6>
+                                        <h6 class="value"><?php echo $DamangedBooks; ?></h6>
                                         <p class="">Damanged Books</p>
                                     </div>
                                     <div class="">
@@ -159,7 +159,7 @@ require_once('partials/_head.php');
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value"><?php echo $borrowedBooks;?></h6>
+                                        <h6 class="value"><?php echo $borrowedBooks; ?></h6>
                                         <p class="">Borrowed Books</p>
                                     </div>
                                     <div class="">
@@ -180,7 +180,7 @@ require_once('partials/_head.php');
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value"> Ksh <?php echo $PaidFine;?></h6>
+                                        <h6 class="value"> Ksh <?php echo $PaidFine; ?></h6>
                                         <p class="">Unpaid Fine</p>
                                     </div>
                                     <div class="">
@@ -230,28 +230,42 @@ require_once('partials/_head.php');
 
                                 <div class="mt-container mx-auto">
                                     <div class="timeline-line">
-
-                                        <div class="item-timeline timeline-new">
-                                            <div class="t-dot">
-                                                <div class="t-primary">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check">
-                                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                                    </svg>
+                                        <?php
+                                        $ret = "SELECT * FROM `UniSys_LIM_Fines`  ";
+                                        $stmt = $mysqli->prepare($ret);
+                                        $stmt->execute(); //ok
+                                        $res = $stmt->get_result();
+                                        while ($fines = $res->fetch_object()) {
+                                        ?>
+                                            <div class="item-timeline timeline-new">
+                                                <div class="t-dot">
+                                                    <div class="t-primary">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check">
+                                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <div class="t-content">
+                                                    <div class="t-uppercontent">
+                                                        <h5>Paid</h5>
+                                                        <span class=""><?php echo date('d, M, Y', strtotime($rines->created_at)); ?></span>
+                                                    </div>
+                                                    <p>
+                                                        <span class="text-success">
+                                                            <?php echo $fines->code; ?> CONFIRMED
+                                                        </span>
+                                                        <?php echo $fines->student_name; ?> - <?php echo $fines->student_regno; ?>
+                                                        Has Paid Ksh <?php echo $fines->fine_amt; ?> For <?php echo $fines->fine_type; ?>
+                                                        Book.
+                                                    </p>
+                                                    <div class="tags">
+                                                        <div class="badge badge-primary"><?php echo $fines->book_isbn; ?></div>
+                                                        <div class="badge badge-success"><?php echo $fines->book_title; ?></div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="t-content">
-                                                <div class="t-uppercontent">
-                                                    <h5>Logs</h5>
-                                                    <span class="">27 Feb, 2020</span>
-                                                </div>
-                                                <p><span>Updated</span> Server Logs</p>
-                                                <div class="tags">
-                                                    <div class="badge badge-primary">Logs</div>
-                                                    <div class="badge badge-success">CPanel</div>
-                                                    <div class="badge badge-warning">Update</div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <?php
+                                        } ?>
                                     </div>
                                 </div>
                             </div>

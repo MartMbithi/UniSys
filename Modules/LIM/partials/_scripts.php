@@ -128,11 +128,11 @@
                         data: [<?php echo $jan;?>, <?php echo $feb;?>, <?php echo $mar;?>, <?php echo $apr;?>, <?php echo $may;?>, <?php echo $jun;?>, <?php echo $jul;?>, <?php echo $aug;?>, <?php echo $sep;?>, <?php echo $oct;?>, <?php echo $nov;?>, <?php echo $dec;?>]
                     }, {
                         name: 'Damanged Books',
-                        data: [16500, 17500, 16200, 17300, 16000, 19500, 16000, 17000, 16000, 19000, 18000, 19000]
+                        data: [<?php echo $Jan;?>, <?php echo $Feb;?>, <?php echo $Mar;?>, <?php echo $Apr;?>, <?php echo $May;?>, <?php echo $Jun;?>, <?php echo $Jul;?>, <?php echo $Aug;?>, <?php echo $Sep;?>, <?php echo $Oct;?>, <?php echo $Nov;?>, <?php echo $Dec;?>]
                     },
                     {
                         name: 'Lost Books',
-                        data: [16500, 17500, 16200, 17300, 16000, 19500, 16000, 17000, 16000, 19000, 18000, 19000]
+                        data: [<?php echo $lostJan;?>, <?php echo $lostFeb;?>, <?php echo $lostMar;?>, <?php echo $lostApr;?>, <?php echo $lostMay;?>, <?php echo $lostJun;?>, <?php echo $Jul;?>, <?php echo $lostAug;?>, <?php echo $lostSep;?>, <?php echo $lostOct;?>, <?php echo $lostNov;?>, <?php echo $lostDec;?>]
                     }
                 ],
                 labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],

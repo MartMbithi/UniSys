@@ -321,7 +321,7 @@ $stmt->close();
 $query = "SELECT COUNT(*)  FROM `UniSys_LIM_Register` WHERE month = 'Jan' ";
 $stmt = $mysqli->prepare($query);
 $stmt->execute();
-$stmt->bind_result($vistJan);
+$stmt->bind_result($visitJan);
 $stmt->fetch();
 $stmt->close();
 

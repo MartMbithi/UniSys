@@ -414,7 +414,7 @@
                 },
                 series: [{
                     name: 'Direct',
-                    data: [<?php echo $vistJan; ?>, <?php echo $vistFeb; ?>, <?php echo $visitMar; ?>, <?php echo $vistApr; ?>, <?php echo $visitMay; ?>, <?php echo $visitJun; ?>, <?php echo $visitJul; ?>, <?php echo $vistAug; ?>, <?php echo $visitSep; ?>, <?php echo $visitOct; ?>, <?php echo $visitNov; ?>, <?php echo $visitDec; ?>]
+                    data: [<?php echo $visitJan; ?>, <?php echo $visitFeb; ?>, <?php echo $visitMar; ?>, <?php echo $visitApr; ?>, <?php echo $visitMay; ?>, <?php echo $visitJun; ?>, <?php echo $visitJul; ?>, <?php echo $visitAug; ?>, <?php echo $visitSep; ?>, <?php echo $visitOct; ?>, <?php echo $visitNov; ?>, <?php echo $visitDec; ?>]
                 }],
                 xaxis: {
                     categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],

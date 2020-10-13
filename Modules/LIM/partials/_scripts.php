@@ -248,7 +248,7 @@
                     type: 'donut',
                     width: 380
                 },
-                colors: ['#5c1ac3', '#e2a03f', '#e7515a', '#e2a03f'],
+                colors: ['#e7515a', '#e2a03f', '#5c1ac3', '#e2a03f'],
                 dataLabels: {
                     enabled: false
                 },
@@ -308,8 +308,8 @@
                     show: true,
                     width: 25,
                 },
-                series: [985, 737, 270],
-                labels: ['Apparel', 'Electronic', 'Others'],
+                series: [<?php echo $LostBook;?>, <?php echo $DamangedBooks;?>, <?php echo $borrowedBooks;?>],
+                labels: ['Lost', 'Damanged', 'Borrowed'],
                 responsive: [{
                     breakpoint: 1599,
                     options: {

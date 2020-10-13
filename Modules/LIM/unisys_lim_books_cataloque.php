@@ -108,7 +108,7 @@ require_once('partials/_head.php');
                                                 <td><?php echo $book->author; ?></td>
                                                 <td><?php echo $book->title; ?></td>
                                                 <td><?php echo $book->publisher; ?></td>
-                                                <td><?php echo $book->copies; ?></td>
+                                                <td><?php echo $book->copies; ?> Copies</td>
                                                 <td class="text-center">
                                                     <a href="unisys_lim_view_book.php?view=<?php echo $book->id; ?>" data-toggle="tooltip" class="badge outline-badge-success">
                                                         View

@@ -28,14 +28,14 @@ if (isset($_POST['add_book'])) {
             $title = $_POST['title'];
             $author = $_POST['author'];
             $publisher  = $_POST['publisher'];
-            $copies  = $_POST['copies '];
+            $copies  = $_POST['copies'];
             $synopsis = $_POST['synopsis'];
             $cover_img = $_FILES['cover_img']['name'];
-            move_uploaded_file($_FILES["cover_img"]["tmp_name"], "assets/img/student/" . $_FILES["cover_img"]["name"]);
+            move_uploaded_file($_FILES["cover_img"]["tmp_name"], "assets/img/cover_img/" . $_FILES["cover_img"]["name"]);
 
-            $query = "INSERT INTO UniSys_LIM_Books_Cataloque (id, isbn, title, author, publisher, copies, synopsis, cover_img) VALUES (?,?,?,?,?,?,?)";
+            $query = "INSERT INTO UniSys_LIM_Books_Cataloque (id, isbn, title, author, publisher, copies, synopsis, cover_img) VALUES (?,?,?,?,?,?,?,?)";
             $stmt = $mysqli->prepare($query);
-            $rc = $stmt->bind_param('sssssss', $id, $isbn, $title, $author, $publisher, $copies, $synopsis, $cover_img);
+            $rc = $stmt->bind_param('ssssssss', $id, $isbn, $title, $author, $publisher, $copies, $synopsis, $cover_img);
             $stmt->execute();
             if ($stmt) {
                 $success = "Added" && header("refresh:1; url=unisys_lim_add_book.php");
@@ -136,12 +136,12 @@ require_once('partials/_head.php');
                                         <input type="text" required class="form-control" name="copies">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="inputEmail4">Passport</label>
+                                        <label for="inputEmail4">Cover Image</label>
                                         <input type="file" required class="form-control btn btn-outline-success" name="cover_img">
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="inputEmail4">Book Synopsis</label>
-                                        <textarea type="text" id="textarea" class="form-control" name="synopsis"></textarea>
+                                        <textarea type="text"  required id="textarea" class="form-control" name="synopsis"></textarea>
                                     </div>
                                 </div>
                                 <button type="submit" name="add_book" class="btn btn-primary mt-3">Submit</button>

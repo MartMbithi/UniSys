@@ -307,3 +307,89 @@ $stmt->execute();
 $stmt->bind_result($lostDec);
 $stmt->fetch();
 $stmt->close();
+
+
+/* Library Visitors Per Month */
+$query = "SELECT COUNT(*)  FROM `UniSys_LIM_Register` WHERE month = 'Jan' ";
+$stmt = $mysqli->prepare($query);
+$stmt->execute();
+$stmt->bind_result($vistJan);
+$stmt->fetch();
+$stmt->close();
+
+$query = "SELECT COUNT(*)  FROM `UniSys_LIM_Register` WHERE month = 'Feb'";
+$stmt = $mysqli->prepare($query);
+$stmt->execute();
+$stmt->bind_result($visitFeb);
+$stmt->fetch();
+$stmt->close();
+
+$query = "SELECT COUNT(*)  FROM `UniSys_LIM_Register` WHERE month = 'Mar'";
+$stmt = $mysqli->prepare($query);
+$stmt->execute();
+$stmt->bind_result($visitMar);
+$stmt->fetch();
+$stmt->close();
+
+$query = "SELECT COUNT(*)  FROM `UniSys_LIM_Register` WHERE month = 'Apr'";
+$stmt = $mysqli->prepare($query);
+$stmt->execute();
+$stmt->bind_result($visitApr);
+$stmt->fetch();
+$stmt->close();
+
+$query = "SELECT COUNT(*)  FROM `UniSys_LIM_Register` WHERE month = 'May'";
+$stmt = $mysqli->prepare($query);
+$stmt->execute();
+$stmt->bind_result($visitMay);
+$stmt->fetch();
+$stmt->close();
+
+$query = "SELECT COUNT(*)  FROM `UniSys_LIM_Register` WHERE month = 'Jun' ";
+$stmt = $mysqli->prepare($query);
+$stmt->execute();
+$stmt->bind_result($visitJun);
+$stmt->fetch();
+$stmt->close();
+
+$query = "SELECT COUNT(*)  FROM `UniSys_LIM_Register` WHERE month = 'Jul'";
+$stmt = $mysqli->prepare($query);
+$stmt->execute();
+$stmt->bind_result($visitJul);
+$stmt->fetch();
+$stmt->close();
+
+$query = "SELECT COUNT(*)  FROM `UniSys_LIM_Register` WHERE month = 'Aug'";
+$stmt = $mysqli->prepare($query);
+$stmt->execute();
+$stmt->bind_result($visitAug);
+$stmt->fetch();
+$stmt->close();
+
+$query = "SELECT COUNT(*)  FROM `UniSys_LIM_Register` WHERE month = 'Sep'";
+$stmt = $mysqli->prepare($query);
+$stmt->execute();
+$stmt->bind_result($visitSep);
+$stmt->fetch();
+$stmt->close();
+
+$query = "SELECT COUNT(*)  FROM `UniSys_LIM_Register` WHERE month = 'Oct'";
+$stmt = $mysqli->prepare($query);
+$stmt->execute();
+$stmt->bind_result($visitOct);
+$stmt->fetch();
+$stmt->close();
+
+$query = "SELECT COUNT(*)  FROM `UniSys_LIM_Register` WHERE month = 'Nov' ";
+$stmt = $mysqli->prepare($query);
+$stmt->execute();
+$stmt->bind_result($visitNov);
+$stmt->fetch();
+$stmt->close();
+
+$query = "SELECT COUNT(*)  FROM `UniSys_LIM_Register` WHERE month = 'Dec' ";
+$stmt = $mysqli->prepare($query);
+$stmt->execute();
+$stmt->bind_result($visitDec);
+$stmt->fetch();
+$stmt->close();

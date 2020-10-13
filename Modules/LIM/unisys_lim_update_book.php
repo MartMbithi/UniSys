@@ -6,16 +6,6 @@ check_login();
 require_once('configs/codeGen.php');
 
 if (isset($_POST['update_book'])) {
-    //Error Handling and prevention of posting double entries
-    $error = 0;
-    if (isset($_POST['isbn']) && !empty($_POST['isbn'])) {
-        $isbn = mysqli_real_escape_string($mysqli, trim($_POST['isbn']));
-    } else {
-        $error = 1;
-        $err = "ISBN  Number Cannot Be Empty";
-    }
-    if (!$error) {
-
         $update = $_GET['update'];
         $isbn = $_POST['isbn'];
         $title = $_POST['title'];
@@ -37,7 +27,7 @@ if (isset($_POST['update_book'])) {
             $info = "Please Try Again Or Try Later";
         }
     }
-}
+
 
 require_once('partials/_head.php');
 ?>

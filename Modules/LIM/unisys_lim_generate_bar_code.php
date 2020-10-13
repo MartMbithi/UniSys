@@ -76,7 +76,7 @@ require_once('partials/_head.php');
                                         <h5 class="card-title">ISBN: <?php echo  $book->isbn; ?> </h5>
                                         <h5 class="card-title">Author: <?php echo  $book->author; ?> </h5>
                                         <hr>
-                                        <form method="POST" action="generate_barcode.php" enctype="multipart/form-data">
+                                        <form method="POST" enctype="multipart/form-data">
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
                                                     <label for="inputEmail4">Raw Barcode Number</label>
@@ -85,6 +85,13 @@ require_once('partials/_head.php');
                                             </div>
                                             <button type="submit" name="generate_barcode" class="btn btn-primary mt-3">Generate BarCode</button>
                                         </form>
+
+                                        <?php
+                                        if (isset($_POST['generate_barcode'])) {
+                                            $text = $_POST['barcode_text'];
+                                            echo "<img alt='testing' src='barcode_api.php?codetype=Code39&size=40&text=" . $text . "&print=true'/>";
+                                        } ?>
+
                                     </div>
                                 </div>
                             </div>

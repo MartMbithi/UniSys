@@ -70,11 +70,21 @@ require_once('partials/_head.php');
                         <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
                             <div class="widget-content widget-content-area br-6">
                                 <div class="card component-card_2">
-                                    <img src="assets/img/grid-blog-style-3.jpg" class="card-img-top" alt="widget-card-2">
+                                    <img src="assets/img/cover_img/<?php echo $book->cover_img; ?>" class="img-thumbnail img-fluid card-img-top" alt="widget-card-2">
                                     <div class="card-body">
-                                        <h5 class="card-title">CLI Based</h5>
-                                        <p class="card-text">Etiam sed augue ac justo tincidunt posuere. Vivamus euismod eros, nec risus malesuada.</p>
-                                        <a href="#" class="btn btn-primary">Explore More</a>
+                                        <h5 class="card-title"><?php echo  $book->title; ?> </h5>
+                                        <h5 class="card-title">ISBN: <?php echo  $book->isbn; ?> </h5>
+                                        <h5 class="card-title">Author: <?php echo  $book->author; ?> </h5>
+                                        <hr>
+                                        <form method="POST" action="generate_barcode.php" enctype="multipart/form-data">
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label for="inputEmail4">Raw Barcode Number</label>
+                                                    <input type="text" required value="<?php echo $a; ?><?php echo $b; ?>" class="form-control" name="barcode_text">
+                                                </div>
+                                            </div>
+                                            <button type="submit" name="generate_barcode" class="btn btn-primary mt-3">Generate BarCode</button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>

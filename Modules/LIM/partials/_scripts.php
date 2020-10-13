@@ -125,14 +125,14 @@
                 },
                 series: [{
                         name: 'Borrowed Books',
-                        data: [<?php echo $jan;?>, <?php echo $feb;?>, <?php echo $mar;?>, <?php echo $apr;?>, <?php echo $may;?>, <?php echo $jun;?>, <?php echo $jul;?>, <?php echo $aug;?>, <?php echo $sep;?>, <?php echo $oct;?>, <?php echo $nov;?>, <?php echo $dec;?>]
+                        data: [<?php echo $jan; ?>, <?php echo $feb; ?>, <?php echo $mar; ?>, <?php echo $apr; ?>, <?php echo $may; ?>, <?php echo $jun; ?>, <?php echo $jul; ?>, <?php echo $aug; ?>, <?php echo $sep; ?>, <?php echo $oct; ?>, <?php echo $nov; ?>, <?php echo $dec; ?>]
                     }, {
                         name: 'Damanged Books',
-                        data: [<?php echo $Jan;?>, <?php echo $Feb;?>, <?php echo $Mar;?>, <?php echo $Apr;?>, <?php echo $May;?>, <?php echo $Jun;?>, <?php echo $Jul;?>, <?php echo $Aug;?>, <?php echo $Sep;?>, <?php echo $Oct;?>, <?php echo $Nov;?>, <?php echo $Dec;?>]
+                        data: [<?php echo $Jan; ?>, <?php echo $Feb; ?>, <?php echo $Mar; ?>, <?php echo $Apr; ?>, <?php echo $May; ?>, <?php echo $Jun; ?>, <?php echo $Jul; ?>, <?php echo $Aug; ?>, <?php echo $Sep; ?>, <?php echo $Oct; ?>, <?php echo $Nov; ?>, <?php echo $Dec; ?>]
                     },
                     {
                         name: 'Lost Books',
-                        data: [<?php echo $lostJan;?>, <?php echo $lostFeb;?>, <?php echo $lostMar;?>, <?php echo $lostApr;?>, <?php echo $lostMay;?>, <?php echo $lostJun;?>, <?php echo $Jul;?>, <?php echo $lostAug;?>, <?php echo $lostSep;?>, <?php echo $lostOct;?>, <?php echo $lostNov;?>, <?php echo $lostDec;?>]
+                        data: [<?php echo $lostJan; ?>, <?php echo $lostFeb; ?>, <?php echo $lostMar; ?>, <?php echo $lostApr; ?>, <?php echo $lostMay; ?>, <?php echo $lostJun; ?>, <?php echo $Jul; ?>, <?php echo $lostAug; ?>, <?php echo $lostSep; ?>, <?php echo $lostOct; ?>, <?php echo $lostNov; ?>, <?php echo $lostDec; ?>]
                     }
                 ],
                 labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
@@ -308,7 +308,7 @@
                     show: true,
                     width: 25,
                 },
-                series: [<?php echo $LostBook;?>, <?php echo $DamangedBooks;?>, <?php echo $borrowedBooks;?>],
+                series: [<?php echo $LostBook; ?>, <?php echo $DamangedBooks; ?>, <?php echo $borrowedBooks; ?>],
                 labels: ['Lost', 'Damanged', 'Borrowed'],
                 responsive: [{
                     breakpoint: 1599,
@@ -414,7 +414,7 @@
                 },
                 series: [{
                     name: 'Direct',
-                    data: [<?php echo $vistJan;?>, <?php echo $vistFeb;?>, <?php echo $visitMar;?>, <?php echo $vistApr;?>, <?php echo $visitMay;?>, <?php echo $visitJun;?>, <?php echo $visitJul;?>, <?php echo $vistAug;?>, <?php echo $visitSep;?>, <?php echo $visitOct;?>, <?php echo $visitNov;?>, <?php echo $visitDec;?>]
+                    data: [<?php echo $vistJan; ?>, <?php echo $vistFeb; ?>, <?php echo $visitMar; ?>, <?php echo $vistApr; ?>, <?php echo $visitMay; ?>, <?php echo $visitJun; ?>, <?php echo $visitJul; ?>, <?php echo $vistAug; ?>, <?php echo $visitSep; ?>, <?php echo $visitOct; ?>, <?php echo $visitNov; ?>, <?php echo $visitDec; ?>]
                 }],
                 xaxis: {
                     categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],

@@ -26,6 +26,14 @@ $stmt->close();
 /* Borrowed  Books */
 $borrowedBooks = ($AvailableBook - ($LostBook + $DamangedBooks));
 
+/* Total Library Operations */
+$query = "SELECT COUNT(*)  FROM `UniSys_LIM_Library_Operations`" ;
+$stmt = $mysqli->prepare($query);
+$stmt->execute();
+$stmt->bind_result($ops);
+$stmt->fetch();
+$stmt->close();
+
 /* Total Paid Fine */
 $query = "SELECT SUM(fine_amt)  FROM `UniSys_LIM_Fines` WHERE  status = 'Paid'";
 $stmt = $mysqli->prepare($query);

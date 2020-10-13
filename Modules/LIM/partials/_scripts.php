@@ -12,6 +12,8 @@
     </script>
     <script src="assets/js/custom.js"></script>
     <script src="plugins/apex/apexcharts.min.js"></script>
+    <!-- Load Analytics Once Again -->
+    <?php require_once('partials/_analytics.php'); ?>
     <script>
         try {
 
@@ -72,7 +74,7 @@
                         },
                     }
                 },
-                colors: ['#1b55e2', '#e7515a'],
+                colors: ['#1b55e2', '#ffa700', '#e7515a'],
                 dataLabels: {
                     enabled: false
                 },
@@ -92,7 +94,7 @@
                     }]
                 },
                 subtitle: {
-                    text: 'Total Profit',
+                    text: 'Library Operations',
                     align: 'left',
                     margin: 0,
                     offsetX: -10,
@@ -104,7 +106,7 @@
                     }
                 },
                 title: {
-                    text: '$10,840',
+                    text: '<?php echo $ops; ?>',
                     align: 'left',
                     margin: 0,
                     offsetX: -10,
@@ -122,12 +124,17 @@
                     lineCap: 'square'
                 },
                 series: [{
-                    name: 'Income',
-                    data: [16800, 16800, 15500, 17800, 15500, 17000, 19000, 16000, 15000, 17000, 14000, 17000]
-                }, {
-                    name: 'Expenses',
-                    data: [16500, 17500, 16200, 17300, 16000, 19500, 16000, 17000, 16000, 19000, 18000, 19000]
-                }],
+                        name: 'Borrowed Books',
+                        data: [<?php echo $jan;?>, <?php echo $feb;?>, <?php echo $mar;?>, <?php echo $apr;?>, <?php echo $may;?>, <?php echo $jun;?>, <?php echo $jul;?>, <?php echo $aug;?>, <?php echo $sep;?>, <?php echo $oct;?>, <?php echo $nov;?>, <?php echo $dec;?>]
+                    }, {
+                        name: 'Damanged Books',
+                        data: [16500, 17500, 16200, 17300, 16000, 19500, 16000, 17000, 16000, 19000, 18000, 19000]
+                    },
+                    {
+                        name: 'Lost Books',
+                        data: [16500, 17500, 16200, 17300, 16000, 19500, 16000, 17000, 16000, 19000, 18000, 19000]
+                    }
+                ],
                 labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
                 xaxis: {
                     axisBorder: {

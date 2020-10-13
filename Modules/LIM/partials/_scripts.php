@@ -414,10 +414,7 @@
                 },
                 series: [{
                     name: 'Direct',
-                    data: [58, 44, 55, 57, 56, 61, 58, 63, 60, 66, 56, 63]
-                }, {
-                    name: 'Organic',
-                    data: [91, 76, 85, 101, 98, 87, 105, 91, 114, 94, 66, 70]
+                    data: [<?php echo $vistJan;?>, <?php echo $vistFeb;?>, <?php echo $visitMar;?>, <?php echo $vistApr;?>, <?php echo $visitMay;?>, <?php echo $visitJun;?>, <?php echo $visitJul;?>, <?php echo $vistAug;?>, <?php echo $visitSep;?>, <?php echo $visitOct;?>, <?php echo $visitNov;?>, <?php echo $visitDec;?>]
                 }],
                 xaxis: {
                     categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],

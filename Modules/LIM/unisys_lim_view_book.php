@@ -83,11 +83,10 @@ require_once('partials/_head.php');
                                             </svg></a>
                                     </div>
                                     <div class="text-center user-info">
-                                        <img src='assets/img/student/<?php $book->cover_img; ?>' class='img-fluid img-thumbnail' alt='avatar'>
+                                        <img src='assets/img/cover_img/<?php  echo $book->cover_img; ?>' class='img-fluid img-thumbnail' alt='avatar'>
                                         <p class=""><?php echo $book->title; ?></p>
                                     </div>
                                     <div class="user-info-list">
-
                                         <div class="">
                                             <ul class="contacts-block list-unstyled">
                                                 <li class="contacts-block__item">
@@ -100,9 +99,8 @@ require_once('partials/_head.php');
                                                     Publisher : <?php echo $book->publisher; ?>
                                                 </li>
                                                 <li class="contacts-block__item">
-                                                    Copies : <?php echo $book->copies; ?>
+                                                    Copies : <?php echo $book->copies; ?> Copies
                                                 </li>
-
                                             </ul>
                                         </div>
                                     </div>
@@ -119,7 +117,9 @@ require_once('partials/_head.php');
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 layout-top-spacing">
                             <div class="bio layout-spacing ">
                                 <div class="widget-content widget-content-area">
                                     <h3 class="">Libary Operations Records For <?php echo $book->title; ?></h3>

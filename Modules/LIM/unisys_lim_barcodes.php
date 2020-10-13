@@ -31,7 +31,7 @@ require_once('partials/_head.php');
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
                                 <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><span>Book Cataloque</span></li>
+                                <li class="breadcrumb-item active" aria-current="page"><span>BarCodes</span></li>
                             </ol>
                         </nav>
 

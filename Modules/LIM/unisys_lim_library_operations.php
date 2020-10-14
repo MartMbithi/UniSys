@@ -94,7 +94,7 @@ require_once('partials/_head.php');
                                             <th>Student Name</th>
                                             <th>Student ADMNo</th>
                                             <th>Created At</th>
-                                            <th class="text-center">Settings</th>
+                                            <th class="text-center">Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -122,11 +122,22 @@ require_once('partials/_head.php');
                                                 <td><?php echo $ops->book_title; ?></td>
                                                 <td><?php echo $ops->student_name; ?></td>
                                                 <td><?php echo $ops->student_regno; ?></td>
-                                                <td><?php echo date('d, M, Y g:i', strtotime($ops->created_at));?></td>
+                                                <td><?php echo date('d, M, Y g:i', strtotime($ops->created_at)); ?></td>
                                                 <td class="text-center">
-                                                    <a href="unisys_lim_library_operations.php?delete=<?php echo $ops->id; ?>" data-toggle="tooltip" class="badge outline-badge-danger">
-                                                        Delete
-                                                    </a>
+                                                    <div class="dropdown custom-dropdown">
+                                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink12" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal">
+                                                                <circle cx="12" cy="12" r="1"></circle>
+                                                                <circle cx="19" cy="12" r="1"></circle>
+                                                                <circle cx="5" cy="12" r="1"></circle>
+                                                            </svg>
+                                                        </a>
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink12">
+                                                            <a class="dropdown-item" href="javascript:void(0);">View</a>
+                                                            <a class="dropdown-item" href="javascript:void(0);">Edit</a>
+                                                            <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                                                        </div>
+                                                    </div>
                                                 </td>
                                             </tr>
                                         <?php } ?>

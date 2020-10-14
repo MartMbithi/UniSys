@@ -5,7 +5,7 @@ require_once('configs/checklogin.php');
 check_login();
 require_once('configs/codeGen.php');
 
-if (isset($_POST['add_operation'])) {
+if (isset($_POST['add_library_operation'])) {
     //Error Handling and prevention of posting double entries
     $error = 0;
     if (isset($_POST['student_name']) && !empty($_POST['student_name'])) {
@@ -126,7 +126,7 @@ require_once('partials/_head.php');
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Student Registration Number</label>
-                                        <select class='form-control basic' id="RegNumber" onchange="getStudentDetails(this.value);"  name="student_regno" >
+                                        <select class='form-control basic' id="RegNumber" onchange="getStudentDetails(this.value);" name="student_regno">
                                             <option selected>Select Student Registration Number</option>
                                             <?php
                                             $ret = "SELECT * FROM `UniSys_Students`  ";
@@ -146,7 +146,7 @@ require_once('partials/_head.php');
                                     <hr>
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Book ISBN Number</label>
-                                        <select id="bookIsbn" onchange="getBookDetails(this.value);" class='form-control basic' name="book_isbn" >
+                                        <select id="bookIsbn" onchange="getBookDetails(this.value);" class='form-control basic' name="book_isbn">
                                             <option selected>Select Student Registration Number</option>
                                             <?php
                                             $ret = "SELECT * FROM `UniSys_LIM_Books_Cataloque`  ";
@@ -164,7 +164,7 @@ require_once('partials/_head.php');
                                         <input type="text" id="bookTitle" readonly class="form-control" name="book_title">
                                     </div>
                                 </div>
-                                <button type="submit" name="add_book" class="btn btn-primary mt-3">Submit</button>
+                                <button type="submit" name="add_library_operation" class="btn btn-primary mt-3">Submit</button>
                             </form>
                         </div>
                     </div>

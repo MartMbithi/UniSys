@@ -49,7 +49,7 @@ if (isset($_POST['add_library_operation'])) {
         $stmt->execute();
         $updatestmt->execute();
         if ($stmt && $updatestmt) {
-            $success = "Added"; // && header("refresh:1; url=unisys_lim_add_library_operation.php");
+            $success = "Added" && header("refresh:1; url=unisys_lim_add_library_operation.php");
         } else {
             //inject alert that task failed
             $info = "Please Try Again Or Try Later";

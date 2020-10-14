@@ -136,16 +136,26 @@ require_once('partials/_head.php');
                                                         </a>
                                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink12">
                                                             <?php
-                                                            if ($ops->type = 'Borrow') {
+                                                            if ($ops->type == 'Borrow') {
                                                                 echo
                                                                     "
                                                                     <a class='dropdown-item text-success' href='unisys_lim_return_book.php?return=$ops->id'>Return Book</a>
                                                                     <a class='dropdown-item text-danger' href='unisys_lim_report_lost.php?lost=$ops->id'>Report Lost</a>
                                                                     <a class='dropdown-item text-warning' href='unisys_lim_return_damanged.php?damanged=$ops->id'>Return Damanged</a>
+                                                                    <a class='dropdown-item text-primary' href='unisys_lim_library_operations.php?delete=$ops->id'>Delete Record</a>
+                                                                    ";
+                                                            } elseif ($ops->type == 'Damanged') {
+                                                                echo
+                                                                    "
+                                                                    <a class='dropdown-item text-primary' href='unisys_lim_library_operations.php?delete=$ops->id'>Delete Record</a>
+                                                                    ";
+                                                            } else {
+                                                                echo
+                                                                    "
+                                                                    <a class='dropdown-item text-primary' href='unisys_lim_library_operations.php?delete=$ops->id'>Delete Record</a>
                                                                     ";
                                                             }
                                                             ?>
-                                                            <a class="dropdown-item text-primary" href="unisys_lim_library_operations.php?delete=<?php echo $ops->id; ?>">Delete Record</a>
                                                         </div>
                                                     </div>
                                                 </td>

@@ -8,13 +8,20 @@ require_once('configs/codeGen.php');
 if (isset($_POST['add_operation'])) {
     //Error Handling and prevention of posting double entries
     $error = 0;
-    if (isset($_POST['isbn']) && !empty($_POST['isbn'])) {
-        $isbn = mysqli_real_escape_string($mysqli, trim($_POST['isbn']));
+    if (isset($_POST['student_name']) && !empty($_POST['student_name'])) {
+        $student_name = mysqli_real_escape_string($mysqli, trim($_POST['student_name']));
     } else {
         $error = 1;
-        $err = "ISBN  Number Cannot Be Empty";
+        $err = "Student Name Cannot Be Empty";
+    }
+    if (isset($_POST['book_title']) && !empty($_POST['book_title'])) {
+        $book_title = mysqli_real_escape_string($mysqli, trim($_POST['book_title']));
+    } else {
+        $error = 1;
+        $err = "Book Title Cannot Be Empty";
     }
     if (!$error) {
+        /* 
         $sql = "SELECT * FROM  UniSys_LIM_Books_Cataloque WHERE  isbn='$isbn' ";
         $res = mysqli_query($mysqli, $sql);
         if (mysqli_num_rows($res) > 0) {
@@ -22,26 +29,26 @@ if (isset($_POST['add_operation'])) {
             if ($isbn == $row['isbn']) {
                 $err =  "ISBN  Number Already Exists";
             }
-        } else {
-            $id = $_POST['id'];
-            $cheksum = $_POST['checksum'];
-            $type = $_POST['type'];
-            $student_regno = $_POST['student_regno'];
-            $student_name  = $_POST['student_name'];
-            $book_isbn  = $_POST['book_isbn'];
-            $book_title = $_POST['book_title'];
-            $month = $_POST['month'];
+        } else { */
 
-            $query = "INSERT INTO UniSys_LIM_Library_Operations (id, checksum, type, student_regno, student_name, book_isbn, book_title, month ) VALUES (?,?,?,?,?,?,?,?)";
-            $stmt = $mysqli->prepare($query);
-            $rc = $stmt->bind_param('ssssssss', $id, $checksum, $type, $student_regno, $student_name, $book_isbn, $book_title, $month);
-            $stmt->execute();
-            if ($stmt) {
-                $success = "Added" && header("refresh:1; url=unisys_lim_add_library_operation.php");
-            } else {
-                //inject alert that task failed
-                $info = "Please Try Again Or Try Later";
-            }
+        $id = $_POST['id'];
+        $cheksum = $_POST['checksum'];
+        $type = $_POST['type'];
+        $student_regno = $_POST['student_regno'];
+        $student_name  = $_POST['student_name'];
+        $book_isbn  = $_POST['book_isbn'];
+        $book_title = $_POST['book_title'];
+        $month = $_POST['month'];
+
+        $query = "INSERT INTO UniSys_LIM_Library_Operations (id, checksum, type, student_regno, student_name, book_isbn, book_title, month ) VALUES (?,?,?,?,?,?,?,?)";
+        $stmt = $mysqli->prepare($query);
+        $rc = $stmt->bind_param('ssssssss', $id, $checksum, $type, $student_regno, $student_name, $book_isbn, $book_title, $month);
+        $stmt->execute();
+        if ($stmt) {
+            $success = "Added" && header("refresh:1; url=unisys_lim_add_library_operation.php");
+        } else {
+            //inject alert that task failed
+            $info = "Please Try Again Or Try Later";
         }
     }
 }
@@ -119,7 +126,7 @@ require_once('partials/_head.php');
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Student Registration Number</label>
-                                        <select class='form-control basic' name="type" id="">
+                                        <select class='form-control basic' id="admNo" onchange="registerLibraryOperation(this.value);"  name="student_regno" id="">
                                             <option selected>Select Student Registration Number</option>
                                             <?php
                                             $ret = "SELECT * FROM `UniSys_Students`  ";
@@ -128,18 +135,18 @@ require_once('partials/_head.php');
                                             $res = $stmt->get_result();
                                             while ($std = $res->fetch_object()) {
                                             ?>
-                                                <option selected><?php echo $std->reg_no; ?></option>
+                                                <option><?php echo $std->reg_no; ?></option>
                                             <?php } ?>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Student Name</label>
-                                        <input type="text" readonly id="StudentName" required class="form-control" name="author">
+                                        <input type="text" readonly id="StudentName" required class="form-control" name="student_name">
                                     </div>
                                     <hr>
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Book ISBN Number</label>
-                                        <select class='form-control basic' name="book_isbn" id="">
+                                        <select id="admNo" onchange="registerLibraryOperation(this.value);" class='form-control basic' name="book_isbn" >
                                             <option selected>Select Student Registration Number</option>
                                             <?php
                                             $ret = "SELECT * FROM `UniSys_LIM_Books_Cataloque`  ";
@@ -154,7 +161,7 @@ require_once('partials/_head.php');
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Book Title</label>
-                                        <input type="text" id="BookTitle" readonly class="form-control" name="copies">
+                                        <input type="text" id="BookTitle" readonly class="form-control" name="book_title">
                                     </div>
                                 </div>
                                 <button type="submit" name="add_book" class="btn btn-primary mt-3">Submit</button>

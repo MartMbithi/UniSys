@@ -109,12 +109,14 @@ require_once('partials/_head.php');
                                                 <td><span class="text-success"><?php echo $ops->checksum; ?></span></td>
                                                 <td>
                                                     <?php
-                                                    if ($ops->type == 'Borrow') {
+                                                    if ($ops->type == 'Damanged') {
                                                         echo "<span class='badge outline-badge-warning'>$ops->type</span>";
                                                     } elseif ($ops->type == 'Lost') {
                                                         echo "<span class='badge outline-badge-danger'>$ops->type</span>";
                                                     } elseif ($ops->type == 'Return') {
                                                         echo "<span class='badge outline-badge-success'>$ops->type</span>";
+                                                    }else{
+                                                        echo "<span class='badge outline-badge-primary'>$ops->type</span>";
                                                     }
                                                     ?>
                                                 </td>

@@ -5,7 +5,7 @@ require_once('configs/checklogin.php');
 check_login();
 require_once('configs/codeGen.php');
 
-if (isset($_POST['return_book'])) {
+if (isset($_POST['report_lost'])) {
     //Error Handling and prevention of posting double entries
     $error = 0;
     if (isset($_POST['student_name']) && !empty($_POST['student_name'])) {
@@ -26,24 +26,11 @@ if (isset($_POST['return_book'])) {
         $type = $_POST['type'];
         $book_isbn = $_POST['book_isbn'];
 
-        $ret = "SELECT * FROM `UniSys_LIM_Books_Cataloque` WHERE isbn = '$book_isbn'  ";
-        $stmt = $mysqli->prepare($ret);
-        $stmt->execute(); //ok
-        $res = $stmt->get_result();
-        while ($bk = $res->fetch_object()) {
-            $initial_copies = $bk->copies;
-            $new_copies = $initial_copies + 1;
-        }
-
         $query = "UPDATE UniSys_LIM_Library_Operations SET checksum =?, type = ? WHERE id = ?";
-        $update = "UPDATE UniSys_LIM_Books_Cataloque SET copies = ? WHERE isbn = ?";
         $stmt = $mysqli->prepare($query);
-        $updatestmt = $mysqli->prepare($update);
         $rc = $stmt->bind_param('sss', $checksum, $type, $return);
-        $rc = $updatestmt->bind_param('ss', $new_copies, $book_isbn);
         $stmt->execute();
-        $updatestmt->execute();
-        if ($stmt && $updatestmt) {
+        if ($stmt) {
             $success = "Returned" && header("refresh:1; url=unisys_lim_library_operations.php");
         } else {
             //inject alert that task failed
@@ -87,7 +74,7 @@ require_once('partials/_head.php');
                                     <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
                                     <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
                                     <li class="breadcrumb-item"><a href="unisys_lim_library_operations.php">Library Operations</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page"><span>Return <?php echo $ops->book_title; ?></span></li>
+                                    <li class="breadcrumb-item active" aria-current="page"><span>Report Lost <?php echo $ops->book_title; ?></span></li>
                                 </ol>
                             </nav>
 
@@ -126,7 +113,7 @@ require_once('partials/_head.php');
                                     <div class="form-row">
                                         <div style="display: none;" class="form-group col-md-6">
                                             <input type="hidden" required value="<?php echo $checksum; ?>" readonly class="form-control" name="checksum">
-                                            <input type="hidden" required value="Return" class="form-control" name="type">
+                                            <input type="hidden" required value="Lost" class="form-control" name="type">
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="inputEmail4">Student Registration Number</label>
@@ -147,7 +134,7 @@ require_once('partials/_head.php');
                                             <input type="text" id="bookTitle" value="<?php echo $ops->book_title; ?>" readonly class="form-control" name="book_title">
                                         </div>
                                     </div>
-                                    <button type="submit" name="return_book" class="btn btn-primary mt-3">Return Book</button>
+                                    <button type="submit" name="report_lost" class="btn btn-primary mt-3">Report Book Is Lost</button>
                                 </form>
                             </div>
                         </div>

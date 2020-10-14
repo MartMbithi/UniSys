@@ -133,10 +133,10 @@ require_once('partials/_head.php');
                                                             </svg>
                                                         </a>
                                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink12">
-                                                            <a class="dropdown-item" href="unisys_lim_return_book.php?return=<?php echo $ops->id;?>">Return Book</a>
-                                                            <a class="dropdown-item" href="unisys_lim_report_lost.php?lost=<?php echo $ops->id;?>">Report Lost</a>
-                                                            <a class="dropdown-item" href="unisys_lim_return_damanged.php?damanged=<?php echo $ops->id;?>">Return Damanged</a>
-                                                            <a class="dropdown-item" href="unisys_lim_library_operations.php?delete=<?php echo $ops->id;?>">Delete Record</a>
+                                                            <a class="dropdown-item text-success" href="unisys_lim_return_book.php?return=<?php echo $ops->id; ?>">Return Book</a>
+                                                            <a class="dropdown-item text-danger" href="unisys_lim_report_lost.php?lost=<?php echo $ops->id; ?>">Report Lost</a>
+                                                            <a class="dropdown-item text-warning" href="unisys_lim_return_damanged.php?damanged=<?php echo $ops->id; ?>">Return Damanged</a>
+                                                            <a class="dropdown-item text-primary" href="unisys_lim_library_operations.php?delete=<?php echo $ops->id; ?>">Delete Record</a>
                                                         </div>
                                                     </div>
                                                 </td>

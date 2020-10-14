@@ -28,7 +28,7 @@ if (isset($_POST['report_lost'])) {
 
         $query = "UPDATE UniSys_LIM_Library_Operations SET checksum =?, type = ? WHERE id = ?";
         $stmt = $mysqli->prepare($query);
-        $rc = $stmt->bind_param('sss', $checksum, $type, $return);
+        $rc = $stmt->bind_param('sss', $checksum, $type, $lost);
         $stmt->execute();
         if ($stmt) {
             $success = "Returned" && header("refresh:1; url=unisys_lim_library_operations.php");

@@ -25,7 +25,7 @@ $stmt->close();
 
 
 /* Borrowed  Books */
-$query = "SELECT COUNT(*)  FROM `UniSys_LIM_Library_Operations` WHERE type = 'Borrowed'" ;
+$query = "SELECT COUNT(*)  FROM `UniSys_LIM_Library_Operations` WHERE type = 'Borrow'" ;
 $stmt = $mysqli->prepare($query);
 $stmt->execute();
 $stmt->bind_result($borrowedBooks);

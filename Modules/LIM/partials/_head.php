@@ -64,54 +64,16 @@
   <?php } ?>
   <!-- AJAX -->
   <script>
-    function getCourseDetails(val) {
+
+    function getBookDetails(val) {
       $.ajax({
 
         type: "POST",
         url: "ajax.php",
-        data: 'courseName=' + val,
+        data: 'bookIsbn=' + val,
         success: function(data) {
           //alert(data);
-          $('#Course_Id').val(data);
-        }
-      });
-
-    }
-
-    function getFacultyDetails(val) {
-      $.ajax({
-
-        type: "POST",
-        url: "ajax.php",
-        data: 'facultyName=' + val,
-        success: function(data) {
-          //alert(data);
-          $('#facultyID').val(data);
-        }
-      });
-
-      $.ajax({
-
-        type: "POST",
-        url: "ajax.php",
-        data: 'facultyId=' + val,
-        success: function(data) {
-          //alert(data);
-          $('#facultyCode').val(data);
-        }
-      });
-
-    }
-
-    function getUnitDetails(val) {
-      $.ajax({
-
-        type: "POST",
-        url: "ajax.php",
-        data: 'UnitCode=' + val,
-        success: function(data) {
-          //alert(data);
-          $('#unitName').val(data);
+          $('#bookTitle').val(data);
         }
       });
     }
@@ -125,17 +87,6 @@
         success: function(data) {
           //alert(data);
           $('#StudentName').val(data);
-        }
-      });
-
-      $.ajax({
-
-        type: "POST",
-        url: "ajax.php",
-        data: 'StudentName=' + val,
-        success: function(data) {
-          //alert(data);
-          $('#StudentID').val(data);
         }
       });
     }

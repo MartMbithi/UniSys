@@ -87,7 +87,7 @@ require_once('partials/_head.php');
                             <div class="widget-heading">
                                 <h5 class="">Monthly Library Operations</h5>
                                 <ul class="tabs tab-pills">
-                                    <li><a href="javascript:void(0);" id="tb_1" class="tabmenu"><?php echo date('d M Y');?></a></li>
+                                    <li><a href="javascript:void(0);" id="tb_1" class="tabmenu"><?php echo date('d M Y'); ?></a></li>
                                 </ul>
                             </div>
 
@@ -132,9 +132,8 @@ require_once('partials/_head.php');
                                             <div class="t-company-name">
                                                 <div class="t-icon">
                                                     <div class="icon">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
-                                                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                                                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
+                                                            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
                                                         </svg>
                                                     </div>
                                                 </div>

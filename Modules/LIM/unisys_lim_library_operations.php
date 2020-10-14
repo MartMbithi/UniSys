@@ -122,15 +122,9 @@ require_once('partials/_head.php');
                                                 <td><?php echo $ops->book_title; ?></td>
                                                 <td><?php echo $ops->student_name; ?></td>
                                                 <td><?php echo $ops->student_regno; ?></td>
-                                                <td><?php echo date('d, M, Y g:i', strtotime($ops->created_at));?> Copies</td>
+                                                <td><?php echo date('d, M, Y g:i', strtotime($ops->created_at));?></td>
                                                 <td class="text-center">
-                                                    <a href="unisys_lim_view_book.php?view=<?php echo $book->id; ?>" data-toggle="tooltip" class="badge outline-badge-success">
-                                                        View
-                                                    </a>
-                                                    <a href="unisys_lim_update_book.php?update=<?php echo $book->id; ?>" data-toggle="tooltip" class="badge outline-badge-warning">
-                                                        Edit
-                                                    </a>
-                                                    <a href="unisys_lim_books_cataloque.php?delete=<?php echo $book->id; ?>" data-toggle="tooltip" class="badge outline-badge-danger">
+                                                    <a href="unisys_lim_library_operations.php?delete=<?php echo $ops->id; ?>" data-toggle="tooltip" class="badge outline-badge-danger">
                                                         Delete
                                                     </a>
                                                 </td>

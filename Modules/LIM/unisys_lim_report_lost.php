@@ -21,7 +21,7 @@ if (isset($_POST['report_lost'])) {
         $err = "Book Title Cannot Be Empty";
     }
     if (!$error) {
-        $return = $_GET['return'];
+        $lost = $_GET['lost'];
         $checksum = $_POST['checksum'];
         $type = $_POST['type'];
         $book_isbn = $_POST['book_isbn'];
@@ -47,8 +47,8 @@ require_once('partials/_head.php');
     <!--  BEGIN NAVBAR  -->
     <?php
     require_once('partials/_nav.php');
-    $return = $_GET['return'];
-    $ret = "SELECT * FROM `UniSys_LIM_Library_Operations` WHERE id ='$return'  ";
+    $lost = $_GET['lost'];
+    $ret = "SELECT * FROM `UniSys_LIM_Library_Operations` WHERE id ='$lost'  ";
     $stmt = $mysqli->prepare($ret);
     $stmt->execute(); //ok
     $res = $stmt->get_result();

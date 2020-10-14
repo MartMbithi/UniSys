@@ -21,14 +21,14 @@ if (isset($_POST['return_damanged'])) {
         $err = "Book Title Cannot Be Empty";
     }
     if (!$error) {
-        $lost = $_GET['lost'];
+        $damanged = $_GET['damanged'];
         $checksum = $_POST['checksum'];
         $type = $_POST['type'];
         $book_isbn = $_POST['book_isbn'];
 
         $query = "UPDATE UniSys_LIM_Library_Operations SET checksum =?, type = ? WHERE id = ?";
         $stmt = $mysqli->prepare($query);
-        $rc = $stmt->bind_param('sss', $checksum, $type, $lost);
+        $rc = $stmt->bind_param('sss', $checksum, $type, $damanged);
         $stmt->execute();
         if ($stmt) {
             $success = "Returned" && header("refresh:1; url=unisys_lim_library_operations.php");
@@ -47,8 +47,8 @@ require_once('partials/_head.php');
     <!--  BEGIN NAVBAR  -->
     <?php
     require_once('partials/_nav.php');
-    $lost = $_GET['lost'];
-    $ret = "SELECT * FROM `UniSys_LIM_Library_Operations` WHERE id ='$lost'  ";
+    $damanged = $_GET['damanged'];
+    $ret = "SELECT * FROM `UniSys_LIM_Library_Operations` WHERE id ='$damanged'  ";
     $stmt = $mysqli->prepare($ret);
     $stmt->execute(); //ok
     $res = $stmt->get_result();

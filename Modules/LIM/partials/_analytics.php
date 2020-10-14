@@ -23,8 +23,14 @@ $stmt->bind_result($DamangedBooks);
 $stmt->fetch();
 $stmt->close();
 
+
 /* Borrowed  Books */
-$borrowedBooks = ($AvailableBook - ($LostBook + $DamangedBooks));
+$query = "SELECT COUNT(*)  FROM `UniSys_LIM_Library_Operations` WHERE type = 'Borrowed'" ;
+$stmt = $mysqli->prepare($query);
+$stmt->execute();
+$stmt->bind_result($borrowedBooks);
+$stmt->fetch();
+$stmt->close();
 
 /* Total Library Operations */
 $query = "SELECT COUNT(*)  FROM `UniSys_LIM_Library_Operations`" ;

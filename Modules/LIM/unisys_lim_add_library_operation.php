@@ -37,12 +37,8 @@ if (isset($_POST['add_library_operation'])) {
         $res = $stmt->get_result();
         while ($bk = $res->fetch_object()) {
             $initial_copies = $bk->copies;
-            $new_copies = $bk - 1;
+            $new_copies = $initial_copies - 1;
         }
-
-        //Update Book Cataloq 
-        $new_copies = $_POST['copies'];
-
 
         $query = "INSERT INTO UniSys_LIM_Library_Operations (id, checksum, type, student_regno, student_name, book_isbn, book_title, month ) VALUES (?,?,?,?,?,?,?,?)";
         $update = "UPDATE UniSys_LIM_Books_Cataloque SET copies = ? WHERE isbn = ?";
@@ -53,7 +49,7 @@ if (isset($_POST['add_library_operation'])) {
         $stmt->execute();
         $updatestmt->execute();
         if ($stmt && $updatestmt) {
-            $success = "Added" && header("refresh:1; url=unisys_lim_add_library_operation.php");
+            $success = "Added"; // && header("refresh:1; url=unisys_lim_add_library_operation.php");
         } else {
             //inject alert that task failed
             $info = "Please Try Again Or Try Later";

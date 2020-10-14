@@ -147,7 +147,7 @@ require_once('partials/_head.php');
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Book ISBN Number</label>
                                         <select id="bookIsbn" onchange="getBookDetails(this.value);" class='form-control basic' name="book_isbn">
-                                            <option selected>Select Student Registration Number</option>
+                                            <option selected>Select Book ISBN Number</option>
                                             <?php
                                             $ret = "SELECT * FROM `UniSys_LIM_Books_Cataloque`  ";
                                             $stmt = $mysqli->prepare($ret);

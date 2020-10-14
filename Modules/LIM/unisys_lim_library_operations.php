@@ -115,7 +115,7 @@ require_once('partials/_head.php');
                                                         echo "<span class='badge outline-badge-danger'>$ops->type</span>";
                                                     } elseif ($ops->type == 'Return') {
                                                         echo "<span class='badge outline-badge-success'>$ops->type</span>";
-                                                    }else{
+                                                    } else {
                                                         echo "<span class='badge outline-badge-primary'>$ops->type</span>";
                                                     }
                                                     ?>
@@ -135,9 +135,16 @@ require_once('partials/_head.php');
                                                             </svg>
                                                         </a>
                                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink12">
-                                                            <a class="dropdown-item text-success" href="unisys_lim_return_book.php?return=<?php echo $ops->id; ?>">Return Book</a>
-                                                            <a class="dropdown-item text-danger" href="unisys_lim_report_lost.php?lost=<?php echo $ops->id; ?>">Report Lost</a>
-                                                            <a class="dropdown-item text-warning" href="unisys_lim_return_damanged.php?damanged=<?php echo $ops->id; ?>">Return Damanged</a>
+                                                            <?php
+                                                            if ($ops->type = 'Borrow') {
+                                                                echo
+                                                                    "
+                                                                    <a class='dropdown-item text-success' href='unisys_lim_return_book.php?return=$ops->id'>Return Book</a>
+                                                                    <a class='dropdown-item text-danger' href='unisys_lim_report_lost.php?lost=$ops->id'>Report Lost</a>
+                                                                    <a class='dropdown-item text-warning' href='unisys_lim_return_damanged.php?damanged=$ops->id'>Return Damanged</a>
+                                                                    ";
+                                                            }
+                                                            ?>
                                                             <a class="dropdown-item text-primary" href="unisys_lim_library_operations.php?delete=<?php echo $ops->id; ?>">Delete Record</a>
                                                         </div>
                                                     </div>

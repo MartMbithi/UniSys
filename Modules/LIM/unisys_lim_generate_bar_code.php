@@ -89,10 +89,11 @@ require_once('partials/_head.php');
                                             <?php
                                             if (isset($_POST['generate_barcode'])) {
                                                 $text = $_POST['barcode_text'];
-                                                echo "<img alt='testing' id='barcode' src='barcode_api.php?codetype=Code39&size=100&text=" . $text . "&print=true'/>";
+                                                $barcode_image =  "<img alt='testing' id='barcode' src='barcode_api.php?codetype=Code39&size=100&text=" . $text . "&print=true'/>";
+                                                echo $barcode_image;
                                             } ?>
                                             <hr>
-                                            <button id='print' onclick="printContent('barcode');" class='btn btn-primary mt-3'>Print</button>
+                                            <button id='print' onclick="printContent('barcode');" class='btn btn-outline-primary mt-3'>Print</button>
                                         </div>
                                     </div>
                                 </div>

@@ -126,7 +126,7 @@ require_once('partials/_head.php');
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Student Registration Number</label>
-                                        <select class='form-control basic' id="admNo" onchange="registerLibraryOperation(this.value);"  name="student_regno" id="">
+                                        <select class='form-control basic' id="RegNumber" onchange="getStudentDetails(this.value);"  name="student_regno" >
                                             <option selected>Select Student Registration Number</option>
                                             <?php
                                             $ret = "SELECT * FROM `UniSys_Students`  ";
@@ -146,7 +146,7 @@ require_once('partials/_head.php');
                                     <hr>
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Book ISBN Number</label>
-                                        <select id="admNo" onchange="registerLibraryOperation(this.value);" class='form-control basic' name="book_isbn" >
+                                        <select id="bookIsbn" onchange="getBookDetails(this.value);" class='form-control basic' name="book_isbn" >
                                             <option selected>Select Student Registration Number</option>
                                             <?php
                                             $ret = "SELECT * FROM `UniSys_LIM_Books_Cataloque`  ";
@@ -161,7 +161,7 @@ require_once('partials/_head.php');
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Book Title</label>
-                                        <input type="text" id="BookTitle" readonly class="form-control" name="book_title">
+                                        <input type="text" id="bookTitle" readonly class="form-control" name="book_title">
                                     </div>
                                 </div>
                                 <button type="submit" name="add_book" class="btn btn-primary mt-3">Submit</button>

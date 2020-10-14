@@ -161,20 +161,21 @@ require_once('partials/_head.php');
                                             $stmt->execute(); //ok
                                             $res = $stmt->get_result();
                                             while ($book = $res->fetch_object()) {
+                                                $bookIsnNumber = $book->isbn;
+                                                $ret = "SELECT * FROM `UniSys_LIM_Books_Cataloque` WHERE isbn = '$bookIsnNumber'  ";
+                                                $stmt = $mysqli->prepare($ret);
+                                                $stmt->execute(); //ok
+                                                $res = $stmt->get_result();
+                                                while ($books = $res->fetch_object()) {
+                                                    $initialBookCount = $books->copies;
+                                                    $newBookCount = $initialBookCount - 1;
+                                                }
                                             ?>
                                                 <option><?php echo $book->isbn; ?></option>
                                             <?php }
-                                            $bookIsnNumber = $book->isbn;
-                                            $ret = "SELECT * FROM `UniSys_LIM_Books_Cataloque` WHERE isbn = '$bookIsnNumber'  ";
-                                            $stmt = $mysqli->prepare($ret);
-                                            $stmt->execute(); //ok
-                                            $res = $stmt->get_result();
-                                            while ($book = $res->fetch_object()) {
-                                                $initialBookCount = $book->copies;
-                                                $newBookCount = $initialBookCount - 1;
-                                            }
+
                                             ?>
-                                            <input type="hidden" class="form-control" name="copies" value="<?php echo $newBookCount; ?>">
+                                            <input type="" class="form-control" name="copies" value="<?php echo $newBookCount; ?>">
                                         </select>
                                     </div>
                                     <div class="form-group col-md-6">

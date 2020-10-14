@@ -40,11 +40,18 @@ if (isset($_POST['add_library_operation'])) {
         $book_title = $_POST['book_title'];
         $month = $_POST['month'];
 
+        //Update Book Cataloq 
+        $copies = $_POST['copies'];
+
         $query = "INSERT INTO UniSys_LIM_Library_Operations (id, checksum, type, student_regno, student_name, book_isbn, book_title, month ) VALUES (?,?,?,?,?,?,?,?)";
+        $update = "UPDATE UniSys_LIM_Books_Cataloque SET copies = ? WHERE isbn = ?";
         $stmt = $mysqli->prepare($query);
+        $updatestmt = $mysqli->prepare($update);
         $rc = $stmt->bind_param('ssssssss', $id, $checksum, $type, $student_regno, $student_name, $book_isbn, $book_title, $month);
+        $rc = $updatestmt->bind_param('ss', $copies, $book_isbn);
         $stmt->execute();
-        if ($stmt) {
+        $updatestmt->execute();
+        if ($stmt && $updatestmt) {
             $success = "Added" && header("refresh:1; url=unisys_lim_add_library_operation.php");
         } else {
             //inject alert that task failed

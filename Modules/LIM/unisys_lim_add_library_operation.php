@@ -21,16 +21,6 @@ if (isset($_POST['add_library_operation'])) {
         $err = "Book Title Cannot Be Empty";
     }
     if (!$error) {
-        /* 
-        $sql = "SELECT * FROM  UniSys_LIM_Books_Cataloque WHERE  isbn='$isbn' ";
-        $res = mysqli_query($mysqli, $sql);
-        if (mysqli_num_rows($res) > 0) {
-            $row = mysqli_fetch_assoc($res);
-            if ($isbn == $row['isbn']) {
-                $err =  "ISBN  Number Already Exists";
-            }
-        } else { */
-
         $id = $_POST['id'];
         $cheksum = $_POST['checksum'];
         $type = $_POST['type'];
@@ -40,15 +30,26 @@ if (isset($_POST['add_library_operation'])) {
         $book_title = $_POST['book_title'];
         $month = $_POST['month'];
 
+
+        $ret = "SELECT * FROM `UniSys_LIM_Books_Cataloque` WHERE isbn = '$book_isbn'  ";
+        $stmt = $mysqli->prepare($ret);
+        $stmt->execute(); //ok
+        $res = $stmt->get_result();
+        while ($bk = $res->fetch_object()) {
+            $initial_copies = $bk->copies;
+            $new_copies = $bk - 1;
+        }
+
         //Update Book Cataloq 
-        $copies = $_POST['copies'];
+        $new_copies = $_POST['copies'];
+
 
         $query = "INSERT INTO UniSys_LIM_Library_Operations (id, checksum, type, student_regno, student_name, book_isbn, book_title, month ) VALUES (?,?,?,?,?,?,?,?)";
         $update = "UPDATE UniSys_LIM_Books_Cataloque SET copies = ? WHERE isbn = ?";
         $stmt = $mysqli->prepare($query);
         $updatestmt = $mysqli->prepare($update);
         $rc = $stmt->bind_param('ssssssss', $id, $checksum, $type, $student_regno, $student_name, $book_isbn, $book_title, $month);
-        $rc = $updatestmt->bind_param('ss', $copies, $book_isbn);
+        $rc = $updatestmt->bind_param('ss', $new_copies, $book_isbn);
         $stmt->execute();
         $updatestmt->execute();
         if ($stmt && $updatestmt) {
@@ -161,21 +162,10 @@ require_once('partials/_head.php');
                                             $stmt->execute(); //ok
                                             $res = $stmt->get_result();
                                             while ($book = $res->fetch_object()) {
-                                                $bookIsnNumber = $book->isbn;
-                                                $ret = "SELECT * FROM `UniSys_LIM_Books_Cataloque` WHERE isbn = '$bookIsnNumber'  ";
-                                                $stmt = $mysqli->prepare($ret);
-                                                $stmt->execute(); //ok
-                                                $res = $stmt->get_result();
-                                                while ($books = $res->fetch_object()) {
-                                                    $initialBookCount = $books->copies;
-                                                    $newBookCount = $initialBookCount - 1;
-                                                }
                                             ?>
                                                 <option><?php echo $book->isbn; ?></option>
                                             <?php }
-
                                             ?>
-                                            <input type="" class="form-control" name="copies" value="<?php echo $newBookCount; ?>">
                                         </select>
                                     </div>
                                     <div class="form-group col-md-6">

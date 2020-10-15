@@ -109,12 +109,12 @@ require_once('partials/_head.php');
                                                 <td><?php echo $reg->student_regno; ?></td>
                                                 <td><?php echo $reg->student_name; ?></td>
                                                 <td><?php echo $reg->check_in; ?></td>
-                                                <td><?php echo $reg->check_out;?></td>
+                                                <td><?php echo $reg->check_out; ?></td>
                                                 <td class="text-center">
-                                                    <a href="unisys_lim_update_book.php?update=<?php echo $book->id; ?>" data-toggle="tooltip" class="badge outline-badge-warning">
+                                                    <a href="unisys_lim_update_register.php?update=<?php echo $reg->id; ?>" data-toggle="tooltip" class="badge outline-badge-warning">
                                                         Edit
                                                     </a>
-                                                    <a href="unisys_lim_books_cataloque.php?delete=<?php echo $book->id; ?>" data-toggle="tooltip" class="badge outline-badge-danger">
+                                                    <a href="unisys_lim_library_register.php?delete=<?php echo $reg->id; ?>" data-toggle="tooltip" class="badge outline-badge-danger">
                                                         Delete
                                                     </a>
                                                 </td>

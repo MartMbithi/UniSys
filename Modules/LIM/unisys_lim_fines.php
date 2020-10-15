@@ -58,6 +58,7 @@ require_once('partials/_head.php');
                 <div class="row layout-top-spacing">
                     <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
                         <div class="widget-content widget-content-area br-6">
+                            <h4 class="text-center">Library Operations</h4>
                             <div class="table-responsive mb-4 mt-4">
                                 <table id="alter_pagination" class="table table-hover" style="width:100%">
                                     <thead>
@@ -101,7 +102,67 @@ require_once('partials/_head.php');
                                                 <td><?php echo $ops->student_regno; ?></td>
                                                 <td><?php echo date('d, M, Y g:i', strtotime($ops->created_at)); ?></td>
                                                 <td class="text-center">
-                                                    <a class="badge outline-badge-success" href="unisys_lim_pay_fine.php?pay=<?php echo $ops->id; ?>&status=Paid&fine_type=<?php echo $ops->type;?>">Pay Fine</a>
+                                                    <a class="badge outline-badge-success" href="unisys_lim_pay_fine.php?pay=<?php echo $ops->id; ?>&status=Paid&fine_type=<?php echo $ops->type; ?>">Pay Fine</a>
+                                                </td>
+                                            </tr>
+                                        <?php } ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row layout-top-spacing">
+                    <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
+                        <div class="widget-content widget-content-area br-6">
+                            <h4 class="text-center">Paid Fines</h4>
+                            <div class="table-responsive mb-4 mt-4">
+                                <table id="fines" class="table table-hover" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Code</th>
+                                            <th>Fine For</th>
+                                            <th>Book Isbn</th>
+                                            <th>Book Title</th>
+                                            <th>Student Name</th>
+                                            <th>Student ADMNo</th>
+                                            <th>Amount Fined</th>
+                                            <th>Paid At</th>
+                                            <th class="text-center">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        $ret = "SELECT * FROM `UniSys_LIM_Fines` ";
+                                        $stmt = $mysqli->prepare($ret);
+                                        $stmt->execute(); //ok
+                                        $res = $stmt->get_result();
+                                        while ($fine = $res->fetch_object()) {
+                                        ?>
+                                            <tr>
+                                                <td><span class="text-success"><?php echo $fine->code; ?></span></td>
+                                                <td>
+                                                    <?php
+                                                    if ($fine->fine_type == 'Damanged') {
+                                                        echo "<span class='badge outline-badge-warning'>$fine->fine_type Book </span>";
+                                                    } elseif ($fine->fine_type == 'Lost') {
+                                                        echo "<span class='badge outline-badge-danger'>$fine->fine_type Book </span>";
+                                                    } elseif ($fine->fine_type == 'Return') {
+                                                        echo "<span class='badge outline-badge-success'>$fine->fine_type Book </span>";
+                                                    } else {
+                                                        echo "<span class='badge outline-badge-primary'>$fine->fine_type Book </span>";
+                                                    }
+                                                    ?>
+                                                </td>
+                                                <td><?php echo $fine->book_isbn; ?></td>
+                                                <td><?php echo $fine->book_title; ?></td>
+                                                <td><?php echo $fine->student_name; ?></td>
+                                                <td><?php echo $fine->student_regno; ?></td>
+                                                <td>Ksh <?php echo $fine->fine_amt;?></td>
+                                                <td><?php echo date('d, M, Y g:i', strtotime($fine->created_at)); ?></td>
+                                                <td class="text-center">
+                                                    <a class="badge outline-badge-success" href="unisys_lim_generate_receipt.php?receipt=<?php echo $fine->id; ?>">Get Receipt</a>
                                                 </td>
                                             </tr>
                                         <?php } ?>

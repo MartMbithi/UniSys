@@ -25,6 +25,7 @@
   <link rel="stylesheet" type="text/css" href="plugins/table/datatable/custom_dt_html5.css">
   <link rel="stylesheet" type="text/css" href="plugins/table/datatable/dt-global_style.css">
   <link rel="stylesheet" type="text/css" href="plugins/select2/select2.min.css">
+  <link rel="stylesheet" type="text/css" href="plugins/table/datatable/custom_dt_multiple_tables.css">
 
   <!-- SWAL ALERTS INJECTION-->
   <?php if (isset($success)) { ?>

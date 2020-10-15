@@ -89,7 +89,7 @@ require_once('partials/_head.php');
                                     <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
                                     <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
                                     <li class="breadcrumb-item"><a href="unisys_lim_fines.php">Fines</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page"><span>Pay <?php echo $ops->type;?> Book Fine</span></li>
+                                    <li class="breadcrumb-item active" aria-current="page"><span>Pay <?php echo $ops->type; ?> Book Fine</span></li>
                                 </ol>
                             </nav>
 
@@ -127,11 +127,11 @@ require_once('partials/_head.php');
                                     </div>
                                     <div class="form-row">
                                         <div style="display: none;" class="form-group col-md-6">
-                                            <input type="hidden" required value="<?php echo $a; ?><?php echo $b;?>" readonly class="form-control" name="code">
+                                            <input type="hidden" required value="<?php echo $a; ?><?php echo $b; ?>" readonly class="form-control" name="code">
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="inputEmail4">Student Registration Number</label>
-                                            <input type="text" readonly value="<?php echo $ops->student_regno; ?>" required class="form-control" name="student_name">
+                                            <input type="text" readonly value="<?php echo $ops->student_regno; ?>" required class="form-control" name="student_regno">
 
                                         </div>
                                         <div class="form-group col-md-6">
@@ -149,7 +149,7 @@ require_once('partials/_head.php');
                                         </div>
                                         <div class="form-group col-md-12">
                                             <label for="inputEmail4">Fine Amount</label>
-                                            <input type="text"  class="form-control" required name="fine_amt">
+                                            <input type="text" class="form-control" required name="fine_amt">
                                         </div>
                                     </div>
                                     <button type="submit" name="pay_fine" class="btn btn-primary mt-3">Submit</button>

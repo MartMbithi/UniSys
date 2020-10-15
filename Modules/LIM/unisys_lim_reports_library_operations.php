@@ -5,6 +5,20 @@ require_once('configs/checklogin.php');
 check_login();
 require_once('partials/_analytics.php');
 
+//Delete
+if (isset($_GET['delete'])) {
+    $id = $_GET['delete'];
+    $adn = "DELETE FROM UniSys_LIM_Library_Operations WHERE id =?";
+    $stmt = $mysqli->prepare($adn);
+    $stmt->bind_param('s', $id);
+    $stmt->execute();
+    $stmt->close();
+    if ($stmt) {
+        $success = "Deleted" && header("refresh:1; url=unisys_lim_library_operations.php");
+    } else {
+        $info = "Please Try Again Or Try Later";
+    }
+}
 require_once('partials/_head.php');
 ?>
 
@@ -32,7 +46,7 @@ require_once('partials/_head.php');
                                 <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
                                 <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
                                 <li class="breadcrumb-item"><a href="">Advance Reporting</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><span>Library Register</span></li>
+                                <li class="breadcrumb-item active" aria-current="page"><span>Library Operations</span></li>
                             </ol>
                         </nav>
 
@@ -64,27 +78,43 @@ require_once('partials/_head.php');
                                 <table id="html5-extension" class="table table-hover" style="width:100%">
                                     <thead>
                                         <tr>
-                                            <th>Code</th>
+                                            <th>Checksum</th>
+                                            <th>Type</th>
+                                            <th>Book Isbn</th>
+                                            <th>Book Title</th>
                                             <th>Student Name</th>
-                                            <th>ADM Number</th>
-                                            <th>Check In</th>
-                                            <th>Check Out</th>
+                                            <th>Student ADMNo</th>
+                                            <th>Created At</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-                                        $ret = "SELECT * FROM `UniSys_LIM_Register`  ";
+                                        $ret = "SELECT * FROM `UniSys_LIM_Library_Operations`  ";
                                         $stmt = $mysqli->prepare($ret);
                                         $stmt->execute(); //ok
                                         $res = $stmt->get_result();
-                                        while ($reg = $res->fetch_object()) {
+                                        while ($ops = $res->fetch_object()) {
                                         ?>
                                             <tr>
-                                                <td><?php echo $reg->code; ?></td>
-                                                <td><?php echo $reg->student_name; ?></td>
-                                                <td><?php echo $reg->student_regno; ?></td>
-                                                <td><?php echo $reg->day; ?> <?php echo $reg->month; ?> <?php echo $reg->year; ?> <?php echo $reg->check_in; ?></td>
-                                                <td><?php echo $reg->day; ?> <?php echo $reg->month; ?> <?php echo $reg->year; ?> <?php echo $reg->check_out; ?></td>
+                                                <td><span class="text-success"><?php echo $ops->checksum; ?></span></td>
+                                                <td>
+                                                    <?php
+                                                    if ($ops->type == 'Damanged') {
+                                                        echo "<span class='badge outline-badge-warning'>$ops->type</span>";
+                                                    } elseif ($ops->type == 'Lost') {
+                                                        echo "<span class='badge outline-badge-danger'>$ops->type</span>";
+                                                    } elseif ($ops->type == 'Return') {
+                                                        echo "<span class='badge outline-badge-success'>$ops->type</span>";
+                                                    } else {
+                                                        echo "<span class='badge outline-badge-primary'>$ops->type</span>";
+                                                    }
+                                                    ?>
+                                                </td>
+                                                <td><?php echo $ops->book_isbn; ?></td>
+                                                <td><?php echo $ops->book_title; ?></td>
+                                                <td><?php echo $ops->student_name; ?></td>
+                                                <td><?php echo $ops->student_regno; ?></td>
+                                                <td><?php echo date('d, M, Y g:i', strtotime($ops->created_at)); ?></td>
                                             </tr>
                                         <?php } ?>
                                     </tbody>
@@ -93,6 +123,7 @@ require_once('partials/_head.php');
                         </div>
                     </div>
                 </div>
+
             </div>
             <?php require_once('partials/_footer.php'); ?>
         </div>

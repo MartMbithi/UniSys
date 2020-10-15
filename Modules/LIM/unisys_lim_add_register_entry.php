@@ -74,8 +74,8 @@ require_once('partials/_head.php');
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
                                 <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
-                                <li class="breadcrumb-item"><a href="unisys_lim_books_cataloque.php">Books Cataloque</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><span>Add New Book</span></li>
+                                <li class="breadcrumb-item"><a href="unisys_lim_library_register.php">Library Register</a></li>
+                                <li class="breadcrumb-item active" aria-current="page"><span>Register New Entry</span></li>
                             </ol>
                         </nav>
 
@@ -112,39 +112,34 @@ require_once('partials/_head.php');
                                     </div>
                                 </div>
                                 <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label for="inputEmail4">ISBN Number</label>
-                                        <input type="text" required value="<?php echo $a; ?><?php echo $b; ?>" class="form-control" name="isbn">
-                                        <input type="hidden" required value="<?php echo $b; ?><?php echo $a; ?>" class="form-control" name="barcode">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="inputEmail4">Title</label>
-                                        <input type="text" required class="form-control" name="title">
-                                    </div>
-
-                                    <div class="form-group col-md-6">
-                                        <label for="inputEmail4">Author</label>
-                                        <input type="text" required class="form-control" name="author">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="inputEmail4">Publisher</label>
-                                        <input type="text" required class="form-control" name="publisher">
-                                    </div>
-
-                                    <div class="form-group col-md-6">
-                                        <label for="inputEmail4">Copies Available</label>
-                                        <input type="text" required class="form-control" name="copies">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="inputEmail4">Cover Image</label>
-                                        <input type="file" required class="form-control btn btn-outline-success" name="cover_img">
+                                    <div class="form-group col-md-12">
+                                        <label for="inputEmail4">Code</label>
+                                        <input type="text" required value="<?php echo $a; ?><?php echo $b; ?>" class="form-control" name="code">
+                                        <input type="hidden" required value="<?php echo date('d'); ?>" class="form-control" name="day">
+                                        <input type="hidden" required value="<?php echo date('M'); ?>" class="form-control" name="month">
+                                        <input type="hidden" required value="<?php echo date('Y'); ?>" class="form-control" name="year">
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <label for="inputEmail4">Book Synopsis</label>
-                                        <textarea type="text"  required id="textarea" class="form-control" name="synopsis"></textarea>
+                                        <label for="inputEmail4">Student Name</label>
+                                        <input type="text" required class="form-control" name="student_name">
                                     </div>
+
+                                    <div class="form-group col-md-12">
+                                        <label for="inputEmail4">Student Admission Number</label>
+                                        <input type="text" required class="form-control" name="student_regno">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputEmail4">Check In</label>
+                                        <input type="time" required class="form-control" name="check_out">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="inputEmail4">Check Out</label>
+                                        <input type="time" required class="form-control" name="check_in">
+                                    </div>
+
                                 </div>
-                                <button type="submit" name="add_book" class="btn btn-primary mt-3">Submit</button>
+                                <button type="submit" name="add_entry" class="btn btn-primary mt-3">Submit</button>
                             </form>
                         </div>
                     </div>

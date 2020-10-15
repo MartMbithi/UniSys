@@ -128,9 +128,6 @@
                         <a href="unisys_lim_reports_books_inventory.php"> Books Inventory </a>
                     </li>
                     <li>
-                        <a href="unisys_lim_reports_barcodes.php"> Barcodes </a>
-                    </li>
-                    <li>
                         <a href="unisys_lim_reports_library_register.php"> Register</a>
                     </li>
                     <li>

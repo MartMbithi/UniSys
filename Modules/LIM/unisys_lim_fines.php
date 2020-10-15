@@ -74,7 +74,6 @@ require_once('partials/_head.php');
                                     </thead>
                                     <tbody>
                                         <?php
-
                                         $ret = "SELECT * FROM `UniSys_LIM_Library_Operations` WHERE (type ='Lost ' || type = 'Damanged') AND payment_status ='Pending' ";
                                         $stmt = $mysqli->prepare($ret);
                                         $stmt->execute(); //ok
@@ -102,7 +101,7 @@ require_once('partials/_head.php');
                                                 <td><?php echo $ops->student_regno; ?></td>
                                                 <td><?php echo date('d, M, Y g:i', strtotime($ops->created_at)); ?></td>
                                                 <td class="text-center">
-                                                    <a class="badge outline-badge-success" href="unisys_lim_pay_fine.php?pay=<?php echo $ops->id; ?>&status=Paid">Pay Fine</a>
+                                                    <a class="badge outline-badge-success" href="unisys_lim_pay_fine.php?pay=<?php echo $ops->id; ?>&status=Paid&fine_type=<?php echo $ops->type;?>">Pay Fine</a>
                                                 </td>
                                             </tr>
                                         <?php } ?>

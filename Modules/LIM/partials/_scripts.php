@@ -554,4 +554,4 @@
             tags: true,
         });
     </script>
-    
+    <script src="assets/js/apps/invoice.js"></script>

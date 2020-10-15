@@ -26,7 +26,7 @@
   <link rel="stylesheet" type="text/css" href="plugins/table/datatable/dt-global_style.css">
   <link rel="stylesheet" type="text/css" href="plugins/select2/select2.min.css">
   <link rel="stylesheet" type="text/css" href="plugins/table/datatable/custom_dt_multiple_tables.css">
-
+  <link href="assets/css/apps/invoice.css" rel="stylesheet" type="text/css" />
   <!-- SWAL ALERTS INJECTION-->
   <?php if (isset($success)) { ?>
     <!--This code for injecting success alert-->

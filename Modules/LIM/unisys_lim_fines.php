@@ -75,7 +75,7 @@ require_once('partials/_head.php');
                                     </thead>
                                     <tbody>
                                         <?php
-                                        $ret = "SELECT * FROM `UniSys_LIM_Library_Operations` WHERE (type ='Lost ' || type = 'Damanged') AND payment_status ='Pending' ";
+                                        $ret = "SELECT * FROM `UniSys_LIM_Library_Operations` WHERE (type ='Lost ' || type = 'Damanged') AND payment_status ='' ";
                                         $stmt = $mysqli->prepare($ret);
                                         $stmt->execute(); //ok
                                         $res = $stmt->get_result();

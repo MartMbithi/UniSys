@@ -120,14 +120,26 @@ require_once('partials/_head.php');
                                         <input type="hidden" required value="<?php echo date('Y'); ?>" class="form-control" name="year">
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <label for="inputEmail4">Student Name</label>
-                                        <input type="text" required class="form-control" name="student_name">
+                                        <label for="inputEmail4">Student Registration Number</label>
+                                        <select class='form-control basic' id="RegNumber" onchange="getStudentDetails(this.value);" name="student_regno">
+                                            <option selected>Select Student Registration Number</option>
+                                            <?php
+                                            $ret = "SELECT * FROM `UniSys_Students`  ";
+                                            $stmt = $mysqli->prepare($ret);
+                                            $stmt->execute(); //ok
+                                            $res = $stmt->get_result();
+                                            while ($std = $res->fetch_object()) {
+                                            ?>
+                                                <option><?php echo $std->reg_no; ?></option>
+                                            <?php } ?>
+                                        </select>
                                     </div>
 
                                     <div class="form-group col-md-12">
-                                        <label for="inputEmail4">Student Admission Number</label>
-                                        <input type="text" required class="form-control" name="student_regno">
+                                        <label for="inputEmail4">Student Name</label>
+                                        <input type="text" readonly id="StudentName" required class="form-control" name="student_name">
                                     </div>
+
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Check In</label>
                                         <input type="time" required class="form-control" name="check_out">

@@ -142,12 +142,12 @@ require_once('partials/_head.php');
 
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Check In</label>
-                                        <input type="time" required class="form-control" name="check_out">
+                                        <input type="time" required class="form-control" name="check_in">
                                     </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Check Out</label>
-                                        <input type="time" required class="form-control" name="check_in">
+                                        <input type="time" required class="form-control" name="check_out">
                                     </div>
 
                                 </div>

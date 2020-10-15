@@ -88,7 +88,7 @@ require_once('partials/_head.php');
                                     <thead>
                                         <tr>
                                             <th>Code</th>
-                                            <th>Name</th>
+                                            <th>Student Name</th>
                                             <th>ADM Number</th>
                                             <th>Check In</th>
                                             <th>Check Out</th>
@@ -105,11 +105,10 @@ require_once('partials/_head.php');
                                         ?>
                                             <tr>
                                                 <td><?php echo $reg->code; ?></td>
-                                                <td><?php echo $reg->name; ?></td>
-                                                <td><?php echo $reg->student_regno; ?></td>
                                                 <td><?php echo $reg->student_name; ?></td>
-                                                <td><?php echo $reg->check_in; ?></td>
-                                                <td><?php echo $reg->check_out; ?></td>
+                                                <td><?php echo $reg->student_regno; ?></td>
+                                                <td><?php echo $reg->day;?> <?php echo $reg->month;?> <?php echo $reg->year;?> <?php echo $reg->check_in; ?></td>
+                                                <td><?php echo $reg->day;?> <?php echo $reg->month;?> <?php echo $reg->year;?> <?php echo $reg->check_out; ?></td>
                                                 <td class="text-center">
                                                     <a href="unisys_lim_update_register.php?update=<?php echo $reg->id; ?>" data-toggle="tooltip" class="badge outline-badge-warning">
                                                         Edit

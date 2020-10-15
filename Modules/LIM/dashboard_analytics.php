@@ -180,7 +180,7 @@ require_once('partials/_head.php');
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value"> Ksh <?php echo $PaidFine; ?></h6>
+                                        <h6 class="value"> Ksh <?php echo $UnPaidFine; ?></h6>
                                         <p class="">Unpaid Fine</p>
                                     </div>
                                     <div class="">
@@ -248,7 +248,7 @@ require_once('partials/_head.php');
                                                 <div class="t-content">
                                                     <div class="t-uppercontent">
                                                         <h5>Paid</h5>
-                                                        <span class=""><?php echo date('d, M, Y', strtotime($rines->created_at)); ?></span>
+                                                        <span class=""><?php echo date('d, M, Y', strtotime($fines->created_at)); ?></span>
                                                     </div>
                                                     <p>
                                                         <span class="text-success">
@@ -260,7 +260,6 @@ require_once('partials/_head.php');
                                                     </p>
                                                     <div class="tags">
                                                         <div class="badge badge-primary"><?php echo $fines->book_isbn; ?></div>
-                                                        <div class="badge badge-success"><?php echo $fines->book_title; ?></div>
                                                     </div>
                                                 </div>
                                             </div>

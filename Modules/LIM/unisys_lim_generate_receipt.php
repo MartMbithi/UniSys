@@ -85,7 +85,7 @@ require_once('partials/_head.php');
                                             </div>
                                             <ul class="nav nav-pills inv-list-container d-block" id="pills-tab" role="tablist">
                                                 <li class="nav-item">
-                                                    <div class="nav-link list-actions" id="invoice-00001" data-invoice-id="00001">
+                                                    <div class="nav-link list-actions" id="invoice-00001" data-invoice-id="<?php echo $fine->fine_amt;?>">
                                                         <div class="f-m-body">
                                                             <div class="f-head">
                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-dollar-sign">
@@ -116,7 +116,7 @@ require_once('partials/_head.php');
                                         <div class="invoice-header-section">
                                             <h4 class="inv-number"></h4>
                                             <div class="invoice-action">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-printer action-print" data-toggle="tooltip" data-placement="top" data-original-title="Reply">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-printer action-print" data-toggle="tooltip" data-placement="top" data-original-title="">
                                                     <polyline points="6 9 6 2 18 2 18 9"></polyline>
                                                     <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
                                                     <rect x="6" y="14" width="12" height="8"></rect>
@@ -138,7 +138,6 @@ require_once('partials/_head.php');
                                                                 <h5 class="inv-brand-name">UniSys - Library</h5>
                                                             </div>
                                                         </div>
-
                                                     </div>
 
                                                     <div class="row inv--detail-section">
@@ -176,8 +175,8 @@ require_once('partials/_head.php');
                                                                         <tr>
                                                                             <td><?php echo $fine->book_title;?></td>
                                                                             <td class="text-right"><?php echo $fine->book_isbn;?></td>
-                                                                            <td class="text-right"><?php echo $fine->fine_type;?></td>
-                                                                            <td class="text-right"><?php echo $fine->fine_amt;?></td>
+                                                                            <td class="text-right"><?php echo $fine->fine_type;?> Book</td>
+                                                                            <td class="text-right">Ksh <?php echo $fine->fine_amt;?></td>
                                                                         </tr>
                                                                     </tbody>
                                                                 </table>
@@ -186,33 +185,18 @@ require_once('partials/_head.php');
                                                     </div>
 
                                                     <div class="row mt-4">
+                                                        <div class="col-sm-5 col-12 order-sm-0 order-1">
+                                                            
+                                                        </div>
                                                         
                                                         <div class="col-sm-7 col-12 order-sm-1 order-0">
                                                             <div class="inv--total-amounts text-sm-right">
                                                                 <div class="row">
-                                                                    <div class="col-sm-8 col-7">
-                                                                        <p class="">Sub Total: </p>
-                                                                    </div>
-                                                                    <div class="col-sm-4 col-5">
-                                                                        <p class="">$13300</p>
-                                                                    </div>
-                                                                    <div class="col-sm-8 col-7">
-                                                                        <p class="">Tax Amount: </p>
-                                                                    </div>
-                                                                    <div class="col-sm-4 col-5">
-                                                                        <p class="">$700</p>
-                                                                    </div>
-                                                                    <div class="col-sm-8 col-7">
-                                                                        <p class=" discount-rate">Discount : <span class="discount-percentage">5%</span> </p>
-                                                                    </div>
-                                                                    <div class="col-sm-4 col-5">
-                                                                        <p class="">$700</p>
-                                                                    </div>
                                                                     <div class="col-sm-8 col-7 grand-total-title">
-                                                                        <h4 class="">Grand Total : </h4>
+                                                                        <h4 class="">Total Paid : </h4>
                                                                     </div>
                                                                     <div class="col-sm-4 col-5 grand-total-amount">
-                                                                        <h4 class="">$14000</h4>
+                                                                        <h4 class="">Ksh <?php echo $fine->fine_amt;?></h4>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -226,7 +210,7 @@ require_once('partials/_head.php');
                                     <div class="inv--thankYou">
                                         <div class="row">
                                             <div class="col-sm-12 col-12">
-                                                <p class="">Thank you for doing Business with us.</p>
+                                                <p class="">Thank You For Being Our Loyal Client </p>
                                             </div>
                                         </div>
                                     </div>

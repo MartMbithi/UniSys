@@ -45,7 +45,7 @@ require_once('partials/_head.php');
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
                                 <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><span>Book Cataloque</span></li>
+                                <li class="breadcrumb-item active" aria-current="page"><span>Library Register</span></li>
                             </ol>
                         </nav>
 
@@ -73,7 +73,7 @@ require_once('partials/_head.php');
                 <div class="row layout-top-spacing">
                     <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
                         <div class="widget-content widget-content-area br-6">
-                            <a class="btn btn-outline-success" href="unisys_lim_add_book.php">
+                            <a class="btn btn-outline-success" href="unisys_lim_add_register_entry.php">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
                                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                                     <polyline points="14 2 14 8 20 8"></polyline>
@@ -81,38 +81,36 @@ require_once('partials/_head.php');
                                     <line x1="9" y1="15" x2="15" y2="15"></line>
                                 </svg>
 
-                                Add New Book
+                                Add New Register Entry
                             </a>
                             <div class="table-responsive mb-4 mt-4">
                                 <table id="alter_pagination" class="table table-hover" style="width:100%">
                                     <thead>
                                         <tr>
-                                            <th>ISBN No</th>
-                                            <th>Author</th>
-                                            <th>Title</th>
-                                            <th>Publisher</th>
-                                            <th>Copies Available</th>
+                                            <th>Code</th>
+                                            <th>Name</th>
+                                            <th>ADM Number</th>
+                                            <th>Check In</th>
+                                            <th>Check Out</th>
                                             <th class="text-center">Settings</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-                                        $ret = "SELECT * FROM `UniSys_LIM_Books_Cataloque`  ";
+                                        $ret = "SELECT * FROM `UniSys_LIM_Register`  ";
                                         $stmt = $mysqli->prepare($ret);
                                         $stmt->execute(); //ok
                                         $res = $stmt->get_result();
-                                        while ($book = $res->fetch_object()) {
+                                        while ($reg = $res->fetch_object()) {
                                         ?>
                                             <tr>
-                                                <td><?php echo $book->isbn; ?></td>
-                                                <td><?php echo $book->author; ?></td>
-                                                <td><?php echo $book->title; ?></td>
-                                                <td><?php echo $book->publisher; ?></td>
-                                                <td><?php echo $book->copies; ?> Copies</td>
+                                                <td><?php echo $reg->code; ?></td>
+                                                <td><?php echo $reg->name; ?></td>
+                                                <td><?php echo $reg->student_regno; ?></td>
+                                                <td><?php echo $reg->student_name; ?></td>
+                                                <td><?php echo $reg->check_in; ?></td>
+                                                <td><?php echo $reg->check_out;?></td>
                                                 <td class="text-center">
-                                                    <a href="unisys_lim_view_book.php?view=<?php echo $book->id; ?>" data-toggle="tooltip" class="badge outline-badge-success">
-                                                        View
-                                                    </a>
                                                     <a href="unisys_lim_update_book.php?update=<?php echo $book->id; ?>" data-toggle="tooltip" class="badge outline-badge-warning">
                                                         Edit
                                                     </a>

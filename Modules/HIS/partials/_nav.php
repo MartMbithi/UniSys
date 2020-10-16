@@ -18,8 +18,8 @@ while ($staff = $res->fetch_object()) {
                     <img src="assets/img/logo.png" class="navbar-logo" alt="logo">
                 </a>
             </li> -->
-                <li class="nav-item theme-text">
-                    <a href="dashboard.php" class="nav-link">UniSys - Library Information Management Module</a>
+                <li class="nav-item  text-center theme-text">
+                    <a href="dashboard.php" class="nav-link">UniSys - Hostel Information Management Module</a>
                 </li>
             </ul>
 

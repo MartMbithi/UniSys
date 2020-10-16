@@ -19,7 +19,6 @@ if (isset($_POST['login'])) {
 }
 require_once('partials/_head.php');
 ?>
-
 <body class="form">
     <div class="form-container outer">
         <div class="form-form">
@@ -27,7 +26,7 @@ require_once('partials/_head.php');
                 <div class="form-container">
                     <div class="form-content">
                         <img class="img-fluid text-center" src="assets/img/logo.png">
-                        <h1 class="">Students' Records Management Module</h1>
+                        <h1 class="">Library Information Management Module</h1>
                         <form method="post" class="text-left">
                             <div class="form">
                                 <div id="username-field" class="field-wrapper input">

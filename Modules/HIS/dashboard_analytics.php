@@ -93,7 +93,7 @@ require_once('partials/_head.php');
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value"><?php echo $AvailableBook; ?></h6>
+                                        <h6 class="value"><?php echo $hostels; ?></h6>
                                         <p class="">Hostels</p>
                                     </div>
                                     <div class="">
@@ -114,7 +114,7 @@ require_once('partials/_head.php');
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value"><?php echo $LostBook; ?></h6>
+                                        <h6 class="value"><?php echo $rooms; ?></h6>
                                         <p class="">Total Rooms</p>
                                     </div>
                                     <div class="">
@@ -138,7 +138,7 @@ require_once('partials/_head.php');
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value"><?php echo $DamangedBooks; ?></h6>
+                                        <h6 class="value"><?php echo $vacant; ?></h6>
                                         <p class="">Vacant Rooms</p>
                                     </div>
                                     <div class="">
@@ -160,7 +160,7 @@ require_once('partials/_head.php');
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value"><?php echo $borrowedBooks; ?></h6>
+                                        <h6 class="value"><?php echo $occupied; ?></h6>
                                         <p class="">Occupied Rooms</p>
                                     </div>
                                     <div class="">
@@ -181,7 +181,7 @@ require_once('partials/_head.php');
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value"><?php echo $borrowedBooks; ?></h6>
+                                        <h6 class="value"><?php echo $underrenovation; ?></h6>
                                         <p class="">Under Renovation Rooms</p>
                                     </div>
                                     <div class="">
@@ -203,7 +203,7 @@ require_once('partials/_head.php');
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value"><?php echo $borrowedBooks; ?></h6>
+                                        <h6 class="value"><?php echo $assets; ?></h6>
                                         <p class="">Hostel Assets</p>
                                     </div>
                                     <div class="">

@@ -60,11 +60,10 @@ require_once('partials/_head.php');
                             </svg></a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="customDropdown">
-                            <a class="dropdown-item" data-value="Books Inventory" href="unisys_lim_reports_books_inventory.php">Books Inventory</a>
-                            <a class="dropdown-item" data-value="Barcodes" href="unisys_lim_reports_barcodes.php">Barcodes</a>
-                            <a class="dropdown-item" data-value="Register" href="unisys_lim_reports_library_register.php">Register</a>
-                            <a class="dropdown-item" data-value="Operations" href="unisys_lim_reports_library_operations.php">Operations</a>
-                            <a class="dropdown-item" data-value="Fines" href="unisys_lim_reports_fines.php">Fines</a>
+                            <a class="dropdown-item" data-value="Hostels" href="unisys_him_reports_hostels.php">Hostels</a>
+                            <a class="dropdown-item" data-value="Rooms" href="unisys_him_reports_rooms.php">Rooms</a>
+                            <a class="dropdown-item" data-value="Allocations" href="unisys_him_reports_allocations.php">Allocations</a>
+                            <a class="dropdown-item" data-value="Assets" href="unisys_him_reports_assets.php">Assets</a>
                         </div>
                     </div>
                 </li>
@@ -95,7 +94,7 @@ require_once('partials/_head.php');
                                 <div class="w-content">
                                     <div class="w-info">
                                         <h6 class="value"><?php echo $AvailableBook; ?></h6>
-                                        <p class="">Available Book Copies</p>
+                                        <p class="">Hostels</p>
                                     </div>
                                     <div class="">
                                         <div class="w-icon">
@@ -116,7 +115,7 @@ require_once('partials/_head.php');
                                 <div class="w-content">
                                     <div class="w-info">
                                         <h6 class="value"><?php echo $LostBook; ?></h6>
-                                        <p class="">Lost Books</p>
+                                        <p class="">Total Rooms</p>
                                     </div>
                                     <div class="">
                                         <div class="w-icon">
@@ -138,7 +137,7 @@ require_once('partials/_head.php');
                                 <div class="w-content">
                                     <div class="w-info">
                                         <h6 class="value"><?php echo $DamangedBooks; ?></h6>
-                                        <p class="">Damanged Books</p>
+                                        <p class="">Vacant Rooms</p>
                                     </div>
                                     <div class="">
                                         <div class="w-icon">
@@ -160,7 +159,7 @@ require_once('partials/_head.php');
                                 <div class="w-content">
                                     <div class="w-info">
                                         <h6 class="value"><?php echo $borrowedBooks; ?></h6>
-                                        <p class="">Borrowed Books</p>
+                                        <p class="">Occupied Rooms</p>
                                     </div>
                                     <div class="">
                                         <div class="w-icon">
@@ -175,101 +174,7 @@ require_once('partials/_head.php');
                         </div>
                     </div>
 
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
-                        <div class="widget widget-card-four">
-                            <div class="widget-content">
-                                <div class="w-content">
-                                    <div class="w-info">
-                                        <h6 class="value"> Ksh <?php echo $UnPaidFine; ?></h6>
-                                        <p class="">Unpaid Fine</p>
-                                    </div>
-                                    <div class="">
-                                        <div class="w-icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
-                                                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
-                                                <line x1="12" y1="9" x2="12" y2="13"></line>
-                                                <line x1="12" y1="17" x2="12" y2="17"></line>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-9 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
-                        <div class="widget widget-chart-three">
-                            <div class="widget-heading">
-                                <div class="">
-                                    <h5 class="">Library Visitors</h5>
-                                </div>
-                                <div class="dropdown  custom-dropdown">
-                                    <a class="dropdown-toggle" href="#" role="button" id="uniqueVisitors" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal">
-                                            <circle cx="12" cy="12" r="1"></circle>
-                                            <circle cx="19" cy="12" r="1"></circle>
-                                            <circle cx="5" cy="12" r="1"></circle>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="widget-content">
-                                <div id="uniqueVisits"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing">
-                        <div class="widget widget-activity-three">
-
-                            <div class="widget-heading">
-                                <h5 class="">Library Fine Payment Logs</h5>
-                            </div>
-
-                            <div class="widget-content">
-
-                                <div class="mt-container mx-auto">
-                                    <div class="timeline-line">
-                                        <?php
-                                        $ret = "SELECT * FROM `UniSys_LIM_Fines`  ";
-                                        $stmt = $mysqli->prepare($ret);
-                                        $stmt->execute(); //ok
-                                        $res = $stmt->get_result();
-                                        while ($fines = $res->fetch_object()) {
-                                        ?>
-                                            <div class="item-timeline timeline-new">
-                                                <div class="t-dot">
-                                                    <div class="t-primary">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check">
-                                                            <polyline points="20 6 9 17 4 12"></polyline>
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                                <div class="t-content">
-                                                    <div class="t-uppercontent">
-                                                        <h5>Paid</h5>
-                                                        <span class=""><?php echo date('d, M, Y', strtotime($fines->created_at)); ?></span>
-                                                    </div>
-                                                    <p>
-                                                        <span class="text-success">
-                                                            <?php echo $fines->code; ?> CONFIRMED
-                                                        </span>
-                                                        <?php echo $fines->student_name; ?> - <?php echo $fines->student_regno; ?>
-                                                        Has Paid Ksh <?php echo $fines->fine_amt; ?> For <?php echo $fines->fine_type; ?>
-                                                        Book.
-                                                    </p>
-                                                    <div class="tags">
-                                                        <div class="badge badge-primary"><?php echo $fines->book_isbn; ?></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        <?php
-                                        } ?>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
             <?php require_once('partials/_footer.php'); ?>

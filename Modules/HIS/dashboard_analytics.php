@@ -153,13 +153,55 @@ require_once('partials/_head.php');
                         </div>
                     </div>
 
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
                         <div class="widget widget-card-four">
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
                                         <h6 class="value"><?php echo $borrowedBooks; ?></h6>
                                         <p class="">Occupied Rooms</p>
+                                    </div>
+                                    <div class="">
+                                        <div class="w-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
+                                                <path d="M22 11.07V12a10 10 0 1 1-5.93-9.14"></path>
+                                                <polyline points="23 3 12 14 9 11"></polyline>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
+                        <div class="widget widget-card-four">
+                            <div class="widget-content">
+                                <div class="w-content">
+                                    <div class="w-info">
+                                        <h6 class="value"><?php echo $borrowedBooks; ?></h6>
+                                        <p class="">Under Renovation Rooms</p>
+                                    </div>
+                                    <div class="">
+                                        <div class="w-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
+                                                <path d="M22 11.07V12a10 10 0 1 1-5.93-9.14"></path>
+                                                <polyline points="23 3 12 14 9 11"></polyline>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
+                        <div class="widget widget-card-four">
+                            <div class="widget-content">
+                                <div class="w-content">
+                                    <div class="w-info">
+                                        <h6 class="value"><?php echo $borrowedBooks; ?></h6>
+                                        <p class="">Hostel Assets</p>
                                     </div>
                                     <div class="">
                                         <div class="w-icon">

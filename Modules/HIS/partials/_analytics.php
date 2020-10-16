@@ -33,7 +33,7 @@ $stmt->fetch();
 $stmt->close();
 
 /* Under Renovation  Room*/
-$query = "SELECT COUNT(*)  FROM `UniSys_HIM_Assets` WHERE status !='Under Renovation'   ";
+$query = "SELECT COUNT(*)  FROM `UniSys_HIM_Assets`   ";
 $stmt = $mysqli->prepare($query);
 $stmt->execute();
 $stmt->bind_result($underrenovation);

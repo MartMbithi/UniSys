@@ -28,8 +28,8 @@ UniSys is a  Light Weight University Information Management System which is a we
 
 ## UniSys🧑‍🎓 Modules Implementation
 *  Students Information Management -> Fully Implemented
-*  Library Information Management -> Partially Implemented
-*  Hostel Information Management
+*  Library Information Management -> Fully Implemented
+*  Hostel Information Management -> On Going Implementation
 *  Mess Information Management
 *  Programe and Course Management
 *  Transport Management

@@ -140,9 +140,7 @@ require_once('partials/_head.php');
                         </div>
                     </div>
 
-                </div>
 
-                <div class="row layout-top-spacing">
                     <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
                         <div class="widget widget-table-two">
                             <div class="widget-heading">
@@ -197,8 +195,72 @@ require_once('partials/_head.php');
                         </div>
                     </div>
 
-                </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+                        <div class="widget widget-table-two">
+                            <div class="widget-heading">
+                                <h5 class="">Student Rooms Allocation At Glance
+                                    <a href="unisys_him_rooms_allocation.php" class="badge outline-badge-success">View All</a>
+                                </h5>
+                            </div>
 
+                            <div class="widget-content">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <div class="th-content">Room Number</div>
+                                                </th>
+                                                <th>
+                                                    <div class="th-content">Room Type</div>
+                                                </th>
+                                                <th>
+                                                    <div class="th-content th-heading">Student ADM No</div>
+                                                </th>
+                                                <th>
+                                                    <div class="th-content th-heading">Student Name</div>
+                                                </th>
+                                                <th>
+                                                    <div class="th-content th-heading">Student Phone No</div>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                            $ret = "SELECT * FROM `UniSys_LIM_Books_Cataloque`  ";
+                                            $stmt = $mysqli->prepare($ret);
+                                            $stmt->execute(); //ok
+                                            $res = $stmt->get_result();
+                                            while ($books = $res->fetch_object()) {
+                                            ?>
+                                                <tr>
+                                                    <td>
+                                                        <div class="td-content customer-name">
+                                                            <?php echo $books->isbn; ?>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="td-content product-brand"><?php echo $books->title; ?></div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="td-content"><?php echo $books->author; ?></div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="td-content"><?php echo $books->author; ?></div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="td-content"><?php echo $books->author; ?></div>
+                                                    </td>
+                                                </tr>
+                                            <?php
+                                            } ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <?php require_once('partials/_footer.php'); ?>
         </div>

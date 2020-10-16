@@ -6,7 +6,6 @@ check_login();
 require_once('partials/_analytics.php');
 require_once('partials/_head.php');
 ?>
-
 <body>
     <!-- BEGIN LOADER -->
     <div id="load_screen">
@@ -48,16 +47,15 @@ require_once('partials/_head.php');
             <ul class="navbar-nav flex-row ml-auto ">
                 <li class="nav-item more-dropdown">
                     <div class="dropdown  custom-dropdown-icon">
-                        <a class="dropdown-toggle btn" href="#" role="button" id="customDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Library Reports</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
+                        <a class="dropdown-toggle btn" href="#" role="button" id="customDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Hostel Reports</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg></a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="customDropdown">
-                            <a class="dropdown-item" data-value="Books Inventory" href="unisys_lim_reports_books_inventory.php">Books Inventory</a>
-                            <a class="dropdown-item" data-value="Barcodes" href="unisys_lim_reports_barcodes.php">Barcodes</a>
-                            <a class="dropdown-item" data-value="Register" href="unisys_lim_reports_library_register.php">Register</a>
-                            <a class="dropdown-item" data-value="Operations" href="unisys_lim_reports_library_operations.php">Operations</a>
-                            <a class="dropdown-item" data-value="Fines" href="unisys_lim_reports_fines.php">Fines</a>
+                            <a class="dropdown-item" data-value="Hostels" href="unisys_him_reports_hostels.php">Hostels</a>
+                            <a class="dropdown-item" data-value="Rooms" href="unisys_him_reports_rooms.php">Rooms</a>
+                            <a class="dropdown-item" data-value="Allocations" href="unisys_him_reports_allocations.php">Allocations</a>
+                            <a class="dropdown-item" data-value="Assets" href="unisys_him_reports_assets.php">Assets</a>
                         </div>
                     </div>
                 </li>
@@ -79,126 +77,12 @@ require_once('partials/_head.php');
         <!--  BEGIN CONTENT AREA  -->
         <div id="content" class="main-content">
             <div class="layout-px-spacing">
-
                 <div class="row layout-top-spacing">
-                    <!-- Monthly Library Usage -->
-                    <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
-                        <div class="widget widget-chart-one">
-                            <div class="widget-heading">
-                                <h5 class="">Monthly Library Operations</h5>
-                                <ul class="tabs tab-pills">
-                                    <li><a href="javascript:void(0);" id="tb_1" class="tabmenu"><?php echo date('d M Y'); ?></a></li>
-                                </ul>
-                            </div>
-
-                            <div class="widget-content">
-                                <div class="tabs tab-content">
-                                    <div id="content_1" class="tabcontent">
-                                        <div id="revenueMonthly"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Library Operations  -->
-                    <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
-                        <div class="widget widget-chart-two">
-                            <div class="widget-heading">
-                                <h5 class="">Library Operations Per Type</h5>
-                            </div>
-                            <div class="widget-content">
-                                <div id="chart-2" class=""></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-8 col-lg-12 col-md-6 col-sm-12 col-12 layout-spacing">
-                        <div class="widget widget-table-one">
-                            <div class="widget-heading">
-                                <h5 class="">Library Operations At Glance</h5>
-                            </div>
-
-                            <div class="widget-content">
-                                <?php
-                                $ret = "SELECT * FROM `UniSys_LIM_Library_Operations`  ";
-                                $stmt = $mysqli->prepare($ret);
-                                $stmt->execute(); //ok
-                                $res = $stmt->get_result();
-                                while ($operations = $res->fetch_object()) {
-                                ?>
-                                    <div class="transactions-list">
-                                        <div class="t-item">
-                                            <div class="t-company-name">
-                                                <div class="t-icon">
-                                                    <div class="icon">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
-                                                            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                                <div class="t-name">
-                                                    <h4><?php echo $operations->student_regno; ?> <?php echo $operations->student_name; ?> </h4>
-                                                    <p class="meta-date"><?php echo $operations->book_title; ?> <?php echo $operations->book_isbn; ?> At <?php echo date('d, M, Y - g:i', strtotime($operations->created_at)); ?></p>
-                                                </div>
-
-                                            </div>
-
-                                            <div class="t-rate rate-dec">
-                                                <p>
-                                                    <span><?php echo $operations->type; ?> </span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                <?php } ?>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing">
-
-                        <div class="widget widget-account-invoice-one">
-
-                            <div class="widget-heading">
-                                <h5 class="">Library Account Info</h5>
-                            </div>
-
-                            <div class="widget-content">
-                                <div class="invoice-box">
-
-                                    <div class="acc-total-info">
-                                        <h5>Balance</h5>
-                                        <p class="acc-amount">Ksh <?php echo $totalFine; ?></p>
-                                    </div>
-
-                                    <div class="inv-detail">
-                                        <div class="info-detail-1">
-                                            <p>Paid Fines</p>
-                                            <p>Ksh <?php echo $PaidFine; ?></p>
-                                        </div>
-                                        <div class="info-detail-2">
-                                            <p>Pending Fines</p>
-                                            <p>Ksh <?php echo $UnPaidFine; ?></p>
-                                        </div>
-                                    </div>
-
-                                    <div class="inv-action">
-                                        <a href="unisys_lim_reports_fines.php" class="btn btn-dark">Summary</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+                    <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
                         <div class="widget widget-table-two">
-
                             <div class="widget-heading">
-                                <h5 class="">Recently Added Books
-                                    <a href="unisys_lim_books_cataloque.php" class="badge outline-badge-success">View All</a>
+                                <h5 class="">Hostels At Glance
+                                    <a href="unisys_him_hostels.php" class="badge outline-badge-success">View All</a>
                                 </h5>
                             </div>
 
@@ -208,19 +92,16 @@ require_once('partials/_head.php');
                                         <thead>
                                             <tr>
                                                 <th>
-                                                    <div class="th-content">ISBN Number</div>
+                                                    <div class="th-content">Hostel Code</div>
                                                 </th>
                                                 <th>
-                                                    <div class="th-content">Title</div>
+                                                    <div class="th-content">Hostel Name</div>
                                                 </th>
                                                 <th>
-                                                    <div class="th-content th-heading">Author</div>
+                                                    <div class="th-content th-heading">Number Of Rooms</div>
                                                 </th>
                                                 <th>
-                                                    <div class="th-content">Publisher</div>
-                                                </th>
-                                                <th>
-                                                    <div class="th-content">Copies Available</div>
+                                                    <div class="th-content">Hostel Location</div>
                                                 </th>
                                             </tr>
                                         </thead>
@@ -247,8 +128,60 @@ require_once('partials/_head.php');
                                                     <td>
                                                         <div class="td-content pricing"><span class=""><?php echo $books->publisher; ?></span></div>
                                                     </td>
+                                                </tr>
+                                            <?php
+                                            } ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+                        <div class="widget widget-table-two">
+                            <div class="widget-heading">
+                                <h5 class="">Available Roooms At Glance
+                                    <a href="unisys_him_rooms.php" class="badge outline-badge-success">View All</a>
+                                </h5>
+                            </div>
+
+                            <div class="widget-content">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <div class="th-content">Room Number</div>
+                                                </th>
+                                                <th>
+                                                    <div class="th-content">Room Type</div>
+                                                </th>
+                                                <th>
+                                                    <div class="th-content th-heading">Room Status</div>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                            $ret = "SELECT * FROM `UniSys_LIM_Books_Cataloque`  ";
+                                            $stmt = $mysqli->prepare($ret);
+                                            $stmt->execute(); //ok
+                                            $res = $stmt->get_result();
+                                            while ($books = $res->fetch_object()) {
+                                            ?>
+                                                <tr>
                                                     <td>
-                                                        <div class="td-content"><span class="badge outline-badge-primary"><?php echo $books->copies; ?></span></div>
+                                                        <div class="td-content customer-name">
+                                                            <?php echo $books->isbn; ?>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="td-content product-brand"><?php echo $books->title; ?></div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="td-content"><?php echo $books->author; ?></div>
                                                     </td>
                                                 </tr>
                                             <?php
@@ -260,8 +193,72 @@ require_once('partials/_head.php');
                         </div>
                     </div>
 
-                </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+                        <div class="widget widget-table-two">
+                            <div class="widget-heading">
+                                <h5 class="">Student Rooms Allocation At Glance
+                                    <a href="unisys_him_rooms_allocation.php" class="badge outline-badge-success">View All</a>
+                                </h5>
+                            </div>
 
+                            <div class="widget-content">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <div class="th-content">Room Number</div>
+                                                </th>
+                                                <th>
+                                                    <div class="th-content">Room Type</div>
+                                                </th>
+                                                <th>
+                                                    <div class="th-content th-heading">Student ADM No</div>
+                                                </th>
+                                                <th>
+                                                    <div class="th-content th-heading">Student Name</div>
+                                                </th>
+                                                <th>
+                                                    <div class="th-content th-heading">Student Phone No</div>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                            $ret = "SELECT * FROM `UniSys_LIM_Books_Cataloque`  ";
+                                            $stmt = $mysqli->prepare($ret);
+                                            $stmt->execute(); //ok
+                                            $res = $stmt->get_result();
+                                            while ($books = $res->fetch_object()) {
+                                            ?>
+                                                <tr>
+                                                    <td>
+                                                        <div class="td-content customer-name">
+                                                            <?php echo $books->isbn; ?>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="td-content product-brand"><?php echo $books->title; ?></div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="td-content"><?php echo $books->author; ?></div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="td-content"><?php echo $books->author; ?></div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="td-content"><?php echo $books->author; ?></div>
+                                                    </td>
+                                                </tr>
+                                            <?php
+                                            } ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <?php require_once('partials/_footer.php'); ?>
         </div>

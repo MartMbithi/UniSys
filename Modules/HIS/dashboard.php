@@ -6,7 +6,6 @@ check_login();
 require_once('partials/_analytics.php');
 require_once('partials/_head.php');
 ?>
-
 <body>
     <!-- BEGIN LOADER -->
     <div id="load_screen">
@@ -78,7 +77,6 @@ require_once('partials/_head.php');
         <!--  BEGIN CONTENT AREA  -->
         <div id="content" class="main-content">
             <div class="layout-px-spacing">
-                
                 <div class="row layout-top-spacing">
                     <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
                         <div class="widget widget-table-two">

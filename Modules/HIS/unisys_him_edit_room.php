@@ -25,7 +25,7 @@ if (isset($_POST['update_room'])) {
         $rc = $stmt->bind_param('ssssss',  $code, $name, $h_code, $status, $type, $update);
         $stmt->execute();
         if ($stmt) {
-            $success = "Updated" && header("refresh:1; url=unisys_him_view_rooms.php?h_code=$h_code");
+            $success = "Updated" && header("refresh:1; url=unisys_him_view_rooms.php?update=$update;&h_code=$h_code");
         } else {
             //inject alert that task failed
             $info = "Please Try Again Or Try Later";
@@ -69,7 +69,7 @@ require_once('partials/_head.php');
                                     <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
                                     <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
                                     <li class="breadcrumb-item"><a href="unisys_him_rooms.php">Hostels</a></li>
-                                    <li class="breadcrumb-item"><a href="unisys_him_rooms.php"><?php echo $row->name; ?></a> </li>
+                                    <li class="breadcrumb-item"><a href="unisys_him_rooms.php"><?php echo $row->hostel_name; ?></a> </li>
                                     <li class="breadcrumb-item"><a href="">Rooms</a> </li>
                                     <li class="breadcrumb-item active" aria-current="page"><span>Update</span></li>
                                 </ol>

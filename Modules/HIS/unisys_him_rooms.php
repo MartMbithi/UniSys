@@ -82,7 +82,7 @@ require_once('partials/_head.php');
                                                 <td><?php echo $row->name; ?></td>
                                                 <td><?php echo $row->created_at; ?></td>
                                                 <td class="text-center">
-                                                    <a href="unisys_him_add_room.php?h_code=<?php echo $row->code; ?>&name=<?php echo $row->name; ?>" data-toggle="tooltip" class="badge outline-badge-primary">
+                                                    <a href="unisys_him_add_room.php?h_code=<?php echo $row->code; ?>&name=<?php echo $row->name; ?>" data-toggle="tooltip" class="badge outline-badge-success">
                                                         Add Room
                                                     </a>
                                                     <a href="unisys_him_view_rooms.php?h_code=<?php echo $row->code; ?>" data-toggle="tooltip" class="badge outline-badge-primary">

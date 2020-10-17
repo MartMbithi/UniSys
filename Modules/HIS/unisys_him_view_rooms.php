@@ -55,7 +55,8 @@ require_once('partials/_head.php');
                                     <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
                                     <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
                                     <li class="breadcrumb-item"><a href="unisys_him_rooms.php">Hostels</a></li>
-                                    <li class="breadcrumb-item"><a href="unisys_him_rooms.php"><?php echo $row->name; ?><</a> </li> <li class="breadcrumb-item active" aria-current="page"><span>Rooms</span></li>
+                                    <li class="breadcrumb-item"><a href="unisys_him_rooms.php"><?php echo $row->name; ?></a> </li>
+                                    <li class="breadcrumb-item active" aria-current="page"><span>Rooms</span></li>
                                 </ol>
                             </nav>
 
@@ -106,7 +107,7 @@ require_once('partials/_head.php');
                                                     <td><?php echo $row->type; ?></td>
                                                     <td><?php echo $row->status; ?></td>
                                                     <td class="text-center">
-                                                        <a href="unisys_him_add_room.php?h_code=<?php echo $row->code; ?>&name=<?php echo $row->name; ?>" data-toggle="tooltip" class="badge outline-badge-primary">
+                                                        <a href="unisys_him_add_room.php?update=<?php echo $row->id; ?>" data-toggle="tooltip" class="badge outline-badge-primary">
                                                             Edit
                                                         </a>
                                                         <a href="unisys_him_view_rooms.php?delete=<?php echo $row->id; ?>&h_code=<?php echo $row->hostel_code; ?>" data-toggle="tooltip" class="badge outline-badge-danger">

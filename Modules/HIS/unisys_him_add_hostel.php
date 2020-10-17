@@ -71,8 +71,8 @@ require_once('partials/_head.php');
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
                                 <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
-                                <li class="breadcrumb-item"><a href="unisys_lim_library_register.php">Library Register</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><span>Register New Entry</span></li>
+                                <li class="breadcrumb-item"><a href="unisys_him_hostels.php">Hostels</a></li>
+                                <li class="breadcrumb-item active" aria-current="page"><span>Register New Hostel</span></li>
                             </ol>
                         </nav>
 
@@ -112,43 +112,22 @@ require_once('partials/_head.php');
                                     <div class="form-group col-md-12">
                                         <label for="inputEmail4">Code</label>
                                         <input type="text" required value="<?php echo $a; ?><?php echo $b; ?>" class="form-control" name="code">
-                                        <input type="hidden" required value="<?php echo date('d'); ?>" class="form-control" name="day">
-                                        <input type="hidden" required value="<?php echo date('M'); ?>" class="form-control" name="month">
-                                        <input type="hidden" required value="<?php echo date('Y'); ?>" class="form-control" name="year">
+                                        <input type="hidden" required value="<?php echo date('d M Y'); ?>" class="form-control" name="created_at">
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <label for="inputEmail4">Student Registration Number</label>
-                                        <select class='form-control basic' id="RegNumber" onchange="getStudentDetails(this.value);" name="student_regno">
-                                            <option selected>Select Student Registration Number</option>
-                                            <?php
-                                            $ret = "SELECT * FROM `UniSys_Students`  ";
-                                            $stmt = $mysqli->prepare($ret);
-                                            $stmt->execute(); //ok
-                                            $res = $stmt->get_result();
-                                            while ($std = $res->fetch_object()) {
-                                            ?>
-                                                <option><?php echo $std->reg_no; ?></option>
-                                            <?php } ?>
-                                        </select>
+                                        <label for="inputEmail4">Hostel Name</label>
+                                        <input type="text" required class="form-control" name="name">
                                     </div>
-
                                     <div class="form-group col-md-12">
-                                        <label for="inputEmail4">Student Name</label>
-                                        <input type="text" readonly id="StudentName" required class="form-control" name="student_name">
+                                        <label for="inputEmail4">Location</label>
+                                        <input type="text" required class="form-control" name="location">
                                     </div>
-
-                                    <div class="form-group col-md-6">
-                                        <label for="inputEmail4">Check In</label>
-                                        <input type="time" required class="form-control" name="check_in">
+                                    <div class="form-group col-md-12">
+                                        <label for="inputEmail4">Number Of Rooms</label>
+                                        <input type="text" required class="form-control" name="name">
                                     </div>
-
-                                    <div class="form-group col-md-6">
-                                        <label for="inputEmail4">Check Out</label>
-                                        <input type="time" required class="form-control" name="check_out">
-                                    </div>
-
                                 </div>
-                                <button type="submit" name="add_entry" class="btn btn-primary mt-3">Submit</button>
+                                <button type="submit" name="add_hostel" class="btn btn-primary mt-3">Add Hostel</button>
                             </form>
                         </div>
                     </div>

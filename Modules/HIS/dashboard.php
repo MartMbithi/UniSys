@@ -92,41 +92,41 @@ require_once('partials/_head.php');
                                         <thead>
                                             <tr>
                                                 <th>
-                                                    <div class="th-content">Hostel Code</div>
+                                                    <div class="th-content">Code</div>
                                                 </th>
                                                 <th>
-                                                    <div class="th-content">Hostel Name</div>
+                                                    <div class="th-content">Name</div>
                                                 </th>
                                                 <th>
-                                                    <div class="th-content th-heading">Number Of Rooms</div>
+                                                    <div class="th-content">No Rooms</div>
                                                 </th>
                                                 <th>
-                                                    <div class="th-content">Hostel Location</div>
+                                                    <div class="th-content">Location</div>
                                                 </th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $ret = "SELECT * FROM `UniSys_LIM_Books_Cataloque`  ";
+                                            $ret = "SELECT * FROM `UniSys_HIM_Hostels`  ";
                                             $stmt = $mysqli->prepare($ret);
                                             $stmt->execute(); //ok
                                             $res = $stmt->get_result();
-                                            while ($books = $res->fetch_object()) {
+                                            while ($row = $res->fetch_object()) {
                                             ?>
                                                 <tr>
                                                     <td>
-                                                        <div class="td-content customer-name">
-                                                            <?php echo $books->isbn; ?>
+                                                        <div class="td-content ">
+                                                            <?php echo $row->code; ?>
                                                         </div>
                                                     </td>
                                                     <td>
-                                                        <div class="td-content product-brand"><?php echo $books->title; ?></div>
+                                                        <div class="td-content"><?php echo $row->name; ?></div>
                                                     </td>
                                                     <td>
-                                                        <div class="td-content"><?php echo $books->author; ?></div>
+                                                        <div class="td-content"><?php echo $row->rooms; ?></div>
                                                     </td>
                                                     <td>
-                                                        <div class="td-content pricing"><span class=""><?php echo $books->publisher; ?></span></div>
+                                                        <div class="td-content"><span class=""><?php echo $row->location; ?></span></div>
                                                     </td>
                                                 </tr>
                                             <?php
@@ -153,35 +153,35 @@ require_once('partials/_head.php');
                                         <thead>
                                             <tr>
                                                 <th>
-                                                    <div class="th-content">Room Number</div>
+                                                    <div class="th-content">Number</div>
                                                 </th>
                                                 <th>
-                                                    <div class="th-content">Room Type</div>
+                                                    <div class="th-content">Type</div>
                                                 </th>
                                                 <th>
-                                                    <div class="th-content th-heading">Room Status</div>
+                                                    <div class="th-content th-heading">Status</div>
                                                 </th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $ret = "SELECT * FROM `UniSys_LIM_Books_Cataloque`  ";
+                                            $ret = "SELECT * FROM `UniSys_HIM_Rooms`  ";
                                             $stmt = $mysqli->prepare($ret);
                                             $stmt->execute(); //ok
                                             $res = $stmt->get_result();
-                                            while ($books = $res->fetch_object()) {
+                                            while ($row = $res->fetch_object()) {
                                             ?>
                                                 <tr>
                                                     <td>
                                                         <div class="td-content customer-name">
-                                                            <?php echo $books->isbn; ?>
+                                                            <?php echo $row->code; ?>
                                                         </div>
                                                     </td>
                                                     <td>
-                                                        <div class="td-content product-brand"><?php echo $books->title; ?></div>
+                                                        <div class="td-content product-brand"><?php echo $row->type; ?></div>
                                                     </td>
                                                     <td>
-                                                        <div class="td-content"><?php echo $books->author; ?></div>
+                                                        <div class="td-content"><?php echo $row->status; ?></div>
                                                     </td>
                                                 </tr>
                                             <?php
@@ -213,41 +213,47 @@ require_once('partials/_head.php');
                                                     <div class="th-content">Room Type</div>
                                                 </th>
                                                 <th>
+                                                    <div class="th-content">Hostel Name</div>
+                                                </th>
+                                                <th>
                                                     <div class="th-content th-heading">Student ADM No</div>
                                                 </th>
                                                 <th>
                                                     <div class="th-content th-heading">Student Name</div>
                                                 </th>
                                                 <th>
-                                                    <div class="th-content th-heading">Student Phone No</div>
+                                                    <div class="th-content th-heading">Date Allocated</div>
                                                 </th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $ret = "SELECT * FROM `UniSys_LIM_Books_Cataloque`  ";
+                                            $ret = "SELECT * FROM `UniSys_LIM_Allocations`  ";
                                             $stmt = $mysqli->prepare($ret);
                                             $stmt->execute(); //ok
                                             $res = $stmt->get_result();
-                                            while ($books = $res->fetch_object()) {
+                                            while ($row = $res->fetch_object()) {
                                             ?>
                                                 <tr>
                                                     <td>
                                                         <div class="td-content customer-name">
-                                                            <?php echo $books->isbn; ?>
+                                                            <?php echo $row->room_code; ?>
                                                         </div>
                                                     </td>
                                                     <td>
-                                                        <div class="td-content product-brand"><?php echo $books->title; ?></div>
+                                                        <div class="td-content product-brand"><?php echo $row->room_type; ?></div>
                                                     </td>
                                                     <td>
-                                                        <div class="td-content"><?php echo $books->author; ?></div>
+                                                        <div class="td-content product-brand"><?php echo $row->hostel_name; ?></div>
                                                     </td>
                                                     <td>
-                                                        <div class="td-content"><?php echo $books->author; ?></div>
+                                                        <div class="td-content"><?php echo $row->student_regno; ?></div>
                                                     </td>
                                                     <td>
-                                                        <div class="td-content"><?php echo $books->author; ?></div>
+                                                        <div class="td-content"><?php echo $row->student_name; ?></div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="td-content"><?php echo $row->date_allocated; ?></div>
                                                     </td>
                                                 </tr>
                                             <?php

@@ -29,7 +29,7 @@
             </li>
 
             <li class="menu">
-                <a href="unisys_lim_books_cataloque.php" aria-expanded="false" class="dropdown-toggle">
+                <a href="unisys_him_hostels.php" aria-expanded="false" class="dropdown-toggle">
                     <div class="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
                             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
@@ -41,7 +41,7 @@
             </li>
 
             <li class="menu">
-                <a href="unisys_lim_books_cataloque.php" aria-expanded="false" class="dropdown-toggle">
+                <a href="unisys_him_rooms.php" aria-expanded="false" class="dropdown-toggle">
                     <div class="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
                             <circle cx="12" cy="12" r="10"></circle>
@@ -56,7 +56,7 @@
             </li>
 
             <li class="menu">
-                <a href="unisys_lim_barcodes.php" aria-expanded="false" class="dropdown-toggle">
+                <a href="unisys_him_room_allocations.php" aria-expanded="false" class="dropdown-toggle">
                     <div class="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
                             <path d="M5 18H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h3.19M15 6h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-3.19"></path>
@@ -70,7 +70,7 @@
             </li>
 
             <li class="menu">
-                <a href="unisys_lim_library_operations.php" aria-expanded="false" class="dropdown-toggle">
+                <a href="unisys_him_hostel_inventory.php" aria-expanded="false" class="dropdown-toggle">
                     <div class="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
                             <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
@@ -99,16 +99,16 @@
                 </a>
                 <ul class="collapse submenu list-unstyled" id="reports" data-parent="#accordionExample">
                     <li class="active">
-                        <a href="unisys_lim_reports_books_inventory.php"> Hostels </a>
+                        <a href="unisys_him_reports_hostels.php"> Hostels </a>
                     </li>
                     <li>
-                        <a href="unisys_lim_reports_library_register.php"> Rooms</a>
+                        <a href="unisys_him_reports_rooms.php"> Rooms</a>
                     </li>
                     <li>
-                        <a href="unisys_lim_reports_library_operations.php"> Allocations </a>
+                        <a href="unisys_him_reports_allocations.php"> Allocations </a>
                     </li>
                     <li>
-                        <a href="unisys_lim_reports_fines.php"> Assets </a>
+                        <a href="unisys_him_reports_assets.php"> Assets </a>
                     </li>
                 </ul>
             </li>

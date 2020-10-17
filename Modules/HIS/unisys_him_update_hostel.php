@@ -5,7 +5,7 @@ require_once('configs/checklogin.php');
 check_login();
 require_once('configs/codeGen.php');
 
-if (isset($_POST['update_hostel'])) {
+if (isset($_POST['update'])) {
     //Error Handling and prevention of posting double entries
     $error = 0;
     if (isset($_POST['code']) && !empty($_POST['code'])) {
@@ -21,7 +21,7 @@ if (isset($_POST['update_hostel'])) {
         $location = $_POST['location'];
         $rooms  = $_POST['rooms'];
         $created_at = $_POST['created_at'];
-        $query = "UPDATE UniSys_HIM_Hostels SET code =?, name =?, location =?, rooms =?, created_at ? WHERE id =?";
+        $query = "UPDATE UniSys_HIM_Hostels SET code =?, name =?, location =?, rooms =?, created_at = ? WHERE id =?";
         $stmt = $mysqli->prepare($query);
         $rc = $stmt->bind_param('ssssss', $code, $name, $location, $rooms, $created_at, $update);
         $stmt->execute();

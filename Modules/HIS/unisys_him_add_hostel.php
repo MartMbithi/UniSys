@@ -34,7 +34,7 @@ if (isset($_POST['add_hostel'])) {
             $rc = $stmt->bind_param('ssssss', $id, $code, $name, $location, $rooms, $created_at);
             $stmt->execute();
             if ($stmt) {
-                $success = "Added" && header("refresh:1; url=unisys_add_hostel.php");
+                $success = "Added" && header("refresh:1; url=unisys_him_add_hostel.php");
             } else {
                 //inject alert that task failed
                 $info = "Please Try Again Or Try Later";

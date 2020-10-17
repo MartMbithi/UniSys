@@ -105,7 +105,7 @@ require_once('partials/_head.php');
                                             <tr>
                                                 <td><?php echo $row->code; ?></td>
                                                 <td><?php echo $row->name; ?></td>
-                                                <td><?php echo $row->rooms; ?></td>
+                                                <td><?php echo $row->rooms; ?> Rooms</td>
                                                 <td><?php echo $row->created_at; ?></td>
                                                 <td class="text-center">
                                                     <a href="unisys_him_update_hostel.php?update=<?php echo $row->id; ?>" data-toggle="tooltip" class="badge outline-badge-warning">

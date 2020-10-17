@@ -92,16 +92,16 @@ require_once('partials/_head.php');
                                         <thead>
                                             <tr>
                                                 <th>
-                                                    <div class="th-content">Hostel Code</div>
+                                                    <div class="th-content">Code</div>
                                                 </th>
                                                 <th>
-                                                    <div class="th-content">Hostel Name</div>
+                                                    <div class="th-content">Name</div>
                                                 </th>
                                                 <th>
-                                                    <div class="th-content th-heading">Number Of Rooms</div>
+                                                    <div class="th-content">No Rooms</div>
                                                 </th>
                                                 <th>
-                                                    <div class="th-content">Hostel Location</div>
+                                                    <div class="th-content">Location</div>
                                                 </th>
                                             </tr>
                                         </thead>
@@ -115,18 +115,18 @@ require_once('partials/_head.php');
                                             ?>
                                                 <tr>
                                                     <td>
-                                                        <div class="td-content customer-name">
+                                                        <div class="td-content ">
                                                             <?php echo $row->code; ?>
                                                         </div>
                                                     </td>
                                                     <td>
-                                                        <div class="td-content product-brand"><?php echo $row->name; ?></div>
+                                                        <div class="td-content"><?php echo $row->name; ?></div>
                                                     </td>
                                                     <td>
                                                         <div class="td-content"><?php echo $row->rooms; ?></div>
                                                     </td>
                                                     <td>
-                                                        <div class="td-content pricing"><span class=""><?php echo $row->location; ?></span></div>
+                                                        <div class="td-content"><span class=""><?php echo $row->location; ?></span></div>
                                                     </td>
                                                 </tr>
                                             <?php
@@ -153,13 +153,13 @@ require_once('partials/_head.php');
                                         <thead>
                                             <tr>
                                                 <th>
-                                                    <div class="th-content">Room Number</div>
+                                                    <div class="th-content">Number</div>
                                                 </th>
                                                 <th>
-                                                    <div class="th-content">Room Type</div>
+                                                    <div class="th-content">Type</div>
                                                 </th>
                                                 <th>
-                                                    <div class="th-content th-heading">Room Status</div>
+                                                    <div class="th-content th-heading">Status</div>
                                                 </th>
                                             </tr>
                                         </thead>

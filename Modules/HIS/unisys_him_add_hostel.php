@@ -29,9 +29,9 @@ if (isset($_POST['add_hostel'])) {
             $location = $_POST['location'];
             $rooms  = $_POST['rooms'];
             $created_at = $_POST['created_at'];
-            $query = "INSERT INTO UniSys_HIM_Hostels (id, code, name, location, rooms, created_at) VALUES (?,?,?,?,?,?,?)";
+            $query = "INSERT INTO UniSys_HIM_Hostels (id, code, name, location, rooms, created_at) VALUES (?,?,?,?,?,?)";
             $stmt = $mysqli->prepare($query);
-            $rc = $stmt->bind_param('sssssss', $id, $code, $name, $location, $rooms, $created_at);
+            $rc = $stmt->bind_param('ssssss', $id, $code, $name, $location, $rooms, $created_at);
             $stmt->execute();
             if ($stmt) {
                 $success = "Added" && header("refresh:1; url=unisys_add_hostel.php");
@@ -124,7 +124,7 @@ require_once('partials/_head.php');
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="inputEmail4">Number Of Rooms</label>
-                                        <input type="text" required class="form-control" name="name">
+                                        <input type="text" required class="form-control" name="rooms">
                                     </div>
                                 </div>
                                 <button type="submit" name="add_hostel" class="btn btn-primary mt-3">Add Hostel</button>

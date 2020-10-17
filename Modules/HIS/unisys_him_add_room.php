@@ -71,11 +71,10 @@ require_once('partials/_head.php');
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
                                 <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
-                                <li class="breadcrumb-item"><a href="unisys_him_hostels.php">Hostels</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><span>Register New Hostel</span></li>
+                                <li class="breadcrumb-item"><a href="unisys_him_hostels.php">Rooms</a></li>
+                                <li class="breadcrumb-item active" aria-current="page"><span>Register New Room </span></li>
                             </ol>
                         </nav>
-
                     </div>
                 </li>
             </ul>
@@ -112,22 +111,20 @@ require_once('partials/_head.php');
                                     <div class="form-group col-md-12">
                                         <label for="inputEmail4">Code</label>
                                         <input type="text" required value="<?php echo $a; ?><?php echo $b; ?>" class="form-control" name="code">
-                                        <input type="hidden" required value="<?php echo date('d M Y'); ?>" class="form-control" name="created_at">
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <label for="inputEmail4">Hostel Name</label>
-                                        <input type="text" required class="form-control" name="name">
+                                        <label for="inputEmail4">Room Status</label>
+                                        <select class='form-control basic' name="status">
+                                            <option>Vacant</option>
+                                            <option>Occupied</option>
+                                        </select>
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <label for="inputEmail4">Location</label>
-                                        <input type="text" required class="form-control" name="location">
-                                    </div>
-                                    <div class="form-group col-md-12">
-                                        <label for="inputEmail4">Number Of Rooms</label>
-                                        <input type="text" required class="form-control" name="rooms">
+                                        <label for="inputEmail4">Room Type</label>
+                                        <input type="text" required class="form-control" name="type">
                                     </div>
                                 </div>
-                                <button type="submit" name="add_hostel" class="btn btn-primary mt-3">Add Hostel</button>
+                                <button type="submit" name="add_room" class="btn btn-primary mt-3">Add Room</button>
                             </form>
                         </div>
                     </div>

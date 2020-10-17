@@ -5,20 +5,6 @@ require_once('configs/checklogin.php');
 check_login();
 require_once('partials/_analytics.php');
 
-//Delete
-if (isset($_GET['delete'])) {
-    $id = $_GET['delete'];
-    $adn = "DELETE FROM UniSys_HIM_Rooms WHERE id =?";
-    $stmt = $mysqli->prepare($adn);
-    $stmt->bind_param('s', $id);
-    $stmt->execute();
-    $stmt->close();
-    if ($stmt) {
-        $success = "Deleted" && header("refresh:1; url=unisys_him_rooms.php");
-    } else {
-        $info = "Please Try Again Or Try Later";
-    }
-}
 require_once('partials/_head.php');
 ?>
 
@@ -98,6 +84,9 @@ require_once('partials/_head.php');
                                                 <td class="text-center">
                                                     <a href="unisys_him_add_room.php?h_code=<?php echo $row->code; ?>&name=<?php echo $row->name; ?>" data-toggle="tooltip" class="badge outline-badge-primary">
                                                         Add Room
+                                                    </a>
+                                                    <a href="unisys_him_view_rooms.php?h_code=<?php echo $row->code; ?>" data-toggle="tooltip" class="badge outline-badge-primary">
+                                                        View Rooms
                                                     </a>
                                                 </td>
                                             </tr>

@@ -107,26 +107,26 @@ require_once('partials/_head.php');
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $ret = "SELECT * FROM `UniSys_LIM_Books_Cataloque`  ";
+                                            $ret = "SELECT * FROM `UniSys_HIM_Hostels`  ";
                                             $stmt = $mysqli->prepare($ret);
                                             $stmt->execute(); //ok
                                             $res = $stmt->get_result();
-                                            while ($books = $res->fetch_object()) {
+                                            while ($row = $res->fetch_object()) {
                                             ?>
                                                 <tr>
                                                     <td>
                                                         <div class="td-content customer-name">
-                                                            <?php echo $books->isbn; ?>
+                                                            <?php echo $row->code; ?>
                                                         </div>
                                                     </td>
                                                     <td>
-                                                        <div class="td-content product-brand"><?php echo $books->title; ?></div>
+                                                        <div class="td-content product-brand"><?php echo $row->name; ?></div>
                                                     </td>
                                                     <td>
-                                                        <div class="td-content"><?php echo $books->author; ?></div>
+                                                        <div class="td-content"><?php echo $row->rooms; ?></div>
                                                     </td>
                                                     <td>
-                                                        <div class="td-content pricing"><span class=""><?php echo $books->publisher; ?></span></div>
+                                                        <div class="td-content pricing"><span class=""><?php echo $row->location; ?></span></div>
                                                     </td>
                                                 </tr>
                                             <?php

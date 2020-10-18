@@ -8,12 +8,19 @@ require_once('partials/_analytics.php');
 //Delete
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
+    $room_code = $_GET['room_code'];
+    $status = $_GET['status'];
     $adn = "DELETE FROM UniSys_LIM_Allocations WHERE id =?";
+    $roomStatus = "UPDATE UniSys_HIM_Rooms SET status =? WHERE code = ?";
     $stmt = $mysqli->prepare($adn);
+    $roomStmt = $mysqli->prepare(($roomStatus));
     $stmt->bind_param('s', $id);
+    $roomStmt->bind_param('ss', $status, $room_code);
     $stmt->execute();
+    $roomStmt->execute();
     $stmt->close();
-    if ($stmt) {
+    $roomStmt->close();
+    if ($stmt && $roomStmt) {
         $success = "Deleted" && header("refresh:1; url=unisys_him_room_allocations.php");
     } else {
         $info = "Please Try Again Or Try Later";

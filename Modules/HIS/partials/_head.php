@@ -64,19 +64,6 @@
   <!-- AJAX -->
   <script>
 
-    function getBookDetails(val) {
-      $.ajax({
-
-        type: "POST",
-        url: "ajax.php",
-        data: 'bookIsbn=' + val,
-        success: function(data) {
-          //alert(data);
-          $('#bookTitle').val(data);
-        }
-      });
-    }
-
     function getStudentDetails(val) {
       $.ajax({
 

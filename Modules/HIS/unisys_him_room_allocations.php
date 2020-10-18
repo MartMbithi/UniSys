@@ -65,16 +65,15 @@ require_once('partials/_head.php');
                                 <table id="alter_pagination" class="table table-hover" style="width:100%">
                                     <thead>
                                         <tr>
-                                            <th>Room Code Number</th>
+                                            <th>Room No</th>
                                             <th>Type</th>
-                                            <th>Hostel Code Number</th>
                                             <th>Hostel Name</th>
-                                            <th class="text-center">Room Settings</th>
+                                            <th class="text-center">Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-                                        $ret = "SELECT * FROM `UniSys_HIM_Rooms` WHERE status ='Vacant'  ";
+                                        $ret = "SELECT * FROM `UniSys_HIM_Rooms`  ";
                                         $stmt = $mysqli->prepare($ret);
                                         $stmt->execute(); //ok
                                         $res = $stmt->get_result();
@@ -83,12 +82,21 @@ require_once('partials/_head.php');
                                             <tr>
                                                 <td><?php echo $row->code; ?></td>
                                                 <td><?php echo $row->type; ?></td>
-                                                <td><?php echo $row->hostel_code; ?></td>
                                                 <td><?php echo $row->hostel_name; ?></td>
                                                 <td class="text-center">
                                                     <a href="unisys_him_allocate_room.php?room_code=<?php echo $row->code; ?>&room_type=<?php echo  $row->type; ?>&hostel_code=<?php echo $row->hostel_code; ?>&hostel_name=<?php echo $row->hostel_name; ?>&status=Occupied" data-toggle="tooltip" class="badge outline-badge-primary">
-                                                        Allocate Room
+                                                        Allocate
                                                     </a>
+                                                    <?php
+                                                    if ($row->status == 'Occupied') {
+                                                        echo
+                                                            "
+                                                                <a href='unisys_him_view_room_allocation.php?$row->code' class ='badge outline-badge-success'>
+                                                                    View Allocation
+                                                                </a>
+                                                            ";
+                                                    }
+                                                    ?>
                                                 </td>
                                             </tr>
                                         <?php

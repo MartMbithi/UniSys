@@ -11,9 +11,7 @@ require_once('partials/_head.php');
 <body>
 
     <!--  BEGIN NAVBAR  -->
-    <?php
-    require_once('partials/_nav.php');
-    ?>
+    <?php require_once('partials/_nav.php'); ?>
     <!--  END NAVBAR  -->
 
     <!--  BEGIN NAVBAR  -->
@@ -34,10 +32,9 @@ require_once('partials/_head.php');
                                 <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
                                 <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
                                 <li class="breadcrumb-item"><a href="">Advanced Reporting</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><span>Room Allocations</span></li>
+                                <li class="breadcrumb-item active" aria-current="page"><span>Hostel Assets</span></li>
                             </ol>
                         </nav>
-
                     </div>
                 </li>
             </ul>
@@ -66,34 +63,25 @@ require_once('partials/_head.php');
                                 <table id="html5-extension" class="table table-hover" style="width:100%">
                                     <thead>
                                         <tr>
-                                            <th>Room Number</th>
-                                            <th>Type</th>
-                                            <th>Hostel Number</th>
-                                            <th>Hostel Name</th>
-                                            <th>Student Name</th>
-                                            <th>Student ADM No.</th>
-                                            <th>Date Allocated</th>
+                                            <th>Code Number</th>
+                                            <th>Name</th>
+                                            <th>Created At</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-                                        $ret = "SELECT * FROM `UniSys_LIM_Allocations` ";
+                                        $ret = "SELECT * FROM `UniSys_HIM_Assets`  ";
                                         $stmt = $mysqli->prepare($ret);
                                         $stmt->execute(); //ok
                                         $res = $stmt->get_result();
                                         while ($row = $res->fetch_object()) {
                                         ?>
                                             <tr>
-                                                <td><?php echo $row->room_code; ?></td>
-                                                <td><?php echo $row->room_type; ?></td>
-                                                <td><?php echo $row->hostel_code; ?></td>
-                                                <td><?php echo $row->hostel_name; ?></td>
-                                                <td><?php echo $row->student_name; ?></td>
-                                                <td><?php echo $row->student_regno; ?></td>
-                                                <td><?php echo $row->date_allocated; ?></td>
+                                                <td><?php echo $row->code; ?></td>
+                                                <td><?php echo $row->name; ?></td>
+                                                <td><?php echo $row->created_at;?></td>
                                             </tr>
-                                        <?php
-                                        } ?>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -102,8 +90,7 @@ require_once('partials/_head.php');
                 </div>
 
             </div>
-            <?php require_once('partials/_footer.php');
-            ?>
+            <?php require_once('partials/_footer.php'); ?>
         </div>
         <!--  END CONTENT AREA  -->
     </div>

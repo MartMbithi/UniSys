@@ -84,15 +84,20 @@ require_once('partials/_head.php');
                                                 <td><?php echo $row->type; ?></td>
                                                 <td><?php echo $row->hostel_name; ?></td>
                                                 <td class="text-center">
-                                                    <a href="unisys_him_allocate_room.php?room_code=<?php echo $row->code; ?>&room_type=<?php echo  $row->type; ?>&hostel_code=<?php echo $row->hostel_code; ?>&hostel_name=<?php echo $row->hostel_name; ?>&status=Occupied" data-toggle="tooltip" class="badge outline-badge-primary">
-                                                        Allocate
-                                                    </a>
+
                                                     <?php
                                                     if ($row->status == 'Occupied') {
                                                         echo
                                                             "
                                                                 <a href='unisys_him_view_room_allocation.php?code=$row->code' class ='badge outline-badge-success'>
                                                                     View Allocation
+                                                                </a>
+                                                            ";
+                                                    } else {
+                                                        echo
+                                                            "
+                                                                <a href='unisys_him_allocate_room.php?room_code=$row->code&room_type=$row->type;&hostel_code=$row->hostel_code&hostel_name=$row->hostel_name;&status=Occupied'  class='badge outline-badge-primary'>
+                                                                    Allocate
                                                                 </a>
                                                             ";
                                                     }

@@ -91,7 +91,7 @@ require_once('partials/_head.php');
                                                     if ($row->status == 'Occupied') {
                                                         echo
                                                             "
-                                                                <a href='unisys_him_view_room_allocation.php?$row->code' class ='badge outline-badge-success'>
+                                                                <a href='unisys_him_view_room_allocation.php?code=$row->code' class ='badge outline-badge-success'>
                                                                     View Allocation
                                                                 </a>
                                                             ";

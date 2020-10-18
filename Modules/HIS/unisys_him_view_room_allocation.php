@@ -119,9 +119,10 @@ require_once('partials/_head.php');
                                                     <td><?php echo $row->hostel_name; ?></td>
                                                     <td><?php echo $row->student_name; ?></td>
                                                     <td><?php echo $row->student_regno; ?></td>
+                                                    <td><?php echo $row->date_allocated; ?></td>
                                                     <td class="text-center">
                                                         <a href="unisys_him_view_room_allocation.php?delete=<?php echo $row->id; ?>&room_code=<?php echo $row->room_code; ?>&status=Vacant" data-toggle="tooltip" class="badge outline-badge-danger">
-                                                            Delete
+                                                            Delete 
                                                         </a>
                                                     </td>
                                                 </tr>

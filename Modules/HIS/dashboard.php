@@ -107,7 +107,7 @@ require_once('partials/_head.php');
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $ret = "SELECT * FROM `UniSys_HIM_Hostels`  ";
+                                            $ret = "SELECT * FROM `UniSys_HIM_Hostels` LIMIT 5  ";
                                             $stmt = $mysqli->prepare($ret);
                                             $stmt->execute(); //ok
                                             $res = $stmt->get_result();
@@ -165,7 +165,7 @@ require_once('partials/_head.php');
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $ret = "SELECT * FROM `UniSys_HIM_Rooms`  ";
+                                            $ret = "SELECT * FROM `UniSys_HIM_Rooms` LIMIT 5  ";
                                             $stmt = $mysqli->prepare($ret);
                                             $stmt->execute(); //ok
                                             $res = $stmt->get_result();
@@ -228,7 +228,7 @@ require_once('partials/_head.php');
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $ret = "SELECT * FROM `UniSys_LIM_Allocations`  ";
+                                            $ret = "SELECT * FROM `UniSys_LIM_Allocations` LIMIT 5  ";
                                             $stmt = $mysqli->prepare($ret);
                                             $stmt->execute(); //ok
                                             $res = $stmt->get_result();

@@ -85,10 +85,9 @@ require_once('partials/_head.php');
                                                 <td><?php echo $row->type; ?></td>
                                                 <td><?php echo $row->hostel_code; ?></td>
                                                 <td><?php echo $row->hostel_name; ?></td>
-                                                <td><?php echo $row->status; ?></td>
                                                 <td class="text-center">
-                                                    <a href="unisys_him_allocate_room.php?room_code=<?php echo $row->room_code; ?>&room_type=<?php echo  $room_type; ?>&hostel_code=<?php echo $row->hostel_code; ?>&hostel_name=<?php echo $row->hostel_name; ?>" data-toggle="tooltip" class="badge outline-badge-primary">
-                                                        Edit
+                                                    <a href="unisys_him_allocate_room.php?room_code=<?php echo $row->code; ?>&room_type=<?php echo  $row->type; ?>&hostel_code=<?php echo $row->hostel_code; ?>&hostel_name=<?php echo $row->hostel_name; ?>&status=Occupied" data-toggle="tooltip" class="badge outline-badge-primary">
+                                                        Allocate Room
                                                     </a>
                                                 </td>
                                             </tr>

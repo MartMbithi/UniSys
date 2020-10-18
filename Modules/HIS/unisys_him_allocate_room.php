@@ -27,7 +27,7 @@ if (isset($_POST['allocate_room'])) {
         if (mysqli_num_rows($res) > 0) {
             $row = mysqli_fetch_assoc($res);
             if ($student_regno == $row['student_regno']) {
-                $err =  "Student Already Allocated Room Number";
+                $err =  "Student Already Allocated Room";
             }
         } else {
             $id = $_POST['id'];
@@ -46,7 +46,8 @@ if (isset($_POST['allocate_room'])) {
             $rc = $stmt->bind_param('ssssssss', $id, $room_code, $room_type, $hostel_code, $hostel_name, $student_name, $student_regno, $date_allocated);
             $rc = $RoomStmt->bind_param('ss', $status, $room_code);
             $stmt->execute();
-            if ($stmt) {
+            $RoomStmt->execute();
+            if ($stmt && $RoomStmt) {
                 $success = "Allocation Recorded" && header("refresh:1; url=unisys_him_room_allocations.php");
             } else {
                 //inject alert that task failed

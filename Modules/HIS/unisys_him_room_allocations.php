@@ -65,7 +65,7 @@ require_once('partials/_head.php');
                                 <table id="alter_pagination" class="table table-hover" style="width:100%">
                                     <thead>
                                         <tr>
-                                            <th>Code Number</th>
+                                            <th>Room Code Number</th>
                                             <th>Type</th>
                                             <th>Hostel Code Number</th>
                                             <th>Hostel Name</th>

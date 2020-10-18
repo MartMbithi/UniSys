@@ -37,7 +37,7 @@ if (isset($_POST['allocate_room'])) {
             $hostel_name = $_GET['hostel_name'];
             $student_name = $_POST['student_name'];
             $student_regno = $_POST['student_regno'];
-            $status  = $_POST['status'];
+            $status  = $_GET['status'];
             $date_allocated = date('d M Y');
             $query = "INSERT INTO UniSys_LIM_Allocations (id, room_code, room_type, hostel_code, hostel_name, student_name, student_regno, date_allocated) VALUES (?,?,?,?,?,?,?,?)";
             $RoomStat = "UPDATE UniSys_HIM_Rooms SET status =? WHERE code =?";

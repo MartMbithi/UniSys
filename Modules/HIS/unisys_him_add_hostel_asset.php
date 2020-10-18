@@ -118,7 +118,7 @@ require_once('partials/_head.php');
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="inputEmail4">Description</label>
-                                        <input type="text" id="textarea" required class="form-control" name="details">
+                                        <textarea type="text" id="textarea" required class="form-control"  name="details"></textarea>
                                     </div>
                                 </div>
                                 <button type="submit" name="add_asset" class="btn btn-primary mt-3">Add Asset</button>

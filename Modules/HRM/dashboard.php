@@ -45,7 +45,7 @@ require_once('partials/_head.php');
                         <nav class="breadcrumb-one" aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><span>Analytics Dashboard</span></li>
+                                <li class="breadcrumb-item active" aria-current="page"><span>Dashboard</span></li>
                             </ol>
                         </nav>
 
@@ -53,20 +53,7 @@ require_once('partials/_head.php');
                 </li>
             </ul>
             <ul class="navbar-nav flex-row ml-auto ">
-                <li class="nav-item more-dropdown">
-                    <div class="dropdown  custom-dropdown-icon">
-                        <a class="dropdown-toggle btn" href="#" role="button" id="customDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Settings</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg></a>
-
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="customDropdown">
-                            <a class="dropdown-item" data-value="Hostels" href="unisys_him_reports_hostels.php">Hostels</a>
-                            <a class="dropdown-item" data-value="Rooms" href="unisys_him_reports_rooms.php">Rooms</a>
-                            <a class="dropdown-item" data-value="Allocations" href="unisys_him_reports_allocations.php">Allocations</a>
-                            <a class="dropdown-item" data-value="Assets" href="unisys_him_reports_assets.php">Assets</a>
-                        </div>
-                    </div>
-                </li>
+                
             </ul>
         </header>
     </div>
@@ -94,7 +81,7 @@ require_once('partials/_head.php');
                                 <div class="w-content">
                                     <div class="w-info">
                                         <h6 class="value"><?php echo $hostels; ?></h6>
-                                        <p class="">Hostels</p>
+                                        <p class="">Total Staffs</p>
                                     </div>
                                     <div class="">
                                         <div class="w-icon">
@@ -115,7 +102,7 @@ require_once('partials/_head.php');
                                 <div class="w-content">
                                     <div class="w-info">
                                         <h6 class="value"><?php echo $rooms; ?></h6>
-                                        <p class="">Total Rooms</p>
+                                        <p class="">Job Posted</p>
                                     </div>
                                     <div class="">
                                         <div class="w-icon">
@@ -139,7 +126,7 @@ require_once('partials/_head.php');
                                 <div class="w-content">
                                     <div class="w-info">
                                         <h6 class="value"><?php echo $vacant; ?></h6>
-                                        <p class="">Vacant Rooms</p>
+                                        <p class="">Unpaid Benefits</p>
                                     </div>
                                     <div class="">
                                         <div class="w-icon">
@@ -161,7 +148,7 @@ require_once('partials/_head.php');
                                 <div class="w-content">
                                     <div class="w-info">
                                         <h6 class="value"><?php echo $occupied; ?></h6>
-                                        <p class="">Occupied Rooms</p>
+                                        <p class="">Paid Benefits</p>
                                     </div>
                                     <div class="">
                                         <div class="w-icon">
@@ -182,7 +169,7 @@ require_once('partials/_head.php');
                                 <div class="w-content">
                                     <div class="w-info">
                                         <h6 class="value"><?php echo $underrenovation; ?></h6>
-                                        <p class="">Under Renovation Rooms</p>
+                                        <p class="">Paid Payrolls</p>
                                     </div>
                                     <div class="">
                                         <div class="w-icon">
@@ -204,7 +191,7 @@ require_once('partials/_head.php');
                                 <div class="w-content">
                                     <div class="w-info">
                                         <h6 class="value"><?php echo $assets; ?></h6>
-                                        <p class="">Hostel Assets</p>
+                                        <p class="">Unpaid Payrolls</p>
                                     </div>
                                     <div class="">
                                         <div class="w-icon">

@@ -43,16 +43,7 @@
                 </a>
                 <ul class="collapse submenu list-unstyled" id="EIM" data-parent="#accordionExample">
                     <li class="">
-                        <a href="unisys_lim_reports_books_inventory.php"> Staffs </a>
-                    </li>
-                    <li>
-                        <a href="unisys_lim_reports_library_register.php"> Job History</a>
-                    </li>
-                    <li>
-                        <a href="unisys_lim_reports_library_operations.php"> Salary History </a>
-                    </li>
-                    <li>
-                        <a href="unisys_lim_reports_fines.php"> Fines </a>
+                        <a href="unisys_hr_staffs.php"> Staffs </a>
                     </li>
                 </ul>
             </li>
@@ -75,7 +66,7 @@
                 </a>
                 <ul class="collapse submenu list-unstyled" id="rec" data-parent="#accordionExample">
                     <li class="">
-                        <a href="unisys_lim_reports_books_inventory.php">Job Openings </a>
+                        <a href="unisys_hr_job_openings.php">Job Openings </a>
                     </li>
                 </ul>
             </li>
@@ -98,7 +89,7 @@
                 </a>
                 <ul class="collapse submenu list-unstyled" id="talents" data-parent="#accordionExample">
                     <li class="">
-                        <a href="unisys_lim_reports_books_inventory.php">Staff Performance</a>
+                        <a href="unisys_hr_staff_performance.php">Staff Performance</a>
                     </li>
                 </ul>
             </li>
@@ -121,7 +112,7 @@
                 </a>
                 <ul class="collapse submenu list-unstyled" id="benefits" data-parent="#accordionExample">
                     <li class="">
-                        <a href="unisys_lim_reports_books_inventory.php">Benefits Administration</a>
+                        <a href="unisys_hr_benefits_administrations.php">Benefits Administration</a>
                     </li>
                 </ul>
             </li>
@@ -134,7 +125,7 @@
                             <rect x="18" y="8" width="4" height="13"></rect>
                             <rect x="2" y="13" width="4" height="8"></rect>
                         </svg>
-                        <span>Financial Mngmt</span>
+                        <span>Finances</span>
                     </div>
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
@@ -144,10 +135,11 @@
                 </a>
                 <ul class="collapse submenu list-unstyled" id="finances" data-parent="#accordionExample">
                     <li class="">
-                        <a href="unisys_lim_reports_books_inventory.php">Payrolls</a>
+                        <a href="unisys_hr_payrolls.php">Payrolls</a>
                     </li>
                 </ul>
             </li>
+
 
             <li class="menu">
                 <a href="#time-attendance" data-active="false" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
@@ -157,7 +149,7 @@
                             <rect x="18" y="8" width="4" height="13"></rect>
                             <rect x="2" y="13" width="4" height="8"></rect>
                         </svg>
-                        <span>Time and Attendance</span>
+                        <span>Attendance</span>
                     </div>
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
@@ -167,7 +159,7 @@
                 </a>
                 <ul class="collapse submenu list-unstyled" id="time-attendance" data-parent="#accordionExample">
                     <li class="">
-                        <a href="unisys_lim_reports_books_inventory.php"> Time Reporting</a>
+                        <a href="unisys_hr_time_reporting.php"> Time Reporting</a>
                     </li>
                 </ul>
             </li>

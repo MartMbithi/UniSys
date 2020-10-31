@@ -85,10 +85,7 @@ require_once('partials/_head.php');
                                     </div>
                                     <div class="">
                                         <div class="w-icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
-                                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                                            </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> 
                                         </div>
                                     </div>
                                 </div>
@@ -106,13 +103,7 @@ require_once('partials/_head.php');
                                     </div>
                                     <div class="">
                                         <div class="w-icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
-                                                <circle cx="12" cy="12" r="10"></circle>
-                                                <line x1="22" y1="12" x2="18" y2="12"></line>
-                                                <line x1="6" y1="12" x2="2" y2="12"></line>
-                                                <line x1="12" y1="6" x2="12" y2="2"></line>
-                                                <line x1="12" y1="22" x2="12" y2="18"></line>
-                                            </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><path d="M3 17v3a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-3"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="16"></line></svg> 
                                         </div>
                                     </div>
                                 </div>
@@ -169,7 +160,7 @@ require_once('partials/_head.php');
                                 <div class="w-content">
                                     <div class="w-info">
                                         <h6 class="value"><?php echo $underrenovation; ?></h6>
-                                        <p class="">Paid Payrolls</p>
+                                        <p class="">Pending Payrolls</p>
                                     </div>
                                     <div class="">
                                         <div class="w-icon">
@@ -191,7 +182,7 @@ require_once('partials/_head.php');
                                 <div class="w-content">
                                     <div class="w-info">
                                         <h6 class="value"><?php echo $assets; ?></h6>
-                                        <p class="">Unpaid Payrolls</p>
+                                        <p class="">Paid Payrolls</p>
                                     </div>
                                     <div class="">
                                         <div class="w-icon">

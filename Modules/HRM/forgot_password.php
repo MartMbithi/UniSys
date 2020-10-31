@@ -26,8 +26,8 @@ require_once('partials/_head.php');
             <div class="form-form-wrap">
                 <div class="form-container">
                     <div class="form-content">
-                        <img class="img-fluid text-center"  src="assets/img/logo.png">
-                        <h1>Human Resource Management Module</h1>
+                        <img class="img-fluid text-center" src="assets/img/logo.png">
+                        <h1 class="">Human Resource  Information Management Module</h1>
                         <form method="post" class="text-left">
                             <div class="form">
                                 <div id="username-field" class="field-wrapper input">
@@ -38,10 +38,10 @@ require_once('partials/_head.php');
                                     </svg>
                                     <input id="username" name="auth_email" type="text" class="form-control">
                                 </div>
-                                <div id="password-field" class="field-wrapper input mb-2">
+                                <!-- <div id="password-field" class="field-wrapper input mb-2">
                                     <div class="d-flex justify-content-between">
                                         <label for="password">Password</label>
-                                        <a href="forgot_password.php" target="_blank" class="forgot-pass-link">Forgot Password?</a>
+                                        <a href="forgot_password.php" class="forgot-pass-link">Forgot Password?</a>
                                     </div>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock">
                                         <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
@@ -52,10 +52,10 @@ require_once('partials/_head.php');
                                         <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                         <circle cx="12" cy="12" r="3"></circle>
                                     </svg>
-                                </div>
+                                </div> -->
                                 <div class="d-sm-flex justify-content-between">
                                     <div class="field-wrapper">
-                                        <button name="login" type="submit" class="btn btn-primary" value="">Log In</button>
+                                        <button name="login" type="submit" class="btn btn-primary" value="">Reset Password</button>
                                     </div>
                                 </div>
                             </div>

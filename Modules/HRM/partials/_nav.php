@@ -19,7 +19,7 @@ while ($staff = $res->fetch_object()) {
                 </a>
             </li> -->
                 <li class="nav-item theme-text">
-                    <a href="dashboard.php" class="nav-link">UniSys - Library Information Management Module</a>
+                    <a href="dashboard.php" class="nav-link">UniSys - Human Resource Information Management Module</a>
                 </li>
             </ul>
 

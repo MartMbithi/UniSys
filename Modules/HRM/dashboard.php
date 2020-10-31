@@ -6,6 +6,13 @@ check_login();
 require_once('partials/_analytics.php');
 require_once('partials/_head.php');
 ?>
+<!-- 
+    Dont Worry Why I have this css here 
+    but if you have an issue with it 
+    being here drop me a call here
+    +25737229776 to know why 🤟 
+ -->
+<link href="assets/css/dashboard/dash_2.css" rel="stylesheet" type="text/css" />
 
 <body>
     <!-- BEGIN LOADER -->
@@ -46,21 +53,7 @@ require_once('partials/_head.php');
                 </li>
             </ul>
             <ul class="navbar-nav flex-row ml-auto ">
-                <li class="nav-item more-dropdown">
-                    <div class="dropdown  custom-dropdown-icon">
-                        <a class="dropdown-toggle btn" href="#" role="button" id="customDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Library Reports</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg></a>
-
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="customDropdown">
-                            <a class="dropdown-item" data-value="Books Inventory" href="unisys_lim_reports_books_inventory.php">Books Inventory</a>
-                            <a class="dropdown-item" data-value="Barcodes" href="unisys_lim_reports_barcodes.php">Barcodes</a>
-                            <a class="dropdown-item" data-value="Register" href="unisys_lim_reports_library_register.php">Register</a>
-                            <a class="dropdown-item" data-value="Operations" href="unisys_lim_reports_library_operations.php">Operations</a>
-                            <a class="dropdown-item" data-value="Fines" href="unisys_lim_reports_fines.php">Fines</a>
-                        </div>
-                    </div>
-                </li>
+                
             </ul>
         </header>
     </div>
@@ -76,200 +69,141 @@ require_once('partials/_head.php');
         <?php require_once('partials/_sidebar.php'); ?>
         <!--  END SIDEBAR  -->
 
-        <!--  BEGIN CONTENT AREA  -->
+        <!--  BEGIN CONTENT PART  -->
         <div id="content" class="main-content">
             <div class="layout-px-spacing">
 
                 <div class="row layout-top-spacing">
-                    <!-- Monthly Library Usage -->
-                    <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
-                        <div class="widget widget-chart-one">
-                            <div class="widget-heading">
-                                <h5 class="">Monthly Library Operations</h5>
-                                <ul class="tabs tab-pills">
-                                    <li><a href="javascript:void(0);" id="tb_1" class="tabmenu"><?php echo date('d M Y'); ?></a></li>
-                                </ul>
-                            </div>
 
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
+                        <div class="widget widget-card-four">
                             <div class="widget-content">
-                                <div class="tabs tab-content">
-                                    <div id="content_1" class="tabcontent">
-                                        <div id="revenueMonthly"></div>
+                                <div class="w-content">
+                                    <div class="w-info">
+                                        <h6 class="value"><?php echo $hostels; ?></h6>
+                                        <p class="">Total Staffs</p>
+                                    </div>
+                                    <div class="">
+                                        <div class="w-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> 
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Library Operations  -->
-                    <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
-                        <div class="widget widget-chart-two">
-                            <div class="widget-heading">
-                                <h5 class="">Library Operations Per Type</h5>
-                            </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
+                        <div class="widget widget-card-four">
                             <div class="widget-content">
-                                <div id="chart-2" class=""></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-8 col-lg-12 col-md-6 col-sm-12 col-12 layout-spacing">
-                        <div class="widget widget-table-one">
-                            <div class="widget-heading">
-                                <h5 class="">Library Operations At Glance</h5>
-                            </div>
-
-                            <div class="widget-content">
-                                <?php
-                                $ret = "SELECT * FROM `UniSys_LIM_Library_Operations`  ";
-                                $stmt = $mysqli->prepare($ret);
-                                $stmt->execute(); //ok
-                                $res = $stmt->get_result();
-                                while ($operations = $res->fetch_object()) {
-                                ?>
-                                    <div class="transactions-list">
-                                        <div class="t-item">
-                                            <div class="t-company-name">
-                                                <div class="t-icon">
-                                                    <div class="icon">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
-                                                            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                                <div class="t-name">
-                                                    <h4><?php echo $operations->student_regno; ?> <?php echo $operations->student_name; ?> </h4>
-                                                    <p class="meta-date"><?php echo $operations->book_title; ?> <?php echo $operations->book_isbn; ?> At <?php echo date('d, M, Y - g:i', strtotime($operations->created_at)); ?></p>
-                                                </div>
-
-                                            </div>
-
-                                            <div class="t-rate rate-dec">
-                                                <p>
-                                                    <span><?php echo $operations->type; ?> </span>
-                                                </p>
-                                            </div>
+                                <div class="w-content">
+                                    <div class="w-info">
+                                        <h6 class="value"><?php echo $rooms; ?></h6>
+                                        <p class="">Job Posted</p>
+                                    </div>
+                                    <div class="">
+                                        <div class="w-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><path d="M3 17v3a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-3"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="16"></line></svg> 
                                         </div>
                                     </div>
-                                <?php } ?>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing">
-
-                        <div class="widget widget-account-invoice-one">
-
-                            <div class="widget-heading">
-                                <h5 class="">Library Account Info</h5>
-                            </div>
-
-                            <div class="widget-content">
-                                <div class="invoice-box">
-
-                                    <div class="acc-total-info">
-                                        <h5>Balance</h5>
-                                        <p class="acc-amount">Ksh <?php echo $totalFine; ?></p>
-                                    </div>
-
-                                    <div class="inv-detail">
-                                        <div class="info-detail-1">
-                                            <p>Paid Fines</p>
-                                            <p>Ksh <?php echo $PaidFine; ?></p>
-                                        </div>
-                                        <div class="info-detail-2">
-                                            <p>Pending Fines</p>
-                                            <p>Ksh <?php echo $UnPaidFine; ?></p>
-                                        </div>
-                                    </div>
-
-                                    <div class="inv-action">
-                                        <a href="unisys_lim_reports_fines.php" class="btn btn-dark">Summary</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
-                        <div class="widget widget-table-two">
-
-                            <div class="widget-heading">
-                                <h5 class="">Recently Added Books
-                                    <a href="unisys_lim_books_cataloque.php" class="badge outline-badge-success">View All</a>
-                                </h5>
-                            </div>
-
-                            <div class="widget-content">
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>
-                                                    <div class="th-content">ISBN Number</div>
-                                                </th>
-                                                <th>
-                                                    <div class="th-content">Title</div>
-                                                </th>
-                                                <th>
-                                                    <div class="th-content th-heading">Author</div>
-                                                </th>
-                                                <th>
-                                                    <div class="th-content">Publisher</div>
-                                                </th>
-                                                <th>
-                                                    <div class="th-content">Copies Available</div>
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php
-                                            $ret = "SELECT * FROM `UniSys_LIM_Books_Cataloque`  ";
-                                            $stmt = $mysqli->prepare($ret);
-                                            $stmt->execute(); //ok
-                                            $res = $stmt->get_result();
-                                            while ($books = $res->fetch_object()) {
-                                            ?>
-                                                <tr>
-                                                    <td>
-                                                        <div class="td-content customer-name">
-                                                            <?php echo $books->isbn; ?>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="td-content product-brand"><?php echo $books->title; ?></div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="td-content"><?php echo $books->author; ?></div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="td-content pricing"><span class=""><?php echo $books->publisher; ?></span></div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="td-content"><span class="badge outline-badge-primary"><?php echo $books->copies; ?></span></div>
-                                                    </td>
-                                                </tr>
-                                            <?php
-                                            } ?>
-                                        </tbody>
-                                    </table>
                                 </div>
                             </div>
                         </div>
                     </div>
 
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
+                        <div class="widget widget-card-four">
+                            <div class="widget-content">
+                                <div class="w-content">
+                                    <div class="w-info">
+                                        <h6 class="value"><?php echo $vacant; ?></h6>
+                                        <p class="">Unpaid Benefits</p>
+                                    </div>
+                                    <div class="">
+                                        <div class="w-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <line x1="12" y1="8" x2="12" y2="12"></line>
+                                                <line x1="12" y1="16" x2="12" y2="16"></line>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
+                        <div class="widget widget-card-four">
+                            <div class="widget-content">
+                                <div class="w-content">
+                                    <div class="w-info">
+                                        <h6 class="value"><?php echo $occupied; ?></h6>
+                                        <p class="">Paid Benefits</p>
+                                    </div>
+                                    <div class="">
+                                        <div class="w-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
+                                                <path d="M22 11.07V12a10 10 0 1 1-5.93-9.14"></path>
+                                                <polyline points="23 3 12 14 9 11"></polyline>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
+                        <div class="widget widget-card-four">
+                            <div class="widget-content">
+                                <div class="w-content">
+                                    <div class="w-info">
+                                        <h6 class="value"><?php echo $underrenovation; ?></h6>
+                                        <p class="">Pending Payrolls</p>
+                                    </div>
+                                    <div class="">
+                                        <div class="w-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
+                                                <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon>
+                                                <line x1="12" y1="8" x2="12" y2="12"></line>
+                                                <line x1="12" y1="16" x2="12" y2="16"></line>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
+                        <div class="widget widget-card-four">
+                            <div class="widget-content">
+                                <div class="w-content">
+                                    <div class="w-info">
+                                        <h6 class="value"><?php echo $assets; ?></h6>
+                                        <p class="">Paid Payrolls</p>
+                                    </div>
+                                    <div class="">
+                                        <div class="w-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
+                                                <path d="M22 11.07V12a10 10 0 1 1-5.93-9.14"></path>
+                                                <polyline points="23 3 12 14 9 11"></polyline>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
             </div>
             <?php require_once('partials/_footer.php'); ?>
         </div>
-        <!--  END CONTENT AREA  -->
-
+        <!--  END CONTENT PART  -->
     </div>
+    <!-- END MAIN CONTAINER -->
     <?php require_once('partials/_scripts.php'); ?>
-
 </body>
 
 </html>

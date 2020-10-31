@@ -29,10 +29,10 @@
                 <a href="#EIM" data-active="false" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                     <div class="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
-                            <rect x="10" y="3" width="4" height="18"></rect>
-                            <rect x="18" y="8" width="4" height="13"></rect>
-                            <rect x="2" y="13" width="4" height="8"></rect>
+                            <polyline points="13 17 18 12 13 7"></polyline>
+                            <polyline points="6 17 11 12 6 7"></polyline>
                         </svg>
+
                         <span>Employee Info</span>
                     </div>
                     <div>
@@ -52,9 +52,8 @@
                 <a href="#rec" data-active="false" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                     <div class="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
-                            <rect x="10" y="3" width="4" height="18"></rect>
-                            <rect x="18" y="8" width="4" height="13"></rect>
-                            <rect x="2" y="13" width="4" height="8"></rect>
+                            <polyline points="13 17 18 12 13 7"></polyline>
+                            <polyline points="6 17 11 12 6 7"></polyline>
                         </svg>
                         <span>Recruitments</span>
                     </div>
@@ -75,9 +74,8 @@
                 <a href="#talents" data-active="false" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                     <div class="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
-                            <rect x="10" y="3" width="4" height="18"></rect>
-                            <rect x="18" y="8" width="4" height="13"></rect>
-                            <rect x="2" y="13" width="4" height="8"></rect>
+                            <polyline points="13 17 18 12 13 7"></polyline>
+                            <polyline points="6 17 11 12 6 7"></polyline>
                         </svg>
                         <span>Talents</span>
                     </div>
@@ -98,9 +96,8 @@
                 <a href="#benefits" data-active="false" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                     <div class="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
-                            <rect x="10" y="3" width="4" height="18"></rect>
-                            <rect x="18" y="8" width="4" height="13"></rect>
-                            <rect x="2" y="13" width="4" height="8"></rect>
+                            <polyline points="13 17 18 12 13 7"></polyline>
+                            <polyline points="6 17 11 12 6 7"></polyline>
                         </svg>
                         <span>Benefits</span>
                     </div>
@@ -121,9 +118,8 @@
                 <a href="#finances" data-active="false" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                     <div class="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
-                            <rect x="10" y="3" width="4" height="18"></rect>
-                            <rect x="18" y="8" width="4" height="13"></rect>
-                            <rect x="2" y="13" width="4" height="8"></rect>
+                            <polyline points="13 17 18 12 13 7"></polyline>
+                            <polyline points="6 17 11 12 6 7"></polyline>
                         </svg>
                         <span>Finances</span>
                     </div>
@@ -145,9 +141,8 @@
                 <a href="#time-attendance" data-active="false" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                     <div class="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
-                            <rect x="10" y="3" width="4" height="18"></rect>
-                            <rect x="18" y="8" width="4" height="13"></rect>
-                            <rect x="2" y="13" width="4" height="8"></rect>
+                            <polyline points="13 17 18 12 13 7"></polyline>
+                            <polyline points="6 17 11 12 6 7"></polyline>
                         </svg>
                         <span>Attendance</span>
                     </div>

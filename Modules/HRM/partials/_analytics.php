@@ -14,12 +14,35 @@ $stmt->execute();
 $stmt->bind_result($jobs_posted);
 $stmt->fetch();
 $stmt->close();
-/* Unpaid Benefits */
 
-$unpaid_benefits = 0;
+/* Unpaid Benefits */
+$query = "SELECT COUNT(*)  FROM `UniSys_Benefits` WHERE status !='Paid'  ";
+$stmt = $mysqli->prepare($query);
+$stmt->execute();
+$stmt->bind_result($unpaid_benefits);
+$stmt->fetch();
+$stmt->close();
+
 /* Paid Benefits */
-$paid_benefits = 0;
+$query = "SELECT COUNT(*)  FROM `UniSys_Benefits` WHERE status ='Paid'  ";
+$stmt = $mysqli->prepare($query);
+$stmt->execute();
+$stmt->bind_result($paid_benefits);
+$stmt->fetch();
+$stmt->close();
+
 /* Pending Payrolls */
-$pending_payrolls = 0;
+$query = "SELECT COUNT(*)  FROM `UniSys_Payrolls` WHERE status ='Pending'  ";
+$stmt = $mysqli->prepare($query);
+$stmt->execute();
+$stmt->bind_result($pending_payrolls);
+$stmt->fetch();
+$stmt->close();
+
 /* Paid Payrolls */
-$paid_payrolls = 0 ;
+$query = "SELECT COUNT(*)  FROM `UniSys_Payrolls` WHERE status !='Pending'  ";
+$stmt = $mysqli->prepare($query);
+$stmt->execute();
+$stmt->bind_result($paid_payrolls);
+$stmt->fetch();
+$stmt->close();

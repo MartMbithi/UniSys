@@ -8,7 +8,9 @@
 
 ## UniSys🧑‍🎓 {Lite Weight University Information Management System}
 
-UniSys is a  Light Weight University Information Management System which is a web, desktop and android application  with expressive, elegant and comprehensive functionalities. We believe tertiary education records management must be an enjoyable and creative experience to be truly fulfilling. UniSys takes the pain out of Campus / University Information Management by easing and automating day to day activities.UniSys is accessible, powerful, and provides tools required for large, robust and complex Information Management.
+<s>UniSys is a  Light Weight University Information Management System which is a web, desktop and android application  with expressive, elegant and comprehensive functionalities. We believe tertiary education records management must be an enjoyable and creative experience to be truly fulfilling. UniSys takes the pain out of Campus / University Information Management by easing and automating day to day activities.UniSys is accessible, powerful, and provides tools required for large, robust and complex Information Management. </s>
+
+
 
 
 ## UniSys🧑‍🎓 Modules
@@ -17,7 +19,6 @@ UniSys is a  Light Weight University Information Management System which is a we
 *  Hostel Information Management
 *  Mess Information Management
 *  Programe and Course Management
-*  Transport Management
 *  Exam / Results Management
 *  Students / Lecturers Portal
 *  <i>And Many More</i>

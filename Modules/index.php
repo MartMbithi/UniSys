@@ -58,9 +58,9 @@
                                 UniSys is a product crafted by a bored developer, who had nothing to do, its buggy as hell - well that we know but none cares
                                 oh but if you care, just clone the repo make it better and you know share it too. Anyway UniSys is a light weight dummy
                                 prototype of a campus or a small educational instutuion management system, If you like it why cant you go and drop a fork and a
-                                star too. 
+                                star too.
                             </p>
-                            <a class="banner_btn" href="#">Select On Any Module To Try<i class="ti-arrow-right"></i></a>
+                            <a class="banner_btn" href="#modules">Select On Any Module To Try<i class="ti-arrow-right"></i></a>
                         </div>
                     </div>
 
@@ -69,8 +69,9 @@
         </div>
     </section>
 
-    <section class="service-area area-padding">
+    <section id="modules" class="service-area area-padding">
         <div class="container">
+
             <div class="row">
                 <!-- Single service -->
                 <div class="col-md-6 col-lg-4">
@@ -79,7 +80,7 @@
                             <i class="ti-pencil-alt"></i>
                         </div>
                         <div class="service-content">
-                            <h5>Unique Design</h5>
+                            <h5>Students Records Management Module</h5>
                             <p>Third don't lights wherein was. bring to build them, seas. Thing gathering answ gaered beast third that heaven after all that living one bank limit</p>
                             <a href="#">Read More</a>
                         </div>
@@ -93,7 +94,7 @@
                             <i class="ti-image"></i>
                         </div>
                         <div class="service-content">
-                            <h5>Business Solution</h5>
+                            <h5>Library Information Management Module</h5>
                             <p>Third don't lights wherein was. bring to build them, seas. Thing gathering answ gaered beast third that heaven after all that living one bank limit</p>
                             <a href="#">Read More</a>
                         </div>
@@ -108,7 +109,81 @@
                             <i class="ti-headphone-alt"></i>
                         </div>
                         <div class="service-content">
-                            <h5>Customer Support</h5>
+                            <h5>Hostel Information Management Module</h5>
+                            <p>Third don't lights wherein was. bring to build them, seas. Thing gathering answ gaered beast third that heaven after all that living one bank limit</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <!-- Single service -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="single-service">
+                        <div class="service-icon">
+                            <i class="ti-pencil-alt"></i>
+                        </div>
+                        <div class="service-content">
+                            <h5>Mess / Cafeteria Information Management Module</h5>
+                            <p>Third don't lights wherein was. bring to build them, seas. Thing gathering answ gaered beast third that heaven after all that living one bank limit</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single service -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="single-service">
+                        <div class="service-icon">
+                            <i class="ti-image"></i>
+                        </div>
+                        <div class="service-content">
+                            <h5>Programe And Course Management Module</h5>
+                            <p>Third don't lights wherein was. bring to build them, seas. Thing gathering answ gaered beast third that heaven after all that living one bank limit</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Single service -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="single-service">
+                        <div class="service-icon">
+                            <i class="ti-headphone-alt"></i>
+                        </div>
+                        <div class="service-content">
+                            <h5>Exam And Results Management Module</h5>
+                            <p>Third don't lights wherein was. bring to build them, seas. Thing gathering answ gaered beast third that heaven after all that living one bank limit</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single service -->
+                <div class="col-md-6 col-lg-6">
+                    <div class="single-service">
+                        <div class="service-icon">
+                            <i class="ti-image"></i>
+                        </div>
+                        <div class="service-content">
+                            <h5>Students Portal</h5>
+                            <p>Third don't lights wherein was. bring to build them, seas. Thing gathering answ gaered beast third that heaven after all that living one bank limit</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Single service -->
+                <div class="col-md-6 col-lg-6">
+                    <div class="single-service">
+                        <div class="service-icon">
+                            <i class="ti-headphone-alt"></i>
+                        </div>
+                        <div class="service-content">
+                            <h5>Lecturers Portal</h5>
                             <p>Third don't lights wherein was. bring to build them, seas. Thing gathering answ gaered beast third that heaven after all that living one bank limit</p>
                             <a href="#">Read More</a>
                         </div>
@@ -118,6 +193,7 @@
             </div>
         </div>
     </section>
+
     <footer class="footer-area">
         <div class="container">
             <div class="row">
@@ -158,11 +234,11 @@
                 <div class="col-lg-3 col-md-8 mb-4 mb-xl-0 single-footer-widget">
                     <h4>Newsletter</h4>
                     <p>
-                        Cannot get enough of our products, drop your mail here to subscribe to our weekly newsletters.
+                        Cant get enough of our products, drop your mail here to subscribe to our weekly newsletters.
                     </p>
 
                     <div class="form-wrap" id="mc_embed_signup">
-                        <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get">
+                        <form target="_blank">
                             <div class="input-group">
                                 <input type="email" class="form-control" name="EMAIL" placeholder="Your Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '">
                                 <div class="input-group-append">
@@ -181,6 +257,7 @@
 
                 </div>
             </div>
+
             <div class="footer-bottom row align-items-center text-center text-lg-left no-gutters">
                 <p class="footer-text m-0 col-lg-8 col-md-12">
                     Copyright &copy;<script>
@@ -196,10 +273,7 @@
             </div>
         </div>
     </footer>
-    <!-- ================ End footer Area ================= -->
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="js/jquery-2.2.4.min.js"></script>
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>

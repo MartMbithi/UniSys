@@ -73,121 +73,96 @@
         <div class="container">
 
             <div class="row">
-                <!-- Single service -->
                 <div class="col-md-6 col-lg-4">
-                    <div class="single-service">
-                        <div class="service-icon">
-                            <i class="ti-pencil-alt"></i>
+                    <a href="">
+                        <div class="single-service">
+                            <div class="service-content">
+                                <h5>Students Records Management Module</h5>
+                            </div>
                         </div>
-                        <div class="service-content">
-                            <h5>Students Records Management Module</h5>
-                            <p>Third don't lights wherein was. bring to build them, seas. Thing gathering answ gaered beast third that heaven after all that living one bank limit</p>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
+                    </a>
                 </div>
 
-                <!-- Single service -->
                 <div class="col-md-6 col-lg-4">
-                    <div class="single-service">
-                        <div class="service-icon">
-                            <i class="ti-image"></i>
+                    <a href="">
+                        <div class="single-service">
+                            <div class="service-content">
+                                <h5>Library Information Management Module</h5>
+                                <a href="#">Login</a>
+                            </div>
                         </div>
-                        <div class="service-content">
-                            <h5>Library Information Management Module</h5>
-                            <p>Third don't lights wherein was. bring to build them, seas. Thing gathering answ gaered beast third that heaven after all that living one bank limit</p>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
+                    </a>
                 </div>
 
 
-                <!-- Single service -->
                 <div class="col-md-6 col-lg-4">
-                    <div class="single-service">
-                        <div class="service-icon">
-                            <i class="ti-headphone-alt"></i>
+                    <a href="">
+                        <div class="single-service">
+                            <div class="service-content">
+                                <h5>Hostel Information Management Module</h5>
+                            </div>
                         </div>
-                        <div class="service-content">
-                            <h5>Hostel Information Management Module</h5>
-                            <p>Third don't lights wherein was. bring to build them, seas. Thing gathering answ gaered beast third that heaven after all that living one bank limit</p>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
+                    </a>
                 </div>
 
             </div>
+
             <div class="row">
-                <!-- Single service -->
                 <div class="col-md-6 col-lg-4">
-                    <div class="single-service">
-                        <div class="service-icon">
-                            <i class="ti-pencil-alt"></i>
+                    <a href="">
+                        <div class="single-service">
+                            <div class="service-content">
+                                <h5>Mess / Cafeteria Information Management Module</h5>
+                                <a href="#">Read More</a>
+                            </div>
                         </div>
-                        <div class="service-content">
-                            <h5>Mess / Cafeteria Information Management Module</h5>
-                            <p>Third don't lights wherein was. bring to build them, seas. Thing gathering answ gaered beast third that heaven after all that living one bank limit</p>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
+                    </a>
                 </div>
 
-                <!-- Single service -->
                 <div class="col-md-6 col-lg-4">
-                    <div class="single-service">
-                        <div class="service-icon">
-                            <i class="ti-image"></i>
+                    <a href="">
+                        <div class="single-service">
+                            <div class="service-content">
+                                <h5>Programe And Course Management Module</h5>
+                                <a href="#">Read More</a>
+                            </div>
                         </div>
-                        <div class="service-content">
-                            <h5>Programe And Course Management Module</h5>
-                            <p>Third don't lights wherein was. bring to build them, seas. Thing gathering answ gaered beast third that heaven after all that living one bank limit</p>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
+                    </a>
                 </div>
 
 
-                <!-- Single service -->
                 <div class="col-md-6 col-lg-4">
-                    <div class="single-service">
-                        <div class="service-icon">
-                            <i class="ti-headphone-alt"></i>
+                    <a href="">
+                        <div class="single-service">
+                            <div class="service-content">
+                                <h5>Exam And Results Management Module</h5>
+                                <a href="#">Read More</a>
+                            </div>
                         </div>
-                        <div class="service-content">
-                            <h5>Exam And Results Management Module</h5>
-                            <p>Third don't lights wherein was. bring to build them, seas. Thing gathering answ gaered beast third that heaven after all that living one bank limit</p>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
+                    </a>
                 </div>
 
-                <!-- Single service -->
                 <div class="col-md-6 col-lg-6">
-                    <div class="single-service">
-                        <div class="service-icon">
-                            <i class="ti-image"></i>
+                    <a href="">
+                        <div class="single-service">
+                            <div class="service-content">
+                                <h5>Students Portal</h5>
+                                <a href="#">Read More</a>
+                            </div>
                         </div>
-                        <div class="service-content">
-                            <h5>Students Portal</h5>
-                            <p>Third don't lights wherein was. bring to build them, seas. Thing gathering answ gaered beast third that heaven after all that living one bank limit</p>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
+                    </a>
                 </div>
 
 
-                <!-- Single service -->
                 <div class="col-md-6 col-lg-6">
-                    <div class="single-service">
-                        <div class="service-icon">
-                            <i class="ti-headphone-alt"></i>
+                    <a href="">
+                        <div class="single-service">
+                            <div class="service-content">
+                                <h5>Lecturers Portal</h5>
+                                <a href="#">Read More</a>
+                            </div>
                         </div>
-                        <div class="service-content">
-                            <h5>Lecturers Portal</h5>
-                            <p>Third don't lights wherein was. bring to build them, seas. Thing gathering answ gaered beast third that heaven after all that living one bank limit</p>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
+                    </a>
                 </div>
 
             </div>

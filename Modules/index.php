@@ -74,7 +74,7 @@
 
             <div class="row">
                 <div class="col-md-6 col-lg-4">
-                    <a href="">
+                    <a href="SRM/">
                         <div class="single-service">
                             <div class="service-content">
                                 <h5>Students Records Management Module</h5>
@@ -84,7 +84,7 @@
                 </div>
 
                 <div class="col-md-6 col-lg-4">
-                    <a href="">
+                    <a href="LIM/">
                         <div class="single-service">
                             <div class="service-content">
                                 <h5>Library Information Management Module</h5>
@@ -95,7 +95,7 @@
 
 
                 <div class="col-md-6 col-lg-4">
-                    <a href="">
+                    <a href="HIS/">
                         <div class="single-service">
                             <div class="service-content">
                                 <h5>Hostel Information Management Module</h5>

@@ -18,26 +18,9 @@ UniSys is a  Light Weight University Information Management System which is a we
 *  Mess Information Management
 *  Programe and Course Management
 *  Transport Management
-*  HR Information Management
-*  Scholarships And Discounts
-*  Admission Information Management
 *  Exam / Results Management
-*  Inventory and Assets Informatgion Management
 *  Students / Lecturers Portal
 *  <i>And Many More</i>
 
-## UniSys🧑‍🎓 Modules Implementation
-*  Students Information Management -> Fully Implemented
-*  Library Information Management -> Fully Implemented
-*  Hostel Information Management -> On Going Implementation
-*  Mess Information Management
-*  Programe and Course Management
-*  Transport Management
-*  HR Information Management
-*  Scholarships And Discounts
-*  Admission Information Management
-*  Exam / Results Management
-*  Inventory and Assets Informatgion Management
-*  Students / Lecturers Portal
 ## License
 UniSys is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

@@ -53,8 +53,13 @@
                 <div class="row">
                     <div class="col-lg-6 offset-lg-6 col-xl-5 offset-xl-7">
                         <div class="banner_content">
-                            <h3>Build a better<br />business & faster</h3>
-                            <p>Subdue creature does face signs evening good sixth foreign gaered one. Fruit. Third every fruitful multiply subdue creature doesn't face signs evening good sixth tyou're.</p>
+                            <h3>UniSys <br> Prototype Of A Campus MIS</h3>
+                            <p>
+                                UniSys is a product crafted by a bored developer, who had nothing to do, its buggy as hell - well that we know but none cares
+                                oh but if you care, just clone the repo make it better and you know share it too. Anyway UniSys is a light weight dummy
+                                prototype of a campus or a small educational instutuion management system, If you like it why cant you go and drop a fork and a
+                                star too. 
+                            </p>
                             <a class="banner_btn" href="#">Select On Any Module To Try<i class="ti-arrow-right"></i></a>
                         </div>
                     </div>
@@ -63,7 +68,7 @@
             </div>
         </div>
     </section>
-    
+
     <section class="service-area area-padding">
         <div class="container">
             <div class="row">
@@ -113,8 +118,6 @@
             </div>
         </div>
     </section>
-    <!--================Service Area end =================-->
-    <!-- ================ start footer Area ================= -->
     <footer class="footer-area">
         <div class="container">
             <div class="row">

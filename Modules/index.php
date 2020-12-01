@@ -88,7 +88,6 @@
                         <div class="single-service">
                             <div class="service-content">
                                 <h5>Library Information Management Module</h5>
-                                <a href="#">Login</a>
                             </div>
                         </div>
                     </a>
@@ -113,7 +112,6 @@
                         <div class="single-service">
                             <div class="service-content">
                                 <h5>Mess / Cafeteria Information Management Module</h5>
-                                <a href="#">Read More</a>
                             </div>
                         </div>
                     </a>
@@ -124,7 +122,6 @@
                         <div class="single-service">
                             <div class="service-content">
                                 <h5>Programe And Course Management Module</h5>
-                                <a href="#">Read More</a>
                             </div>
                         </div>
                     </a>
@@ -136,7 +133,6 @@
                         <div class="single-service">
                             <div class="service-content">
                                 <h5>Exam And Results Management Module</h5>
-                                <a href="#">Read More</a>
                             </div>
                         </div>
                     </a>
@@ -147,7 +143,6 @@
                         <div class="single-service">
                             <div class="service-content">
                                 <h5>Students Portal</h5>
-                                <a href="#">Read More</a>
                             </div>
                         </div>
                     </a>
@@ -159,7 +154,6 @@
                         <div class="single-service">
                             <div class="service-content">
                                 <h5>Lecturers Portal</h5>
-                                <a href="#">Read More</a>
                             </div>
                         </div>
                     </a>
@@ -173,7 +167,7 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-lg-3 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
+                <div class="col-lg-4 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
                     <h4>About Us</h4>
                     <p>
                         UniSys is a product crafted by a bored developer, who had nothing to do, its buggy as hell - well that we know but none cares
@@ -186,7 +180,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
+                <div class="col-lg-4 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
                     <h4>Contact Info</h4>
                     <div class="footer-address">
                         <p>Address :127.0.0.1 - Localhost</p>
@@ -195,18 +189,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
-                    <h4>Modules Links</h4>
-                    <ul>
-                        <li><a href="#">WHMCS-bridge</a></li>
-                        <li><a href="#">Search Domain</a></li>
-                        <li><a href="#">My Account</a></li>
-                        <li><a href="#">Shopping Cart</a></li>
-                        <li><a href="#">Our Shop</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-3 col-md-8 mb-4 mb-xl-0 single-footer-widget">
+                <div class="col-lg-4 col-md-8 mb-4 mb-xl-0 single-footer-widget">
                     <h4>Newsletter</h4>
                     <p>
                         Cant get enough of our products, drop your mail here to subscribe to our weekly newsletters.
@@ -234,17 +217,12 @@
             </div>
 
             <div class="footer-bottom row align-items-center text-center text-lg-left no-gutters">
-                <p class="footer-text m-0 col-lg-8 col-md-12">
+                <p class="footer-text m-0 col-lg-12 col-md-12">
                     Copyright &copy;<script>
                         document.write(new Date().getFullYear());
                     </script> All rights reserved | UniSys Is A Product Build With <i class="fa fa-heart" aria-hidden="true"></i> By <a href="https://martdev.info" target="_blank">MartDevlopers Inc</a>
                 </p>
-                <div class="col-lg-4 col-md-12 text-center text-lg-right footer-social">
-                    <a href="#"><i class="ti-facebook"></i></a>
-                    <a href="#"><i class="ti-twitter-alt"></i></a>
-                    <a href="#"><i class="ti-dribbble"></i></a>
-                    <a href="#"><i class="ti-linkedin"></i></a>
-                </div>
+                
             </div>
         </div>
     </footer>

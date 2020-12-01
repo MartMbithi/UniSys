@@ -74,7 +74,7 @@
 
             <div class="row">
                 <div class="col-md-6 col-lg-4">
-                    <a href="SRM/">
+                    <a target="_blank" href="SRM/">
                         <div class="single-service">
                             <div class="service-content">
                                 <h5>Students Records Management Module</h5>
@@ -84,7 +84,7 @@
                 </div>
 
                 <div class="col-md-6 col-lg-4">
-                    <a href="LIM/">
+                    <a target="_blank" href="LIM/">
                         <div class="single-service">
                             <div class="service-content">
                                 <h5>Library Information Management Module</h5>
@@ -95,7 +95,7 @@
 
 
                 <div class="col-md-6 col-lg-4">
-                    <a href="HIS/">
+                    <a target="_blank" href="HIS/">
                         <div class="single-service">
                             <div class="service-content">
                                 <h5>Hostel Information Management Module</h5>
@@ -108,7 +108,7 @@
 
             <div class="row">
                 <div class="col-md-6 col-lg-4">
-                    <a href="">
+                    <a target="_blank" href="">
                         <div class="single-service">
                             <div class="service-content">
                                 <h5>Mess / Cafeteria Information Management Module</h5>
@@ -118,7 +118,7 @@
                 </div>
 
                 <div class="col-md-6 col-lg-4">
-                    <a href="">
+                    <a target="_blank" href="">
                         <div class="single-service">
                             <div class="service-content">
                                 <h5>Programe And Course Management Module</h5>
@@ -129,7 +129,7 @@
 
 
                 <div class="col-md-6 col-lg-4">
-                    <a href="">
+                    <a target="_blank" href="">
                         <div class="single-service">
                             <div class="service-content">
                                 <h5>Exam And Results Management Module</h5>
@@ -139,7 +139,7 @@
                 </div>
 
                 <div class="col-md-6 col-lg-6">
-                    <a href="">
+                    <a target="_blank" href="">
                         <div class="single-service">
                             <div class="service-content">
                                 <h5>Students Portal</h5>
@@ -150,7 +150,7 @@
 
 
                 <div class="col-md-6 col-lg-6">
-                    <a href="">
+                    <a target="_blank" href="">
                         <div class="single-service">
                             <div class="service-content">
                                 <h5>Lecturers Portal</h5>
@@ -158,7 +158,6 @@
                         </div>
                     </a>
                 </div>
-
             </div>
         </div>
     </section>
